@@ -15,10 +15,18 @@ const aboutLinks = [
   { name: "Clients", href: "/about/clients" },
 ]
 
+const contactLinks = [
+  { name: "Contact Us", href: "/contact" },
+  { name: "Request Quote", href: "/contact/quote" },
+  { name: "Vendor Registration", href: "/contact/vendor" },
+  { name: "Become Partner", href: "/contact/partner" },
+]
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
+  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
   const mobileMenuRef = useRef(null)
   const location = useLocation()
@@ -35,6 +43,7 @@ export default function Header() {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsAboutDropdownOpen(false)
+        setIsContactDropdownOpen(false)
       }
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
         setIsMobileMenuOpen(false)
@@ -49,6 +58,7 @@ export default function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false)
     setIsAboutDropdownOpen(false)
+    setIsContactDropdownOpen(false)
   }, [location.pathname])
 
   const navLinks = [
@@ -57,7 +67,7 @@ export default function Header() {
     { name: "Services", href: "/services" },
     { name: "Projects", href: "/projects" },
     { name: "OEM", href: "/oem" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/contact", dropdown: contactLinks },
   ]
 
   return (
@@ -87,16 +97,28 @@ export default function Header() {
               link.dropdown ? (
                 <div key={link.name} className="relative" ref={dropdownRef}>
                   <button
-                    onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                    onClick={() => {
+                      if (link.name === "About") {
+                        setIsAboutDropdownOpen(!isAboutDropdownOpen)
+                        setIsContactDropdownOpen(false)
+                      } else if (link.name === "Contact") {
+                        setIsContactDropdownOpen(!isContactDropdownOpen)
+                        setIsAboutDropdownOpen(false)
+                      }
+                    }}
                     className={`flex items-center space-x-1 px-1 py-2 font-medium ${
-                      aboutLinks.some(l => location.pathname === l.href) 
+                      (link.name === "About" && aboutLinks.some(l => location.pathname === l.href)) ||
+                      (link.name === "Contact" && contactLinks.some(l => location.pathname === l.href))
                         ? "text-orange-500" 
                         : "text-gray-700 hover:text-orange-500"
                     }`}
                   >
                     <span>{link.name}</span>
                     <motion.span
-                      animate={{ rotate: isAboutDropdownOpen ? 180 : 0 }}
+                      animate={{ 
+                        rotate: (link.name === "About" && isAboutDropdownOpen) || 
+                               (link.name === "Contact" && isContactDropdownOpen) ? 180 : 0 
+                      }}
                       transition={{ duration: 0.2 }}
                     >
                       <ChevronDown className="w-4 h-4" />
@@ -104,7 +126,8 @@ export default function Header() {
                   </button>
 
                   <AnimatePresence>
-                    {isAboutDropdownOpen && (
+                    {((link.name === "About" && isAboutDropdownOpen) || 
+                      (link.name === "Contact" && isContactDropdownOpen)) && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -122,7 +145,10 @@ export default function Header() {
                                   ? "text-orange-500 bg-orange-50"
                                   : "text-gray-700 hover:text-orange-500 hover:bg-gray-50"
                               }`}
-                              onClick={() => setIsAboutDropdownOpen(false)}
+                              onClick={() => {
+                                setIsAboutDropdownOpen(false)
+                                setIsContactDropdownOpen(false)
+                              }}
                             >
                               {l.name}
                             </Link>
@@ -188,11 +214,22 @@ export default function Header() {
                     <div key={link.name}>
                       <button 
                         className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
-                        onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                        onClick={() => {
+                          if (link.name === "About") {
+                            setIsAboutDropdownOpen(!isAboutDropdownOpen)
+                            setIsContactDropdownOpen(false)
+                          } else if (link.name === "Contact") {
+                            setIsContactDropdownOpen(!isContactDropdownOpen)
+                            setIsAboutDropdownOpen(false)
+                          }
+                        }}
                       >
                         <span>{link.name}</span>
                         <motion.span
-                          animate={{ rotate: isAboutDropdownOpen ? 180 : 0 }}
+                          animate={{ 
+                            rotate: (link.name === "About" && isAboutDropdownOpen) || 
+                                   (link.name === "Contact" && isContactDropdownOpen) ? 180 : 0 
+                          }}
                           transition={{ duration: 0.2 }}
                         >
                           <ChevronDown className="h-4 w-4" />
@@ -200,7 +237,8 @@ export default function Header() {
                       </button>
                       
                       <AnimatePresence>
-                        {isAboutDropdownOpen && (
+                        {((link.name === "About" && isAboutDropdownOpen) || 
+                          (link.name === "Contact" && isContactDropdownOpen)) && (
                           <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
@@ -220,6 +258,7 @@ export default function Header() {
                                   }`}
                                   onClick={() => {
                                     setIsAboutDropdownOpen(false)
+                                    setIsContactDropdownOpen(false)
                                     setIsMobileMenuOpen(false)
                                   }}
                                 >

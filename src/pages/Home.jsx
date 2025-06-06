@@ -69,7 +69,8 @@ export default function Home() {
     >
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 bg-[url('/src/assets/77.jpg')] bg-cover bg-center opacity-20 blur-[2px] scale-105" />
+        <div className="absolute inset-0 bg-[url('/src/assets/pic_1.png')] bg-cover bg-center opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/60 to-blue-900/70" />
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-20">
           <div className="max-w-4xl mx-auto lg:text-left flex flex-col items-center lg:items-start">
             <motion.h1 

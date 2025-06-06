@@ -10,7 +10,10 @@ import OurHistory from "./pages/AboutUs/OurHistory"
 import OurCertifications from "./pages/AboutUs/OurCertifications"
 import EventGallery from "./pages/AboutUs/EventGallery"
 import Clients from "./pages/AboutUs/Clients"
-import ContactUs from "./pages/ContactUs/ContactUs"
+import ContactForm from "./pages/ContactUs/ContactForm"
+import RequestQuote from "./pages/ContactUs/RequestQuote"
+import VendorRegistration from "./pages/ContactUs/VendorRegistration"
+import BecomePartner from "./pages/ContactUs/BecomePartner"
 import Services from "./pages/Services/Services"
 import Projects from "./pages/Projects"
 import OEM from "./pages/OEM"
@@ -33,7 +36,12 @@ function App() {
               <Route path="gallery" element={<EventGallery />} />
               <Route path="clients" element={<Clients />} />
             </Route>
-            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/contact">
+              <Route index element={<ContactForm />} />
+              <Route path="quote" element={<RequestQuote />} />
+              <Route path="vendor" element={<VendorRegistration />} />
+              <Route path="partner" element={<BecomePartner />} />
+            </Route>
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/oem" element={<OEM />} />
