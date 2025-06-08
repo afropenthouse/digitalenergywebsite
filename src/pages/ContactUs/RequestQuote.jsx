@@ -14,32 +14,43 @@ const services = [
 
 export default function RequestQuote() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20">
+    <div className="pt-24 min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white relative overflow-hidden rounded-2xl mx-4 md:mx-6 lg:mx-8">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/80" />
-          <div className="absolute top-0 right-0 w-full h-full opacity-10">
-            <div className="grid grid-cols-4 gap-8 rotate-45 transform scale-150">
-              {[...Array(12)].map((_, i) => (
-                <div key={i} className="h-32 border-2 border-white/20 rounded-xl" />
-              ))}
-            </div>
-          </div>
+          <img
+            src="/src/assets/p88.png"
+            alt="Request Quote"
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
         </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="relative z-10 container mx-auto px-6 max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
+            transition={{ delay: 0.1 }}
+            className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
           >
-            <h1 className="text-4xl font-bold mb-6">Request a <span className="text-orange-400">Quote</span></h1>
-            <p className="text-lg text-blue-100 leading-relaxed">
-              Share your project details and we'll prepare a customized solution
-            </p>
+            <p className="text-sm font-medium">Request a Quote</p>
           </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Excellence Through <span className="text-orange-400">Service</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+          >
+            Share your project details and we'll prepare a customized solution.
+          </motion.p>
         </div>
       </section>
 

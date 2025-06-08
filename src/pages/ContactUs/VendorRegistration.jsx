@@ -20,19 +20,41 @@ export default function VendorRegistration() {
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white relative overflow-hidden rounded-2xl mx-4 md:mx-6 lg:mx-8">
+        <div className="absolute inset-0">
+          <img
+            src="/src/assets/p88.png"
+            alt="Vendor Registration"
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6 max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ delay: 0.1 }}
+            className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Vendor Registration</h1>
-            <p className="text-xl text-primary-100 leading-relaxed">
-              Join our network of trusted vendors and partners to collaborate on energy projects
-            </p>
+            <p className="text-sm font-medium">Vendor Registration</p>
           </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Excellence Through <span className="text-orange-400">Partnership</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+          >
+            Join our network of trusted vendors and grow with us.
+          </motion.p>
         </div>
       </section>
 
