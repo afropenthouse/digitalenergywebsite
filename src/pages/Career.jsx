@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { MapPin, Clock, Users, GraduationCap, Heart, Award } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const jobOpenings = [
   {
@@ -88,19 +89,42 @@ export default function Career() {
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/src/assets/pic_2.png"
+            alt="Careers"
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6 max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ delay: 0.1 }}
+            className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Join Our Team</h1>
-            <p className="text-xl text-primary-100 leading-relaxed">
-              Build your career with Nigeria's leading energy solutions company
-            </p>
+            <p className="text-sm font-medium">Career</p>
           </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Join our <span className="text-orange-400">Digital Energy</span>{" "}Team
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+          >
+            Join our dynamic team and be part of a company that's shaping the future of energy solutions.
+            We offer exciting opportunities for growth, innovation, and professional development.
+          </motion.p>
         </div>
       </section>
 
@@ -222,7 +246,9 @@ export default function Career() {
               We're always looking for talented individuals to join our team. Send us your resume and we'll keep you in
               mind for future opportunities.
             </p>
-            <Button className="bg-primary-500 hover:bg-primary-600 text-white">Submit Your Resume</Button>
+            <Link to="/contact">
+              <Button className="bg-primary-500 hover:bg-primary-600 text-white">Submit Your Resume</Button>
+            </Link>
           </motion.div>
         </div>
       </section>

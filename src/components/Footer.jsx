@@ -89,7 +89,7 @@ export default function Footer() {
                   Home
                 </Link>
                 <Link 
-                  to="/about" 
+                  to="/about/who-we-are" 
                   className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
                 >
                   <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
@@ -117,6 +117,13 @@ export default function Footer() {
                 >
                   <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
                   OEM
+                </Link>
+                <Link 
+                  to="/careers" 
+                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
+                >
+                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                  Careers
                 </Link>
                 <Link 
                   to="/contact" 

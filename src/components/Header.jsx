@@ -67,6 +67,7 @@ export default function Header() {
     { name: "Services", href: "/services" },
     { name: "Projects", href: "/projects" },
     { name: "OEM", href: "/oem" },
+    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact", dropdown: contactLinks },
   ]
 
