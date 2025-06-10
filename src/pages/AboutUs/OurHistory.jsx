@@ -5,59 +5,34 @@ import { Clock, Award, Users, Building2, Target, Lightbulb } from "lucide-react"
 const milestones = [
   {
     id: 1,
-    year: "2010",
+    year: "2015",
     title: "Company Foundation",
-    description: "Digital Energy was established with a vision to transform the energy sector.",
+    description: "Digital Energy & Integrated Services Limited was established as a leading indigenous multi-disciplinary Engineering & Project Management organization, offering world-class services in Oil & Gas, Energy, Marine and ICT sectors.",
     icon: Building2
   },
   {
     id: 2,
-    year: "2015",
-    title: "Expansion",
-    description: "Expanded operations to multiple regions and established key partnerships.",
+    title: "Service Expansion",
+    description: "Expanded our service portfolio to cover Oil & Gas (Upstream, Midstream & Downstream), Energy (Power), Marine and ICT sectors.",
     icon: Target
   },
   {
     id: 3,
-    year: "2018",
-    title: "Innovation Hub",
-    description: "Launched our innovation center to drive technological advancement.",
+    title: "Engineering Excellence",
+    description: "Established our core competencies in all engineering disciplines with cutting-edge project management deployment.",
     icon: Lightbulb
   },
   {
     id: 4,
-    year: "2020",
     title: "Global Recognition",
-    description: "Received international recognition for sustainable energy solutions.",
+    description: "Achieved recognition for delivering world-class services across multiple industries and establishing a strong track record of satisfied customers.",
     icon: Award
   },
   {
     id: 5,
-    year: "2023",
-    title: "Digital Transformation",
-    description: "Completed major digital transformation initiatives.",
+    title: "Digital Innovation",
+    description: "Enhanced our digital capabilities and integrated services to provide comprehensive solutions across the energy value chain.",
     icon: Users
-  }
-]
-
-const achievements = [
-  {
-    id: 1,
-    number: "500+",
-    label: "Projects Completed",
-    description: "Successfully delivered energy solutions across various sectors"
-  },
-  {
-    id: 2,
-    number: "50+",
-    label: "Team Members",
-    description: "Growing team of energy and technology experts"
-  },
-  {
-    id: 3,
-    number: "15+",
-    label: "Years Experience",
-    description: "Decades of industry expertise and innovation"
   }
 ]
 
@@ -110,25 +85,7 @@ const OurHistory = () => {
             </div>
           </motion.div>
 
-          {/* Key Achievements */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={achievement.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-7 shadow-lg border border-gray-100"
-              >
-                <div className="text-4xl font-bold text-blue-600 mb-2">
-                  {achievement.number}
-                </div>
-                <p className="text-gray-900 font-medium mb-2">{achievement.label}</p>
-                <p className="text-gray-600 text-sm">{achievement.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          
 
           {/* Timeline Section */}
           <div className="bg-gradient-to-br from-blue-50 to-white py-16 rounded-2xl">

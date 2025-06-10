@@ -46,25 +46,40 @@ const boardMembers = [
   }
 ]
 
-const OurGovernance = () => {
-  const committees = [
-    {
-      title: "Audit Committee",
-      description: "Oversees financial reporting, internal controls, and risk management",
-      members: ["Dr. James Wilson", "Maria Rodriguez"],
-    },
-    {
-      title: "Nomination Committee",
-      description: "Handles board composition, succession planning, and governance",
-      members: ["David Chen", "Dr. James Wilson"],
-    },
-    {
-      title: "Remuneration Committee",
-      description: "Manages executive compensation and performance evaluation",
-      members: ["Maria Rodriguez", "David Chen"],
-    },
-  ]
+const governanceStructure = [
+  {
+    title: "Board of Directors",
+    description: "Experienced professionals providing strategic guidance"
+  },
+  {
+    title: "Executive Management",
+    description: "Skilled leaders driving operational excellence"
+  },
+  {
+    title: "Committees",
+    description: "Specialized teams ensuring compliance"
+  }
+]
 
+const corporateStructure = [
+  {
+    title: "Board of Directors",
+    description: "Provides strategic oversight and governance for the company's operations and growth",
+    members: ["Board Leadership"],
+  },
+  {
+    title: "Executive Management",
+    description: "Leads the implementation of corporate strategy and day-to-day operations",
+    members: ["Executive Team"],
+  },
+  {
+    title: "Corporate Secretariat",
+    description: "Ensures compliance with corporate governance requirements and regulatory standards",
+    members: ["Legal & Compliance Team"],
+  },
+]
+
+const OurGovernance = () => {
   return (
     <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
@@ -164,49 +179,9 @@ const OurGovernance = () => {
         </div>
       </div>
 
-          {/* Core Values */}
-      <div>
-            <div className="text-center mb-12">
-              <motion.h3 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl font-bold text-gray-900 mb-4"
-              >
-                Our Core Values
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-gray-600 text-lg max-w-3xl mx-auto"
-              >
-                Fundamental principles guiding our decision-making
-              </motion.p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {governanceValues.map((value, index) => (
-            <motion.div
-                  key={value.title}
-              initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-7 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                    <value.icon className="w-6 h-6 text-blue-600" />
-              </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h4>
-                  <p className="text-gray-600">{value.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
           {/* Governance Structure */}
-          <div className="bg-gradient-to-br from-blue-50 to-white py-16 rounded-2xl">
-            <div className="container mx-auto px-6">
+          <div className="bg-white py-16 rounded-2xl">
+            <div className="container mx-auto px-6 max-w-4xl">
               <div className="text-center mb-12">
                 <motion.h3 
                   initial={{ opacity: 0, y: 20 }}
@@ -226,85 +201,11 @@ const OurGovernance = () => {
                   A robust framework ensuring effective oversight
                 </motion.p>
               </div>
-              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-white rounded-2xl p-7 shadow-lg border border-gray-100"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                    <Users className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Board of Directors</h4>
-                  <p className="text-gray-600 mb-4">
-                    Experienced professionals providing strategic guidance
-                  </p>
-                  <div className="w-8 h-0.5 bg-orange-400 rounded-full" />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="bg-white rounded-2xl p-7 shadow-lg border border-gray-100"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                    <Building2 className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Executive Management</h4>
-                  <p className="text-gray-600 mb-4">
-                    Skilled leaders driving operational excellence
-                  </p>
-                  <div className="w-8 h-0.5 bg-orange-400 rounded-full" />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-white rounded-2xl p-7 shadow-lg border border-gray-100"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                    <Target className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Committees</h4>
-                  <p className="text-gray-600 mb-4">
-                    Specialized teams ensuring compliance
-                  </p>
-                  <div className="w-8 h-0.5 bg-orange-400 rounded-full" />
-                </motion.div>
-              </div>
-            </div>
-          </div>
-
-          {/* Committees Section */}
-          <div className="bg-white py-16 rounded-2xl">
-            <div className="container mx-auto px-6 max-w-4xl">
-              <div className="text-center mb-12">
-                <motion.h3 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="text-3xl font-bold text-gray-900 mb-4"
-                >
-                  Board Committees
-                </motion.h3>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-gray-600 text-lg max-w-3xl mx-auto"
-                >
-                  Specialized committees supporting effective governance
-                </motion.p>
-              </div>
               
               <div className="space-y-6">
-                {committees.map((committee, index) => (
+                {governanceStructure.map((structure, index) => (
                   <motion.div
-                    key={committee.title}
+                    key={structure.title}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -313,14 +214,10 @@ const OurGovernance = () => {
                     <div className="flex items-start">
                       <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mr-4 mt-1">
                         <FileCheck className="w-5 h-5 text-blue-600" />
-            </div>
-            <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">{committee.title}</h4>
-                        <p className="text-gray-600">{committee.description}</p>
-                        <div className="mt-3">
-                          <span className="text-sm font-medium text-gray-700">Members: </span>
-                          <span className="text-sm text-gray-600">{committee.members.join(", ")}</span>
-                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-1">{structure.title}</h4>
+                        <p className="text-gray-600">{structure.description}</p>
                       </div>
                     </div>
                   </motion.div>

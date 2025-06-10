@@ -7,41 +7,39 @@ import { Link } from "react-router-dom"
 const clients = [
   {
     id: 1,
-    name: "Nigerian National Petroleum Corporation",
-    logo: "/src/assets/pic_10.png",
-    description: "Leading energy company in Nigeria",
-    category: "Energy"
+    name: "NNPC",
+    logo: "/src/assets/nnpc.jpeg",
+    description: "Nigeria's National Oil Company"
   },
   {
     id: 2,
-    name: "Shell Petroleum Development Company",
-    logo: "/src/assets/pic_11.png",
-    description: "Global energy and petrochemical company",
-    category: "Energy"
+    name: "SEEPCO",
+    logo: "/src/assets/seepco.jpeg",
+    description: "Strategic Energy & Petroleum Company"
   },
   {
     id: 3,
-    name: "Total Energies",
-    logo: "/src/assets/pic_12.png",
-    description: "International oil and gas company",
-    category: "Energy"
-  }
-]
-
-const testimonials = [
-  {
-    id: 1,
-    name: "John Smith",
-    position: "CEO, Energy Solutions Ltd",
-    content: "Digital Energy has transformed our operations with their innovative solutions.",
-    rating: 5
+    name: "SEPLAT",
+    logo: "/src/assets/seplat.jpg",
+    description: "Leading Independent Energy Company"
   },
   {
-    id: 2,
-    name: "Sarah Johnson",
-    position: "Operations Director, Power Corp",
-    content: "Their expertise in digital energy management is unmatched in the industry.",
-    rating: 5
+    id: 4,
+    name: "Chevron",
+    logo: "/src/assets/chevron.png",
+    description: "Global Energy Corporation"
+  },
+  {
+    id: 5,
+    name: "Shell",
+    logo: "/src/assets/shell.png",
+    description: "International Energy Company"
+  },
+  {
+    id: 6,
+    name: "Total",
+    logo: "/src/assets/total.png",
+    description: "Global Energy Major"
   }
 ]
 
@@ -99,7 +97,7 @@ const Clients = () => {
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">Our Clients</p>
+                <p className="text-sm font-medium">Our Partners</p>
               </motion.div>
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -121,25 +119,25 @@ const Clients = () => {
             </div>
           </motion.div>
 
-          {/* Clients Grid */}
-          <div>
-            <div className="text-center mb-12">
+          {/* Partners Grid */}
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
               <motion.h3 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl font-bold text-gray-900 mb-4"
+                className="text-2xl font-semibold text-gray-800 mb-3"
               >
-                Our Clients
+                Our Valued Partners
               </motion.h3>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-gray-600 text-lg max-w-3xl mx-auto"
+                className="text-gray-600 max-w-2xl mx-auto"
               >
-                Leading organizations that trust us with their energy solutions
+                Trusted by industry leaders in the energy sector
               </motion.p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
@@ -150,78 +148,22 @@ const Clients = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100"
                 >
-                  <div className="aspect-[4/3] relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                  <div className="aspect-[4/3] relative overflow-hidden bg-gray-50">
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-6">
-                    <div className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-3">
-                      {client.category}
-                    </div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">{client.name}</h4>
+                  <div className="p-5">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-1">{client.name}</h4>
                     <p className="text-gray-600 text-sm">{client.description}</p>
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </div>
-
-          {/* Testimonials Section */}
-          <div className="bg-gradient-to-br from-blue-50 to-white py-16 rounded-2xl">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-12">
-                <motion.h3 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="text-3xl font-bold text-gray-900 mb-4"
-                >
-                  Client Testimonials
-                </motion.h3>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-gray-600 text-lg max-w-3xl mx-auto"
-                >
-                  What our clients say about working with us
-                </motion.p>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {testimonials.map((testimonial, index) => (
-                  <motion.div
-                    key={testimonial.id}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-xl p-6 shadow-lg border border-gray-100"
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
-                        <Users className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-gray-900">{testimonial.name}</h4>
-                        <p className="text-sm text-gray-600">{testimonial.position}</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-600 mb-4">{testimonial.content}</p>
-                    <div className="flex gap-1">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-orange-400 fill-orange-400" />
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </div>
           </div>
 

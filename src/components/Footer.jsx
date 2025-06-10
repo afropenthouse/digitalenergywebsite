@@ -73,66 +73,38 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
             className="space-y-6"
           >
-            <h3 className="text-lg font-bold text-center md:text-left pb-2 border-b border-blue-700">
-              Quick Links
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-3">
-                <Link 
-                  to="/" 
-                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
-                >
-                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                  Home
-                </Link>
-                <Link 
-                  to="/about/who-we-are" 
-                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
-                >
-                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                  About Us
-                </Link>
-                <Link 
-                  to="/services" 
-                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
-                >
-                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                  Services
-                </Link>
-              </div>
-              <div className="space-y-3">
-                <Link 
-                  to="/projects" 
-                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
-                >
-                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                  Projects
-                </Link>
-                <Link 
-                  to="/oem" 
-                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
-                >
-                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                  OEM
-                </Link>
-                <Link 
-                  to="/careers" 
-                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
-                >
-                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                  Careers
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className="text-blue-100 hover:text-orange-500 transition-colors text-sm font-medium flex items-center group"
-                >
-                  <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                  Contact
-                </Link>
-              </div>
+            <h3 className="text-lg font-semibold text-center md:text-left">Quick Links</h3>
+            <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
+              <Link to="/" className="text-blue-100 hover:text-white flex items-center group">
+                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">Home</span>
+              </Link>
+              <Link to="/about" className="text-blue-100 hover:text-white flex items-center group">
+                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">About Us</span>
+              </Link>
+              <Link to="/services" className="text-blue-100 hover:text-white flex items-center group">
+                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">Services</span>
+              </Link>
+              <Link to="/projects" className="text-blue-100 hover:text-white flex items-center group">
+                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">Projects</span>
+              </Link>
+              <Link to="/oem" className="text-blue-100 hover:text-white flex items-center group">
+                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">OEM</span>
+              </Link>
+              <Link to="/careers" className="text-blue-100 hover:text-white flex items-center group">
+                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">Careers</span>
+              </Link>
+              <Link to="/contact" className="text-blue-100 hover:text-white flex items-center group">
+                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">Contact</span>
+              </Link>
             </div>
           </motion.div>
 
@@ -141,52 +113,32 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
             className="space-y-6"
           >
-            <h3 className="text-lg font-bold text-center md:text-left pb-2 border-b border-blue-700">
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <div className="bg-orange-500 p-2 rounded-lg mr-3 flex-shrink-0">
-                  <MapPin className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-sm">Office Address</h4>
-                  <p className="text-blue-100 text-xs mt-1">
-                    123 Energy Street, Lagos, Nigeria
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="bg-orange-500 p-2 rounded-lg mr-3 flex-shrink-0">
-                  <Phone className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-sm">Phone</h4>
-                  <p className="text-blue-100 text-xs mt-1">+234 123 456 7890</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="bg-orange-500 p-2 rounded-lg mr-3 flex-shrink-0">
-                  <Mail className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-sm">Email</h4>
-                  <p className="text-blue-100 text-xs mt-1">info@digitalenergy.com</p>
-                </div>
-              </li>
-            </ul>
+            <h3 className="text-lg font-semibold text-center md:text-left">Contact Info</h3>
+            <div className="space-y-4">
+              <div className="flex items-center justify-center md:justify-start">
+                <MapPin className="h-5 w-5 text-orange-400 mr-3" />
+                <span className="text-blue-100">123 Energy Avenue, Victoria Island, Lagos, Nigeria</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Phone className="h-5 w-5 text-orange-400 mr-3" />
+                <span className="text-blue-100">+234 (0) 123 456 7890</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Mail className="h-5 w-5 text-orange-400 mr-3" />
+                <span className="text-blue-100">info@digitalenergy.ng</span>
+              </div>
+            </div>
           </motion.div>
         </div>
-      </div>
 
-      {/* Copyright */}
-      <div className="border-t border-blue-800 py-3">
-        <div className="container mx-auto px-4">
-          <div className="text-xs text-blue-200 text-center">
-            © {new Date().getFullYear()} Digital Energy & Integrated Services Limited. All rights reserved.
+        {/* Copyright */}
+        <div className="border-t border-blue-800 mt-12 pt-8">
+          <div className="container mx-auto px-4">
+            <div className="text-xs text-blue-200 text-center">
+              © {new Date().getFullYear()} Digital Energy & Integrated Services Limited. All rights reserved.
+            </div>
           </div>
         </div>
       </div>

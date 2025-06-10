@@ -56,69 +56,261 @@ const galleryImages = [
   },
   {
     id: 2,
+    src: "/src/assets/new1.jpg",
+    alt: "Energy Systems",
+    category: "Technology"
+  },
+  {
+    id: 3,
     src: "/src/assets/pic_2.png",
     alt: "Solar Power Installation",
     category: "Renewable Energy"
   },
   {
-    id: 3,
-    src: "/src/assets/pic_3.png",
-    alt: "Wind Farm",
-    category: "Renewable Energy"
+    id: 4,
+    src: "/src/assets/new4.jpg",
+    alt: "Power Distribution",
+    category: "Infrastructure"
   },
   {
-    id: 4,
-    src: "/src/assets/pic_4.png",
+    id: 5,
+    src: "/src/assets/pic_3.png",
+    alt: "Customer Service",
+    category: "Technology"
+  },
+  {
+    id: 6,
+    src: "/src/assets/new7.jpg",
+    alt: "Energy Management",
+    category: "Technology"
+  },
+  {
+    id: 7,
+    src: "/src/assets/pic_4.jpg",
     alt: "Smart Grid Technology",
     category: "Technology"
   },
   {
-    id: 5,
-    src: "/src/assets/pic_5.png",
+    id: 8,
+    src: "/src/assets/new11.jpg",
+    alt: "Power Systems",
+    category: "Infrastructure"
+  },
+  {
+    id: 9,
+    src: "/src/assets/pic_5.jpg",
     alt: "Energy Distribution",
     category: "Infrastructure"
   },
   {
-    id: 6,
-    src: "/src/assets/pic_6.png",
-    alt: "Power Plant",
-    category: "Infrastructure"
-  },
-  {
-    id: 7,
-    src: "/src/assets/pic_7.png",
-    alt: "Energy Storage",
-    category: "Technology"
-  },
-  {
-    id: 8,
-    src: "/src/assets/pic_8.png",
-    alt: "Smart Metering",
-    category: "Technology"
-  },
-  {
-    id: 9,
-    src: "/src/assets/pic_9.png",
-    alt: "Grid Modernization",
-    category: "Infrastructure"
-  },
-  {
     id: 10,
-    src: "/src/assets/pic_10.png",
+    src: "/src/assets/new21.jpg",
     alt: "Smart Grid Operations",
     category: "Technology"
   },
   {
     id: 11,
+    src: "/src/assets/pic_6.png",
+    alt: "Power Plant",
+    category: "Infrastructure"
+  },
+  {
+    id: 12,
+    src: "/src/assets/new22.jpg",
+    alt: "Energy Solutions",
+    category: "Technology"
+  },
+  {
+    id: 13,
+    src: "/src/assets/pic_8.png",
+    alt: "Energy Storage",
+    category: "Technology"
+  },
+  {
+    id: 14,
+    src: "/src/assets/new23.jpg",
+    alt: "Power Generation",
+    category: "Infrastructure"
+  },
+  {
+    id: 15,
+    src: "/src/assets/pic_9.png",
+    alt: "Smart Metering",
+    category: "Technology"
+  },
+  {
+    id: 16,
+    src: "/src/assets/new25.jpg",
+    alt: "Energy Infrastructure",
+    category: "Infrastructure"
+  },
+  {
+    id: 17,
+    src: "/src/assets/pic_10.jpg",
+    alt: "Grid Modernization",
+    category: "Infrastructure"
+  },
+  {
+    id: 18,
+    src: "/src/assets/new26.jpg",
+    alt: "Control Systems",
+    category: "Technology"
+  },
+  {
+    id: 19,
     src: "/src/assets/pic_11.png",
+    alt: "Smart Grid Operations",
+    category: "Technology"
+  },
+  {
+    id: 20,
+    src: "/src/assets/new27.jpg",
+    alt: "Power Distribution",
+    category: "Infrastructure"
+  },
+  {
+    id: 21,
+    src: "/src/assets/pic_12.jpg",
     alt: "Renewable Energy Plant",
     category: "Renewable Energy"
   },
   {
-    id: 12,
-    src: "/src/assets/pic_12.png",
+    id: 22,
+    src: "/src/assets/new28.jpg",
+    alt: "Modern Office Space",
+    category: "Technology"
+  },
+  {
+    id: 23,
+    src: "/src/assets/pic_14.png",
     alt: "Energy Distribution Network",
     category: "Infrastructure"
+  },
+  {
+    id: 24,
+    src: "/src/assets/new29.jpg",
+    alt: "Modern Office Space",
+    category: "Technology"
+  },
+  {
+    id: 26,
+    src: "/src/assets/new30.jpg",
+    alt: "Power Systems",
+    category: "Infrastructure"
+  },
+  {
+    id: 27,
+    src: "/src/assets/p1.jpg",
+    alt: "Industrial Facility",
+    category: "Infrastructure"
+  },
+  {
+    id: 28,
+    src: "/src/assets/new31.jpg",
+    alt: "Modern Office Space",
+    category: "Technology"
+  },
+  {
+    id: 29,
+    src: "/src/assets/p2.jpg",
+    alt: "Energy Control Center",
+    category: "Technology"
+  },
+  {
+    id: 30,
+    src: "/src/assets/new32.jpg",
+    alt: "Power Distribution",
+    category: "Infrastructure"
+  },
+  {
+    id: 31,
+    src: "/src/assets/p3.png",
+    alt: "Power Distribution",
+    category: "Infrastructure"
+  },
+  {
+    id: 32,
+    src: "/src/assets/new33.jpg",
+    alt: "Energy Management",
+    category: "Technology"
+  },
+  {
+    id: 33,
+    src: "/src/assets/p4.jpg",
+    alt: "Energy Management",
+    category: "Technology"
+  },
+  {
+    id: 34,
+    src: "/src/assets/new34.jpg",
+    alt: "Power Systems",
+    category: "Infrastructure"
+  },
+  {
+    id: 35,
+    src: "/src/assets/p5.jpg",
+    alt: "Power Systems",
+    category: "Infrastructure"
+  },
+  {
+    id: 36,
+    src: "/src/assets/new35.jpg",
+    alt: "Power Systems",
+    category: "Technology"
+  },
+  {
+    id: 38,
+    src: "/src/assets/new44.jpg",
+    alt: "Energy Infrastructure",
+    category: "Infrastructure"
+  },
+  {
+    id: 39,
+    src: "/src/assets/p7.jpg",
+    alt: "Energy Infrastructure",
+    category: "Infrastructure"
+  },
+  {
+    id: 41,
+    src: "/src/assets/p9.jpg",
+    alt: "Energy Control Systems",
+    category: "Technology"
+  },
+  {
+    id: 42,
+    src: "/src/assets/p10.jpg",
+    alt: "Power Distribution Network",
+    category: "Infrastructure"
+  },
+  {
+    id: 43,
+    src: "/src/assets/p77.jpg",
+    alt: "Energy Management Systems",
+    category: "Technology"
+  },
+  {
+    id: 44,
+    src: "/src/assets/u3.jpg",
+    alt: "Energy Solutions",
+    category: "Technology"
+  },
+  {
+    id: 45,
+    src: "/src/assets/pic_14.jpg",
+    alt: "Energy Network",
+    category: "Infrastructure"
+  },
+  {
+    id: 46,
+    src: "/src/assets/p88.png",
+    alt: "Power Generation",
+    category: "Infrastructure"
+  },
+  {
+    id: 47,
+    src: "/src/assets/pic_2.jpg",
+    alt: "Renewable Energy",
+    category: "Renewable Energy"
   }
 ]
 
@@ -212,7 +404,7 @@ const EventGallery = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -228,9 +420,6 @@ const EventGallery = () => {
                   </button>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-3 z-20">
-                  <div className="inline-block bg-blue-600/80 backdrop-blur-sm px-2 py-0.5 rounded-full text-xs text-white mb-1">
-                    {image.category}
-                  </div>
                   <h3 className="text-white text-sm font-medium truncate">{image.alt}</h3>
                 </div>
               </motion.div>
@@ -251,32 +440,23 @@ const EventGallery = () => {
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.9, opacity: 0 }}
-                  className="relative max-w-5xl w-full"
+                  className="relative max-w-[90vw] max-h-[90vh] w-auto h-auto"
                   onClick={e => e.stopPropagation()}
                 >
-                  {/* Close button in top-right corner */}
+                  {/* Close button */}
                   <button
-                    className="absolute -top-12 right-0 p-2 text-white hover:text-gray-300 transition-colors"
+                    className="absolute -top-12 right-0 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white z-50"
                     onClick={closeLightbox}
                   >
                     <X className="w-8 h-8" />
                   </button>
 
-                  {/* Close button overlay on image */}
-                  <button
-                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
-                    onClick={closeLightbox}
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-
                   <img
                     src={selectedImage.src}
                     alt={selectedImage.alt}
-                    className="w-full h-auto rounded-lg shadow-2xl"
+                    className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm p-4 rounded-lg">
-                    <div className="text-white text-sm mb-1">{selectedImage.category}</div>
                     <h3 className="text-white font-medium">{selectedImage.alt}</h3>
                   </div>
                 </motion.div>
