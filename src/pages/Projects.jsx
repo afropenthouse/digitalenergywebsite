@@ -74,18 +74,7 @@ export default function Projects() {
       {/* Projects Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore our portfolio of successful projects
-            </p>
-          </motion.div>
+          
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
@@ -163,14 +152,18 @@ export default function Projects() {
               Let us bring our expertise to your next energy project
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg shadow-lg hover:shadow-blue-700/20 transition-all">
-                Request a Quote
+              <Button 
+                asChild
+                className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg shadow-lg hover:shadow-blue-700/20 transition-all"
+              >
+                <a href="/contact/quote">Request a Quote</a>
               </Button>
               <Button
+                asChild
                 variant="outline"
-                className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-8 py-4 rounded-lg transition-colors"
+                className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-8 py-4 rounded-lg transition-colors bg-white/50 backdrop-blur-sm"
               >
-                Contact Us
+                <a href="/contact">Contact Us</a>
               </Button>
             </div>
           </motion.div>

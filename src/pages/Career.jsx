@@ -2,14 +2,13 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
-import { MapPin, Clock, Users, GraduationCap, Heart, Award } from "lucide-react"
+import { MapPin, Clock, Users, GraduationCap, Heart, Award, ChevronRight } from "lucide-react"
 import { Link } from "react-router-dom"
 
 const jobOpenings = [
   {
     id: 1,
     title: "Senior Mechanical Engineer",
-    department: "Engineering",
     location: "Lagos, Nigeria",
     type: "Full-time",
     experience: "5+ years",
@@ -18,56 +17,14 @@ const jobOpenings = [
   {
     id: 2,
     title: "Project Manager",
-    department: "Project Management",
     location: "Port Harcourt, Rivers State",
     type: "Full-time",
     experience: "7+ years",
     description: "Manage large-scale energy infrastructure projects",
   },
-  {
-    id: 3,
-    title: "Electrical Engineer",
-    department: "Engineering",
-    location: "Abuja, FCT",
-    type: "Full-time",
-    experience: "3+ years",
-    description: "Design and implement electrical systems for energy projects",
-  },
-  {
-    id: 4,
-    title: "QA/QC Inspector",
-    department: "Quality Assurance",
-    location: "Warri, Delta State",
-    type: "Full-time",
-    experience: "4+ years",
-    description: "Ensure quality standards and compliance in construction projects",
-  },
-  {
-    id: 5,
-    title: "HSE Officer",
-    department: "Health, Safety & Environment",
-    location: "Lagos, Nigeria",
-    type: "Full-time",
-    experience: "3+ years",
-    description: "Implement and monitor health, safety, and environmental protocols",
-  },
-  {
-    id: 6,
-    title: "Procurement Specialist",
-    department: "Procurement",
-    location: "Lagos, Nigeria",
-    type: "Full-time",
-    experience: "4+ years",
-    description: "Manage procurement processes and vendor relationships",
-  },
 ]
 
 const benefits = [
-  {
-    icon: Heart,
-    title: "Health & Wellness",
-    description: "Comprehensive health insurance and wellness programs for you and your family",
-  },
   {
     icon: GraduationCap,
     title: "Learning & Development",
@@ -126,9 +83,42 @@ export default function Career() {
             We offer exciting opportunities for growth, innovation, and professional development.
           </motion.p>
         </div>
+
+        {/* Floating elements */}
+        <motion.div 
+          className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-orange-500/20 blur-xl"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 4, repeat: Infinity }}
+        />
       </section>
 
-      {/* Why Work With Us */}
+      {/* Stats Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {[
+              { value: "200+", label: "Professionals" },
+              { value: "5+", label: "Countries" },
+              { value: "50+", label: "Projects" },
+              { value: "10+", label: "Years" }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">{stat.value}</div>
+                <div className="text-gray-600">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Work With Us - Enhanced */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div
@@ -138,13 +128,18 @@ export default function Career() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Digital Energy</h2>
+            <div className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full mb-4 font-medium">
+              Why Choose Us
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Grow With Digital Energy
+            </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Join a dynamic team that values innovation, excellence, and professional growth
+              We invest in our people as much as we invest in technology
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.title}
@@ -153,13 +148,18 @@ export default function Career() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full text-center hover:shadow-lg transition-shadow border-0 shadow-md">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <benefit.icon className="h-8 w-8 text-primary-500" />
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 shadow-sm group overflow-hidden">
+                  <CardContent className="p-6 relative">
+                    <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-100 transition-opacity">
+                      <div className={`w-16 h-16 rounded-full ${benefit.color?.replace('bg-', 'bg-')} blur-xl`} />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.description}</p>
+                    
+                    <div className={`w-14 h-14 rounded-xl ${benefit.color} flex items-center justify-center mb-6 relative z-10`}>
+                      <benefit.icon className="h-6 w-6" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">{benefit.title}</h3>
+                    <p className="text-gray-600 relative z-10">{benefit.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -231,8 +231,8 @@ export default function Career() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      {/* Enhanced CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -241,14 +241,26 @@ export default function Career() {
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Don't See Your Role?</h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              We're always looking for talented individuals to join our team. Send us your resume and we'll keep you in
-              mind for future opportunities.
+            <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full mb-6">
+              <p className="text-sm font-medium">Future Opportunities</p>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Power Your Career?
+            </h2>
+            
+            <p className="text-xl text-indigo-100 mb-8 leading-relaxed max-w-2xl mx-auto">
+              Even if you don't see your perfect role today, join our talent community for future opportunities at Digital Energy.
             </p>
-            <Link to="/contact">
-              <Button className="bg-primary-500 hover:bg-primary-600 text-white">Submit Your Resume</Button>
-            </Link>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-base font-medium flex items-center">
+                  Submit Your Resume
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -105,25 +105,6 @@ const OurCertifications = () => {
 
           {/* Certifications Grid */}
           <div>
-            <div className="text-center mb-12">
-              <motion.h3 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl font-bold text-gray-900 mb-4"
-              >
-                Our Certifications
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-gray-600 text-lg max-w-3xl mx-auto"
-              >
-                Strategic partnerships with industry leaders
-              </motion.p>
-            </div>
             <div className="grid md:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <motion.div

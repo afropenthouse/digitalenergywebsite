@@ -219,11 +219,11 @@ export default function RequestQuote() {
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <span className="text-blue-700 font-medium w-20">Email:</span>
-                    <span className="text-gray-600">contact@digitalenergy.ng</span>
+                    <span className="text-gray-600">info@digitalenergyng.com</span>
                   </div>
                   <div className="flex items-center">
                     <span className="text-blue-700 font-medium w-20">Phone:</span>
-                    <span className="text-gray-600">+234 (0) 812 345 6789</span>
+                    <span className="text-gray-600">+234 201 453 6157</span>
                   </div>
                 </div>
               </div>

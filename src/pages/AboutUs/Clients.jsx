@@ -121,25 +121,6 @@ const Clients = () => {
 
           {/* Partners Grid */}
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8">
-              <motion.h3 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-2xl font-semibold text-gray-800 mb-3"
-              >
-                Our Valued Partners
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-gray-600 max-w-2xl mx-auto"
-              >
-                Trusted by industry leaders in the energy sector
-              </motion.p>
-            </div>
             <div className="grid md:grid-cols-3 gap-6">
               {clients.map((client, index) => (
                 <motion.div

@@ -250,20 +250,7 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Service Portfolio
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              End-to-end solutions tailored to meet the diverse needs of the energy industry
-            </p>
-          </motion.div>
+          
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (

@@ -6,31 +6,30 @@ import { Mail, Phone, MapPin, Clock, ChevronRight, ArrowRight } from "lucide-rea
 
 const offices = [
   {
-    id: "lagos",
-    name: "Lagos Head Office",
-    address: "123 Energy Avenue, Victoria Island, Lagos, Nigeria",
-    phone: "+234 (0) 123 456 7890",
-    email: "lagos@digitalenergy.ng",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5857968337845!2d3.423592415231038!3d6.441822595339119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4c9ae5c0e1d%3A0xceb1b726f6a4e2e!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1648226741251!5m2!1sen!2sng",
-    coordinates: { lat: 6.4418, lng: 3.4236 }
-  },
-  {
-    id: "abuja",
-    name: "Abuja Office",
-    address: "789 Energy Plaza, Central Business District, Abuja, Nigeria",
-    phone: "+234 (0) 987 654 3210",
-    email: "abuja@digitalenergy.ng",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.924758070397!2d7.489268615287964!3d9.002788293573688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e877a4c3f5d91%3A0x4e9c2e5d1a3a6d7e!2sCentral%20Business%20District%2C%20Abuja!5e0!3m2!1sen!2sng!4v1648226860215!5m2!1sen!2sng",
-    coordinates: { lat: 9.0028, lng: 7.4893 }
+    id: "headoffice",
+    name: "Head Office",
+    address: "Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria",
+    phone: "+234 201 453 6157, +234 903 990 3519, +234 810 125 9849",
+    email: "info@digitalenergy.ng",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4843897!2d3.3506531!3d6.484395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c097389e891%3A0xbf38477be5143794!2sThe%20SMAT%20Place%2C%20Tapa%20House%2C%20Imam%20Dauda!5e0!3m2!1sen!2sng!4v1709565342570!5m2!1sen!2sng",
+    directionsUrl: "https://maps.app.goo.gl/bZjh7PQzzVDYdKXi9"
   },
   {
     id: "portharcourt",
-    name: "Port Harcourt Office",
-    address: "456 Oil & Gas Street, GRA Phase II, Port Harcourt, Nigeria",
-    phone: "+234 (0) 456 789 0123",
+    name: "Port Harcourt Terminal Office",
+    address: "Digital Energy Close, Off Igboeche road, by Eleme Junction, Port Harcourt, Nigeria",
     email: "portharcourt@digitalenergy.ng",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.962371287539!2d7.007092715264468!3d4.815081096509545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d26a7b1e1f4d%3A0x4d9e0f1c3d3d3d3d!2sGRA%20Phase%20II%2C%20Port%20Harcourt!5e0!3m2!1sen!2sng!4v1648226912495!5m2!1sen!2sng",
-    coordinates: { lat: 4.8151, lng: 7.0071 }
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.962371287539!2d7.007092715264468!3d4.815081096509545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d26a7b1e1f4d%3A0x4d9e0f1c3d3d3d3d!2sEleme%20Junction%2C%20Port%20Harcourt!5e0!3m2!1sen!2sng!4v1648226912495!5m2!1sen!2sng",
+    directionsUrl: "https://maps.app.goo.gl/ZmNvaNozUm2CV3iD7"
+  },
+  {
+    id: "chevron",
+    name: "Chevron Office",
+    address: "House 8, Dr. Chimezie Street, Chevy View Estate, along Chevron drive, off Lekki-Epe expressway, Lagos",
+    phone: "+234 708 607 8838, +234 707 752 5861, +234 810 125 9849",
+    email: "chevron@digitalenergy.ng",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5857968337845!2d3.523592415231038!3d6.441822595339119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4c9ae5c0e1d%3A0xceb1b726f6a4e2e!2sLekki-Epe%20Expressway%2C%20Lagos!5e0!3m2!1sen!2sng!4v1648226741251!5m2!1sen!2sng",
+    directionsUrl: "https://maps.app.goo.gl/fnkN9uYG9aiFyaKG8"
   }
 ]
 
@@ -114,8 +113,8 @@ export default function ContactForm() {
                         <div className="flex-1">
                           <div className="flex items-center mb-2">
                             <div className={`w-3 h-3 rounded-full mr-3 ${
-                              office.id === "lagos" ? "bg-orange-500" :
-                              office.id === "abuja" ? "bg-blue-600" : "bg-green-500"
+                              office.id === "headoffice" ? "bg-orange-500" :
+                              office.id === "portharcourt" ? "bg-green-500" : "bg-purple-500"
                             }`}></div>
                             <h3 className="text-xl font-bold text-gray-900">{office.name}</h3>
                           </div>
@@ -124,10 +123,12 @@ export default function ContactForm() {
                               <MapPin className="h-5 w-5 text-gray-500 mt-0.5 mr-3 flex-shrink-0" />
                               <p className="text-gray-600">{office.address}</p>
                             </div>
-                            <div className="flex items-center">
-                              <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
-                              <p className="text-gray-600">{office.phone}</p>
-                            </div>
+                            {office.phone && (
+                              <div className="flex items-center">
+                                <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
+                                <p className="text-gray-600">{office.phone}</p>
+                              </div>
+                            )}
                             <div className="flex items-center">
                               <Mail className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
                               <p className="text-gray-600">{office.email}</p>
@@ -166,11 +167,10 @@ export default function ContactForm() {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                     </svg>
-                    After-Hours Support
+                    Need Help?
                   </h3>
                   <p className="text-blue-700">
-                    For urgent technical support outside office hours, call our 24/7 emergency line: 
-                    <span className="font-bold"> +234 (0) 800 123 4567</span>
+                    Our team is here to assist you. Feel free to reach out through any of our office locations or send us an email.
                   </p>
                 </div>
               </motion.div>
@@ -199,8 +199,8 @@ export default function ContactForm() {
                 <div className="p-6">
                   <div className="flex items-center mb-4">
                     <div className={`w-4 h-4 rounded-full mr-2 ${
-                      activeOffice.id === "lagos" ? "bg-orange-500" :
-                      activeOffice.id === "abuja" ? "bg-blue-600" : "bg-green-500"
+                      activeOffice.id === "headoffice" ? "bg-orange-500" :
+                      activeOffice.id === "portharcourt" ? "bg-green-500" : "bg-purple-500"
                     }`}></div>
                     <h2 className="text-2xl font-bold text-gray-900">{activeOffice.name}</h2>
                   </div>
@@ -216,10 +216,12 @@ export default function ContactForm() {
                     
                     <div>
                       <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Contact</h3>
-                      <p className="text-gray-700 mb-2 flex items-center">
-                        <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
-                        {activeOffice.phone}
-                      </p>
+                      {activeOffice.phone && (
+                        <p className="text-gray-700 mb-2 flex items-center">
+                          <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
+                          {activeOffice.phone}
+                        </p>
+                      )}
                       <p className="text-gray-700 flex items-center">
                         <Mail className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
                         {activeOffice.email}
@@ -230,7 +232,7 @@ export default function ContactForm() {
                   <div className="mt-6 flex gap-3">
                     <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
                       <a 
-                        href={`https://www.google.com/maps/dir/?api=1&destination=${activeOffice.coordinates.lat},${activeOffice.coordinates.lng}`}
+                        href={activeOffice.directionsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center"
@@ -250,7 +252,7 @@ export default function ContactForm() {
               </div>
 
               <div className="bg-gradient-to-br from-blue-800 to-blue-900 rounded-2xl shadow-xl p-8 text-white">
-                <h2 className="text-3xl font-bold mb-4">Global Headquarters</h2>
+                <h2 className="text-3xl font-bold mb-4">Head Office</h2>
                 <p className="text-blue-200 mb-6">
                   Our main corporate office where our executive leadership and strategic teams are located.
                 </p>
@@ -259,11 +261,11 @@ export default function ContactForm() {
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Digital Energy Headquarters</h3>
+                      <h3 className="font-semibold">Digital Energy Head Office</h3>
                       <p className="text-blue-200">
-                        789 Corporate Plaza, Victoria Island
+                        Tapa House, 3/5, Imam Dauda Street
                         <br />
-                        Lagos, Nigeria
+                        Off Eric Moore Road, Surulere, Lagos, Nigeria
                       </p>
                     </div>
                   </div>
@@ -271,16 +273,22 @@ export default function ContactForm() {
                   <div className="flex items-start">
                     <Phone className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Main Switchboard</h3>
-                      <p className="text-blue-200">+234 (0) 800 555 1234</p>
+                      <h3 className="font-semibold">Contact Numbers</h3>
+                      <p className="text-blue-200">
+                        +234 201 453 6157
+                        <br />
+                        +234 903 990 3519
+                        <br />
+                        +234 810 125 9849
+                      </p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <Mail className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Corporate Inquiries</h3>
-                      <p className="text-blue-200">corporate@digitalenergy.ng</p>
+                      <h3 className="font-semibold">Email</h3>
+                      <p className="text-blue-200">info@digitalenergy.ng</p>
                     </div>
                   </div>
                 </div>

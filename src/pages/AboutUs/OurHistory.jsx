@@ -90,25 +90,7 @@ const OurHistory = () => {
           {/* Timeline Section */}
           <div className="bg-gradient-to-br from-blue-50 to-white py-16 rounded-2xl">
             <div className="container mx-auto px-6">
-              <div className="text-center mb-12">
-                <motion.h3 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="text-3xl font-bold text-gray-900 mb-4"
-                >
-                  Our Journey Through Time
-                </motion.h3>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-gray-600 text-lg max-w-3xl mx-auto"
-                >
-                  Key milestones that shaped our growth and success
-                </motion.p>
-              </div>
+              
               <div className="max-w-4xl mx-auto">
                 {milestones.map((milestone, index) => (
                   <motion.div

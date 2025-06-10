@@ -4,33 +4,6 @@ import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { CheckCircle, Award, Globe, Users } from "lucide-react"
 
-const oemPartners = [
-  {
-    name: "Global Energy Solutions",
-    logo: "/placeholder.svg?height=80&width=160",
-    description: "Pipeline equipment specialists",
-    products: ["Valves", "Control Systems", "Safety Gear"],
-  },
-  {
-    name: "TechFlow Industries",
-    logo: "/placeholder.svg?height=80&width=160",
-    description: "Flow measurement experts",
-    products: ["Flow Meters", "Sensors", "Control Valves"],
-  },
-  {
-    name: "PowerGen Equipment",
-    logo: "/placeholder.svg?height=80&width=160",
-    description: "Power generation leaders",
-    products: ["Generators", "Transformers", "Switchgear"],
-  },
-  {
-    name: "Marine Solutions Ltd",
-    logo: "/placeholder.svg?height=80&width=160",
-    description: "Marine equipment providers",
-    products: ["Marine Engines", "Nav Systems", "Safety Gear"],
-  },
-]
-
 const benefits = [
   {
     icon: CheckCircle,
@@ -135,7 +108,11 @@ export default function OEM() {
               className="relative"
             >
               <div className="relative h-80 rounded-xl overflow-hidden shadow-2xl">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
+                <img
+                  src="/src/assets/Capture.png"
+                  alt="Global OEM Excellence"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
               </div>
             </motion.div>
@@ -181,92 +158,6 @@ export default function OEM() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* OEM Partners */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold text-gray-900 mb-3"
-            >
-              Trusted OEM Partners
-            </motion.h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Collaborating with global industry leaders
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {oemPartners.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full border-0 shadow-sm hover:shadow-md transition-all overflow-hidden">
-                  <CardContent className="p-5">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-16 mb-4" />
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{partner.name}</h3>
-                      <p className="text-gray-600 text-sm mb-4">{partner.description}</p>
-                      <div className="w-full">
-                        <h4 className="font-medium text-gray-900 mb-2 text-sm">Products:</h4>
-                        <div className="flex flex-wrap justify-center gap-2">
-                          {partner.products.map((product, i) => (
-                            <span
-                              key={i}
-                              className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs rounded-full"
-                            >
-                              {product}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
-          >
-            <h2 className="text-3xl font-bold mb-4">OEM Solutions for Your Projects</h2>
-            <p className="text-blue-100 mb-8">
-              Connect with us for premium equipment and technical support
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-base"
-                size="lg"
-              >
-                Request Quote
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/10 px-8 py-6 text-base"
-                size="lg"
-              >
-                Contact Experts
-              </Button>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>

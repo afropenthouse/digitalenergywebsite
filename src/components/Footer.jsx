@@ -119,15 +119,15 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center justify-center md:justify-start">
                 <MapPin className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">123 Energy Avenue, Victoria Island, Lagos, Nigeria</span>
+                <span className="text-blue-100">Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria</span>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Phone className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">+234 (0) 123 456 7890</span>
+                <span className="text-blue-100">+234 201 453 6157</span>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Mail className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">info@digitalenergy.ng</span>
+                <span className="text-blue-100">info@digitalenergyng.com</span>
               </div>
             </div>
           </motion.div>

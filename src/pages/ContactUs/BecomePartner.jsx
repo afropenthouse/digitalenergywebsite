@@ -196,7 +196,7 @@ export default function BecomePartner() {
 						>
 							<div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
 								<img
-									src="/placeholder.svg?height=600&width=800"
+									src="/src/assets/p88.png"
 									alt="Partnership"
 									className="w-full h-full object-cover"
 								/>
@@ -269,7 +269,7 @@ export default function BecomePartner() {
 										</div>
 										<div>
 											<label className="block text-sm font-medium text-gray-700 mb-2">
-												Position/Title *
+												Position *
 											</label>
 											<input
 												type="text"
@@ -283,18 +283,18 @@ export default function BecomePartner() {
 									<div className="grid md:grid-cols-2 gap-4">
 										<div>
 											<label className="block text-sm font-medium text-gray-700 mb-2">
-												Email Address *
+												Email *
 											</label>
 											<input
 												type="email"
-												placeholder="your.email@example.com"
+												placeholder="your@email.com"
 												required
 												className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
 											/>
 										</div>
 										<div>
 											<label className="block text-sm font-medium text-gray-700 mb-2">
-												Phone Number *
+												Phone *
 											</label>
 											<input
 												type="tel"
@@ -307,18 +307,7 @@ export default function BecomePartner() {
 
 									<div>
 										<label className="block text-sm font-medium text-gray-700 mb-2">
-											Website
-										</label>
-										<input
-											type="url"
-											placeholder="https://www.example.com"
-											className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-										/>
-									</div>
-
-									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">
-											Partnership Type *
+											Partnership Interest *
 										</label>
 										<select
 											required
@@ -326,89 +315,42 @@ export default function BecomePartner() {
 										>
 											<option value="">Select partnership type</option>
 											{partnershipTypes.map((type) => (
-												<option
-													key={type.title}
-													value={type.title
-														.toLowerCase()
-														.replace(/\s+/g, "-")}
-												>
+												<option key={type.title} value={type.title}>
 													{type.title}
 												</option>
 											))}
-											<option value="other">Other</option>
 										</select>
 									</div>
 
 									<div>
 										<label className="block text-sm font-medium text-gray-700 mb-2">
-											Partnership Proposal/Idea *
+											Message *
 										</label>
 										<textarea
-											placeholder="Describe how you envision partnering with Digital Energy"
-											rows={6}
+											rows={4}
+											placeholder="Tell us about your partnership goals"
 											required
 											className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
 										/>
 									</div>
 
 									<div className="flex items-center space-x-2">
-										<input
-											type="checkbox"
-											id="terms"
-											required
-											className="rounded"
-										/>
-										<label
-											htmlFor="terms"
-											className="text-sm font-medium"
-										>
-											I agree to the terms and conditions and privacy policy
+										<input type="checkbox" id="terms" required className="rounded" />
+										<label htmlFor="terms" className="text-sm font-medium">
+											I agree to the terms and conditions
 										</label>
 									</div>
 
-									<Button
-										type="submit"
-										className="w-full bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 flex items-center justify-center"
-									>
-										Submit Partnership Inquiry
-										<ArrowRight className="ml-2 h-4 w-4" />
-									</Button>
+									<div className="mt-8">
+										<Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-2">
+											Submit Partnership Request
+											<ArrowRight className="h-5 w-5" />
+										</Button>
+									</div>
 								</form>
 							</CardContent>
 						</Card>
 					</div>
-				</div>
-			</section>
-
-			{/* CTA Section */}
-			<section className="py-20 bg-secondary-500 text-white">
-				<div className="container mx-auto px-4">
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8 }}
-						viewport={{ once: true }}
-						className="text-center max-w-4xl mx-auto"
-					>
-						<h2 className="text-3xl md:text-4xl font-bold mb-6">
-							Let's Grow Together
-						</h2>
-						<p className="text-xl text-secondary-100 mb-8 leading-relaxed">
-							We're always looking for innovative partners who share our vision and
-							values. Contact us today to explore how we can create value together.
-						</p>
-						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<Button className="bg-primary-500 hover:bg-primary-600 text-white">
-								Schedule a Meeting
-							</Button>
-							<Button
-								variant="outline"
-								className="border-white text-white hover:bg-white hover:text-secondary-500"
-							>
-								Download Partnership Brochure
-							</Button>
-						</div>
-					</motion.div>
 				</div>
 			</section>
 		</div>

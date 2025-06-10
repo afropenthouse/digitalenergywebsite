@@ -249,18 +249,17 @@ export default function VendorRegistration() {
                     <div className="flex items-center space-x-2">
                       <input type="checkbox" id="terms" required className="rounded" />
                       <label htmlFor="terms" className="text-sm font-medium">
-                        I agree to the terms and conditions and privacy policy
+                        I agree to the terms and conditions
                       </label>
                     </div>
-                  </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 flex items-center justify-center"
-                  >
-                    Submit Registration
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                    <div className="mt-8">
+                      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-2">
+                        Submit Registration
+                        <ArrowRight className="h-5 w-5" />
+                      </Button>
+                    </div>
+                  </div>
                 </form>
               </div>
             </motion.div>
@@ -338,11 +337,11 @@ export default function VendorRegistration() {
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <span className="text-primary-500 font-medium">Email:</span>
-                    <span className="ml-2 text-gray-600">vendors@digitalenergy.ng</span>
+                    <span className="ml-2 text-gray-600">info@digitalenergyng.com</span>
                   </div>
                   <div className="flex items-center">
                     <span className="text-primary-500 font-medium">Phone:</span>
-                    <span className="ml-2 text-gray-600">+234 (0) 123 456 7890</span>
+                    <span className="ml-2 text-gray-600">+234 201 453 6157</span>
                   </div>
                 </div>
               </div>
