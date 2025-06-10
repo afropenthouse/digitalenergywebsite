@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { ArrowRight, Play } from "lucide-react"
 import { Wrench, ShoppingCart, Building, CheckCircle, Settings, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import HeroSection from "@/components/HeroSection"
 import StatsSection from "@/components/StatsSection"
 import { Link } from "react-router-dom"
 
@@ -79,8 +78,8 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center lg:text-left"
             >
-              <span className="block">Empowering Energy.</span>
-              <span className="block mt-2 bg-gradient-to-r from-orange-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="block mt-14 sm:mt-2">Empowering Energy.</span>
+              <span className="block text-orange-400 mt-2">
                 Delivering Excellence.
               </span>
             </motion.h1>
@@ -98,25 +97,24 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto"
             >
-              <Link
-                to="/contact"
+              <button
                 className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl shadow-lg overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center">
                   Get Started
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform hidden sm:block" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform rotate-90 sm:hidden" />
                 </span>
-              </Link>
-              <Link
-                to="/about"
+              </button>
+              <button
                 className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-white/10 backdrop-blur-sm border-2 border-orange-500 rounded-xl hover:bg-orange-500/20 transition-colors"
               >
                 <span className="relative flex items-center">
                   Watch Video
                   <Play className="ml-2 h-5 w-5" />
                 </span>
-              </Link>
+              </button>
             </motion.div>
           </div>
         </div>
