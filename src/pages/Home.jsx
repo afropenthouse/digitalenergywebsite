@@ -14,7 +14,7 @@ const services = [
     title: "Engineering Services",
     description: "Conceptual, FEED & Detailed Design | Process & Piping | Civil & Structural | E&I Design",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/src/assets/pic_2.jpg"
+    image: "/images/pic_2.jpg"
   },
   {
     id: "procurement",
@@ -22,7 +22,7 @@ const services = [
     title: "Procurement Services",
     description: "Strategic Sourcing | Materials Management | Vendor Coordination | QA/QC Assurance",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/src/assets/pic_4.jpg"
+    image: "/images/pic_4.jpg"
   },
   {
     id: "construction",
@@ -30,7 +30,7 @@ const services = [
     title: "Construction & Installation",
     description: "Pipeline Construction | Facility Upgrades | Tank Farms | Modular Systems Installation",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/src/assets/pic_5.jpg"
+    image: "/images/pic_5.jpg"
   },
   {
     id: "commissioning",
@@ -38,7 +38,7 @@ const services = [
     title: "Commissioning & Start-up",
     description: "Pre-commissioning | Mechanical Completion | Functional Testing | Handover Documentation",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/src/assets/pic_6.png"
+    image: "/images/pic_6.png"
   },
   {
     id: "operations",
@@ -46,7 +46,7 @@ const services = [
     title: "Operations & Maintenance",
     description: "Routine Maintenance | Turnaround Support | Asset Integrity Management",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/src/assets/pic_8.png"
+    image: "/images/pic_8.png"
   },
   {
     id: "manpower",
@@ -54,7 +54,7 @@ const services = [
     title: "Technical Manpower Supply",
     description: "Certified Personnel | Project Staffing | IRATA Technicians | Specialized Roles",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/src/assets/pic_9.png"
+    image: "/images/pic_9.png"
   },
 ]
 
@@ -110,10 +110,10 @@ export default function Home() {
               <button
                 className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-white/10 backdrop-blur-sm border-2 border-orange-500 rounded-xl hover:bg-orange-500/20 transition-colors"
               >
-                <span className="relative flex items-center">
-                  Watch Video
-                  <Play className="ml-2 h-5 w-5" />
-                </span>
+                <Link to="/contact" className="relative flex items-center">
+                  Contact Us
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </button>
             </motion.div>
           </div>
@@ -171,7 +171,7 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/src/assets/pic_14.jpg"
+                  src="/images/pic_14.jpg"
                   alt="About Digital Energy"
                   className="w-full h-auto object-cover"
                 />

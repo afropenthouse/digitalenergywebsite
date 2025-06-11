@@ -18,5 +18,14 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true
-  }
+  },
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[hash][extname]'
+      }
+    }
+  },
+  publicDir: 'public'
 })

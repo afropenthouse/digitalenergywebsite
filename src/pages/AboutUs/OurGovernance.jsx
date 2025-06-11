@@ -29,19 +29,19 @@ const boardMembers = [
   {
     name: "Simon Chukwunweluwa Ugwuoke",
     position: "MD & CEO",
-    image: "/src/assets/simon.png",
+    image: "/images/simon.png",
     bio: "Simon is a serial entrepreneur and a leader per excellence with experience spanning decades. He is a graduate of the University of Nigeria Nsukka and has obtained several other certifications and trainings both locally and internationally. Simon directs the day to day affairs of the Digital Energy business"
   },
   {
     name: "Engr. Olutayo Ajayi",
     position: "ED, Technical Services",
-    image: "/src/assets/tayo.png",
+    image: "/images/tayo.png",
     bio: "He is a seasoned mechanical engineer with a B.Sc. degree in Mechanical Engineering and over 28 years of global experience in managing complex projects in the power, oil, and gas sectors. A COREN registered Engineer and member of Nigerian Society of Engineers (MNSE), he boasts a proven track record of delivering multi-million-dollar projects."
   },
   {
     name: "Mr. Fredrick Okeagu",
     position: "ED, HR & Management Services",
-    image: "/src/assets/fred.png",
+    image: "/images/fred.png",
     bio: "Global Speaker, a Certified Management Consultant and HR professional with over 15 years experience. He is a doctoral student (Ph.D) in IRHRM, an MSc graduate in IHRM, and holds a PGD in Guidance & Counselling. He is Certified with CIPM, Nigeria, KPI Institute- Australia and a member of the Africa HR Confederation (AHRC)."
   }
 ]
@@ -93,8 +93,8 @@ const OurGovernance = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/src/assets/pic_3.png"
-                alt="Governance"
+                src="/images/pic_3.png"
+                alt="Our Governance"
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />

@@ -1,6 +1,7 @@
 "use client"
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Suspense } from "react"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
@@ -18,39 +19,46 @@ import Services from "./pages/Services/Services"
 import Projects from "./pages/Projects"
 import OEM from "./pages/OEM"
 import Career from "./pages/Career"
+import Loader from "./pages/Loader/Loader"
 import "./index.css"
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about">
-              <Route path="who-we-are" element={<WhoWeAre />} />
-              <Route path="governance" element={<OurGovernance />} />
-              <Route path="history" element={<OurHistory />} />
-              <Route path="certifications" element={<OurCertifications />} />
-              <Route path="gallery" element={<EventGallery />} />
-              <Route path="clients" element={<Clients />} />
-            </Route>
-            <Route path="/contact">
-              <Route index element={<ContactForm />} />
-              <Route path="quote" element={<RequestQuote />} />
-              <Route path="vendor" element={<VendorRegistration />} />
-              <Route path="partner" element={<BecomePartner />} />
-            </Route>
-            <Route path="/services" element={<Services />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/oem" element={<OEM />} />
-            <Route path="/careers" element={<Career />} />
-          </Routes>
+          <Suspense fallback={
+            <div className="flex items-center justify-center min-h-[60vh]">
+              <Loader />
+            </div>
+          }>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about">
+                <Route path="who-we-are" element={<WhoWeAre />} />
+                <Route path="governance" element={<OurGovernance />} />
+                <Route path="history" element={<OurHistory />} />
+                <Route path="certifications" element={<OurCertifications />} />
+                <Route path="gallery" element={<EventGallery />} />
+                <Route path="clients" element={<Clients />} />
+              </Route>
+              <Route path="/contact">
+                <Route index element={<ContactForm />} />
+                <Route path="quote" element={<RequestQuote />} />
+                <Route path="vendor" element={<VendorRegistration />} />
+                <Route path="partner" element={<BecomePartner />} />
+              </Route>
+              <Route path="/services" element={<Services />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/oem" element={<OEM />} />
+              <Route path="/careers" element={<Career />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 

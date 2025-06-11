@@ -35,7 +35,7 @@ export default function BecomePartner() {
 			<section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white relative overflow-hidden rounded-2xl mx-4 md:mx-6 lg:mx-8">
 				<div className="absolute inset-0">
 					<img
-						src="/src/assets/p88.png"
+						src="/images/p88.png"
 						alt="Become a Partner"
 						className="w-full h-full object-cover opacity-40"
 					/>
@@ -196,7 +196,7 @@ export default function BecomePartner() {
 						>
 							<div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
 								<img
-									src="/src/assets/p88.png"
+									src="/images/p88.png"
 									alt="Partnership"
 									className="w-full h-full object-cover"
 								/>
@@ -345,7 +345,7 @@ export default function BecomePartner() {
 										<Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-2">
 											Submit Partnership Request
 											<ArrowRight className="h-5 w-5" />
-										</Button>
+									</Button>
 									</div>
 								</form>
 							</CardContent>

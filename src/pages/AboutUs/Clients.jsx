@@ -83,7 +83,7 @@ const Clients = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/src/assets/p77.jpg"
+                src="/images/p77.jpg"
                 alt="Our Clients"
                 className="w-full h-full object-cover opacity-40"
               />
