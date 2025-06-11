@@ -1,5 +1,3 @@
-"use client"
-
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Suspense } from "react"
 import Header from "./components/Header"
@@ -20,6 +18,7 @@ import Projects from "./pages/Projects"
 import OEM from "./pages/OEM"
 import Career from "./pages/Career"
 import Loader from "./pages/Loader/Loader"
+import ScrollUP from "./components/Scroll/ScrollUP"
 import "./index.css"
 
 function App() {
@@ -57,6 +56,7 @@ function App() {
           </Suspense>
         </main>
         <Footer />
+        <ScrollUP />
       </div>
     </BrowserRouter>
   )

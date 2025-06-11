@@ -1,5 +1,3 @@
-"use client"
-
 import { motion } from "framer-motion"
 import { Users, Award, Clock, Building2, Target, Lightbulb, Heart, Shield, Leaf, Handshake, Trophy, Star } from "lucide-react"
 

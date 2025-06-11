@@ -1,4 +1,3 @@
-"use client"
 import { motion } from "framer-motion"
 import { Shield, Award, Scale, FileCheck, Users, Building2, Target } from "lucide-react"
 
