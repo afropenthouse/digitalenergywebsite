@@ -24,7 +24,8 @@
     {
       "src": "/(.*)\\.js",
       "headers": {
-        "Content-Type": "application/javascript"
+        "Content-Type": "application/javascript",
+        "Content-Security-Policy": "script-src 'self' 'unsafe-eval'"
       },
       "dest": "/$1.js"
     },
