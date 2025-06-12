@@ -26,6 +26,7 @@ import Career from "./pages/Career"
 import Loader from "./pages/Loader/Loader"
 import ScrollUP from "./components/Scroll/ScrollUP"
 import FabricationConstruction from './pages/Services/FabricationConstruction'
+import TradingServices from "./pages/Services/TradingServices"
 import "./index.css"
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
                 <Route path="operations" element={<OperationsMaintenance />} />
                 <Route path="manpower" element={<TechnicalManpower />} />
                 <Route path="fabrication" element={<FabricationConstruction />} />
+                <Route path="trading" element={<TradingServices />} />
               </Route>
               <Route path="/projects" element={<Projects />} />
               <Route path="/oem" element={<OEM />} />

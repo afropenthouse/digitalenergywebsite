@@ -8,6 +8,7 @@ import {
   Settings,
   Users,
   HardHat,
+  Fuel,
 } from "lucide-react"
 
 const services = [
@@ -102,6 +103,21 @@ const services = [
       "HSE Officers & Supervisors",
     ],
     color: "bg-gradient-to-br from-blue-700 to-blue-900",
+  },
+  {
+    id: "trading",
+    icon: Fuel,
+    title: "Marketing, Supply & Trading of Petroleum Products",
+    description: "Reliable supply and trading of petroleum products across Nigeria and West Africa.",
+    features: [
+      "Petroleum Products Trading",
+      "Supply Chain & Distribution",
+      "Industrial & Upstream Support",
+      "Strategic Partnerships",
+      "Quality Assurance",
+      "Timely Delivery",
+    ],
+    color: "bg-gradient-to-br from-orange-500 to-orange-700",
   },
 ]
 

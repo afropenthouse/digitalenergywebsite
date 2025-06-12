@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Wrench, ShoppingCart, HardHat, Settings, Users, UserCheck } from 'lucide-react'
+import { Wrench, ShoppingCart, HardHat, Settings, Users, UserCheck, CheckCircle, Fuel } from 'lucide-react'
 
 const services = [
   {
@@ -25,20 +25,26 @@ const services = [
   {
     id: 'commissioning',
     title: 'Commissioning & Start-up',
-    icon: Settings,
+    icon: CheckCircle,
     path: '/services/commissioning'
   },
   {
     id: 'operations',
     title: 'Operations & Maintenance',
-    icon: Users,
+    icon: Settings,
     path: '/services/operations'
   },
   {
     id: 'manpower',
     title: 'Technical Manpower Supply',
-    icon: UserCheck,
+    icon: Users,
     path: '/services/manpower'
+  },
+  {
+    id: 'trading',
+    title: 'Marketing, Supply & Trading',
+    icon: Fuel,
+    path: '/services/trading'
   }
 ]
 
