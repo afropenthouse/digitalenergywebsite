@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Users, Award, Clock, Building2, Target, Lightbulb, Heart, Shield, Leaf, Handshake, Trophy, Star } from "lucide-react"
+import { Users, Award, Clock, Building2, Target, Lightbulb, Heart, Shield, Leaf, Handshake, Trophy, Star, Zap, UserCheck } from "lucide-react"
 
 const stats = [
   { id: 1, number: 15, suffix: '+', label: 'Years Experience' },
@@ -11,39 +11,51 @@ const stats = [
 const values = [
   {
     id: 1,
-    title: 'Safety First',
-    description: 'We prioritize the health and safety of our people, clients, and communities.',
+    title: 'Safety',
+    description: 'We prioritize the health and safety of our people, clients, and communities in everything we do.',
     icon: Shield
   },
   {
     id: 2,
-    title: 'Excellence',
-    description: 'We are committed to superior quality and continuous improvement.',
-    icon: Star
+    title: 'Integrity',
+    description: 'We operate with honesty, transparency, and ethical standards in all our business dealings.',
+    icon: Handshake
   },
   {
     id: 3,
-    title: 'Integrity',
-    description: 'We operate with honesty, transparency, and respect in all we do.',
-    icon: Handshake
+    title: 'Customer Focus',
+    description: 'We are dedicated to understanding and exceeding our customers\' needs and expectations.',
+    icon: UserCheck
   },
   {
     id: 4,
     title: 'Teamwork',
-    description: 'We believe in collaboration and empowering our people to achieve shared goals.',
+    description: 'We believe in collaboration and empowering our people to achieve shared goals together.',
     icon: Users
   },
   {
     id: 5,
     title: 'Innovation',
-    description: 'We embrace technology and creative solutions to drive progress.',
+    description: 'We embrace technology and creative solutions to drive progress and stay ahead.',
     icon: Lightbulb
   },
   {
     id: 6,
-    title: 'Sustainability',
-    description: 'We strive to minimize environmental impact and contribute positively to society.',
-    icon: Leaf
+    title: 'Excellence',
+    description: 'We are committed to superior quality and continuous improvement in all aspects.',
+    icon: Star
+  },
+  {
+    id: 7,
+    title: 'Respect',
+    description: 'We value diversity and treat everyone with dignity, fairness, and consideration.',
+    icon: Heart
+  },
+  {
+    id: 8,
+    title: 'Efficiency',
+    description: 'We optimize our resources and processes to deliver maximum value and productivity.',
+    icon: Zap
   }
 ]
 
@@ -113,13 +125,10 @@ const WhoWeAre = () => {
               
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <span className="font-bold text-blue-800">DIGITAL ENERGY & INTEGRATED SERVICES LIMITED (DEISL)</span> is a leading indigenous multi-diverse energy solutions company. We provide comprehensive services across the entire energy value chain, from upstream through midstream to downstream and consumption.
+                  <span className="font-bold text-blue-800">DIGITAL ENERGY & INTEGRATED SERVICES LIMITED (DEISL)</span> is a leading indigenous multi-diverse energy solutions company, we provide comprehensive services across the entire energy value chain, from upstream through midstream to downstream.
                 </p>
                 <p>
-                  We digitalize the complete energy lifecycle from consolidated EPCOM contracting services, trading of petroleum products, marine services, to product processing, blending, storage, logistics, distribution, and compliance.
-                </p>
-                <p>
-                  We serve a wide range of industries including Oil & Gas, Power, Petrochemical, Refining, and General Infrastructure. Our services cover the full project lifecycle—from conceptual design through to commissioning and long-term asset support.
+                  We digitalize the complete energy lifecycle from consolidated EPCOM contracting services, trading of petroleum products, marine services, to product processing, storage, logistics, distribution, and compliance.
                 </p>
               </div>
             </div>
@@ -146,7 +155,7 @@ const WhoWeAre = () => {
                       <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
                     </div>
                     <p className="text-gray-700 text-lg">
-                      To be a global leader and trusted partner of choice for delivering innovative, quality, safe, and sustainable solutions that exceed customer expectations.
+                      To exceed customer expectations, drive sustainable growth, and deliver value through innovative solutions, exceptional quality services, and an unwavering commitment to safety, social responsibility, and environmental stewardship.
                     </p>
                   </motion.div>
 
@@ -166,7 +175,7 @@ const WhoWeAre = () => {
                       <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
                     </div>
                     <p className="text-gray-700 text-lg">
-                      To exceed customer expectations, drive sustainable growth, and deliver value through innovative solutions, exceptional quality services, and an unwavering commitment to safety, social responsibility, and environmental stewardship.
+                      To be a global leader and trusted partner of choice for delivering innovative, quality, safe, and sustainable solutions that exceed customer expectations.
                     </p>
               </motion.div>
                 </div>

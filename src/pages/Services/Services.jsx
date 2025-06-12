@@ -7,9 +7,7 @@ import {
   CheckCircle,
   Settings,
   Users,
-  Monitor,
-  GraduationCap,
-  Fuel,
+  HardHat,
 } from "lucide-react"
 
 const services = [
@@ -45,9 +43,10 @@ const services = [
     color: "bg-gradient-to-br from-blue-700 to-blue-900",
   },
   {
-    id: "construction",
-    icon: Building,
-    title: "Construction & Installation",
+    id: "fabrication",
+    title: "Fabrication & Construction",
+    icon: HardHat,
+    path: "/services/fabrication",
     description: "Full-scale construction services for onshore and offshore energy projects.",
     features: [
       "Civil, Structural & Mechanical Installation",
@@ -104,51 +103,6 @@ const services = [
     ],
     color: "bg-gradient-to-br from-blue-700 to-blue-900",
   },
-  {
-    id: "digital",
-    icon: Monitor,
-    title: "Digital Solutions & Automation",
-    description: "Advanced automation and digital transformation solutions for intelligent operations.",
-    features: [
-      "PLC, SCADA & Control Systems",
-      "Industrial Software Solutions",
-      "IIOT Integration",
-      "Remote Monitoring Systems",
-      "Predictive Analytics",
-      "Cybersecurity Implementation",
-    ],
-    color: "bg-gradient-to-br from-orange-500 to-orange-700",
-  },
-  {
-    id: "training",
-    icon: GraduationCap,
-    title: "Training & Consultancy",
-    description: "Capacity building and performance enhancement through structured training programs.",
-    features: [
-      "Technical & Safety Training",
-      "Competency Development",
-      "Management Systems Advisory",
-      "ISO Standards Implementation",
-      "Skills Assessment",
-      "Leadership Development",
-    ],
-    color: "bg-gradient-to-br from-blue-700 to-blue-900",
-  },
-  {
-    id: "trading",
-    icon: Fuel,
-    title: "Petroleum Products Trading",
-    description: "Reliable supply and trading of petroleum products across Nigeria and West Africa.",
-    features: [
-      "Premium Motor Spirit (PMS)",
-      "Automotive Gas Oil (AGO)",
-      "Aviation Turbine Kerosene",
-      "Supply Chain Management",
-      "Quality Assurance",
-      "Strategic Partnerships",
-    ],
-    color: "bg-gradient-to-br from-orange-500 to-orange-700",
-  },
 ]
 
 const ServiceCard = ({ service, index }) => (
@@ -189,7 +143,7 @@ const ServiceCard = ({ service, index }) => (
       </div>
       <div className="px-6 pb-6">
         <Link 
-          to={`/services/${service.id}`}
+          to={service.path || `/services/${service.id}`}
           className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
         >
           Learn more
