@@ -1,4 +1,3 @@
-"use client"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Calendar, Users, MapPin, Clock, Image as ImageIcon, Maximize2 } from "lucide-react"
