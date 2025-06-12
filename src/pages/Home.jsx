@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Play } from "lucide-react"
-import { Wrench, ShoppingCart, Building, CheckCircle, Settings, Users } from "lucide-react"
+import { Wrench, ShoppingCart, Building, CheckCircle, Settings, Users, HardHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import StatsSection from "@/components/StatsSection"
 import { Link } from "react-router-dom"
@@ -10,41 +10,46 @@ const services = [
     id: "engineering",
     icon: Wrench,
     title: "Engineering Services",
-    description: "Conceptual, FEED & Detailed Design | Process & Piping | Civil & Structural | E&I Design",
+    description: "Front-end engineering design (FEED), detailed engineering, and constructability studies across civil, mechanical, electrical, and process disciplines.",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/pic_2.jpg"
+    image: "/images/pic_2.jpg",
+    path: "/services/engineering"
   },
   {
     id: "procurement",
     icon: ShoppingCart,
     title: "Procurement Services",
-    description: "Strategic Sourcing | Materials Management | Vendor Coordination | QA/QC Assurance",
+    description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/pic_4.jpg"
+    image: "/images/pic_4.jpg",
+    path: "/services/procurement"
   },
   {
-    id: "construction",
-    icon: Building,
-    title: "Construction & Installation",
-    description: "Pipeline Construction | Facility Upgrades | Tank Farms | Modular Systems Installation",
+    id: "fabrication",
+    icon: HardHat,
+    title: "Fabrication & Construction",
+    description: "Civil works, Steel structural Fabrication and erection, mechanical installation, piping, E&I, and facility upgrades.",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/pic_5.jpg"
+    image: "/images/pic_5.jpg",
+    path: "/services/fabrication"
   },
   {
     id: "commissioning",
     icon: CheckCircle,
     title: "Commissioning & Start-up",
-    description: "Pre-commissioning | Mechanical Completion | Functional Testing | Handover Documentation",
+    description: "Pre-commissioning, commissioning, and start-up support services to ensure systems operate as designed.",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/pic_6.png"
+    image: "/images/pic_6.png",
+    path: "/services/commissioning"
   },
   {
     id: "operations",
     icon: Settings,
     title: "Operations & Maintenance",
-    description: "Routine Maintenance | Turnaround Support | Asset Integrity Management",
+    description: "End-to-end O&M services ensuring optimal asset performance, reduced downtime, and extended infrastructure life cycle.",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/pic_8.png"
+    image: "/images/pic_8.png",
+    path: "/services/operations"
   },
   {
     id: "manpower",
@@ -52,7 +57,8 @@ const services = [
     title: "Technical Manpower Supply",
     description: "Certified Personnel | Project Staffing | IRATA Technicians | Specialized Roles",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/pic_9.png"
+    image: "/images/pic_9.png",
+    path: "/services/manpower"
   },
 ]
 
@@ -213,27 +219,29 @@ export default function Home() {
                 viewport={{ once: true, margin: "-50px" }}
                 className="h-full"
               >
-                <div className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-200 bg-white rounded-xl overflow-hidden flex flex-col">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div
-                      className={`absolute top-4 left-4 ${service.color} rounded-xl p-3 shadow-md`}
-                    >
-                      <service.icon className="h-6 w-6 text-white" />
+                <Link to={service.path} className="h-full block">
+                  <div className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-200 bg-white rounded-xl overflow-hidden flex flex-col">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div
+                        className={`absolute top-4 left-4 ${service.color} rounded-xl p-3 shadow-md`}
+                      >
+                        <service.icon className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="p-6 flex-grow">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600">{service.description}</p>
                     </div>
                   </div>
-                  <div className="p-6 flex-grow">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>
