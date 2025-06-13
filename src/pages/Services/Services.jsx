@@ -149,11 +149,6 @@ const ServiceCard = ({ service, index }) => (
                 <span className="ml-3 text-sm text-gray-600">{feature}</span>
               </li>
             ))}
-            {service.features.length > 3 && (
-              <li className="text-sm text-blue-600 font-medium">
-                +{service.features.length - 3} more services
-              </li>
-            )}
           </ul>
         </div>
       </div>
