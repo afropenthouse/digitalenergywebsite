@@ -84,7 +84,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/images/logo.png" 
+              src="/images/logo1.jpg" 
               alt="Digital Energy Logo" 
               className={`transition-all duration-300 ${
                 isScrolled ? "h-10" : "h-12"
@@ -94,7 +94,7 @@ export default function Header() {
 
           {/* Certification Logos */}
           <div className="hidden md:flex items-center space-x-4 ml-8">
-            <img src="/images/iso.JPG" alt="ISO Certification" className="h-12 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="/images/isocer.png" alt="ISO Certification" className="h-12 opacity-80 hover:opacity-100 transition-opacity" />
           </div>
 
           {/* Desktop Navigation */}

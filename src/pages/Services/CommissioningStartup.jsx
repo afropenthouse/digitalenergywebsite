@@ -75,7 +75,7 @@ const CommissioningStartup = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/commissioning.jpg"
+                src="/images/pic_5.jpg"
                 alt="Commissioning & Start-up Services"
                 className="w-full h-full object-cover opacity-40"
               />
