@@ -125,11 +125,24 @@ const WhoWeAre = () => {
               
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <span className="font-bold text-blue-800">DIGITAL ENERGY & INTEGRATED SERVICES LIMITED (DEISL)</span> is a leading indigenous multi-diverse energy solutions company, we provide comprehensive services across the entire energy value chain, from upstream through midstream to downstream.
+                  <span className="font-bold text-blue-800">DIGITAL ENERGY & INTEGRATED SERVICES LIMITED (DEISL)</span> is a leading indigenous, multi-faceted energy solutions company, delivering end-to-end services across the entire energy value chain—upstream, midstream, and downstream.
                 </p>
                 <p>
-                  We digitalize the complete energy lifecycle from consolidated EPCOM contracting services, trading of petroleum products, marine services, to product processing, storage, logistics, distribution, and compliance.
+                  We offer integrated EPCOM contracting, petroleum product trading, marine logistics, project management, and ICT services, all tailored to meet the evolving needs of the Nigerian industry. Through the digitalization of the energy lifecycle, we ensure greater efficiency, transparency, and value delivery.
                 </p>
+
+                <p>
+                  Over the years, we have developed the skills, resources, and strategic partnerships required to successfully execute complex projects to the satisfaction of our clients. Our capabilities span across key sectors including Oil & Gas, Power, Petrochemicals, Refining, and General Infrastructure.
+                </p>
+
+                <p>
+                  Our service offerings cover the complete project lifecycle—from conceptual design and engineering to commissioning and long-term asset support. Backed by a management team with extensive combined experience across upstream, midstream, and downstream operations, DEISL is well-positioned to deliver consistent value.
+                </p>
+
+                <p>
+                  At Digital Energy, we are committed to customer satisfaction, operational excellence, and responsiveness in all our engagements.
+                </p>
+
               </div>
             </div>
           </motion.div>
@@ -155,7 +168,7 @@ const WhoWeAre = () => {
                       <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
                     </div>
                     <p className="text-gray-700 text-lg">
-                      To exceed customer expectations, drive sustainable growth, and deliver value through innovative solutions, exceptional quality services, and an unwavering commitment to safety, social responsibility, and environmental stewardship.
+                      To be a global leader and trusted partner of choice for delivering innovative, quality, safe, and sustainable solutions that exceed customer expectations.
                     </p>
                   </motion.div>
 
@@ -175,7 +188,7 @@ const WhoWeAre = () => {
                       <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
                     </div>
                     <p className="text-gray-700 text-lg">
-                      To be a global leader and trusted partner of choice for delivering innovative, quality, safe, and sustainable solutions that exceed customer expectations.
+                      To exceed customer expectations, drive sustainable growth, and deliver value through innovative solutions, exceptional quality services, and an unwavering commitment to safety, social responsibility, and environmental stewardship.
                     </p>
               </motion.div>
                 </div>

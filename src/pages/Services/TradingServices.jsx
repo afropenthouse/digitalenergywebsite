@@ -78,7 +78,7 @@ const TradingServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/trading.jpg"
+                src="/images/pic_2.png"
                 alt="Petroleum Products Trading"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -148,7 +148,7 @@ const TradingServices = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/trading-detail.jpg"
+                    src="/images/pic_2.png"
                     alt="Petroleum Products Trading"
                     className="w-full h-[250px] object-cover"
                   />
