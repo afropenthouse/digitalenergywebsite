@@ -6,54 +6,99 @@ import { MapPin, Calendar, Users, Shield, DollarSign, FileText } from "lucide-re
 
 const projects = []
 
-const projectFunctions = [
-	{
-		icon: Calendar,
-		title: "Planning and Scheduling",
-		description: "Comprehensive project planning and scheduling to ensure timely delivery of all project milestones.",
-	},
-	{
-		icon: Shield,
-		title: "Quality & Safety Control",
-		description: "Rigorous quality and safety protocols to maintain world-class HSE standards throughout project execution.",
-	},
-	{
-		icon: DollarSign,
-		title: "Budget/Cost Control",
-		description: "Strategic cost management and budget control to ensure project financial objectives are met.",
-	},
-	{
-		icon: FileText,
-		title: "Contract Administration",
-		description: "Efficient contract management and administration to ensure compliance and smooth project execution.",
-	},
+const projectList = [
+  {
+    title: "Maintenance & Inspection Services",
+    client: "NPDC",
+    description: "Provision of maintaining and inspection, supply of PUP joints and cross over services for NPDC Operated Land and Swamp Assets on a call Basis",
+    image: "/images/p2.jpg",
+    logo: "/images/Npdc.png"
+  },
+  {
+    title: "Machining & Fabrication Services",
+    client: "Seplat",
+    description: "Provision of machining and fabrication services for eastern assets",
+    image: "/images/pic_2.png",
+    logo: "/images/seplat.jpg"
+  },
+  {
+    title: "Tank Farm Upgrade & Maintenance",
+    client: "Pivot Integrated Energy",
+    description: "Upgrade and maintenance of 40 million liters tank farm depot in Calabar EPZ",
+    image: "/images/pic_12.jpg",
+    logo: "/images/pivot.jpeg"
+  },
+  {
+    title: "Lagos Tank Farm Maintenance",
+    client: "Pivot Integrated Energy",
+    description: "Upgrade and maintenance of 30 million litres tank farm depot in Apapa, Lagos",
+    image: "/images/pic_10.jpg",
+    logo: "/images/pivot.jpeg"
+  },
+  {
+    title: "Modular Refinery Upgrade",
+    client: "Fuel Direct LTD",
+    description: "Upgrade and maintenance of Duport Midstream 2500B/D Modular Refinery in Ebokpa, Edo State",
+    image: "/images/pic_9.png",
+    logo: "/images/fuel.png"
+  },
+  {
+    title: "Booster Compressor Tie-in",
+    client: "Seplat",
+    description: "Booster compressor phase 2 tie-in project",
+    image: "/images/pic_11.png",
+    logo: "/images/seplat.jpg"
+  },
+  {
+    title: "Machining Services",
+    client: "Litewell Completions Services",
+    description: "Provision of Machining services and cutting of BTC PIN X PIN 20 casting pipes - 56 jts - 122 thread connections",
+    image: "/images/pic_6.png",
+    logo: "/images/lite.jpeg"
+  },
+  {
+    title: "Gas Equipment Procurement",
+    client: "MidWestern",
+    description: "Procurement of Gas pressure regulator 25bar & cartridge Gas & Supply of FLO Choke Valve",
+    image: "/images/Capture.PNG",
+    logo: "/images/Midwestern.png"
+  },
+  {
+    title: "Fabrication & Supply",
+    client: "Weatherford",
+    description: "Fabrication and Supply of X-overs & 1-Gauge lumpsum service on multi wells pads",
+    image: "/images/p9.jpg",
+    logo: "/images/weatherford.jpg"
+  },
+  {
+    title: "PUP Joints Procurement",
+    client: "Avaiam Offshore",
+    description: "Procurement of PUP Joints for offshore operations",
+    image: "/images/pic_3.png",
+    logo: "/images/aviam.jpeg"
+  }
 ]
 
-const projectImages = [
-	{
-		src: "/images/pic_2.png",
-		alt: "Project Execution - Site Work",
-		title: "Site Construction",
-		description: "Large-scale EPCIC project execution with focus on safety and quality",
-	},
-	{
-		src: "/images/p77.jpg",
-		alt: "Project Execution - Equipment Installation",
-		title: "Equipment Installation",
-		description: "Precision installation of critical equipment with quality control",
-	},
-	{
-		src: "/images/pic_12.jpg",
-		alt: "Project Execution - Team Coordination",
-		title: "Team Coordination",
-		description: "Efficient project team coordination and management",
-	},
+const projectCategories = [
+  { name: "All", count: 10 },
+  { name: "Infrastructure", count: 2 },
+  { name: "Energy", count: 2 },
+  { name: "Manufacturing", count: 2 },
+  { name: "Procurement", count: 2 },
+  { name: "Maintenance", count: 1 },
+  { name: "Fabrication", count: 1 }
 ]
 
 export default function Projects() {
-	return (
-		<div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
-			{/* Hero Section */}
+  const [selectedCategory, setSelectedCategory] = React.useState("All");
+  
+  const filteredProjects = selectedCategory === "All" 
+    ? projectList 
+    : projectList.filter(project => project.category === selectedCategory);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
+      {/* Hero Section */}
 			<section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
 				<div className="absolute inset-0">
 					<img
@@ -92,84 +137,48 @@ export default function Projects() {
 				</div>
 			</section>
 
-			{/* Project Management Section */}
-			<section className="py-12 bg-gradient-to-b from-gray-50 to-white">
-				<div className="container mx-auto px-4 md:px-6 py-8">
-					<div className="space-y-16">
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6 }}
-							className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
-						>
-							<h3 className="text-2xl font-bold text-gray-900 mb-6">Project Management</h3>
-							<p className="text-gray-700 leading-relaxed">
-								Project Management teams deliver large and complex EPCIC projects meeting world-class HSE, quality and schedule requirements. Procurement teams ensure certainty and cost competitiveness of supplies through world-wide network of suppliers, efficient expediting and detailed planning.
-							</p>
-						</motion.div>
+      {/* Projects Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+         
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectList.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-3">
+                    <img 
+                      src={project.logo} 
+                      alt={`${project.client} logo`}
+                      className="w-20 h-20 object-contain"
+                    />
+                    <div className="ml-4">
+                      <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
+                      <p className="text-sm text-blue-600 font-medium">{project.client}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600">{project.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6 }}
-							className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
-						>
-							<h3 className="text-2xl font-bold text-gray-900 mb-6">Project Execution Functions</h3>
-							<div className="grid md:grid-cols-2 gap-8">
-								{projectFunctions.map((func, index) => (
-									<motion.div
-										key={index}
-										initial={{ opacity: 0, y: 20 }}
-										animate={{ opacity: 1, y: 0 }}
-										transition={{ delay: index * 0.1 }}
-										className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
-									>
-										<div className="flex items-center space-x-3 mb-4">
-											<div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-												<func.icon className="w-6 h-6 text-blue-600" />
-											</div>
-											<h4 className="text-lg font-semibold text-gray-900">{func.title}</h4>
-										</div>
-										<p className="text-gray-700">{func.description}</p>
-									</motion.div>
-								))}
-							</div>
-						</motion.div>
-
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6 }}
-							className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
-						>
-							<h3 className="text-2xl font-bold text-gray-900 mb-6">Project Execution Highlights</h3>
-							<div className="grid md:grid-cols-3 gap-8">
-								{projectImages.map((image, index) => (
-									<motion.div
-										key={index}
-										initial={{ opacity: 0, y: 20 }}
-										animate={{ opacity: 1, y: 0 }}
-										transition={{ delay: index * 0.1 }}
-										className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
-									>
-										<div className="relative h-48">
-											<img
-												src={image.src}
-												alt={image.alt}
-												className="w-full h-full object-cover"
-											/>
-										</div>
-										<div className="p-4">
-											<h4 className="text-lg font-semibold text-gray-900 mb-2">{image.title}</h4>
-											<p className="text-gray-700">{image.description}</p>
-										</div>
-									</motion.div>
-								))}
-							</div>
-						</motion.div>
-					</div>
-				</div>
-			</section>
-		</div>
-	)
+        </div>
+      </section>
+    </div>
+  )
 }
