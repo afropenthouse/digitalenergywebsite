@@ -21,9 +21,9 @@ export default function Footer() {
             <div className="flex justify-center md:justify-start">
               <div className="p-3 rounded-xl">
                 <img 
-                  src="/images/logo.png" 
+                  src="/images/logofooter.png" 
                   alt="Digital Energy Logo" 
-                  className="h-8 w-auto transition-transform hover:scale-105"
+                  className="h-12 transition-transform hover:scale-105"
                 />
               </div>
             </div>

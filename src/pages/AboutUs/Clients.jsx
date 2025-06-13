@@ -5,80 +5,97 @@ import { Link } from "react-router-dom"
 
 const clientCategories = [
   {
-    title: "International Oil Companies (IOCs)",
+    title: "Our Clients",
     clients: [
       {
         id: 1,
-        name: "Chevron",
-        logo: "/images/chevron.png",
-      },
-      {
-        id: 2,
-        name: "Shell",
-        logo: "/images/shell.png",
-      },
-      {
-        id: 3,
-        name: "Total",
-        logo: "/images/total.png",
-      },
-      {
-        id: 4,
-        name: "SEEPCO",
-        logo: "/images/seepco.jpeg",
-      },
-      {
-        id: 5,
-        name: "SEPLAT",
-        logo: "/images/seplat.jpg",
-      },
-    ]
-  },
-  {
-    title: "NNPC Group",
-    clients: [
-      {
-        id: 6,
         name: "NNPC",
         logo: "/images/nnpc.jpeg",
       },
       {
-        id: 7,
-        name: "PHRC",
-        description: "Port Harcourt Refining Company Limited",
-        logo: "/images/phrc.png",
+        id: 2,
+        name: "Chevron",
+        logo: "/images/chevron.png",
       },
       {
-        id: 8,
-        name: "NGPTC",
-        description: "Nigeria Gas Processing and Transportation Co. Ltd",
-        logo: "/images/ngptc.jpg",
+        id: 3,
+        name: "Shell",
+        logo: "/images/shell.png",
       },
       {
-        id: 9,
-        name: "WRPC",
-        description: "Warri Refining and Petrochemical Company Limited",
-        logo: "/images/WRPC.jpg",
+        id: 4,
+        name: "Total Energy",
+        logo: "/images/Total.jpeg",
       },
       {
-        id: 10,
-        name: "NPDC",
-        logo: "/images/Npdc.png",
+        id: 5,
+        name: "SEEPCO",
+        logo: "/images/seepco.jpeg",
       },
-    ]
-  },
-  {
-    title: "Marginal Field Operators (MFOs)",
-    clients: [
       {
-        id: 11,
+        id: 6,
         name: "SEPLAT",
         logo: "/images/seplat.jpg",
       },
       {
+        id: 7,
+        name: "Saipem",
+        logo: "/images/Saipem.png",
+      },
+      {
+        id: 8,
+        name: "Addax",
+        logo: "/images/Addax.jpg",
+      },
+      {
+        id: 9,
+        name: "First Hydrocarbon",
+        logo: "/images/Hydrocarbon.jpeg",
+      },
+      {
+        id: 10,
+        name: "Exxon Mobil",
+        logo: "/images/ExxonMobil.png",
+      },
+      {
+        id: 11,
+        name: "Eroton",
+        logo: "/images/eroton.png",
+      },
+      {
         id: 12,
-        name: "Lekoil",
-        logo: "/images/Lekoil.jpeg",
+        name: "EWT Energy Works",
+        logo: "/images/ewt.png",
+      },
+      {
+        id: 13,
+        name: "Dangote",
+        logo: "/images/Dangote.png",
+      },
+      {
+        id: 14,
+        name: "General Electric",
+        logo: "/images/General_Electric.png",
+      },
+      {
+        id: 15,
+        name: "Neconde Energy",
+        logo: "/images/Neconde.png",
+      },
+      {
+        id: 16,
+        name: "Conoil",
+        logo: "/images/conoil.png",
+      },
+      {
+        id: 17,
+        name: "Mid Western",
+        logo: "/images/Midwestern.png",
+      },
+      {
+        id: 18,
+        name: "SUPANOVA ENERGY SERVICES LTD",
+        logo: "/images/supanova.png",
       },
     ]
   }
@@ -173,9 +190,6 @@ const Clients = () => {
                       </div>
                       <div className="p-4 text-center border-t border-gray-100">
                         <h4 className="text-sm font-medium text-gray-900">{client.name}</h4>
-                        {client.description && (
-                          <p className="text-xs text-gray-500 mt-1">{client.description}</p>
-                        )}
                       </div>
                     </motion.div>
                   ))}

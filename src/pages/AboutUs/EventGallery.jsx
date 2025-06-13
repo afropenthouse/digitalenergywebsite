@@ -6,279 +6,222 @@ const galleryImages = [
 		id: 1,
 		src: "/images/p88.png",
 		alt: "Power Generation",
-		category: "Infrastructure",
 	},
 	{
 		id: 2,
-		src: "/images/pic_1.png",
-		alt: "Energy Infrastructure",
-		category: "Infrastructure",
+		src: "/images/new1.jpg",
+		alt: "Energy Systems",
 	},
 	{
 		id: 3,
-		src: "/images/new1.jpg",
-		alt: "Energy Systems",
-		category: "Technology",
+		src: "/images/pic_2.png",
+		alt: "Solar Power Installation",
 	},
 	{
 		id: 4,
-		src: "/images/pic_2.png",
-		alt: "Solar Power Installation",
-		category: "Renewable Energy",
+		src: "/images/new4.jpg",
+		alt: "Power Distribution",
 	},
 	{
 		id: 5,
-		src: "/images/new4.jpg",
-		alt: "Power Distribution",
-		category: "Infrastructure",
+		src: "/images/pic_3.png",
+		alt: "Customer Service",
 	},
 	{
 		id: 6,
-		src: "/images/pic_3.png",
-		alt: "Customer Service",
-		category: "Technology",
+		src: "/images/new7.jpg",
+		alt: "Energy Management",
 	},
 	{
 		id: 7,
-		src: "/images/new7.jpg",
-		alt: "Energy Management",
-		category: "Technology",
+		src: "/images/pic_4.jpg",
+		alt: "Smart Grid Technology",
 	},
 	{
 		id: 8,
-		src: "/images/pic_4.jpg",
-		alt: "Smart Grid Technology",
-		category: "Technology",
+		src: "/images/new11.jpg",
+		alt: "Power Systems",
 	},
 	{
 		id: 9,
-		src: "/images/new11.jpg",
-		alt: "Power Systems",
-		category: "Infrastructure",
+		src: "/images/pic_5.jpg",
+		alt: "Energy Distribution",
 	},
 	{
 		id: 10,
-		src: "/images/pic_5.jpg",
-		alt: "Energy Distribution",
-		category: "Infrastructure",
+		src: "/images/new21.jpg",
+		alt: "Smart Grid Operations",
 	},
 	{
 		id: 11,
-		src: "/images/new21.jpg",
-		alt: "Smart Grid Operations",
-		category: "Technology",
+		src: "/images/pic_6.png",
+		alt: "Power Plant",
 	},
 	{
 		id: 12,
-		src: "/images/pic_6.png",
-		alt: "Power Plant",
-		category: "Infrastructure",
+		src: "/images/new22.jpg",
+		alt: "Energy Solutions",
 	},
 	{
 		id: 13,
-		src: "/images/new22.jpg",
-		alt: "Energy Solutions",
-		category: "Technology",
+		src: "/images/pic_8.png",
+		alt: "Energy Storage",
 	},
 	{
 		id: 14,
-		src: "/images/pic_8.png",
-		alt: "Energy Storage",
-		category: "Technology",
+		src: "/images/new23.jpg",
+		alt: "Power Generation",
 	},
 	{
 		id: 15,
-		src: "/images/new23.jpg",
-		alt: "Power Generation",
-		category: "Infrastructure",
+		src: "/images/pic_9.png",
+		alt: "Smart Metering",
 	},
 	{
 		id: 16,
-		src: "/images/pic_9.png",
-		alt: "Smart Metering",
-		category: "Technology",
+		src: "/images/new25.jpg",
+		alt: "Energy Infrastructure",
 	},
 	{
 		id: 17,
-		src: "/images/new25.jpg",
-		alt: "Energy Infrastructure",
-		category: "Infrastructure",
+		src: "/images/pic_10.jpg",
+		alt: "Grid Modernization",
 	},
 	{
 		id: 18,
-		src: "/images/pic_10.jpg",
-		alt: "Grid Modernization",
-		category: "Infrastructure",
+		src: "/images/new26.jpg",
+		alt: "Control Systems",
 	},
 	{
 		id: 19,
-		src: "/images/new26.jpg",
-		alt: "Control Systems",
-		category: "Technology",
+		src: "/images/pic_11.png",
+		alt: "Smart Grid Operations",
 	},
 	{
 		id: 20,
-		src: "/images/pic_11.png",
-		alt: "Smart Grid Operations",
-		category: "Technology",
+		src: "/images/new27.jpg",
+		alt: "Power Distribution",
 	},
 	{
 		id: 21,
-		src: "/images/new27.jpg",
-		alt: "Power Distribution",
-		category: "Infrastructure",
+		src: "/images/pic_12.jpg",
+		alt: "Renewable Energy Plant",
 	},
 	{
 		id: 22,
-		src: "/images/pic_12.jpg",
-		alt: "Renewable Energy Plant",
-		category: "Renewable Energy",
+		src: "/images/new28.jpg",
+		alt: "Modern Office Space",
 	},
 	{
 		id: 23,
-		src: "/images/new28.jpg",
-		alt: "Modern Office Space",
-		category: "Technology",
+		src: "/images/pic_14.png",
+		alt: "Energy Distribution Network",
 	},
 	{
 		id: 24,
-		src: "/images/pic_14.png",
-		alt: "Energy Distribution Network",
-		category: "Infrastructure",
+		src: "/images/new29.jpg",
+		alt: "Modern Office Space",
 	},
 	{
 		id: 25,
-		src: "/images/new29.jpg",
-		alt: "Modern Office Space",
-		category: "Technology",
+		src: "/images/new30.jpg",
+		alt: "Power Systems",
 	},
 	{
 		id: 26,
-		src: "/images/new30.jpg",
-		alt: "Power Systems",
-		category: "Infrastructure",
+		src: "/images/p1.jpg",
+		alt: "Industrial Facility",
 	},
 	{
 		id: 27,
-		src: "/images/p1.jpg",
-		alt: "Industrial Facility",
-		category: "Infrastructure",
+		src: "/images/new31.jpg",
+		alt: "Modern Office Space",
 	},
 	{
 		id: 28,
-		src: "/images/new31.jpg",
-		alt: "Modern Office Space",
-		category: "Technology",
+		src: "/images/p2.jpg",
+		alt: "Energy Control Center",
 	},
 	{
 		id: 29,
-		src: "/images/p2.jpg",
-		alt: "Energy Control Center",
-		category: "Technology",
+		src: "/images/new32.jpg",
+		alt: "Power Distribution",
 	},
 	{
 		id: 30,
-		src: "/images/new32.jpg",
+		src: "/images/p3.png",
 		alt: "Power Distribution",
-		category: "Infrastructure",
 	},
 	{
 		id: 31,
-		src: "/images/p3.png",
-		alt: "Power Distribution",
-		category: "Infrastructure",
+		src: "/images/new33.jpg",
+		alt: "Energy Management",
 	},
 	{
 		id: 32,
-		src: "/images/new33.jpg",
+		src: "/images/p4.jpg",
 		alt: "Energy Management",
-		category: "Technology",
 	},
 	{
 		id: 33,
-		src: "/images/p4.jpg",
-		alt: "Energy Management",
-		category: "Technology",
+		src: "/images/new34.jpg",
+		alt: "Power Systems",
 	},
 	{
 		id: 34,
-		src: "/images/new34.jpg",
+		src: "/images/p5.jpg",
 		alt: "Power Systems",
-		category: "Infrastructure",
 	},
 	{
 		id: 35,
-		src: "/images/p5.jpg",
+		src: "/images/new35.jpg",
 		alt: "Power Systems",
-		category: "Infrastructure",
 	},
 	{
 		id: 36,
-		src: "/images/new35.jpg",
-		alt: "Power Systems",
-		category: "Technology",
+		src: "/images/new44.jpg",
+		alt: "Energy Infrastructure",
+	},
+	{
+		id: 37,
+		src: "/images/p7.jpg",
+		alt: "Energy Infrastructure",
 	},
 	{
 		id: 38,
-		src: "/images/new44.jpg",
-		alt: "Energy Infrastructure",
-		category: "Infrastructure",
+		src: "/images/p9.jpg",
+		alt: "Energy Control Systems",
 	},
 	{
 		id: 39,
-		src: "/images/p7.jpg",
-		alt: "Energy Infrastructure",
-		category: "Infrastructure",
+		src: "/images/p10.jpg",
+		alt: "Power Distribution Network",
+	},
+	{
+		id: 40,
+		src: "/images/p77.jpg",
+		alt: "Energy Management Systems",
 	},
 	{
 		id: 41,
-		src: "/images/p9.jpg",
-		alt: "Energy Control Systems",
-		category: "Technology",
+		src: "/images/u3.jpg",
+		alt: "Energy Solutions",
 	},
 	{
 		id: 42,
-		src: "/images/p10.jpg",
-		alt: "Power Distribution Network",
-		category: "Infrastructure",
+		src: "/images/pic_14.jpg",
+		alt: "Energy Network",
 	},
 	{
 		id: 43,
-		src: "/images/p77.jpg",
-		alt: "Energy Management Systems",
-		category: "Technology",
-	},
-	{
-		id: 44,
-		src: "/images/u3.jpg",
-		alt: "Energy Solutions",
-		category: "Technology",
-	},
-	{
-		id: 45,
-		src: "/images/pic_14.jpg",
-		alt: "Energy Network",
-		category: "Infrastructure",
-	},
-	{
-		id: 47,
 		src: "/images/pic_2.jpg",
 		alt: "Renewable Energy",
-		category: "Renewable Energy",
 	},
-]
-
-const categories = [
-	{ id: "all", name: "All" },
-	{ id: "infrastructure", name: "Infrastructure" },
-	{ id: "renewable", name: "Renewable Energy" },
-	{ id: "technology", name: "Technology" },
 ]
 
 const EventGallery = () => {
 	const [selectedImage, setSelectedImage] = useState(null)
 
-	
 	return (
 		<div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
 			<div className="container mx-auto px-4 md:px-6 py-8">
@@ -328,23 +271,6 @@ const EventGallery = () => {
 						</div>
 					</motion.div>
 
-					{/* Category Filter */}
-					<div className="flex flex-wrap justify-center gap-4">
-						{categories.map((category) => (
-							<motion.button
-								key={category.id}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-								className="px-6 py-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 text-gray-700 hover:text-blue-600"
-							>
-								{category.name}
-							</motion.button>
-						))}
-					</div>
-
 					{/* Gallery Grid */}
 					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 						{galleryImages.map((image, index) => (
@@ -365,11 +291,6 @@ const EventGallery = () => {
 								/>
 								<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
 									
-								</div>
-								<div className="absolute bottom-0 left-0 right-0 p-3 z-20">
-									<h3 className="text-white text-sm font-medium truncate">
-										{image.alt}
-									</h3>
 								</div>
 							</motion.div>
 						))}
