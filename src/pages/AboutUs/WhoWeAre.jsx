@@ -207,34 +207,22 @@ const WhoWeAre = () => {
               >
                 Our Core Values
               </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-gray-600 text-lg max-w-3xl mx-auto"
-              >
-                The principles that guide our every decision and action
-              </motion.p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-7 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                    <value.icon className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h4>
-                  <p className="text-gray-600 flex-grow">{value.description}</p>
-                </motion.div>
-              ))}
-            </div>
+            
+            {/* Info Image Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="max-w-4xl mx-auto"
+            >
+              <img
+                src="/images/info.png"
+                alt="Core Values Information"
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

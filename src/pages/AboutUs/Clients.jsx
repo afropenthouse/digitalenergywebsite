@@ -3,78 +3,93 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star, Building2, Users, Globe, Award, ChevronRight, Handshake } from "lucide-react"
 import { Link } from "react-router-dom"
 
-const clients = [
+const clientCategories = [
   {
-    id: 1,
-    name: "NNPC",
-    logo: "/src/assets/nnpc.jpeg",
-    description: "Nigeria's National Oil Company"
+    title: "International Oil Companies (IOCs)",
+    clients: [
+      {
+        id: 1,
+        name: "Chevron",
+        logo: "/images/chevron.png",
+      },
+      {
+        id: 2,
+        name: "Shell",
+        logo: "/images/shell.png",
+      },
+      {
+        id: 3,
+        name: "Total",
+        logo: "/images/total.png",
+      },
+      {
+        id: 4,
+        name: "SEEPCO",
+        logo: "/images/seepco.jpeg",
+      },
+      {
+        id: 5,
+        name: "SEPLAT",
+        logo: "/images/seplat.jpg",
+      },
+    ]
   },
   {
-    id: 2,
-    name: "SEEPCO",
-    logo: "/src/assets/seepco.jpeg",
-    description: "Strategic Energy & Petroleum Company"
+    title: "NNPC Group",
+    clients: [
+      {
+        id: 6,
+        name: "NNPC",
+        logo: "/images/nnpc.jpeg",
+      },
+      {
+        id: 7,
+        name: "PHRC",
+        description: "Port Harcourt Refining Company Limited",
+        logo: "/images/phrc.png",
+      },
+      {
+        id: 8,
+        name: "NGPTC",
+        description: "Nigeria Gas Processing and Transportation Co. Ltd",
+        logo: "/images/ngptc.jpg",
+      },
+      {
+        id: 9,
+        name: "WRPC",
+        description: "Warri Refining and Petrochemical Company Limited",
+        logo: "/images/WRPC.jpg",
+      },
+      {
+        id: 10,
+        name: "NPDC",
+        logo: "/images/Npdc.png",
+      },
+    ]
   },
   {
-    id: 3,
-    name: "SEPLAT",
-    logo: "/src/assets/seplat.jpg",
-    description: "Leading Independent Energy Company"
-  },
-  {
-    id: 4,
-    name: "Chevron",
-    logo: "/src/assets/chevron.png",
-    description: "Global Energy Corporation"
-  },
-  {
-    id: 5,
-    name: "Shell",
-    logo: "/src/assets/shell.png",
-    description: "International Energy Company"
-  },
-  {
-    id: 6,
-    name: "Total",
-    logo: "/src/assets/total.png",
-    description: "Global Energy Major"
-  }
-]
-
-const industries = [
-  {
-    name: "Oil & Gas",
-    icon: Building2,
-    description: "Upstream, midstream, and downstream operations",
-    clients: 4
-  },
-  {
-    name: "Power Generation",
-    icon: Globe,
-    description: "Renewable and conventional power solutions",
-    clients: 3
-  },
-  {
-    name: "Petrochemicals",
-    icon: Award,
-    description: "Chemical processing and manufacturing",
-    clients: 2
-  },
-  {
-    name: "Refining",
-    icon: Users,
-    description: "Crude oil processing and product distribution",
-    clients: 2
+    title: "Marginal Field Operators (MFOs)",
+    clients: [
+      {
+        id: 11,
+        name: "SEPLAT",
+        logo: "/images/seplat.jpg",
+      },
+      {
+        id: 12,
+        name: "Lekoil",
+        logo: "/images/Lekoil.jpeg",
+      },
+    ]
   }
 ]
 
 const Clients = () => {
   return (
-    <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-20 bg-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
-          {/* Enhanced Hero Section */}
+          {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,33 +133,55 @@ const Clients = () => {
             </div>
           </motion.div>
 
-          {/* Partners Grid */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6">
-              {clients.map((client, index) => (
-                <motion.div
-                  key={client.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100"
-                >
-                  <div className="aspect-[4/3] relative overflow-hidden bg-gray-50">
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                    <img
-                      src={client.logo}
-                      alt={client.name}
-                      className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-1">{client.name}</h4>
-                    <p className="text-gray-600 text-sm">{client.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          {/* Client Categories */}
+          <div className="space-y-16">
+            {clientCategories.map((category, categoryIndex) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: categoryIndex * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-8">{category.title}</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {category.clients.map((client, index) => (
+                    <motion.div
+                      key={client.id}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ 
+                        duration: 0.5,
+                        delay: index * 0.1,
+                        ease: "easeOut"
+                      }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        transition: { duration: 0.2 }
+                      }}
+                      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100"
+                    >
+                      <div className="aspect-[4/3] relative overflow-hidden bg-gray-50/50">
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                        <img
+                          src={client.logo}
+                          alt={client.name}
+                          className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-110"
+                        />
+                      </div>
+                      <div className="p-4 text-center border-t border-gray-100">
+                        <h4 className="text-sm font-medium text-gray-900">{client.name}</h4>
+                        {client.description && (
+                          <p className="text-xs text-gray-500 mt-1">{client.description}</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
 
           {/* Partnership Section */}
