@@ -75,7 +75,7 @@ const OperationsMaintenance = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/operations.jpg"
+                src="/images/p7.jpg"
                 alt="Operations & Maintenance Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -145,7 +145,7 @@ const OperationsMaintenance = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/operations-detail.jpg"
+                    src="/images/p7.jpg"
                     alt="Operations & Maintenance"
                     className="w-full h-[250px] object-cover"
                   />

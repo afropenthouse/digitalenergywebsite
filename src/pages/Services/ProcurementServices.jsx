@@ -57,7 +57,7 @@ const ProcurementServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/procurement.jpg"
+                src="/images/pic_10.jpg"
                 alt="Procurement Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -127,7 +127,7 @@ const ProcurementServices = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/procurement-detail.jpg"
+                    src="/images/pic_10.jpg"
                     alt="Procurement Services"
                     className="w-full h-[250px] object-cover"
                   />
