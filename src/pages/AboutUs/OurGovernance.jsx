@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
-import { Shield, Award, Scale, FileCheck, Users, Building2, Target } from "lucide-react"
+import { Shield, Award, Scale, FileCheck, Users, Building2, Target, Card, CardContent } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 
 const governanceValues = [
   {
@@ -78,13 +79,47 @@ const corporateStructure = [
   },
 ]
 
+const directors = [
+  {
+    id: 1,
+    name: "John Doe",
+    position: "Chairman",
+    company: "Digital Energy & Integrated Services Ltd",
+    email: "john.doe@digitalenergy.com",
+    image: "/images/team1.jpg"
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    position: "Managing Director",
+    company: "Digital Energy & Integrated Services Ltd",
+    email: "jane.smith@digitalenergy.com",
+    image: "/images/team2.jpg"
+  },
+  {
+    id: 3,
+    name: "Michael Johnson",
+    position: "Executive Director",
+    company: "Digital Energy & Integrated Services Ltd",
+    email: "michael.j@digitalenergy.com",
+    image: "/images/team3.jpg"
+  },
+  {
+    id: 4,
+    name: "Sarah Williams",
+    position: "Non-Executive Director",
+    company: "Digital Energy & Integrated Services Ltd",
+    email: "sarah.w@digitalenergy.com",
+    image: "/images/team4.jpg"
+  }
+]
+
 const OurGovernance = () => {
   return (
-    <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-20 bg-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
-
-          {/* Enhanced Hero Section */}
+          {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,7 +127,7 @@ const OurGovernance = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/pic_3.png"
+                src="/images/pic_2.png"
                 alt="Our Governance"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -100,9 +135,9 @@ const OurGovernance = () => {
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
             </div>
             <div className="relative z-10 container mx-auto px-6 max-w-5xl">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
@@ -114,7 +149,7 @@ const OurGovernance = () => {
                 transition={{ delay: 0.2 }}
                 className="text-4xl md:text-5xl font-bold mb-6"
               >
-                Excellence in <span className="text-orange-400">Leadership</span>
+                Board of <span className="text-orange-400">Directors</span>
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -122,61 +157,52 @@ const OurGovernance = () => {
                 transition={{ delay: 0.3 }}
                 className="text-xl text-blue-100 max-w-3xl leading-relaxed"
               >
-                At Digital Energy, we maintain the highest standards of corporate governance, ensuring transparency, 
-                accountability, and ethical business practices.
+                Meet our experienced leadership team driving innovation and excellence in the energy sector.
               </motion.p>
-      </div>
+            </div>
           </motion.div>
 
           {/* Board of Directors Section */}
-      <div>
-            <div className="text-center mb-12">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl font-bold text-gray-900 mb-4"
-              >
-                Board of Directors
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-gray-600 text-lg max-w-3xl mx-auto"
-              >
-                Experienced leaders guiding our strategic vision
-              </motion.p>
-            </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {boardMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 20 }}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {directors.map((director, index) => (
+                <motion.div
+                  key={director.id}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: "easeOut"
+                  }}
+                  className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="aspect-[4/5] relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                <img
-                  src={member.image}
-                  alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                    <div className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                      {member.position}
+                  <div className="relative aspect-[3/4] overflow-hidden">
+                    <div className="absolute inset-0 bg-blue-600/90 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+                    <div className="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <div className="text-white text-center p-6">
+                        <div className="flex items-center justify-center space-x-2 mb-4">
+                          <Mail className="w-5 h-5" />
+                          <span className="text-sm">{director.email}</span>
+                        </div>
+                        <p className="text-sm font-medium">{director.company}</p>
+                      </div>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+                    <img
+                      src={director.image}
+                      alt={director.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                   </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">{director.name}</h3>
+                    <p className="text-orange-500 font-medium mb-2">{director.position}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
           {/* Governance Structure */}
           <div className="bg-white py-16 rounded-2xl">

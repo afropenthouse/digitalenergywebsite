@@ -1,192 +1,153 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Calendar, Users, MapPin, Clock, Image as ImageIcon, Maximize2 } from "lucide-react"
-
-const events = [
-	{
-		id: 1,
-		title: "Energy Innovation Summit 2023",
-		date: "March 15-17, 2023",
-		location: "Lagos, Nigeria",
-		image: "/images/pic_6.png",
-		description: "A gathering of industry leaders to discuss the future of energy technology.",
-	},
-	{
-		id: 2,
-		title: "Sustainable Energy Conference",
-		date: "June 8-10, 2023",
-		location: "Abuja, Nigeria",
-		image: "/images/pic_7.png",
-		description: "Exploring sustainable energy solutions for Africa's future.",
-	},
-	{
-		id: 3,
-		title: "Digital Energy Workshop",
-		date: "September 20-22, 2023",
-		location: "Port Harcourt, Nigeria",
-		image: "/images/pic_8.png",
-		description: "Hands-on training in digital energy management systems.",
-	},
-]
-
-const upcomingEvents = [
-	{
-		id: 1,
-		title: "Energy Tech Expo 2024",
-		date: "January 15-17, 2024",
-		location: "Lagos, Nigeria",
-		description: "Showcasing the latest innovations in energy technology",
-	},
-	{
-		id: 2,
-		title: "Green Energy Forum",
-		date: "February 20-22, 2024",
-		location: "Abuja, Nigeria",
-		description: "Focusing on renewable energy solutions",
-	},
-]
 
 const galleryImages = [
 	{
 		id: 1,
+		src: "/images/p88.png",
+		alt: "Power Generation",
+		category: "Infrastructure",
+	},
+	{
+		id: 2,
 		src: "/images/pic_1.png",
 		alt: "Energy Infrastructure",
 		category: "Infrastructure",
 	},
 	{
-		id: 2,
+		id: 3,
 		src: "/images/new1.jpg",
 		alt: "Energy Systems",
 		category: "Technology",
 	},
 	{
-		id: 3,
+		id: 4,
 		src: "/images/pic_2.png",
 		alt: "Solar Power Installation",
 		category: "Renewable Energy",
 	},
 	{
-		id: 4,
+		id: 5,
 		src: "/images/new4.jpg",
 		alt: "Power Distribution",
 		category: "Infrastructure",
 	},
 	{
-		id: 5,
+		id: 6,
 		src: "/images/pic_3.png",
 		alt: "Customer Service",
 		category: "Technology",
 	},
 	{
-		id: 6,
+		id: 7,
 		src: "/images/new7.jpg",
 		alt: "Energy Management",
 		category: "Technology",
 	},
 	{
-		id: 7,
+		id: 8,
 		src: "/images/pic_4.jpg",
 		alt: "Smart Grid Technology",
 		category: "Technology",
 	},
 	{
-		id: 8,
+		id: 9,
 		src: "/images/new11.jpg",
 		alt: "Power Systems",
 		category: "Infrastructure",
 	},
 	{
-		id: 9,
+		id: 10,
 		src: "/images/pic_5.jpg",
 		alt: "Energy Distribution",
 		category: "Infrastructure",
 	},
 	{
-		id: 10,
+		id: 11,
 		src: "/images/new21.jpg",
 		alt: "Smart Grid Operations",
 		category: "Technology",
 	},
 	{
-		id: 11,
+		id: 12,
 		src: "/images/pic_6.png",
 		alt: "Power Plant",
 		category: "Infrastructure",
 	},
 	{
-		id: 12,
+		id: 13,
 		src: "/images/new22.jpg",
 		alt: "Energy Solutions",
 		category: "Technology",
 	},
 	{
-		id: 13,
+		id: 14,
 		src: "/images/pic_8.png",
 		alt: "Energy Storage",
 		category: "Technology",
 	},
 	{
-		id: 14,
+		id: 15,
 		src: "/images/new23.jpg",
 		alt: "Power Generation",
 		category: "Infrastructure",
 	},
 	{
-		id: 15,
+		id: 16,
 		src: "/images/pic_9.png",
 		alt: "Smart Metering",
 		category: "Technology",
 	},
 	{
-		id: 16,
+		id: 17,
 		src: "/images/new25.jpg",
 		alt: "Energy Infrastructure",
 		category: "Infrastructure",
 	},
 	{
-		id: 17,
+		id: 18,
 		src: "/images/pic_10.jpg",
 		alt: "Grid Modernization",
 		category: "Infrastructure",
 	},
 	{
-		id: 18,
+		id: 19,
 		src: "/images/new26.jpg",
 		alt: "Control Systems",
 		category: "Technology",
 	},
 	{
-		id: 19,
+		id: 20,
 		src: "/images/pic_11.png",
 		alt: "Smart Grid Operations",
 		category: "Technology",
 	},
 	{
-		id: 20,
+		id: 21,
 		src: "/images/new27.jpg",
 		alt: "Power Distribution",
 		category: "Infrastructure",
 	},
 	{
-		id: 21,
+		id: 22,
 		src: "/images/pic_12.jpg",
 		alt: "Renewable Energy Plant",
 		category: "Renewable Energy",
 	},
 	{
-		id: 22,
+		id: 23,
 		src: "/images/new28.jpg",
 		alt: "Modern Office Space",
 		category: "Technology",
 	},
 	{
-		id: 23,
+		id: 24,
 		src: "/images/pic_14.png",
 		alt: "Energy Distribution Network",
 		category: "Infrastructure",
 	},
 	{
-		id: 24,
+		id: 25,
 		src: "/images/new29.jpg",
 		alt: "Modern Office Space",
 		category: "Technology",
@@ -300,12 +261,6 @@ const galleryImages = [
 		category: "Infrastructure",
 	},
 	{
-		id: 46,
-		src: "/images/p88.png",
-		alt: "Power Generation",
-		category: "Infrastructure",
-	},
-	{
 		id: 47,
 		src: "/images/pic_2.jpg",
 		alt: "Renewable Energy",
@@ -323,10 +278,7 @@ const categories = [
 const EventGallery = () => {
 	const [selectedImage, setSelectedImage] = useState(null)
 
-	const closeLightbox = () => {
-		setSelectedImage(null)
-	}
-
+	
 	return (
 		<div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
 			<div className="container mx-auto px-4 md:px-6 py-8">
@@ -412,12 +364,7 @@ const EventGallery = () => {
 									onClick={() => setSelectedImage(image)}
 								/>
 								<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-									<button
-										className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors duration-300"
-										onClick={() => setSelectedImage(image)}
-									>
-										<Maximize2 className="w-5 h-5 text-white" />
-									</button>
+									
 								</div>
 								<div className="absolute bottom-0 left-0 right-0 p-3 z-20">
 									<h3 className="text-white text-sm font-medium truncate">
@@ -436,7 +383,6 @@ const EventGallery = () => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
 								className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-								onClick={closeLightbox}
 							>
 								<motion.div
 									initial={{ scale: 0.9, opacity: 0 }}
@@ -448,8 +394,7 @@ const EventGallery = () => {
 									{/* Close button */}
 									<button
 										className="absolute -top-12 right-0 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white z-50"
-										onClick={closeLightbox}
-									>
+										>
 										<X className="w-8 h-8" />
 									</button>
 
