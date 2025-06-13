@@ -52,13 +52,13 @@ const projectImages = [
 
 export default function Projects() {
 	return (
-		<div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+		<div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
 			{/* Hero Section */}
 			<section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
 				<div className="absolute inset-0">
 					<img
-						src="/images/pic_2.png"
-						alt="Services"
+						src="/images/Capture.PNG"
+						alt="Projects"
 						className="w-full h-full object-cover opacity-40"
 					/>
 					<div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
@@ -71,7 +71,7 @@ export default function Projects() {
 						transition={{ delay: 0.1 }}
 						className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
 					>
-						<p className="text-sm font-medium">Our Projects</p>
+						<p className="text-sm font-medium">Projects</p>
 					</motion.div>
 					<motion.h2
 						initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export default function Projects() {
 						transition={{ delay: 0.2 }}
 						className="text-4xl md:text-5xl font-bold mb-6"
 					>
-						Featured <span className="text-orange-400">Projects</span>
+						Premium <span className="text-orange-400">Projects</span>
 					</motion.h2>
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export default function Projects() {
 						transition={{ delay: 0.3 }}
 						className="text-xl text-blue-100 max-w-3xl leading-relaxed"
 					>
-						Showcasing our expertise through successful project deliveries across Nigeria's energy sector
+						Strategic alliances with industry leaders for cutting-edge solutions
 					</motion.p>
 				</div>
 			</section>
