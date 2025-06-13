@@ -145,7 +145,7 @@ const CommissioningStartup = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/commissioning-detail.jpg"
+                    src="/images/pic_5.jpg"
                     alt="Commissioning & Start-up"
                     className="w-full h-[250px] object-cover"
                   />
