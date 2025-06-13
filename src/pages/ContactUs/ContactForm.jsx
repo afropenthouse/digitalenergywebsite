@@ -183,27 +183,17 @@ export default function ContactForm() {
               className="space-y-8"
             >
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <div className="h-96 w-full relative">
-                  <a 
-                    href={activeOffice.directionsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full h-full"
-                  >
-                    <img
-                      src={activeOffice.id === "headoffice" ? "/images/map-head-office.jpg" :
-                           activeOffice.id === "portharcourt" ? "/images/map-port-harcourt.jpg" :
-                           "/images/map-chevron.jpg"}
-                      alt={`Map showing location of ${activeOffice.name}`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/20 hover:bg-black/30 transition-colors flex items-center justify-center">
-                      <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-blue-600 font-medium flex items-center">
-                        <MapPin className="h-5 w-5 mr-2" />
-                        View on Google Maps
-                      </div>
-                    </div>
-                  </a>
+                <div className="h-96 w-full">
+                  <iframe
+                    src={activeOffice.mapUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-t-2xl"
+                  ></iframe>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center mb-4">
