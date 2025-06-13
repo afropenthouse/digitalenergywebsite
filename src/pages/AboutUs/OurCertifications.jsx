@@ -10,7 +10,7 @@ const certifications = [
     icon: BadgeCheck,
     image: "/images/ISO_1.jpg",
     year: "2022",
-    validity: "Valid until 2026",
+    validity: "Valid until October 16, 2025",
   },
   {
     name: "ISO 45001:2018",
@@ -20,7 +20,16 @@ const certifications = [
     image: "/images/ISO_2.jpg",
     year: "2022",
 	issue: "Issued in 2022",
-    validity: "Valid until 2026",
+    validity: "Valid until October 16, 2025",
+  },
+  {
+    name: "COREN Biennial Practising Licence",
+    category: "Engineering Practice",
+    description: "Licensed by the Council for the Regulation of Engineering in Nigeria (COREN) to practice engineering in Nigeria, meeting all requirements contained in the COREN Act. Registration Number: ECF1051",
+    icon: Star,
+    image: "/images/Coren.jpg",
+    year: "2023",
+    validity: "Valid until December 31, 2025",
   },
 ]
 
