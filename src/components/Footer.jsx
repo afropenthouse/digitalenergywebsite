@@ -123,7 +123,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Phone className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">+234 201 453 6157</span>
+                <span className="text-blue-100">+234 (0) 201 453 6157</span>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Mail className="h-5 w-5 text-orange-400 mr-3" />
