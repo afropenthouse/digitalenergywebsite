@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import WhoWeAre from "./WhoWeAre"
-import OurGovernance from "./OurGovernance"
+import Management from "./Management"
 import OurHistory from "./OurHistory"
 import OurCertifications from "./OurCertifications"
 import EventGallery from "./EventGallery"
@@ -23,8 +23,8 @@ const AboutUs = () => {
     switch (activeSection) {
       case "who-we-are":
         return <WhoWeAre />
-      case "our-governance":
-        return <OurGovernance />
+      case "management":
+        return <Management />
       case "our-history":
         return <OurHistory />
       case "our-certifications":
