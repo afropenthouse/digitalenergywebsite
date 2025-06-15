@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 
 const aboutLinks = [
   { name: "Who We Are", href: "/about/who-we-are" },
-  { name: "Our Governance", href: "/about/governance" },
+  { name: "Management", href: "/about/management" },
   { name: "Our History", href: "/about/history" },
   { name: "Our Certifications", href: "/about/certifications" },
   { name: "Event Gallery", href: "/about/gallery" },
@@ -75,19 +75,19 @@ export default function Header() {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-md py-0" 
+          ? "bg-white shadow-md py-0" 
           : "bg-white py-2"
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
               src="/images/logo1.jpg" 
               alt="Digital Energy Logo" 
               className={`transition-all duration-300 ${
-                isScrolled ? "h-10" : "h-12"
+                isScrolled ? "h-12" : "h-14"
               }`} 
             />
           </Link>
@@ -101,7 +101,7 @@ export default function Header() {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               link.dropdown ? (
                 <div key={link.name} className="relative" ref={dropdownRef}>
@@ -115,11 +115,11 @@ export default function Header() {
                         setIsAboutDropdownOpen(false)
                       }
                     }}
-                    className={`flex items-center space-x-1 px-1 py-2 font-medium ${
+                    className={`flex items-center space-x-1 px-4 py-2.5 font-medium rounded-lg transition-all duration-200 ${
                       (link.name === "About" && aboutLinks.some(l => location.pathname === l.href)) ||
                       (link.name === "Contact" && contactLinks.some(l => location.pathname === l.href))
-                        ? "text-orange-500" 
-                        : "text-gray-700 hover:text-orange-500"
+                        ? "bg-gray-100 text-gray-900" 
+                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     }`}
                   >
                     <span>{link.name}</span>
@@ -142,17 +142,17 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-lg py-2 border border-gray-100 min-w-[200px]"
+                        className="absolute left-0 mt-2 bg-white rounded-lg shadow-lg py-2 border border-gray-100 min-w-[220px]"
                       >
                         <div className="flex flex-col">
                           {link.dropdown.map((l) => (
                             <Link
                               key={l.name}
                               to={l.href}
-                              className={`px-4 py-2.5 text-sm whitespace-nowrap ${
+                              className={`px-4 py-2.5 text-sm whitespace-nowrap rounded-lg mx-2 ${
                                 location.pathname === l.href
                                   ? "text-orange-500 bg-orange-50"
-                                  : "text-gray-700 hover:text-orange-500 hover:bg-gray-50"
+                                  : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
                               }`}
                               onClick={() => {
                                 setIsAboutDropdownOpen(false)
@@ -171,25 +171,20 @@ export default function Header() {
                 <Link 
                   key={link.name}
                   to={link.href}
-                  className={`relative font-medium px-1 py-2 text-gray-700 hover:text-orange-500 transition-colors ${
-                    location.pathname === link.href ? "text-orange-500" : ""
+                  className={`relative font-medium px-4 py-2.5 rounded-lg transition-all duration-200 ${
+                    location.pathname === link.href 
+                      ? "bg-gray-100 text-gray-900" 
+                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   }`}
                 >
                   {link.name}
-                  {location.pathname === link.href && (
-                    <motion.div 
-                      layoutId="activeNav"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500"
-                      initial={false}
-                    />
-                  )}
                 </Link>
               )
             ))}
             
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-colors shadow-md"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors shadow-sm ml-4"
             >
               Get Started
             </Link>

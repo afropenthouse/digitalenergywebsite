@@ -221,7 +221,7 @@ export default function RequestQuote() {
                   </div>
                   <div className="flex items-center">
                     <span className="text-blue-700 font-medium w-20">Phone:</span>
-                    <span className="text-gray-600">+234 201 453 6157</span>
+                    <span className="text-gray-600">+234 (0) 201 453 6157</span>
                   </div>
                 </div>
               </div>
