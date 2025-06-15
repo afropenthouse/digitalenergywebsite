@@ -130,7 +130,7 @@ const corporateStructure = [
   },
 ]
 
-const OurGovernance = () => {
+const Management = () => {
   return (
     <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
@@ -145,20 +145,20 @@ const OurGovernance = () => {
             <div className="absolute inset-0">
               <img
                 src="/images/pic_3.png"
-                alt="Our Governance"
+                alt="Our Management"
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
             </div>
             <div className="relative z-10 container mx-auto px-6 max-w-5xl">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">Our Governance</p>
+                <p className="text-sm font-medium">Our Management</p>
               </motion.div>
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -177,11 +177,11 @@ const OurGovernance = () => {
                 At Digital Energy, we maintain the highest standards of corporate governance, ensuring transparency, 
                 accountability, and ethical business practices.
               </motion.p>
-      </div>
+            </div>
           </motion.div>
 
           {/* Board of Directors Section */}
-      <div>
+          <div>
             <div className="text-center mb-12">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -201,62 +201,62 @@ const OurGovernance = () => {
                 Experienced leaders guiding our strategic vision
               </motion.p>
             </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {boardMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group relative"
-              style={styles.perspective1000}
-            >
-              <div className="aspect-[4/5] relative overflow-hidden">
-                {/* Flip container */}
-                <div 
-                  className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
-                  style={styles.transformStyle3d}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {boardMembers.map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group relative"
+                  style={styles.perspective1000}
                 >
-                  {/* Front of card */}
-                  <div 
-                    className="absolute w-full h-full"
-                    style={styles.backfaceHidden}
-                  >
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                  </div>
-                  
-                  {/* Back of card (flipped) */}
-                  <div 
-                    className="absolute w-full h-full bg-gradient-to-br from-blue-900 to-orange-600 p-6 flex flex-col justify-center items-center text-white"
-                    style={{...styles.backfaceHidden, ...styles.rotateY180}}
-                  >
-                    <div className="text-center transform transition-transform duration-500 group-hover:scale-110">
-                      <h3 className="text-2xl font-bold mb-3">{member.name}</h3>
-                      <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
-                        {member.position}
+                  <div className="aspect-[4/5] relative overflow-hidden">
+                    {/* Flip container */}
+                    <div 
+                      className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
+                      style={styles.transformStyle3d}
+                    >
+                      {/* Front of card */}
+                      <div 
+                        className="absolute w-full h-full"
+                        style={styles.backfaceHidden}
+                      >
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                       </div>
-                      <p className="text-sm text-white/90 line-clamp-4">{member.bio}</p>
+                      
+                      {/* Back of card (flipped) */}
+                      <div 
+                        className="absolute w-full h-full bg-gradient-to-br from-blue-900 to-orange-600 p-6 flex flex-col justify-center items-center text-white"
+                        style={{...styles.backfaceHidden, ...styles.rotateY180}}
+                      >
+                        <div className="text-center transform transition-transform duration-500 group-hover:scale-110">
+                          <h3 className="text-2xl font-bold mb-3">{member.name}</h3>
+                          <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
+                            {member.position}
+                          </div>
+                          <p className="text-sm text-white/90 line-clamp-4">{member.bio}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              
-              <div className="p-6 relative">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <div className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                  {member.position}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+                  
+                  <div className="p-6 relative">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                    <div className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                      {member.position}
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
           {/* Governance Structure */}
           <div className="bg-white py-16 rounded-2xl">
@@ -268,7 +268,7 @@ const OurGovernance = () => {
                   viewport={{ once: true }}
                   className="text-3xl font-bold text-gray-900 mb-4"
                 >
-                  Governance Structure
+                  Management Structure
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -311,4 +311,4 @@ const OurGovernance = () => {
   )
 }
 
-export default OurGovernance
+export default Management 

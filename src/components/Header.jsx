@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 
 const aboutLinks = [
   { name: "Who We Are", href: "/about/who-we-are" },
-  { name: "Our Governance", href: "/about/governance" },
+  { name: "Management", href: "/about/management" },
   { name: "Our History", href: "/about/history" },
   { name: "Our Certifications", href: "/about/certifications" },
   { name: "Event Gallery", href: "/about/gallery" },
