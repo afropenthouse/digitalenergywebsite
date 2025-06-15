@@ -4,7 +4,6 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import WhoWeAre from "./pages/AboutUs/WhoWeAre"
-import OurGovernance from "./pages/AboutUs/OurGovernance"
 import OurHistory from "./pages/AboutUs/OurHistory"
 import OurCertifications from "./pages/AboutUs/OurCertifications"
 import EventGallery from "./pages/AboutUs/EventGallery"
@@ -27,6 +26,7 @@ import Loader from "./pages/Loader/Loader"
 import ScrollUP from "./components/Scroll/ScrollUP"
 import FabricationConstruction from './pages/Services/FabricationConstruction'
 import TradingServices from "./pages/Services/TradingServices"
+import Management from "./pages/AboutUs/Management"
 import "./index.css"
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about">
                 <Route path="who-we-are" element={<WhoWeAre />} />
-                <Route path="governance" element={<OurGovernance />} />
+                <Route path="management" element={<Management />} />
                 <Route path="history" element={<OurHistory />} />
                 <Route path="certifications" element={<OurCertifications />} />
                 <Route path="gallery" element={<EventGallery />} />

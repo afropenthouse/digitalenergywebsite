@@ -1,6 +1,21 @@
 import { motion } from "framer-motion"
 import { Shield, Award, Scale, FileCheck, Users, Building2, Target } from "lucide-react"
 
+const styles = {
+  perspective1000: {
+    perspective: '1000px'
+  },
+  transformStyle3d: {
+    transformStyle: 'preserve-3d'
+  },
+  backfaceHidden: {
+    backfaceVisibility: 'hidden'
+  },
+  rotateY180: {
+    transform: 'rotateY(180deg)'
+  }
+}
+
 const governanceValues = [
   {
     icon: Shield,
@@ -42,6 +57,42 @@ const boardMembers = [
     position: "ED, HR & Management Services",
     image: "/images/fred.png",
     bio: "Global Speaker, a Certified Management Consultant and HR professional with over 15 years experience. He is a doctoral student (Ph.D) in IRHRM, an MSc graduate in IHRM, and holds a PGD in Guidance & Counselling. He is Certified with CIPM, Nigeria, KPI Institute- Australia and a member of the Africa HR Confederation (AHRC)."
+  },
+  {
+    name: "Ibeako Amarachi",
+    position: "Group Head Information Tech",
+    image: "/images/amara.png",
+    bio: "A highly ambitious and self-driven IT professional with 15+ years experience in security management systems, business continuity, and network planning. A Certified Information Security Manager (CISM) with extensive experience in overseeing and safeguarding an organization's computer security infrastructure."
+  },
+  {
+    name: "Victor Amadi-Emina",
+    position: "Head, Trading & Shipping Operations",
+    image: "/images/victor.png",
+    bio: "He is a trader and shipping operations professional in the downstream oil and gas. An expert with over 20 years in the industry having worked in many downstream oil and gas companies in Nigeria, trading different grades of refined petroleum products and crude oils. He has also worked in Europe where he handled physical and paper trading of various crude grades to major refineries in the USA, China, India and Japan."
+  },
+  {
+    name: "Chidinma Obi",
+    position: "Head of Accounts",
+    image: "/images/obi.png",
+    bio: "Chidinma is a highly detailed and ethical Accountant with over 13 years of experience in internal audit, finance, bookkeeping, and analytics. She holds a degree in Accounting from Ahmadu Bello University, Zaria, and is a member of The Institute of Chartered Accountants of Nigeria (ICAN) and the Nigerian Institute of Management (NIM). She also has extensive experience in the Real Estate, Shipping, and Logistics sectors."
+  },
+  {
+    name: "Kiki N.C. Ejiaku",
+    position: "Business Development Manager",
+    image: "/images/kike.png",
+    bio: "She is a Seasoned Business Development Manager with 22 years of dedicated experience, committed to driving strategic growth and fostering long-term partnerships. Thrives on turning ideas into opportunities. She is a graduate of the University of Calabar and has obtained several other certifications and training in the same field."
+  },
+  {
+    name: "Anthony Chukwuemeka Uche",
+    position: "Head, Depot Operations",
+    image: "/images/Anthony.png",
+    bio: "Proven with 19 years experience in the Pharmaceutical and Oil & Gas industries. He specialized in fields of Sales & Marketing, Business Development, and Operations. He holds BSc (Hons) in Marine Biology from University of Lagos and MBA in (Business Administration) from Enugu State University of Technology, Enugu (ESUT)."
+  },
+  {
+    name: "Ezechi Ajibo",
+    position: "Company Secretary",
+    image: "/images/eze.png",
+    bio: "Seasoned lawyer with 15+ years of experience in international joint ventures, contract negotiations, debt recoveries, and real estate law. Proven track record of advising multinational companies, including Sanofi Aventis, Doehler Group, and Merck. Recently appointed as Legal Adviser and Company Secretary to Digital Energy Group of companies (2023)."
   }
 ]
 
@@ -78,7 +129,7 @@ const corporateStructure = [
   },
 ]
 
-const OurGovernance = () => {
+const Management = () => {
   return (
     <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
@@ -93,20 +144,20 @@ const OurGovernance = () => {
             <div className="absolute inset-0">
               <img
                 src="/images/pic_3.png"
-                alt="Our Governance"
+                alt="Our Management"
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
             </div>
             <div className="relative z-10 container mx-auto px-6 max-w-5xl">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">Our Governance</p>
+                <p className="text-sm font-medium">Our Management</p>
               </motion.div>
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -125,11 +176,11 @@ const OurGovernance = () => {
                 At Digital Energy, we maintain the highest standards of corporate governance, ensuring transparency, 
                 accountability, and ethical business practices.
               </motion.p>
-      </div>
+            </div>
           </motion.div>
 
           {/* Board of Directors Section */}
-      <div>
+          <div>
             <div className="text-center mb-12">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -137,7 +188,7 @@ const OurGovernance = () => {
                 viewport={{ once: true }}
                 className="text-3xl font-bold text-gray-900 mb-4"
               >
-                Board of Directors
+                Meet Our Team
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -149,34 +200,62 @@ const OurGovernance = () => {
                 Experienced leaders guiding our strategic vision
               </motion.p>
             </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {boardMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 20 }}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {boardMembers.map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group relative"
+                  style={styles.perspective1000}
                 >
                   <div className="aspect-[4/5] relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                <img
-                  src={member.image}
-                  alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                    {/* Flip container */}
+                    <div 
+                      className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
+                      style={styles.transformStyle3d}
+                    >
+                      {/* Front of card */}
+                      <div 
+                        className="absolute w-full h-full"
+                        style={styles.backfaceHidden}
+                      >
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                      </div>
+                      
+                      {/* Back of card (flipped) */}
+                      <div 
+                        className="absolute w-full h-full bg-gradient-to-br from-blue-900 to-orange-600 p-6 flex flex-col justify-center items-center text-white"
+                        style={{...styles.backfaceHidden, ...styles.rotateY180}}
+                      >
+                        <div className="text-center transform transition-transform duration-500 group-hover:scale-110">
+                          <h3 className="text-2xl font-bold mb-3">{member.name}</h3>
+                          <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
+                            {member.position}
+                          </div>
+                          <p className="text-sm text-white/90 line-clamp-4">{member.bio}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6 relative">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
                     <div className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
                       {member.position}
                     </div>
                     <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
                   </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
           {/* Governance Structure */}
           <div className="bg-white py-16 rounded-2xl">
@@ -188,7 +267,7 @@ const OurGovernance = () => {
                   viewport={{ once: true }}
                   className="text-3xl font-bold text-gray-900 mb-4"
                 >
-                  Governance Structure
+                  Management Structure
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -231,4 +310,4 @@ const OurGovernance = () => {
   )
 }
 
-export default OurGovernance
+export default Management 

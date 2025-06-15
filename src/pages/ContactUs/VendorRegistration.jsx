@@ -340,7 +340,7 @@ export default function VendorRegistration() {
                   </div>
                   <div className="flex items-center">
                     <span className="text-primary-500 font-medium">Phone:</span>
-                    <span className="ml-2 text-gray-600">+234 201 453 6157</span>
+                    <span className="ml-2 text-gray-600">+234 (0) 201 453 6157</span>
                   </div>
                 </div>
               </div>
