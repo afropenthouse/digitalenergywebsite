@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 import { Shield, Award, Scale, FileCheck, Users, Building2, Target } from "lucide-react"
 
-// Add styles at the top of the file
 const styles = {
   perspective1000: {
     perspective: '1000px'
