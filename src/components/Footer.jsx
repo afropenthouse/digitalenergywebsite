@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
@@ -33,38 +33,40 @@ export default function Footer() {
             
             {/* Social Media */}
             <div className="flex justify-center md:justify-start space-x-4 pt-2">
-              <motion.a 
+              {/* <motion.a 
                 href="#" 
                 className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
                 aria-label="Facebook"
                 whileHover={{ scale: 1.1 }}
               >
                 <Facebook className="h-5 w-5" />
-              </motion.a>
-              <motion.a 
+              </motion.a> */}
+              {/* <motion.a 
                 href="#" 
                 className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
                 aria-label="Twitter"
                 whileHover={{ scale: 1.1 }}
               >
                 <Twitter className="h-5 w-5" />
-              </motion.a>
+              </motion.a> */}
               <motion.a 
-                href="#" 
+                href="https://www.linkedin.com/company/digital-energy-and-interated-services-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
                 aria-label="LinkedIn"
                 whileHover={{ scale: 1.1 }}
               >
                 <Linkedin className="h-5 w-5" />
               </motion.a>
-              <motion.a 
+              {/* <motion.a 
                 href="#" 
                 className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
                 aria-label="Instagram"
                 whileHover={{ scale: 1.1 }}
               >
                 <Instagram className="h-5 w-5" />
-              </motion.a>
+              </motion.a> */}
             </div>
           </motion.div>
 
