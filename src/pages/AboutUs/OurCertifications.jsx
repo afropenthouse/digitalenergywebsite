@@ -10,7 +10,6 @@ const certifications = [
     icon: BadgeCheck,
     image: "/images/ISO_1.jpg",
     year: "2022",
-    validity: "Valid until October 16, 2025",
   },
   {
     name: "ISO 45001:2018",
@@ -19,8 +18,7 @@ const certifications = [
     icon: Shield,
     image: "/images/ISO_2.jpg",
     year: "2022",
-	issue: "Issued in 2022",
-    validity: "Valid until October 16, 2025",
+	  issue: "Issued in 2022",
   },
   {
     name: "COREN Biennial Practising Licence",
@@ -29,7 +27,6 @@ const certifications = [
     icon: Star,
     image: "/images/Coren.jpg",
     year: "2023",
-    validity: "Valid until December 31, 2025",
   },
 ]
 
@@ -142,7 +139,7 @@ const OurCertifications = () => {
                             <span>{cert.validity}</span>
                           </div>
                           <div className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">
-                            ISO Standard
+                            {cert.name === "COREN Biennial Practising Licence" ? "COREN" : "ISO Standard"}
                           </div>
                         </div>
                       </div>

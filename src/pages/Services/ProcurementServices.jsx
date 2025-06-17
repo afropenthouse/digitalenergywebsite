@@ -169,14 +169,14 @@ const ProcurementServices = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg mb-8 border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-lg mb-8 border border-gray-100"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Technology-Driven Procurement Oversight</h3>
-                <p className="text-gray-700 mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Technology-Driven Procurement Oversight</h3>
+                <p className="text-gray-700 mb-4">
                   To enhance control and transparency, DEISL utilizes integrated procurement management systems that capture and report on each phase of the procurement lifecycle. This ensures effective monitoring, auditing, and accountability throughout the supply chain.
                 </p>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Strengths:</h4>
-                <div className="grid md:grid-cols-2 gap-4">
+                <h4 className="text-xl font-semibold text-gray-900 mb-3">Key Strengths:</h4>
+                <div className="grid md:grid-cols-2 gap-2">
                   {strengths.map((strength, index) => (
                     <motion.div
                       key={index}
@@ -184,10 +184,10 @@ const ProcurementServices = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      className="flex items-center space-x-2 py-1 hover:bg-blue-50 transition-colors"
                     >
-                      <span className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></span>
-                      <span className="text-gray-700">{strength}</span>
+                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></span>
+                      <span className="text-gray-700 text-sm">{strength}</span>
                     </motion.div>
                   ))}
                 </div>

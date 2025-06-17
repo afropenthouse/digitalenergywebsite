@@ -15,7 +15,6 @@ import BecomePartner from "./pages/ContactUs/BecomePartner"
 import Services from "./pages/Services/Services"
 import EngineeringServices from "./pages/Services/EngineeringServices"
 import ProcurementServices from "./pages/Services/ProcurementServices"
-import ConstructionInstallation from "./pages/Services/ConstructionInstallation"
 import CommissioningStartup from "./pages/Services/CommissioningStartup"
 import OperationsMaintenance from "./pages/Services/OperationsMaintenance"
 import TechnicalManpower from "./pages/Services/TechnicalManpower"
@@ -60,7 +59,6 @@ function App() {
                 <Route index element={<Services />} />
                 <Route path="engineering" element={<EngineeringServices />} />
                 <Route path="procurement" element={<ProcurementServices />} />
-                <Route path="construction" element={<ConstructionInstallation />} />
                 <Route path="commissioning" element={<CommissioningStartup />} />
                 <Route path="operations" element={<OperationsMaintenance />} />
                 <Route path="manpower" element={<TechnicalManpower />} />

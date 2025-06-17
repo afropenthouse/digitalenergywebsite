@@ -10,92 +10,107 @@ const clientCategories = [
       {
         id: 1,
         name: "NNPC",
-        logo: "/images/nnpc.jpeg",
+        logo: "/images/Clients/nnpc.jpeg",
       },
       {
         id: 2,
         name: "Chevron",
-        logo: "/images/chevron.png",
+        logo: "/images/Clients/chevron.png",
       },
       {
         id: 3,
-        name: "Shell",
-        logo: "/images/shell.png",
+        name: "Total Energies",
+        logo: "/images/Clients/Total.jpeg",
       },
       {
         id: 4,
-        name: "Total Energy",
-        logo: "/images/Total.jpeg",
+        name: "SEEPCO",
+        logo: "/images/Clients/seepco.jpeg",
       },
       {
         id: 5,
-        name: "SEEPCO",
-        logo: "/images/seepco.jpeg",
+        name: "SEPLAT",
+        logo: "/images/Clients/seplat.jpg",
       },
       {
         id: 6,
-        name: "SEPLAT",
-        logo: "/images/seplat.jpg",
+        name: "Saipem",
+        logo: "/images/Clients/saipem.png",
       },
       {
         id: 7,
-        name: "Saipem",
-        logo: "/images/Saipem.png",
+        name: "Addax",
+        logo: "/images/Clients/Addax.jpg",
       },
       {
         id: 8,
-        name: "Addax",
-        logo: "/images/Addax.jpg",
+        name: "First Hydrocarbon",
+        logo: "/images/Clients/Hydrocarbon.jpeg",
       },
       {
         id: 9,
-        name: "First Hydrocarbon",
-        logo: "/images/Hydrocarbon.jpeg",
+        name: "NNPC 18",
+        logo: "/images/Clients/nnpc-18.png",
       },
       {
         id: 10,
-        name: "Exxon Mobil",
-        logo: "/images/ExxonMobil.png",
+        name: "EWT Energy Works",
+        logo: "/images/Clients/ewt.png",
       },
       {
         id: 11,
-        name: "Eroton",
-        logo: "/images/eroton.png",
+        name: "Neconde Energy",
+        logo: "/images/Clients/Neconde.png",
       },
       {
         id: 12,
-        name: "EWT Energy Works",
-        logo: "/images/ewt.png",
+        name: "Conoil",
+        logo: "/images/Clients/conoil.png",
       },
       {
         id: 13,
-        name: "Dangote",
-        logo: "/images/Dangote.png",
+        name: "Mid Western",
+        logo: "/images/Clients/Midwestern.png",
       },
       {
         id: 14,
-        name: "General Electric",
-        logo: "/images/General_Electric.png",
+        name: "SUPANOVA ENERGY SERVICES LTD",
+        logo: "/images/Clients/supanova.png",
       },
       {
         id: 15,
-        name: "Neconde Energy",
-        logo: "/images/Neconde.png",
+        name: "First Bank",
+        logo: "/images/Clients/firstbank.png",
       },
       {
         id: 16,
-        name: "Conoil",
-        logo: "/images/conoil.png",
+        name: "Stanbic IBTC Bank",
+        logo: "/images/Clients/Stanbic ibtc.png",
       },
       {
         id: 17,
-        name: "Mid Western",
-        logo: "/images/Midwestern.png",
+        name: "Fidelity Bank",
+        logo: "/images/Clients/fidelity.png",
       },
       {
         id: 18,
-        name: "SUPANOVA ENERGY SERVICES LTD",
-        logo: "/images/supanova.png",
+        name: "Agrited Nigeria Limited",
+        logo: "/images/Clients/Agrited.jpg",
+      },
+      {
+        id: 19,
+        name: "Christ Embassy",
+        logo: "/images/Clients/Christ Embassey.png",
+      },
+      {
+        id: 20,
+        name: "JohnsCreek",
+        logo: "/images/Clients/John Creek.png",
+      },
+      {
+        id: 21,
+        name: "Hydron Carbon Limited",
+        logo: "/images/Clients/Hydron-Energy.jpg",
       },
     ]
   }
@@ -114,7 +129,7 @@ const Clients = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/p77.jpg"
+                src="/images/cli.png"
                 alt="Our Clients"
                 className="w-full h-full object-cover opacity-40"
               />
