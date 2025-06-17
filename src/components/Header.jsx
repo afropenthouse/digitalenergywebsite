@@ -93,11 +93,9 @@ export default function Header() {
           </Link>
 
           {/* Certification Logos */}
-          <div className="hidden md:flex items-center space-x-4 ml-8">
-            <img src="/images/isocer.png" alt="ISO Certification" className="h-12 opacity-80 hover:opacity-100 transition-opacity" />
-          </div>
-          <div className="hidden md:flex items-center space-x-4 ml-8">
-            <img src="/images/iso4500.png" alt="ISO Certification" className="h-12 opacity-80 hover:opacity-100 transition-opacity" />
+          <div className="hidden md:flex items-center ml-8">
+            <img src="/images/Bms1.jpg" alt="ISO Certification" className="h-24 w-28 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="/images/Bms2.jpg" alt="ISO Certification" className="h-24 w-28 opacity-80 hover:opacity-100 transition-opacity -ml-4" />
           </div>
           
           {/* Desktop Navigation */}

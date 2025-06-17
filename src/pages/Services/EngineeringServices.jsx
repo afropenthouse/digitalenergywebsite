@@ -44,7 +44,7 @@ const EngineeringServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/p4.jpg"
+                src="/images/pic_2.jpg"
                 alt="Engineering Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -117,7 +117,7 @@ const EngineeringServices = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/p4.jpg"
+                    src="/images/pic_2.jpg"
                     alt="Engineering Services"
                     className="w-full h-[250px] object-cover"
                   />
