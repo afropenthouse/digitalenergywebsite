@@ -7,14 +7,15 @@ const milestones = [
 		year: "2015",
 		title: "Company Foundation",
 		description:
-			"Digital Energy & Integrated Services Limited was established as a leading indigenous multi-disciplinary Engineering & Project Management organization, offering world-class services in Oil & Gas, Energy, Marine and ICT sectors.",
+			"Digital Energy & Integrated Services Limited (DEISL) began with a modest yet focused approach to delivering value in the marketing, supply, and trading of petroleum products including PMS, AGO, DPK, ATK, and LPFO across Nigeria and the West African sub-region. Our commitment to reliable, safe, and cost-effective energy solutions positioned us as a dependable partner to industrial, commercial, and upstream clients",
 		icon: Building2,
 	},
 	{
 		id: 2,
+		year: "2018",
 		title: "Service Expansion",
 		description:
-			"Expanded our service portfolio to cover Oil & Gas (Upstream, Midstream & Downstream), Energy (Power), Marine and ICT sectors.",
+			"Over time, DEISL has evolved into a fully integrated service provider, delivering end-to-end solutions in the following core areas, Engineering, Procurement, Construction, Installation, Commissioning & Maintenance (EPCICM), Marine Logistics & Support Services, Project Management & Technical Support, ICT & Digital Infrastructure Services.This transformation reflects our deep understanding of the dynamic needs of the Nigerian oil & gas and industrial sectors, and our ability to adapt and scale to meet increasing project demands.",
 		icon: Target,
 	},
 	{

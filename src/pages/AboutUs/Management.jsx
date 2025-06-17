@@ -79,7 +79,7 @@ const boardMembers = [
   {
     name: "Kiki N.C. Ejiaku",
     position: "Business Development Manager",
-    image: "/images/kike.png",
+    image: "/images/kike2.jpg",
     bio: "She is a Seasoned Business Development Manager with 22 years of dedicated experience, committed to driving strategic growth and fostering long-term partnerships. Thrives on turning ideas into opportunities. She is a graduate of the University of Calabar and has obtained several other certifications and training in the same field."
   },
   {
@@ -97,10 +97,6 @@ const boardMembers = [
 ]
 
 const governanceStructure = [
-  {
-    title: "Board of Directors",
-    description: "Experienced professionals providing strategic guidance"
-  },
   {
     title: "Executive Management",
     description: "Skilled leaders driving operational excellence"
@@ -143,7 +139,7 @@ const Management = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/pic_3.png"
+                src="/images/cli.png"
                 alt="Our Management"
                 className="w-full h-full object-cover opacity-40"
               />

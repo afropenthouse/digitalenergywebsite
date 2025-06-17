@@ -274,7 +274,7 @@ export default function ContactForm() {
                     <div>
                       <h3 className="font-semibold">Contact Numbers</h3>
                       <p className="text-blue-200">
-                        +234 (0) 201 453 6157
+                        +234 (0)   201 453 6157
                         <br />
                         +234 (0) 903 990 3519
                         <br />
