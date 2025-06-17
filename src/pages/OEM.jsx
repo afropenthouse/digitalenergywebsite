@@ -5,7 +5,7 @@ import { CheckCircle, Award, Globe, Users } from "lucide-react"
 
 // Country flag components
 const FlagIcon = ({ country }) => {
-  const flagClasses = "mr-2 w-6 h-6 rounded-sm object-cover border"
+  const flagClasses = "w-6 h-6 rounded-sm object-cover"
   
   // Simplified flag representation using emojis
   const flags = {
@@ -19,8 +19,17 @@ const FlagIcon = ({ country }) => {
     "Tunisia & Houston, Texas USA": "🇹🇳🇺🇸"
   }
   
+  if (country === "Tunisia & Houston, Texas USA") {
+    return (
+      <div className="flex items-center space-x-1">
+        <span className={`${flagClasses} flex items-center justify-center text-xl`}>🇹🇳</span>
+        <span className={`${flagClasses} flex items-center justify-center text-xl`}>🇺🇸</span>
+      </div>
+    )
+  }
+  
   return (
-    <span className={`${flagClasses} flex items-center justify-center text-xl`}>
+    <span className={`${flagClasses} flex items-center justify-center text-xl mr-2`}>
       {flags[country] || "🌐"}
     </span>
   )
