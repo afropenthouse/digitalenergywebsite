@@ -11,71 +11,71 @@ const projectList = [
     title: "Maintenance & Inspection Services",
     client: "NPDC",
     description: "Provision of maintaining and inspection, supply of PUP joints and cross over services for NPDC Operated Land and Swamp Assets on a call Basis",
-    image: "/images/p2.jpg",
+    image: "/images/Projects/Maintenance.png",
     logo: "/images/Npdc.png"
   },
   {
     title: "Machining & Fabrication Services",
     client: "Seplat",
     description: "Provision of machining and fabrication services for eastern assets",
-    image: "/images/pic_2.png",
+    image: "/images/Projects/Machining Services.jpg",
     logo: "/images/seplat.jpg"
   },
   {
     title: "Tank Farm Upgrade & Maintenance",
     client: "Pivot Integrated Energy",
-    description: "Upgrade and maintenance of 40 million liters tank farm depot in Calabar EPZ",
-    image: "/images/pic_12.jpg",
+    description: "Upgrade and maintenance of 40 million liters Tank farm depot in Calabar EPZ",
+    image: "/images/Projects/Tank_Farm.jpg",
     logo: "/images/pivot.jpeg"
   },
   {
-    title: "Lagos Tank Farm Maintenance",
+    title: "Lagos (Apapa) Tank Farm Maintenance",
     client: "Pivot Integrated Energy",
-    description: "Upgrade and maintenance of 30 million litres tank farm depot in Apapa, Lagos",
-    image: "/images/pic_10.jpg",
+    description: "Upgrade and maintenance of 30 million Litres Tank Farm depot in Apapa, Lagos",
+    image: "/images/Projects/Tank_Farm2.jpg",
     logo: "/images/pivot.jpeg"
   },
   {
     title: "Modular Refinery Upgrade",
     client: "Fuel Direct LTD",
     description: "Upgrade and maintenance of Duport Midstream 2500B/D Modular Refinery in Ebokpa, Edo State",
-    image: "/images/pic_9.png",
+    image: "/images/Projects/modular-refinery.jpg",
     logo: "/images/fuel.png"
   },
   {
     title: "Booster Compressor Tie-in",
     client: "Seplat",
     description: "Booster compressor phase 2 tie-in project",
-    image: "/images/pic_11.png",
+    image: "/images/Projects/BoosterCompressor.jpg.jpg",
     logo: "/images/seplat.jpg"
   },
   {
     title: "Machining Services",
     client: "Litewell Completions Services",
     description: "Provision of Machining services and cutting of BTC PIN X PIN 20 casting pipes - 56 jts - 122 thread connections",
-    image: "/images/pic_6.png",
+    image: "/images/Projects/Machining Services.jpg",
     logo: "/images/lite.jpeg"
   },
   {
     title: "Gas Equipment Procurement",
     client: "MidWestern",
     description: "Procurement of Gas pressure regulator 25bar & cartridge Gas & Supply of FLO Choke Valve",
-    image: "/images/Capture.PNG",
+    image: "/images/Projects/Gas.PNG",
     logo: "/images/Midwestern.png"
   },
   {
     title: "Fabrication & Supply",
     client: "Weatherford",
     description: "Fabrication and Supply of X-overs & 1-Gauge lumpsum service on multi wells pads",
-    image: "/images/p9.jpg",
+    image: "/images/Projects/FabricationSupply.jpg",
     logo: "/images/weatherford.jpg"
   },
   {
-    title: "PUP Joints Procurement",
-    client: "Avaiam Offshore",
-    description: "Procurement of PUP Joints for offshore operations",
-    image: "/images/pic_3.png",
-    logo: "/images/aviam.jpeg"
+    title: "Cathodic Transformer Rectifier Maintenance",
+    client: "ENAGEED RESOURCES LTD",
+    description: "Maintenance and the repair of faulty cathodic transformer rectifier at ENAGEED RESOURCES LTD, April 2025",
+    image: "/images/Projects/CathodicTransformer.jpg",
+    logo: "/images/Npdc.png"
   }
 ]
 
