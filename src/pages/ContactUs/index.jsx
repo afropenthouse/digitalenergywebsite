@@ -6,7 +6,7 @@ const ContactUs = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex-grow pt-20">
+      <div className="flex-grow pt-24">
         <Outlet />
       </div>
       <Footer />

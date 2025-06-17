@@ -96,7 +96,7 @@ const TechnicalManpower = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/tec.png"
+                src="/images/p8.jpg"
                 alt="Technical Manpower Supply"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -166,7 +166,7 @@ const TechnicalManpower = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/tec.png"
+                    src="/images/p8.jpg"
                     alt="Technical Manpower Supply"
                     className="w-full h-[250px] object-cover"
                   />

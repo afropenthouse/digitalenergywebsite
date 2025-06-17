@@ -27,7 +27,7 @@ const services = [
       "Integrated approach that considers the entire project lifecycle",
       "Innovative solutions to complex engineering challenges",
     ],
-    image: "/src/assets/pic_2.jpg",
+    image: "/images/pic_2.jpg",
     color: "bg-primary-500",
   },
   {
@@ -49,7 +49,7 @@ const services = [
       "Efficient logistics and timely delivery",
       "Transparent procurement processes",
     ],
-    image: "/src/assets/pic_4.jpg",
+    image: "/images/procurement.jpg",
     color: "bg-secondary-500",
   },
   {
@@ -71,7 +71,7 @@ const services = [
       "Quality workmanship and attention to detail",
       "Efficient project management to minimize disruptions",
     ],
-    image: "/src/assets/pic_5.jpg",
+    image: "/images/pic_5.jpg",
     color: "bg-primary-500",
   },
   {
@@ -115,7 +115,7 @@ const services = [
       "Reduced operational costs",
       "Improved safety and environmental performance",
     ],
-    image: "/src/assets/pic_8.png",
+    image: "/images/pic_8.png",
     color: "bg-primary-500",
   },
   {
@@ -137,7 +137,7 @@ const services = [
       "Reduced recruitment and training costs",
       "Certified and experienced professionals",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/",
     color: "bg-secondary-500",
   },
   {
@@ -181,7 +181,7 @@ const services = [
       "Knowledge transfer and skill development",
       "Customized training solutions for specific needs",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/",
     color: "bg-secondary-500",
   },
   {
@@ -203,7 +203,7 @@ const services = [
       "Efficient logistics and delivery",
       "Compliance with regulatory requirements",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/",
     color: "bg-primary-500",
   },
 ]
