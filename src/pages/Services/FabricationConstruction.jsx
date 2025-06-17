@@ -94,7 +94,7 @@ const FabricationConstruction = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/p6.png"
+                src="/images/fabrication.png"
                 alt="Fabrication & Construction Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -164,7 +164,7 @@ const FabricationConstruction = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/p6.png"
+                    src="/images/fabrication.png"
                     alt="Fabrication & Construction"
                     className="w-full h-[250px] object-cover"
                   />
