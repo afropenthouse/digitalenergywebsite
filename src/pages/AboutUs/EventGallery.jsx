@@ -4,218 +4,203 @@ import { motion, AnimatePresence } from "framer-motion"
 const galleryImages = [
 	{
 		id: 1,
-		src: "/images/p88.png",
+		src: "/images/Gallery_pics/gallery_1.png",
 		alt: "Power Generation",
 	},
 	{
 		id: 2,
-		src: "/images/new1.jpg",
+		src: "/images/Gallery_pics/gallery_2.png",
 		alt: "Energy Systems",
 	},
 	{
 		id: 3,
-		src: "/images/pic_2.png",
+		src: "/images/Gallery_pics/gallery_3.jpg",
 		alt: "Solar Power Installation",
 	},
 	{
 		id: 4,
-		src: "/images/new4.jpg",
+		src: "/images/Gallery_pics/gallery_4.jpg",
 		alt: "Power Distribution",
 	},
 	{
 		id: 5,
-		src: "/images/pic_3.png",
+		src: "/images/Gallery_pics/gallery_5.png",
 		alt: "Customer Service",
 	},
 	{
 		id: 6,
-		src: "/images/new7.jpg",
+		src: "/images/Gallery_pics/gallery_6.jpg",
 		alt: "Energy Management",
 	},
 	{
 		id: 7,
-		src: "/images/pic_4.jpg",
+		src: "/images/Gallery_pics/gallery_7.jpg",
 		alt: "Smart Grid Technology",
 	},
 	{
 		id: 8,
-		src: "/images/new11.jpg",
+		src: "/images/Gallery_pics/gallery_8.jpg",
 		alt: "Power Systems",
 	},
 	{
 		id: 9,
-		src: "/images/pic_5.jpg",
+		src: "/images/Gallery_pics/gallery_9.jpg",
 		alt: "Energy Distribution",
 	},
 	{
 		id: 10,
-		src: "/images/new21.jpg",
+		src: "/images/Gallery_pics/gallery_10.jpg",
 		alt: "Smart Grid Operations",
 	},
 	{
 		id: 11,
-		src: "/images/pic_6.png",
+		src: "/images/Gallery_pics/gallery_11.jpg",
 		alt: "Power Plant",
 	},
 	{
 		id: 12,
-		src: "/images/new22.jpg",
+		src: "/images/Gallery_pics/gallery_12.png",
 		alt: "Energy Solutions",
 	},
 	{
 		id: 13,
-		src: "/images/pic_8.png",
+		src: "/images/Gallery_pics/gallery_13.png",
 		alt: "Energy Storage",
 	},
 	{
 		id: 14,
-		src: "/images/new23.jpg",
+		src: "/images/Gallery_pics/gallery_14.png",
 		alt: "Power Generation",
 	},
 	{
 		id: 15,
-		src: "/images/pic_9.png",
+		src: "/images/Gallery_pics/gallery_15.jpg",
 		alt: "Smart Metering",
 	},
 	{
 		id: 16,
-		src: "/images/new25.jpg",
+		src: "/images/Gallery_pics/gallery_16.png",
 		alt: "Energy Infrastructure",
 	},
 	{
 		id: 17,
-		src: "/images/pic_10.jpg",
+		src: "/images/Gallery_pics/gallery_17.jpg",
 		alt: "Grid Modernization",
 	},
 	{
 		id: 18,
-		src: "/images/new26.jpg",
+		src: "/images/Gallery_pics/gallery_18.jpg",
 		alt: "Control Systems",
 	},
 	{
 		id: 19,
-		src: "/images/pic_11.png",
+		src: "/images/Gallery_pics/gallery_19.jpg",
 		alt: "Smart Grid Operations",
 	},
 	{
 		id: 20,
-		src: "/images/new27.jpg",
+		src: "/images/Gallery_pics/gallery_20.jpg",
 		alt: "Power Distribution",
 	},
 	{
 		id: 21,
-		src: "/images/pic_12.jpg",
+		src: "/images/Gallery_pics/gallery_21.jpg",
 		alt: "Renewable Energy Plant",
 	},
 	{
 		id: 22,
-		src: "/images/new28.jpg",
+		src: "/images/Gallery_pics/gallery_22.jpg",
 		alt: "Modern Office Space",
 	},
 	{
 		id: 23,
-		src: "/images/pic_14.png",
+		src: "/images/Gallery_pics/gallery_23.jpg",
 		alt: "Energy Distribution Network",
 	},
 	{
 		id: 24,
-		src: "/images/new29.jpg",
+		src: "/images/Gallery_pics/gallery_24.jpg",
 		alt: "Modern Office Space",
 	},
 	{
 		id: 25,
-		src: "/images/new30.jpg",
+		src: "/images/Gallery_pics/gallery_25.jpg",
 		alt: "Power Systems",
 	},
 	{
 		id: 26,
-		src: "/images/p1.jpg",
+		src: "/images/Gallery_pics/gallery_26.jpg",
 		alt: "Industrial Facility",
 	},
 	{
 		id: 27,
-		src: "/images/new31.jpg",
+		src: "/images/Gallery_pics/gallery_27.jpg",
 		alt: "Modern Office Space",
 	},
 	{
 		id: 28,
-		src: "/images/p2.jpg",
+		src: "/images/Gallery_pics/gallery_28.jpg",
 		alt: "Energy Control Center",
 	},
 	{
 		id: 29,
-		src: "/images/new32.jpg",
+		src: "/images/Gallery_pics/gallery_29.jpg",
 		alt: "Power Distribution",
 	},
 	{
 		id: 30,
-		src: "/images/p3.png",
+		src: "/images/Gallery_pics/gallery_30.jpg",
 		alt: "Power Distribution",
 	},
 	{
 		id: 31,
-		src: "/images/new33.jpg",
+		src: "/images/Gallery_pics/gallery_31.png",
 		alt: "Energy Management",
 	},
 	{
 		id: 32,
-		src: "/images/p4.jpg",
+		src: "/images/Gallery_pics/gallery_32.jpg",
 		alt: "Energy Management",
 	},
 	{
 		id: 33,
-		src: "/images/new34.jpg",
+		src: "/images/Gallery_pics/gallery_33.jpg",
 		alt: "Power Systems",
 	},
 	{
 		id: 34,
-		src: "/images/p5.jpg",
+		src: "/images/Gallery_pics/gallery_34.jpg",
 		alt: "Power Systems",
 	},
 	{
 		id: 35,
-		src: "/images/new35.jpg",
+		src: "/images/Gallery_pics/gallery_35.jpg",
 		alt: "Power Systems",
 	},
 	{
 		id: 36,
-		src: "/images/new44.jpg",
+		src: "/images/Gallery_pics/gallery_36.jpg",
 		alt: "Energy Infrastructure",
 	},
 	{
 		id: 37,
-		src: "/images/p7.jpg",
+		src: "/images/Gallery_pics/gallery_37.jpg",
 		alt: "Energy Infrastructure",
 	},
 	{
 		id: 38,
-		src: "/images/p9.jpg",
+		src: "/images/Gallery_pics/gallery_38.jpg",
 		alt: "Energy Control Systems",
 	},
 	{
 		id: 39,
-		src: "/images/p10.jpg",
+		src: "/images/Gallery_pics/gallery_39.jpg",
 		alt: "Power Distribution Network",
 	},
 	{
 		id: 40,
-		src: "/images/p77.jpg",
+		src: "/images/Gallery_pics/gallery_40.jpg",
 		alt: "Energy Management Systems",
-	},
-	{
-		id: 41,
-		src: "/images/u3.jpg",
-		alt: "Energy Solutions",
-	},
-	{
-		id: 42,
-		src: "/images/pic_14.jpg",
-		alt: "Energy Network",
-	},
-	{
-		id: 43,
-		src: "/images/pic_2.jpg",
-		alt: "Renewable Energy",
 	},
 ]
 
@@ -234,7 +219,7 @@ const EventGallery = () => {
 					>
 						<div className="absolute inset-0">
 							<img
-								src="/images/pic_14.png"
+								src="/images/energy.png"
 								alt="Photo Gallery"
 								className="w-full h-full object-cover opacity-40"
 							/>

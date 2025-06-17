@@ -129,10 +129,10 @@ const EngineeringServices = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Engineering Tailored Solutions Include:</h3>
-                <div className="grid md:grid-cols-2 gap-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Engineering Tailored Solutions Include:</h3>
+                <div className="grid md:grid-cols-2 gap-1">
                   {solutions.map((solution, index) => (
                     <motion.div
                       key={index}
@@ -140,10 +140,10 @@ const EngineeringServices = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 }}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      className="flex items-start space-x-2 py-1 hover:bg-blue-50 transition-colors"
                     >
-                      <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="text-gray-700">{solution}</span>
+                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="text-gray-700 text-sm leading-tight">{solution}</span>
                     </motion.div>
                   ))}
                 </div>
