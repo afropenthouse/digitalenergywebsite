@@ -1,9 +1,46 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Fuel, Truck, Ship, Building2, Handshake, ShieldCheck, Clock, DollarSign, UserCheck } from 'lucide-react'
 import ServicesNav from './ServicesNav'
+import Loader from '../Loader/Loader'
 
 const TradingServices = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 2) { // Hero image and content image
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload images
+    const images = [
+      '/images/webp/marketing.webp',
+      '/images/webp/marketing.webp'
+    ]
+
+    images.forEach(src => {
+      const img = new Image()
+      img.src = src.replace(/\.[^/.]+$/, ".webp") // Convert to WebP
+      img.onload = handleImageLoad
+    })
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   const tradingServices = [
     {
       title: "Petroleum Products Trading",
@@ -78,7 +115,7 @@ const TradingServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/marketing.jpg"
+                src="/images/webp/marketing.webp"
                 alt="Petroleum Products Trading"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -148,7 +185,7 @@ const TradingServices = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/marketing.jpg"
+                    src="/images/webp/marketing.webp"
                     alt="Petroleum Products Trading"
                     className="w-full h-[250px] object-cover"
                   />

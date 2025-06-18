@@ -3,6 +3,8 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, Calendar, Users, Shield, DollarSign, FileText } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "./Loader/Loader"
 
 const projects = []
 
@@ -12,70 +14,70 @@ const projectList = [
     client: "NPDC",
     description: "Provision of maintaining and inspection, supply of PUP joints and cross over services for NPDC Operated Land and Swamp Assets on a call Basis",
     image: "/images/Projects/Maintenance.png",
-    logo: "/images/Npdc.png"
+    logo: "/images/webp/Npdc.webp"
   },
   {
     title: "Machining & Fabrication Services",
     client: "Seplat",
     description: "Provision of machining and fabrication services for eastern assets",
     image: "/images/Projects/Machining Services.jpg",
-    logo: "/images/seplat.jpg"
+    logo: "/images/webp/seplat.webp"
   },
   {
     title: "Tank Farm Upgrade & Maintenance",
     client: "Pivot Integrated Energy",
     description: "Upgrade and maintenance of 40 million liters Tank farm depot in Calabar EPZ",
     image: "/images/Projects/Tank_Farm.jpg",
-    logo: "/images/pivot.jpeg"
+    logo: "/images/webp/pivot.webp"
   },
   {
     title: "Lagos (Apapa) Tank Farm Maintenance",
     client: "Pivot Integrated Energy",
     description: "Upgrade and maintenance of 30 million Litres Tank Farm depot in Apapa, Lagos",
     image: "/images/Projects/Tank_Farm2.jpg",
-    logo: "/images/pivot.jpeg"
+    logo: "/images/webp/pivot.webp"
   },
   {
     title: "Modular Refinery Upgrade",
     client: "Fuel Direct LTD",
     description: "Upgrade and maintenance of Duport Midstream 2500B/D Modular Refinery in Ebokpa, Edo State",
     image: "/images/Projects/modular-refinery.jpg",
-    logo: "/images/fuel.png"
+    logo: "/images/webp/fuel.webp"
   },
   {
     title: "Booster Compressor Tie-in",
     client: "Seplat",
     description: "Booster compressor phase 2 tie-in project",
     image: "/images/Projects/BoosterCompressor.jpg.jpg",
-    logo: "/images/seplat.jpg"
+    logo: "/images/webp/seplat.webp"
   },
   {
     title: "Machining Services",
     client: "Litewell Completions Services",
     description: "Provision of Machining services and cutting of BTC PIN X PIN 20 casting pipes - 56 jts - 122 thread connections",
     image: "/images/Projects/Machining Services.jpg",
-    logo: "/images/lite.jpeg"
+    logo: "/images/webp/lite.webp"
   },
   {
     title: "Gas Equipment Procurement",
     client: "MidWestern",
     description: "Procurement of Gas pressure regulator 25bar & cartridge Gas & Supply of FLO Choke Valve",
     image: "/images/Projects/Gas.PNG",
-    logo: "/images/Midwestern.png"
+    logo: "/images/webp/Midwestern.webp"
   },
   {
     title: "Fabrication & Supply",
     client: "Weatherford",
     description: "Fabrication and Supply of X-overs & 1-Gauge lumpsum service on multi wells pads",
     image: "/images/Projects/FabricationSupply.jpg",
-    logo: "/images/weatherford.jpg"
+    logo: "/images/webp/weatherford.webp"
   },
   {
     title: "Cathodic Transformer Rectifier Maintenance",
     client: "ENAGEED RESOURCES LTD",
     description: "Maintenance and the repair of faulty cathodic transformer rectifier at ENAGEED RESOURCES LTD, April 2025",
     image: "/images/Projects/CathodicTransformer.jpg",
-    logo: "/images/Npdc.png"
+    logo: "/images/webp/Npdc.webp"
   }
 ]
 
@@ -89,12 +91,54 @@ const projectCategories = [
   { name: "Fabrication", count: 1 }
 ]
 
-export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = React.useState("All");
-  
+const Projects = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All")
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        // Count hero image + project images + project logos
+        if (newCount === 1 + (projectList.length * 2)) {
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/Capture.webp"
+    heroImg.onload = handleImageLoad
+
+    // Preload project images and logos
+    projectList.forEach(project => {
+      // Preload project image
+      const img = new Image()
+      img.src = project.image
+      img.onload = handleImageLoad
+
+      // Preload project logo
+      const logo = new Image()
+      logo.src = project.logo
+      logo.onload = handleImageLoad
+    })
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   const filteredProjects = selectedCategory === "All" 
     ? projectList 
-    : projectList.filter(project => project.category === selectedCategory);
+    : projectList.filter(project => project.category === selectedCategory)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
@@ -102,7 +146,7 @@ export default function Projects() {
 			<section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
 				<div className="absolute inset-0">
 					<img
-						src="/images/Capture.PNG"
+						src="/images/webp/Capture.webp"
 						alt="Projects"
 						className="w-full h-full object-cover opacity-40"
 					/>
@@ -182,3 +226,5 @@ export default function Projects() {
     </div>
   )
 }
+
+export default Projects

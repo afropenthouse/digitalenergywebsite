@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import { CheckCircle, ArrowRight } from "lucide-react"
 import { Wrench, ShoppingCart, Building, CheckIcon, Settings, Users, Monitor, GraduationCap, Fuel } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "../Loader/Loader"
 
 const services = [
   {
@@ -208,9 +210,37 @@ const services = [
   },
 ]
 
-export default function ServiceDetail() {
+const ServiceDetail = () => {
   const { serviceId } = useParams()
   const service = services.find((s) => s.id === serviceId) || services[0]
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 1) { // Only service image
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload service image
+    const serviceImg = new Image()
+    serviceImg.src = service.image.replace(/\.[^/.]+$/, ".webp") // Convert to WebP
+    serviceImg.onload = handleImageLoad
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [service])
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
@@ -422,3 +452,5 @@ export default function ServiceDetail() {
     </div>
   )
 }
+
+export default ServiceDetail

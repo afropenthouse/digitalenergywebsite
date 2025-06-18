@@ -2,6 +2,9 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { MapPin, Clock, Users, GraduationCap, Heart, Award, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "./Loader/Loader"
+import { Link } from "react-router-dom"
 
 const jobOpenings = []
 
@@ -38,14 +41,43 @@ const benefits = [
   },
 ]
 
-export default function Career() {
+const Career = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 1) { // Only hero image
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/pic_2.webp"
+    heroImg.onload = handleImageLoad
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/pic_2.png"
+            src="/images/webp/pic_2.webp"
             alt="Career"
             className="w-full h-full object-cover"
           />
@@ -235,7 +267,11 @@ export default function Career() {
             </p>
             
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-              <ResumeSubmissionForm />
+              <Button asChild className="w-full bg-white text-indigo-600 hover:bg-indigo-50 py-6 text-lg font-medium">
+                <Link to="/contact">
+                  Submit your Resume
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -243,3 +279,5 @@ export default function Career() {
     </div>
   )
 }
+
+export default Career

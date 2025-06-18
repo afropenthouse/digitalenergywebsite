@@ -44,10 +44,9 @@ const BecomePartner = () => {
 			})
 		}
 
-		// Preload images
 		const images = [
-			"/images/webp/p88.webp", // Hero image
-			"/images/webp/p88.webp"  // Partnership image
+			"/images/webp/p88.webp", 
+			"/images/webp/p88.webp" 
 		]
 
 		images.forEach(src => {

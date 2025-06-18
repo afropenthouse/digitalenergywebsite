@@ -4,6 +4,8 @@ import { Wrench, ShoppingCart, Building, CheckCircle, Settings, Users, HardHat }
 import { Button } from "@/components/ui/button"
 import StatsSection from "@/components/StatsSection"
 import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import Loader from "./Loader/Loader"
 
 const services = [
   {
@@ -12,7 +14,7 @@ const services = [
     title: "Engineering Services",
     description: "Front-end engineering design (FEED), detailed engineering, and constructability studies across civil, mechanical, electrical, and process disciplines.",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/pic_2.jpg",
+    image: "/images/webp/pic_2.webp",
     path: "/services/engineering"
   },
   {
@@ -21,7 +23,7 @@ const services = [
     title: "Procurement Services",
     description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/procurement.jpg",
+    image: "/images/webp/procurement.webp",
     path: "/services/procurement"
   },
   {
@@ -30,7 +32,7 @@ const services = [
     title: "Fabrication & Construction",
     description: "Civil works, Steel structural Fabrication and erection, mechanical installation, piping, E&I, and facility upgrades.",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/fabrication.png",
+    image: "/images/webp/fabrication.webp",
     path: "/services/fabrication"
   },
   {
@@ -39,7 +41,7 @@ const services = [
     title: "Commissioning & Start-up",
     description: "Pre-commissioning, commissioning, and start-up support services to ensure systems operate as designed.",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/commisioning.png",
+    image: "/images/webp/commisioning.webp",
     path: "/services/commissioning"
   },
   {
@@ -48,7 +50,7 @@ const services = [
     title: "Operations & Maintenance",
     description: "End-to-end O&M services ensuring optimal asset performance, reduced downtime, and extended infrastructure life cycle.",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/operation.jpg",
+    image: "/images/webp/operation.webp",
     path: "/services/operations"
   },
   {
@@ -57,12 +59,53 @@ const services = [
     title: "Technical Manpower Supply",
     description: "Certified Personnel | Project Staffing | IRATA Technicians | Specialized Roles",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/p8.jpg",
+    image: "/images/webp/p8.webp",
     path: "/services/manpower"
   },
 ]
 
-export default function Home() {
+const Home = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === services.length + 3) {
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/pic_2.webp"
+    heroImg.onload = handleImageLoad
+
+    // Preload about image
+    const aboutImg = new Image()
+    aboutImg.src = "/images/webp/pic_14.webp"
+    aboutImg.onload = handleImageLoad
+
+    // Preload service images
+    services.forEach(service => {
+      const img = new Image()
+      img.src = service.image
+      img.onload = handleImageLoad
+    })
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <motion.div 
       initial={{ opacity: 0 }} 
@@ -72,7 +115,7 @@ export default function Home() {
     >
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 bg-[url('/images/pic_2.jpg')] bg-cover bg-center opacity-50" />
+        <div className="absolute inset-0 bg-[url('/images/webp/pic_2.webp')] bg-cover bg-center opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/60 to-blue-900/70" />
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-20">
           <div className="max-w-4xl mx-auto lg:text-left flex flex-col items-center lg:items-start">
@@ -175,7 +218,7 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/pic_14.jpg"
+                  src="/images/webp/pic_14.webp"
                   alt="About Digital Energy"
                   className="w-full h-auto object-cover"
                 />
@@ -260,7 +303,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/images/pic_2.png')] bg-cover bg-center opacity-5" />
+          <div className="absolute inset-0 bg-[url('/images/webp/pic_2.webp')] bg-cover bg-center opacity-5" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -302,3 +345,5 @@ export default function Home() {
     </motion.div>
   )
 }
+
+export default Home
