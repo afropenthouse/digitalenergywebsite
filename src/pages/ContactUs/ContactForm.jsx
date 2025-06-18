@@ -18,7 +18,7 @@ const offices = [
     id: "portharcourt",
     name: "Port Harcourt Terminal Office",
     address: "Digital Energy Close, Off Igboeche road, by Eleme Junction, Port Harcourt, Nigeria",
-    email: "portharcourt@digitalenergyng.com",
+    email: "info@digitalenergyng.com",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.962371287539!2d7.007092715264468!3d4.815081096509545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d26a7b1e1f4d%3A0x4d9e0f1c3d3d3d3d!2sEleme%20Junction%2C%20Port%20Harcourt!5e0!3m2!1sen!2sng!4v1648226912495!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/ZmNvaNozUm2CV3iD7"
   },
@@ -27,7 +27,7 @@ const offices = [
     name: "Chevron Office",
     address: "House 8, Dr. Chimezie Street, Chevy View Estate, along Chevron drive, off Lekki-Epe expressway, Lagos",
     phone: "+234 (0) 708 607 8838, +234 (0) 707 752 5861, +234 (0) 810 125 9849",
-    email: "chevron@digitalenergyng.com",
+    email: "info@digitalenergyng.com",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5857968337845!2d3.523592415231038!3d6.441822595339119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4c9ae5c0e1d%3A0xceb1b726f6a4e2e!2sLekki-Epe%20Expressway%2C%20Lagos!5e0!3m2!1sen!2sng!4v1648226741251!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/fnkN9uYG9aiFyaKG8"
   }
@@ -160,7 +160,11 @@ export default function ContactForm() {
                                 {office.phone && (
                                 <div className="flex items-center">
                                   <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
-                                  <p className="text-gray-600">{office.phone}</p>
+                                  <div className="flex flex-col">
+                                    <span>+234 (0) 201 453 6157</span>
+                                    <span>+234 (0) 903 990 3519</span>
+                                    <span>+234 (0) 810 125 9849</span>
+                                  </div>
                                 </div>
                                 )}
                                 <div className="flex items-center">
@@ -253,7 +257,11 @@ export default function ContactForm() {
                           {activeOffice.phone && (
                           <p className="text-gray-700 mb-2 flex items-center">
                             <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
-                            {activeOffice.phone}
+                            <div className="flex flex-col">
+                              <span>+234 (0) 201 453 6157</span>
+                              <span>+234 (0) 903 990 3519</span>
+                              <span>+234 (0) 810 125 9849</span>
+                            </div>
                           </p>
                           )}
                           <p className="text-gray-700 flex items-center">

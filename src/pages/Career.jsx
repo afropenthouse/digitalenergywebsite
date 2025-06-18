@@ -267,7 +267,7 @@ const Career = () => {
             </p>
             
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-              <Button asChild className="w-full bg-white text-indigo-600 hover:bg-indigo-50 py-6 text-lg font-medium">
+              <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white py-6 text-lg font-medium">
                 <Link to="/contact">
                   Submit your Resume
                 </Link>
