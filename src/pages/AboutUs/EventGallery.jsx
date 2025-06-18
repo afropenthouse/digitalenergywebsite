@@ -1,312 +1,211 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const galleryImages = [
 	{
 		id: 1,
 		src: "/images/Gallery_pics_webp/gallery_1.webp",
-		alt: "Power Generation",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 2,
 		src: "/images/Gallery_pics_webp/gallery_2.webp",
-		alt: "Energy Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 3,
 		src: "/images/Gallery_pics_webp/gallery_3.webp",
-		alt: "Solar Power Installation",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 4,
 		src: "/images/Gallery_pics_webp/gallery_4.webp",
-		alt: "Power Distribution",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 5,
 		src: "/images/Gallery_pics_webp/gallery_5.webp",
-		alt: "Customer Service",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 6,
 		src: "/images/Gallery_pics_webp/gallery_6.webp",
-		alt: "Energy Management",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 7,
 		src: "/images/Gallery_pics_webp/gallery_7.webp",
-		alt: "Smart Grid Technology",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 8,
 		src: "/images/Gallery_pics_webp/gallery_8.webp",
-		alt: "Power Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 9,
 		src: "/images/Gallery_pics_webp/gallery_9.webp",
-		alt: "Energy Distribution",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 10,
 		src: "/images/Gallery_pics_webp/gallery_10.webp",
-		alt: "Smart Grid Operations",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 11,
 		src: "/images/Gallery_pics_webp/gallery_11.webp",
-		alt: "Power Plant",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 12,
 		src: "/images/Gallery_pics_webp/gallery_12.webp",
-		alt: "Energy Solutions",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 13,
 		src: "/images/Gallery_pics_webp/gallery_13.webp",
-		alt: "Energy Storage",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 14,
 		src: "/images/Gallery_pics_webp/gallery_14.webp",
-		alt: "Power Generation",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 15,
 		src: "/images/Gallery_pics_webp/gallery_15.webp",
-		alt: "Smart Metering",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 16,
 		src: "/images/Gallery_pics_webp/gallery_16.webp",
-		alt: "Energy Infrastructure",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 17,
 		src: "/images/Gallery_pics_webp/gallery_17.webp",
-		alt: "Grid Modernization",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 18,
 		src: "/images/Gallery_pics_webp/gallery_18.webp",
-		alt: "Control Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 19,
 		src: "/images/Gallery_pics_webp/gallery_19.webp",
-		alt: "Smart Grid Operations",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 20,
 		src: "/images/Gallery_pics_webp/gallery_20.webp",
-		alt: "Power Distribution",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 21,
 		src: "/images/Gallery_pics_webp/gallery_21.webp",
-		alt: "Renewable Energy Plant",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 22,
 		src: "/images/Gallery_pics_webp/gallery_22.webp",
-		alt: "Modern Office Space",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 23,
 		src: "/images/Gallery_pics_webp/gallery_23.webp",
-		alt: "Energy Distribution Network",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 24,
 		src: "/images/Gallery_pics_webp/gallery_24.webp",
-		alt: "Modern Office Space",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 25,
 		src: "/images/Gallery_pics_webp/gallery_25.webp",
-		alt: "Power Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 26,
 		src: "/images/Gallery_pics_webp/gallery_26.webp",
-		alt: "Industrial Facility",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 27,
 		src: "/images/Gallery_pics_webp/gallery_27.webp",
-		alt: "Modern Office Space",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 28,
 		src: "/images/Gallery_pics_webp/gallery_28.webp",
-		alt: "Energy Control Center",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 29,
 		src: "/images/Gallery_pics_webp/gallery_29.webp",
-		alt: "Power Distribution",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 30,
 		src: "/images/Gallery_pics_webp/gallery_30.webp",
-		alt: "Power Distribution",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 31,
 		src: "/images/Gallery_pics_webp/gallery_31.webp",
-		alt: "Energy Management",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 32,
 		src: "/images/Gallery_pics_webp/gallery_32.webp",
-		alt: "Energy Management",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 33,
 		src: "/images/Gallery_pics_webp/gallery_33.webp",
-		alt: "Power Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 34,
 		src: "/images/Gallery_pics_webp/gallery_34.webp",
-		alt: "Power Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 35,
 		src: "/images/Gallery_pics_webp/gallery_35.webp",
-		alt: "Power Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 36,
 		src: "/images/Gallery_pics_webp/gallery_36.webp",
-		alt: "Energy Infrastructure",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 37,
 		src: "/images/Gallery_pics_webp/gallery_37.webp",
-		alt: "Energy Infrastructure",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 38,
 		src: "/images/Gallery_pics_webp/gallery_38.webp",
-		alt: "Energy Control Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 39,
 		src: "/images/Gallery_pics_webp/gallery_39.webp",
-		alt: "Power Distribution Network",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 	{
 		id: 40,
 		src: "/images/Gallery_pics_webp/gallery_40.webp",
-		alt: "Energy Management Systems",
-		width: 800,
-		height: 600,
+		alt: "Digital Energy Gallery",
 	},
 ]
 
 const EventGallery = () => {
 	const [selectedImage, setSelectedImage] = useState(null)
-	const [isLoading, setIsLoading] = useState(true)
-	const [loadedImages, setLoadedImages] = useState(0)
-
-	useEffect(() => {
-		// Preload images
-		galleryImages.forEach((image) => {
-			const img = new Image()
-			img.src = image.src
-			img.onload = () => {
-				setLoadedImages((prev) => prev + 1)
-			}
-		})
-	}, [])
-
-	useEffect(() => {
-		if (loadedImages === galleryImages.length) {
-			setIsLoading(false)
-		}
-	}, [loadedImages])
 
 	return (
 		<div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
@@ -319,13 +218,10 @@ const EventGallery = () => {
 						className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 md:py-24 rounded-2xl overflow-hidden"
 					>
 						<div className="absolute inset-0">
-							<LazyLoadImage
-								src="/images/energy.png"
+							<img
+								src="/images/webp/energy.webp"
 								alt="Photo Gallery"
 								className="w-full h-full object-cover opacity-40"
-								effect="blur"
-								width="100%"
-								height="100%"
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
 							<div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
@@ -361,77 +257,63 @@ const EventGallery = () => {
 					</motion.div>
 
 					{/* Gallery Grid */}
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-						{galleryImages.map((image) => (
+					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+						{galleryImages.map((image, index) => (
 							<motion.div
 								key={image.id}
-								initial={{ opacity: 0, scale: 0.9 }}
-								animate={{ opacity: 1, scale: 1 }}
-								transition={{ duration: 0.3 }}
-								className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg"
-								onClick={() => setSelectedImage(image)}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: index * 0.1 }}
+								className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
 							>
-								<LazyLoadImage
+								<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+								<img
 									src={image.src}
 									alt={image.alt}
-									effect="blur"
-									className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-									width={image.width}
-									height={image.height}
-									placeholderSrc={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E`}
+									className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+									onClick={() => setSelectedImage(image)}
 								/>
-								<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
-									<p className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
-										{image.alt}
-									</p>
+								<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+									
 								</div>
 							</motion.div>
 						))}
 					</div>
 
-					{/* Image Modal */}
+					{/* Enhanced Lightbox */}
 					<AnimatePresence>
 						{selectedImage && (
 							<motion.div
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
-								className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
-								onClick={() => setSelectedImage(null)}
+								className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
 							>
 								<motion.div
-									initial={{ scale: 0.9 }}
-									animate={{ scale: 1 }}
-									exit={{ scale: 0.9 }}
-									className="relative max-w-4xl w-full"
+									initial={{ scale: 0.9, opacity: 0 }}
+									animate={{ scale: 1, opacity: 1 }}
+									exit={{ scale: 0.9, opacity: 0 }}
+									className="relative max-w-[90vw] max-h-[90vh] w-auto h-auto"
 									onClick={(e) => e.stopPropagation()}
 								>
-									<LazyLoadImage
+									{/* Close button */}
+									<button
+										className="absolute -top-12 right-0 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white z-50"
+										>
+										<X className="w-8 h-8" />
+									</button>
+
+									<img
 										src={selectedImage.src}
 										alt={selectedImage.alt}
-										effect="blur"
-										className="w-full h-auto rounded-lg shadow-2xl"
-										width={selectedImage.width}
-										height={selectedImage.height}
+										className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
 									/>
-									<button
-										className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-opacity"
-										onClick={() => setSelectedImage(null)}
-									>
-										<svg
-											className="w-6 h-6"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M6 18L18 6M6 6l12 12"
-											/>
-										</svg>
-									</button>
+									<div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm p-4 rounded-lg">
+										<h3 className="text-white font-medium">
+											{selectedImage.alt}
+										</h3>
+									</div>
 								</motion.div>
 							</motion.div>
 						)}
