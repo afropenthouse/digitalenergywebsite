@@ -2,8 +2,6 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { MapPin, Clock, Users, GraduationCap, Heart, Award, ChevronRight } from "lucide-react"
-import { Link } from "react-router-dom"
-import ResumeSubmissionForm from "../components/ResumeSubmissionForm"
 
 const jobOpenings = []
 
