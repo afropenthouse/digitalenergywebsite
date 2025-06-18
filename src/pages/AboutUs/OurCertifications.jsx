@@ -43,7 +43,7 @@ const OurCertifications = () => {
 			>
 			<div className="absolute inset-0">
 				<img
-					src="/images/p88.png"
+					src="/images/webp/p88.webp"
 					alt="Certifications"
 					className="w-full h-full object-cover opacity-40"
 				/>
