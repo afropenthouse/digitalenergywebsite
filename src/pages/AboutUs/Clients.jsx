@@ -239,11 +239,11 @@ const Clients = () => {
                         <img
                           src={client.logo}
                           alt={client.name}
-                          className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-full object-contain p-4 sm:p-6 md:p-8 transition-transform duration-500 group-hover:scale-110"
                         />
                       </div>
-                      <div className="p-4 text-center border-t border-gray-100">
-                        <h4 className="text-sm font-medium text-gray-900">{client.name}</h4>
+                      <div className="p-3 sm:p-4 text-center border-t border-gray-100">
+                        <h4 className="text-sm sm:text-base font-medium text-gray-900">{client.name}</h4>
                       </div>
                     </motion.div>
                   ))}
