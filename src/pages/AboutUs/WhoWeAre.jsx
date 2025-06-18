@@ -72,7 +72,7 @@ const WhoWeAre = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/pic_2.png"
+                src="/images/webp/pic_2.webp"
                 alt="About Us"
                 className="w-full h-full object-cover opacity-40"
               />
