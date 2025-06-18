@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Mail, Phone, MapPin, Clock, ChevronRight, ArrowRight } from "lucide-react"
+import Loader from "../Loader/Loader"
 
 const offices = [
   {
@@ -40,6 +41,34 @@ const officeHours = [
 
 export default function ContactForm() {
   const [activeOffice, setActiveOffice] = useState(offices[0])
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 1) { // Only one image (hero image)
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/p88.webp" // Updated to WebP format
+    heroImg.onload = handleImageLoad
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">

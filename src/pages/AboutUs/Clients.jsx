@@ -2,6 +2,8 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Building2, Users, Globe, Award, ChevronRight, Handshake } from "lucide-react"
 import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import Loader from "../Loader/Loader"
 
 const clientCategories = [
   {
@@ -117,6 +119,43 @@ const clientCategories = [
 ]
 
 const Clients = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const totalImages = clientCategories[0].clients.length + 1 // +1 for the hero image
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === totalImages) {
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload all client logos
+    clientCategories[0].clients.forEach(client => {
+      const img = new Image()
+      img.src = client.logo
+      img.onload = handleImageLoad
+    })
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/cli.webp"
+    heroImg.onload = handleImageLoad
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="pt-20 bg-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
