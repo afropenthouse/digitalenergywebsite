@@ -3,6 +3,7 @@ import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { MapPin, Clock, Users, GraduationCap, Heart, Award, ChevronRight } from "lucide-react"
 import { Link } from "react-router-dom"
+import ResumeSubmissionForm from "../components/ResumeSubmissionForm"
 
 const jobOpenings = []
 
@@ -235,13 +236,8 @@ export default function Career() {
               Even if you don't see your perfect role today, join our talent community for future opportunities at Digital Energy.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-base font-medium flex items-center">
-                  Submit Your Resume
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+              <ResumeSubmissionForm />
             </div>
           </motion.div>
         </div>
