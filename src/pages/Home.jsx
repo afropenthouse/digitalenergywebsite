@@ -72,7 +72,7 @@ const Home = () => {
     const handleImageLoad = () => {
       setLoadedImages(prev => {
         const newCount = prev + 1
-        if (newCount === services.length + 3) {
+        if (newCount === 2) {
           setIsLoading(false)
         }
         return newCount
@@ -89,11 +89,10 @@ const Home = () => {
     aboutImg.src = "/images/webp/pic_14.webp"
     aboutImg.onload = handleImageLoad
 
-    // Preload service images
+    // Load service images in the background
     services.forEach(service => {
       const img = new Image()
       img.src = service.image
-      img.onload = handleImageLoad
     })
 
     return () => {
