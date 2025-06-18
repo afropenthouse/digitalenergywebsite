@@ -54,7 +54,7 @@ const OurHistory = () => {
 					>
 						<div className="absolute inset-0">
 							<img
-								src="/images/p7.jpg"
+								src="/images/webp/p7.webp"
 								alt="Our History"
 								className="w-full h-full object-cover opacity-40"
 							/>
