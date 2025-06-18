@@ -1,5 +1,7 @@
 import { motion } from "framer-motion"
 import { Shield, Award, Scale, FileCheck, Users, Building2, Target } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "../Loader/Loader"
 
 const styles = {
   perspective1000: {
@@ -126,6 +128,43 @@ const corporateStructure = [
 ]
 
 const Management = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const totalImages = boardMembers.length + 1 // +1 for the hero image
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === totalImages) {
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload all board member images
+    boardMembers.forEach(member => {
+      const img = new Image()
+      img.src = member.image
+      img.onload = handleImageLoad
+    })
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/cli.webp"
+    heroImg.onload = handleImageLoad
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">

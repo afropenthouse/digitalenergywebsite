@@ -1,5 +1,7 @@
 import { motion } from "framer-motion"
 import { Users, Award, Clock, Building2, Target, Lightbulb, Heart, Shield, Leaf, Handshake, Trophy, Star, Zap, UserCheck } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "../Loader/Loader"
 
 const stats = [
   { id: 1, number: 15, suffix: '+', label: 'Years Experience' },
@@ -60,6 +62,41 @@ const values = [
 ]
 
 const WhoWeAre = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const totalImages = 2 // hero image + info image
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === totalImages) {
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/pic_2.webp"
+    heroImg.onload = handleImageLoad
+
+    // Preload info image
+    const infoImg = new Image()
+    infoImg.src = "/images/info.png"
+    infoImg.onload = handleImageLoad
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion"
 import { Clock, Award, Users, Building2, Target, Lightbulb } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "../Loader/Loader"
 
 const milestones = [
 	{
@@ -42,6 +44,35 @@ const milestones = [
 ]
 
 const OurHistory = () => {
+	const [isLoading, setIsLoading] = useState(true)
+	const [loadedImages, setLoadedImages] = useState(0)
+
+	useEffect(() => {
+		const handleImageLoad = () => {
+			setLoadedImages(prev => {
+				const newCount = prev + 1
+				if (newCount === 1) { // Only one image (hero image)
+					setIsLoading(false)
+				}
+				return newCount
+			})
+		}
+
+		// Preload hero image
+		const heroImg = new Image()
+		heroImg.src = "/images/webp/p7.webp"
+		heroImg.onload = handleImageLoad
+
+		return () => {
+			setIsLoading(true)
+			setLoadedImages(0)
+		}
+	}, [])
+
+	if (isLoading) {
+		return <Loader />
+	}
+
 	return (
 		<div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
 			<div className="container mx-auto px-4 md:px-6 py-8">
