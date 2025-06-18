@@ -43,55 +43,55 @@ const boardMembers = [
   {
     name: "Simon Chukwunweluwa Ugwuoke",
     position: "MD & CEO",
-    image: "/images/simon.png",
+    image: "/images/webp/simon.webp",
     bio: "Simon is a serial entrepreneur and a leader per excellence with experience spanning decades. He is a graduate of the University of Nigeria Nsukka and has obtained several other certifications and trainings both locally and internationally. Simon directs the day to day affairs of the Digital Energy business"
   },
   {
     name: "Engr. Olutayo Ajayi",
     position: "ED, Technical Services",
-    image: "/images/tayo.png",
+    image: "/images/webp/tayo.webp",
     bio: "He is a seasoned mechanical engineer with a B.Sc. degree in Mechanical Engineering and over 28 years of global experience in managing complex projects in the power, oil, and gas sectors. A COREN registered Engineer and member of Nigerian Society of Engineers (MNSE), he boasts a proven track record of delivering multi-million-dollar projects."
   },
   {
     name: "Mr. Fredrick Okeagu",
     position: "ED, HR & Management Services",
-    image: "/images/fred.png",
+    image: "/images/webp/fred.webp",
     bio: "Global Speaker, a Certified Management Consultant and HR professional with over 15 years experience. He is a doctoral student (Ph.D) in IRHRM, an MSc graduate in IHRM, and holds a PGD in Guidance & Counselling. He is Certified with CIPM, Nigeria, KPI Institute- Australia and a member of the Africa HR Confederation (AHRC)."
   },
   {
     name: "Ibeako Amarachi",
     position: "Group Head Information Tech",
-    image: "/images/amara.png",
+    image: "/images/webp/amara.webp",
     bio: "A highly ambitious and self-driven IT professional with 15+ years experience in security management systems, business continuity, and network planning. A Certified Information Security Manager (CISM) with extensive experience in overseeing and safeguarding an organization's computer security infrastructure."
   },
   {
     name: "Victor Amadi-Emina",
     position: "Head, Trading & Shipping Operations",
-    image: "/images/victor.png",
+    image: "/images/webp/victor.webp",
     bio: "He is a trader and shipping operations professional in the downstream oil and gas. An expert with over 20 years in the industry having worked in many downstream oil and gas companies in Nigeria, trading different grades of refined petroleum products and crude oils. He has also worked in Europe where he handled physical and paper trading of various crude grades to major refineries in the USA, China, India and Japan."
   },
   {
     name: "Chidinma Obi",
     position: "Head of Accounts",
-    image: "/images/obi.png",
+    image: "/images/webp/obi.webp",
     bio: "Chidinma is a highly detailed and ethical Accountant with over 13 years of experience in internal audit, finance, bookkeeping, and analytics. She holds a degree in Accounting from Ahmadu Bello University, Zaria, and is a member of The Institute of Chartered Accountants of Nigeria (ICAN) and the Nigerian Institute of Management (NIM). She also has extensive experience in the Real Estate, Shipping, and Logistics sectors."
   },
   {
     name: "Kiki N.C. Ejiaku",
     position: "Business Development Manager",
-    image: "/images/kike2.jpg",
+    image: "/images/webp/kike2.webp",
     bio: "She is a Seasoned Business Development Manager with 22 years of dedicated experience, committed to driving strategic growth and fostering long-term partnerships. Thrives on turning ideas into opportunities. She is a graduate of the University of Calabar and has obtained several other certifications and training in the same field."
   },
   {
     name: "Anthony Chukwuemeka Uche",
     position: "Head, Depot Operations",
-    image: "/images/Anthony.png",
+    image: "/images/webp/Anthony.webp",
     bio: "Proven with 19 years experience in the Pharmaceutical and Oil & Gas industries. He specialized in fields of Sales & Marketing, Business Development, and Operations. He holds BSc (Hons) in Marine Biology from University of Lagos and MBA in (Business Administration) from Enugu State University of Technology, Enugu (ESUT)."
   },
   {
     name: "Ezechi Ajibo",
     position: "Company Secretary",
-    image: "/images/eze.png",
+    image: "/images/webp/eze.webp",
     bio: "Seasoned lawyer with 15+ years of experience in international joint ventures, contract negotiations, debt recoveries, and real estate law. Proven track record of advising multinational companies, including Sanofi Aventis, Doehler Group, and Merck. Recently appointed as Legal Adviser and Company Secretary to Digital Energy Group of companies (2023)."
   }
 ]
@@ -139,7 +139,7 @@ const Management = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/cli.png"
+                src="/images/webp/cli.webp"
                 alt="Our Management"
                 className="w-full h-full object-cover opacity-40"
               />
