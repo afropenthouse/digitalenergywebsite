@@ -1,9 +1,46 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Users, GraduationCap, Briefcase, FileText, Shield, Settings, Zap, Wrench, ClipboardCheck, Ruler } from 'lucide-react'
 import ServicesNav from './ServicesNav'
+import Loader from '../Loader/Loader'
 
 const TechnicalManpower = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 2) { // Hero image and content image
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload images
+    const images = [
+      '/images/webp/p8.webp',
+      '/images/webp/p8.webp'
+    ]
+
+    images.forEach(src => {
+      const img = new Image()
+      img.src = src.replace(/\.[^/.]+$/, ".webp") // Convert to WebP
+      img.onload = handleImageLoad
+    })
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   const manpowerServices = [
     {
       title: "Electrical & Instrumentation",
@@ -96,7 +133,7 @@ const TechnicalManpower = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/p8.jpg"
+                src="/images/webp/p8.webp"
                 alt="Technical Manpower Supply"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -166,8 +203,8 @@ const TechnicalManpower = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/p8.jpg"
-                    alt="Technical Manpower Supply"
+                    src="/images/webp/p8.webp"
+                    alt="Technical Manpower"
                     className="w-full h-[250px] object-cover"
                   />
                 </div>

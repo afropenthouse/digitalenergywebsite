@@ -2,6 +2,8 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { CheckCircle, Award, Globe, Users } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "./Loader/Loader"
 
 // Country flag components
 const FlagIcon = ({ country }) => {
@@ -38,68 +40,104 @@ const FlagIcon = ({ country }) => {
 const partners = [
   {
     name: "Elster",
-    logo: "/images/Honeywell.jpg",
+    logo: "/images/webp/Honeywell.webp",
     description: "Elster manufactures energy measuring systems, ultrasonic, turbine, rotary and diaphragm meters as well as gas pressure regulators for low, medium and high pressure. Electronic station flow computers, volume correctors, innovative data read-out and evaluation systems as well as automatic remote data read-out devices are in the electronics products range. Further more turnkey gas regulating and measuring stations of every size or test rigs for calibration of custody transfer gas meters complete the range of products focused on gas.",
     country: "United Kingdom"
   },
   {
     name: "Power Electronics",
-    logo: "/images/Triol.png",
+    logo: "/images/webp/Triol.webp",
     description: "Manufacturer and provider of Power Electronics and software products",
     country: "Ukraine"
   },
   {
     name: "Oily Water Systems",
-    logo: "/images/ultra.png",
+    logo: "/images/webp/ultra.webp",
     description: "Specializes in the design and supply of high-performance oily water separation systems.",
     country: "Australia"
   },
   {
     name: "Dredging Equipment",
-    logo: "/images/straatman.png",
+    logo: "/images/webp/straatman.webp",
     description: "Leading provider of quick-release hooks, dredging equipment and solar systems.",
     country: "Netherlands"
   },
   {
     name: "Canadian Oil Equipment",
-    logo: "/images/reef.jpg",
+    logo: "/images/webp/reef.webp",
     description: "Supplying Canadian designed and fabricated oil and gas production parts and equipment to anywhere in the world on an expedited schedule.",
     country: "Canada"
   },
   {
     name: "Hunan Standard Steel",
-    logo: "/images/HSco.png",
+    logo: "/images/webp/HSco.webp",
     description: "Hunan Standard Steel Pipe Co.,Ltd is the professional manufacturer and sales of steel, seamless steel pipe production, electric resistance welded steel pipe, steel pipe submerged two-sided spiral welded steel pipe, with an annual output of various types of steel pipe 200,000 tons; at the same time also operates oil and gas pipelines, marine equipment, pipe fittings, industrial automation systems, shore drilling platforms, power station equipment, their parts and components related services.",
     country: "China"
   },
   {
     name: "MAX Industrial Tools",
-    logo: "/images/Max.png",
+    logo: "/images/webp/Max.webp",
     description: "Since 1942, MAX has been recognized, worldwide, as a leading manufacturer of high-end industrial tools and office products.",
     country: "United States of America"
   },
   {
     name: "STAUFF USA",
-    logo: "/images/Stauff.png",
+    logo: "/images/webp/Stauff.webp",
     description: "For over 50 Years STAUFF USA has been serving the needs of Hydraulic Distributors and Equipment Manufacturers Using decades of experience and state-of-the-art production technologies, STAUFF has the reputation of being one of the world's most respected manufacturers of pipe clamps, test points, connectors, quick release couplings, filters, valves, diagtronics, hydraulic accessories and Custom Manufactured manipulated tube assemblies.",
     country: "United States of America"
   },
   {
     name: "Integration Objects",
-    logo: "/images/objects.png",
+    logo: "/images/webp/objects.webp",
     description: "Integration Objects is a software development firm created in 2002. The company is a systems integrator and solutions provider for knowledge management, automation and plant process management and decision support applications. It develops OPC software products and knowledge management platforms for manufacturers primarily in the oil and gas, refining and petrochemicals, chemical, food and beverage, steel and pharmaceutical industries. It also provides consulting services.",
     country: "Tunisia & Houston, Texas USA"
   }
 ]
 
-export default function OEM() {
+const OEM = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === partners.length + 1) { // All partner logos + hero image
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/Capture.webp"
+    heroImg.onload = handleImageLoad
+
+    // Preload partner logos
+    partners.forEach(partner => {
+      const img = new Image()
+      img.src = partner.logo // Already using WebP paths
+      img.onload = handleImageLoad
+    })
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
       {/* Hero Section - Unchanged */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/Capture.PNG"
+            src="/images/webp/Capture.webp"
             alt="OEM"
             className="w-full h-full object-cover opacity-40"
           />
@@ -277,3 +315,5 @@ export default function OEM() {
     </div>
   )
 }
+
+export default OEM

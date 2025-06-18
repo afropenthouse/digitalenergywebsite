@@ -10,6 +10,8 @@ import {
   HardHat,
   Fuel,
 } from "lucide-react"
+import { useState, useEffect } from "react"
+import Loader from "../Loader/Loader"
 
 const services = [
   {
@@ -167,7 +169,36 @@ const ServiceCard = ({ service, index }) => (
   </motion.div>
 )
 
-export default function Services() {
+const Services = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 1) { // Only hero image
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload hero image
+    const heroImg = new Image()
+    heroImg.src = "/images/webp/pic_2.webp" // Updated to WebP format
+    heroImg.onload = handleImageLoad
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
@@ -309,3 +340,5 @@ export default function Services() {
     </div>
   )
 }
+
+export default Services

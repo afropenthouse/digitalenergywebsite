@@ -1,9 +1,46 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Wrench, Settings, FileText, Users, Shield, BarChart, Layout, Cpu, Factory, Gauge, Calculator, Building2, Ruler, Scale, ClipboardCheck, Eye, Waves, Anchor } from 'lucide-react'
 import ServicesNav from './ServicesNav'
+import Loader from '../Loader/Loader'
 
 const EngineeringServices = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 2) { // Hero image and content image
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    // Preload images
+    const images = [
+      '/images/webp/pic_2.webp',
+      '/images/webp/pic_2.webp'
+    ]
+
+    images.forEach(src => {
+      const img = new Image()
+      img.src = src.replace(/\.[^/.]+$/, ".webp")
+      img.onload = handleImageLoad
+    })
+
+    return () => {
+      setIsLoading(true)
+      setLoadedImages(0)
+    }
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   const solutions = [
     "Conceptual Design and Feasibility Studies",
     "Front-End Engineering Design (FEED)",
@@ -44,7 +81,7 @@ const EngineeringServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/pic_2.jpg"
+                src="/images/webp/pic_2.webp"
                 alt="Engineering Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -117,7 +154,7 @@ const EngineeringServices = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/pic_2.jpg"
+                    src="/images/webp/pic_2.webp"
                     alt="Engineering Services"
                     className="w-full h-[250px] object-cover"
                   />
