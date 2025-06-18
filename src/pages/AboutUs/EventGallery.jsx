@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Loader from "../Loader/Loader"
 
 const galleryImages = [
 	{
@@ -206,6 +207,42 @@ const galleryImages = [
 
 const EventGallery = () => {
 	const [selectedImage, setSelectedImage] = useState(null)
+	const [isLoading, setIsLoading] = useState(true)
+	const [loadedImages, setLoadedImages] = useState(0)
+
+	useEffect(() => {
+		const totalImages = galleryImages.length + 1 // +1 for the hero image
+		const handleImageLoad = () => {
+			setLoadedImages(prev => {
+				const newCount = prev + 1
+				if (newCount === totalImages) {
+					setIsLoading(false)
+				}
+				return newCount
+			})
+		}
+
+		// Preload all images
+		galleryImages.forEach(image => {
+			const img = new Image()
+			img.src = image.src
+			img.onload = handleImageLoad
+		})
+
+		// Preload hero image
+		const heroImg = new Image()
+		heroImg.src = "/images/webp/energy.webp"
+		heroImg.onload = handleImageLoad
+
+		return () => {
+			setIsLoading(true)
+			setLoadedImages(0)
+		}
+	}, [])
+
+	if (isLoading) {
+		return <Loader />
+	}
 
 	return (
 		<div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
