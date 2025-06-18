@@ -4,6 +4,10 @@ import { Button } from "../components/ui/button"
 import { MapPin, Clock, Users, GraduationCap, Heart, Award, ChevronRight } from "lucide-react"
 import { Link } from "react-router-dom"
 
+const jobOpenings = []
+
+// Uncomment there is an active position
+/*
 const jobOpenings = [
   {
     id: 1,
@@ -12,16 +16,10 @@ const jobOpenings = [
     type: "Full-time",
     experience: "5+ years",
     description: "Lead mechanical engineering projects for oil & gas facilities",
-  },
-  {
-    id: 2,
-    title: "Project Manager",
-    location: "Port Harcourt, Rivers State",
-    type: "Full-time",
-    experience: "7+ years",
-    description: "Manage large-scale energy infrastructure projects",
-  },
+    department: "Engineering"
+  }
 ]
+*/
 
 const benefits = [
   {
@@ -91,31 +89,7 @@ export default function Career() {
         />
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {[
-              { value: "200+", label: "Professionals" },
-              { value: "5+", label: "Countries" },
-              { value: "50+", label: "Projects" },
-              { value: "10+", label: "Years" }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Why Work With Us - Enhanced */}
       <section className="py-20">
@@ -179,54 +153,63 @@ export default function Career() {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Current Openings</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Explore exciting career opportunities across various departments
+              {jobOpenings.length === 0 ? (
+                <div className="mt-8 p-8 bg-gray-50 rounded-lg">
+                  <p className="text-xl text-gray-600 mb-4">No positions available at the moment</p>
+                  <p className="text-gray-500">We're not currently hiring, but we're always looking for talented individuals to join our team. Please check back later or submit your resume for future opportunities.</p>
+                </div>
+              ) : (
+                "Explore exciting career opportunities across various departments"
+              )}
             </p>
           </motion.div>
 
-          <div className="grid gap-6">
-            {jobOpenings.map((job, index) => (
-              <motion.div
-                key={job.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center mb-2">
-                          <h3 className="text-xl font-bold text-gray-900 mr-4">{job.title}</h3>
-                          <span className="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">
-                            {job.department}
-                          </span>
+          {jobOpenings.length > 0 && (
+            <div className="grid gap-6">
+              {jobOpenings.map((job, index) => (
+                <motion.div
+                  key={job.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
+                    <CardContent className="p-6">
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center mb-2">
+                            <h3 className="text-xl font-bold text-gray-900 mr-4">{job.title}</h3>
+                            <span className="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">
+                              {job.department}
+                            </span>
+                          </div>
+                          <p className="text-gray-600 mb-4">{job.description}</p>
+                          <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                            <div className="flex items-center">
+                              <MapPin className="h-4 w-4 mr-1 text-primary-500" />
+                              {job.location}
+                            </div>
+                            <div className="flex items-center">
+                              <Clock className="h-4 w-4 mr-1 text-primary-500" />
+                              {job.type}
+                            </div>
+                            <div className="flex items-center">
+                              <GraduationCap className="h-4 w-4 mr-1 text-primary-500" />
+                              {job.experience}
+                            </div>
+                          </div>
                         </div>
-                        <p className="text-gray-600 mb-4">{job.description}</p>
-                        <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                          <div className="flex items-center">
-                            <MapPin className="h-4 w-4 mr-1 text-primary-500" />
-                            {job.location}
-                          </div>
-                          <div className="flex items-center">
-                            <Clock className="h-4 w-4 mr-1 text-primary-500" />
-                            {job.type}
-                          </div>
-                          <div className="flex items-center">
-                            <GraduationCap className="h-4 w-4 mr-1 text-primary-500" />
-                            {job.experience}
-                          </div>
+                        <div className="mt-4 lg:mt-0 lg:ml-6">
+                          <Button className="bg-primary-500 hover:bg-primary-600 text-white">Apply Now</Button>
                         </div>
                       </div>
-                      <div className="mt-4 lg:mt-0 lg:ml-6">
-                        <Button className="bg-primary-500 hover:bg-primary-600 text-white">Apply Now</Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
