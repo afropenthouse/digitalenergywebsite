@@ -2,8 +2,11 @@
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-blue-900 text-white">
       {/* Decorative top border */}
@@ -28,7 +31,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-blue-100 text-center md:text-left max-w-md text-sm">
-              Leading indigenous multi-diverse energy solutions company providing comprehensive services across the entire energy value chain.
+              {t('footer.leading_indigenous_multi_diverse_energy_solutions_company_providing_comprehensive_services_across_the_entire_energy_value_chain')}
             </p>
             
             {/* Social Media */}
@@ -77,35 +80,35 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-lg font-semibold text-center md:text-left">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-center md:text-left">{t('footer.quick_links')}</h3>
             <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
               <Link to="/" className="text-blue-100 hover:text-white flex items-center group">
                 <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">Home</span>
+                <span className="group-hover:translate-x-1 transition-transform">{t('footer.home')}</span>
               </Link>
-              <Link to="/about" className="text-blue-100 hover:text-white flex items-center group">
+              <Link to="/about/who-we-are" className="text-blue-100 hover:text-white flex items-center group">
                 <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">About Us</span>
+                <span className="group-hover:translate-x-1 transition-transform">{t('footer.about')}</span>
               </Link>
               <Link to="/services" className="text-blue-100 hover:text-white flex items-center group">
                 <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">Services</span>
+                <span className="group-hover:translate-x-1 transition-transform">{t('footer.services')}</span>
               </Link>
               <Link to="/projects" className="text-blue-100 hover:text-white flex items-center group">
                 <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">Projects</span>
+                <span className="group-hover:translate-x-1 transition-transform">{t('footer.projects')}</span>
               </Link>
               <Link to="/oem" className="text-blue-100 hover:text-white flex items-center group">
                 <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">OEM</span>
+                <span className="group-hover:translate-x-1 transition-transform">{t('footer.oem')}</span>
               </Link>
               <Link to="/careers" className="text-blue-100 hover:text-white flex items-center group">
                 <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">Careers</span>
+                <span className="group-hover:translate-x-1 transition-transform">{t('footer.careers')}</span>
               </Link>
               <Link to="/contact" className="text-blue-100 hover:text-white flex items-center group">
                 <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">Contact</span>
+                <span className="group-hover:translate-x-1 transition-transform">{t('footer.contact')}</span>
               </Link>
             </div>
           </motion.div>
@@ -117,19 +120,19 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-lg font-semibold text-center md:text-left">Contact Info</h3>
+            <h3 className="text-lg font-semibold text-center md:text-left">{t('footer.contact_info')}</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-center md:justify-start">
                 <MapPin className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria</span>
+                <span className="text-blue-100">{t('footer.address')}</span>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Phone className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">+234 (0) 201 453 6157</span>
+                <span className="text-blue-100">{t('footer.phone')}</span>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Mail className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">info@digitalenergyng.com</span>
+                <span className="text-blue-100">{t('footer.email')}</span>
               </div>
             </div>
           </motion.div>
@@ -139,7 +142,7 @@ export default function Footer() {
         <div className="border-t border-blue-800 mt-12 pt-8">
           <div className="container mx-auto px-4">
             <div className="text-xs text-blue-200 text-center">
-              © {new Date().getFullYear()} Digital Energy & Integrated Services Limited. All rights reserved.
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </div>
           </div>
         </div>
