@@ -57,7 +57,7 @@ const ProcurementServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/procurement.webp"
+                src="/images/webp/procurement1.webp"
                 alt="Procurement Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -125,13 +125,19 @@ const ProcurementServices = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md">
+                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col gap-4">
                   <img
-                    src="/images/webp/procurement.webp"
+                    src="/images/webp/procurement2.webp"
+                    alt="Procurement Services"
+                    className="w-full h-[250px] object-cover"
+                  />
+                  <img
+                    src="/images/webp/procurement3.webp"
                     alt="Procurement Services"
                     className="w-full h-[250px] object-cover"
                   />
                 </div>
+                
               </motion.div>
 
               {/* Procurement Phases */}
@@ -212,4 +218,4 @@ const ProcurementServices = () => {
   )
 }
 
-export default ProcurementServices 
+export default ProcurementServices

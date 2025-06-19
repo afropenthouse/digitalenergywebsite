@@ -23,7 +23,7 @@ const services = [
     title: "Procurement Services",
     description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/webp/procurement.webp",
+    image: "/images/webp/procurement3.webp",
     path: "/services/procurement"
   },
   {
