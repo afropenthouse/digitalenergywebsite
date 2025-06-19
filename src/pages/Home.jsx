@@ -1,72 +1,133 @@
-import { motion } from "framer-motion"
-import { ArrowRight, Play } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react"
 import { Wrench, ShoppingCart, Building, CheckCircle, Settings, Users, HardHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import StatsSection from "@/components/StatsSection"
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
+import { useSearch } from "@/context/SearchContext"
+import { useTranslation } from "react-i18next"
 
-const services = [
-  {
-    id: "engineering",
-    icon: Wrench,
-    title: "Engineering Services",
-    description: "Front-end engineering design (FEED), detailed engineering, and constructability studies across civil, mechanical, electrical, and process disciplines.",
-    color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/webp/engineering.webp",
-    path: "/services/engineering"
-  },
-  {
-    id: "procurement",
-    icon: ShoppingCart,
-    title: "Procurement Services",
-    description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
-    color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/webp/procurement3.webp",
-    path: "/services/procurement"
-  },
-  {
-    id: "fabrication",
-    icon: HardHat,
-    title: "Fabrication & Construction",
-    description: "Civil works, Steel structural Fabrication and erection, mechanical installation, piping, E&I, and facility upgrades.",
-    color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/webp/fabrication.webp",
-    path: "/services/fabrication"
-  },
-  {
-    id: "commissioning",
-    icon: CheckCircle,
-    title: "Commissioning & Start-up",
-    description: "Pre-commissioning, commissioning, and start-up support services to ensure systems operate as designed.",
-    color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/webp/commisioning.webp",
-    path: "/services/commissioning"
-  },
-  {
-    id: "operations",
-    icon: Settings,
-    title: "Operations & Maintenance",
-    description: "End-to-end O&M services ensuring optimal asset performance, reduced downtime, and extended infrastructure life cycle.",
-    color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/webp/operation.webp",
-    path: "/services/operations"
-  },
-  {
-    id: "manpower",
-    icon: Users,
-    title: "Technical Manpower Supply",
-    description: "Certified Personnel | Project Staffing | IRATA Technicians | Specialized Roles",
-    color: "bg-gradient-to-br from-orange-500 to-orange-700",
-    image: "/images/webp/p8.webp",
-    path: "/services/manpower"
-  },
-]
+function HighlightedText({ text }) {
+  const { searchTerm } = useSearch();
+  if (!searchTerm) return <>{text}</>;
+  const regex = new RegExp(`(${searchTerm})`, "gi");
+  const parts = text.split(regex);
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === searchTerm.toLowerCase() ? (
+          <mark key={i} className="bg-yellow-300 text-black">{part}</mark>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+}
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [loadedImages, setLoadedImages] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderInterval = useRef(null);
+  const { t } = useTranslation();
+
+  const slides = [
+    {
+      id: 1,
+      title: t("home.slider1_title"),
+      subtitle: t("home.slider1_subtitle"),
+      description: t("home.slider1_desc"),
+      image: "/images/webp/pic_2.webp"
+    },
+    {
+      id: 2,
+      title: t("home.slider2_title"),
+      subtitle: t("home.slider2_subtitle"),
+      description: t("home.slider2_desc"),
+      image: "/images/webp/pic_14.webp"
+    },
+    {
+      id: 3,
+      title: t("home.slider3_title"),
+      subtitle: t("home.slider3_subtitle"),
+      description: t("home.slider3_desc"),
+      image: "/images/webp/p2.webp"
+    },
+    {
+      id: 4,
+      title: t("home.slider4_title"),
+      subtitle: t("home.slider4_subtitle"),
+      description: t("home.slider4_desc"),
+      image: "/images/webp/pic_12.webp"
+    },
+    {
+      id: 5,
+      title: t("home.slider5_title"),
+      subtitle: t("home.slider5_subtitle"),
+      description: t("home.slider5_desc"),
+      image: "/images/webp/cli.webp"
+    }
+  ];
+
+  const services = [
+    {
+      id: "engineering",
+      icon: Wrench,
+      title: t("home.engineering_title"),
+      description: t("home.engineering_desc"),
+      color: "bg-gradient-to-br from-blue-600 to-blue-800",
+      image: "/images/webp/engineering.webp",
+      path: "/services/engineering"
+    },
+    {
+      id: "procurement",
+      icon: ShoppingCart,
+      title: t("home.procurement_title"),
+      description: t("home.procurement_desc"),
+      color: "bg-gradient-to-br from-orange-500 to-orange-700",
+      image: "/images/webp/procurement3.webp",
+      path: "/services/procurement"
+    },
+    {
+      id: "fabrication",
+      icon: HardHat,
+      title: t("home.fabrication_title"),
+      description: t("home.fabrication_desc"),
+      color: "bg-gradient-to-br from-blue-600 to-blue-800",
+      image: "/images/webp/fabrication.webp",
+      path: "/services/fabrication"
+    },
+    {
+      id: "commissioning",
+      icon: CheckCircle,
+      title: t("home.commissioning_title"),
+      description: t("home.commissioning_desc"),
+      color: "bg-gradient-to-br from-orange-500 to-orange-700",
+      image: "/images/webp/commisioning.webp",
+      path: "/services/commissioning"
+    },
+    {
+      id: "operations",
+      icon: Settings,
+      title: t("home.operations_title"),
+      description: t("home.operations_desc"),
+      color: "bg-gradient-to-br from-blue-600 to-blue-800",
+      image: "/images/webp/operation.webp",
+      path: "/services/operations"
+    },
+    {
+      id: "manpower",
+      icon: Users,
+      title: t("home.manpower_title"),
+      description: t("home.manpower_desc"),
+      color: "bg-gradient-to-br from-orange-500 to-orange-700",
+      image: "/images/webp/p8.webp",
+      path: "/services/manpower"
+    },
+  ];
 
   useEffect(() => {
     const handleImageLoad = () => {
@@ -84,7 +145,6 @@ const Home = () => {
     heroImg.src = "/images/webp/pic_2.webp"
     heroImg.onload = handleImageLoad
 
-    // Preload about image
     const aboutImg = new Image()
     aboutImg.src = "/images/webp/pic_14.webp"
     aboutImg.onload = handleImageLoad
@@ -95,9 +155,15 @@ const Home = () => {
       img.src = service.image
     })
 
+    // Auto slide change
+    sliderInterval.current = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 6000);
+
     return () => {
       setIsLoading(true)
       setLoadedImages(0)
+      clearInterval(sliderInterval.current);
     }
   }, [])
 
@@ -112,31 +178,48 @@ const Home = () => {
       transition={{ duration: 0.5 }}
       className="overflow-hidden"
     >
-      {/* Hero Section */}
+      {/* Hero Section with Slider */}
       <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 bg-[url('/images/webp/pic_2.webp')] bg-cover bg-center opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/60 to-blue-900/70" />
-        <div className="container mx-auto px-4 py-16 md:py-24 relative z-20">
+        {/* Slider */}
+        <div className="absolute inset-0 z-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="absolute inset-0"
+            >
+              <div 
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/60 to-blue-900/70" />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+        <div className="container mx-auto px-4 pt-32 pb-16 md:pt-44 md:pb-24 relative z-20">
           <div className="max-w-4xl mx-auto lg:text-left flex flex-col items-center lg:items-start">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center lg:text-left"
-            >
-              <span className="block mt-14 sm:mt-2">Empowering Energy.</span>
-              <span className="block text-orange-400 mt-2">
-                Delivering Excellence.
-              </span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl text-center lg:text-left"
-            >
-              Integrated Energy Solutions Tailored for the Future
-            </motion.p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`text-${currentSlide}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center lg:text-left">
+                  <span className="block mt-14 sm:mt-2"><HighlightedText text={slides[currentSlide].title} /></span>
+                  <span className="block text-orange-400 mt-2">
+                    <HighlightedText text={slides[currentSlide].subtitle} />
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl text-center lg:text-left">
+                  <HighlightedText text={slides[currentSlide].description} />
+                </p>
+              </motion.div>
+            </AnimatePresence>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -148,7 +231,7 @@ const Home = () => {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center">
-                  Get Started
+                  {t('home.get_started')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform hidden sm:block" />
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform rotate-90 sm:hidden" />
                 </span>
@@ -157,14 +240,40 @@ const Home = () => {
                 className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-white/10 backdrop-blur-sm border-2 border-orange-500 rounded-xl hover:bg-orange-500/20 transition-colors"
               >
                 <Link to="/contact" className="relative flex items-center">
-                  Contact Us
+                  {t('home.contact_us')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </button>
             </motion.div>
           </div>
         </div>
-        
+        {/* Slider Controls */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                currentSlide === index ? 'bg-orange-400 scale-125' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
+        {/* Left/Right Arrow Controls */}
+        <button
+          onClick={() => setCurrentSlide((currentSlide - 1 + slides.length) % slides.length)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-orange-500/80 text-white hover:text-white rounded-full p-2 shadow-lg transition-colors"
+          aria-label="Previous Slide"
+        >
+          <ChevronLeft className="w-7 h-7" />
+        </button>
+        <button
+          onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-orange-500/80 text-white hover:text-white rounded-full p-2 shadow-lg transition-colors"
+          aria-label="Next Slide"
+        >
+          <ChevronRight className="w-7 h-7" />
+        </button>
         {/* Floating elements */}
         <motion.div 
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block"
@@ -197,14 +306,14 @@ const Home = () => {
               className="order-2 lg:order-1"
             >
               <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
-                Our Story
+                {t('home.our_story')}
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Transforming Energy Solutions</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{t('home.transforming_solutions_title')}</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                We are a forward-thinking energy services company delivering end-to-end engineering, procurement, construction, and commissioning solutions to Nigeria's oil and gas industry. From project conception to completion, we bring innovation, local expertise, and global standards to every challenge.
+                {t('home.transforming_solutions_desc')}
               </p>
               <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-8 py-4">
-                <Link to="/about/who-we-are">Learn More</Link>
+                <Link to="/about/who-we-are">{t('header.learnMore')}</Link>
               </Button>
             </motion.div>
 
@@ -243,11 +352,11 @@ const Home = () => {
             className="text-center mb-8 sm:mb-12"
           >
             <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-1 rounded-full text-sm font-medium mb-3 sm:mb-4">
-              Our Services
+              {t('home.our_services')}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Comprehensive Energy Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">{t('home.comprehensive_solutions_title')}</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We provide integrated services across the entire energy value chain with technical excellence
+              {t('home.comprehensive_solutions_desc')}
             </p>
           </motion.div>
 
@@ -278,9 +387,11 @@ const Home = () => {
                     </div>
                     <div className="p-6 flex-grow">
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
-                        {service.title}
+                        <HighlightedText text={service.title} />
                       </h3>
-                      <p className="text-gray-600">{service.description}</p>
+                      <p className="text-gray-600">
+                        <HighlightedText text={service.description} />
+                      </p>
                     </div>
                   </div>
                 </Link>
@@ -290,7 +401,7 @@ const Home = () => {
 
           <div className="flex justify-center mt-12">
             <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-8 py-4">
-              <Link to="/services">View all services</Link>
+              <Link to="/services">{t('home.view_all_services')}</Link>
             </Button>
           </div>
         </div>
@@ -314,18 +425,17 @@ const Home = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-              Ready to Power Your Next Project?
+              {t('home.ready_title')}
             </h2>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto">
-              Partner with Digital Energy for innovative, reliable, and sustainable energy solutions. Let's discuss how
-              we can bring excellence to your next project.
+              {t('home.ready_desc')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild className="relative group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 text-lg shadow-lg">
                 <Link to="/contact/quote">
                   <span className="relative flex items-center">
-                    Request a Quote
+                    {t('home.request_quote')}
                   </span>
                 </Link>
               </Button>
@@ -334,7 +444,7 @@ const Home = () => {
                 className="bg-gradient-to-r from-blue-700 to-blue-800 text-white px-8 py-4 text-lg shadow-lg hover:from-blue-800 hover:to-blue-900"
               >
                 <Link to="/contact">
-                  Contact Us
+                  {t('home.contact_us')}
                 </Link>
               </Button>
             </div>
