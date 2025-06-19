@@ -14,7 +14,7 @@ const services = [
     title: "Engineering Services",
     description: "Front-end engineering design (FEED), detailed engineering, and constructability studies across civil, mechanical, electrical, and process disciplines.",
     color: "bg-gradient-to-br from-blue-600 to-blue-800",
-    image: "/images/webp/pic_2.webp",
+    image: "/images/webp/engineering.webp",
     path: "/services/engineering"
   },
   {
