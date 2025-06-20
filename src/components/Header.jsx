@@ -90,10 +90,11 @@ export default function Header() {
     <header className="fixed w-full z-50">
       {/* Top Bar: Contact Info, Language, Google Logo & Request Quote */}
       <div className="w-full bg-[#002147] text-white text-sm py-2">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center space-x-6">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0">
+          {/* Top section: Language + Contact Info */}
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6">
             {/* Google logo + Language dropdown */}
-            <div className="flex items-center mr-4">
+            <div className="flex items-center mr-0 sm:mr-4">
               <img src="/images/webp/Google.webp" alt="Google logo" className="h-6 w-auto mr-2" />
               <div className="relative">
                 <select
@@ -120,7 +121,8 @@ export default function Header() {
               <span>info@digitalenergyng.com</span>
             </div>
           </div>
-          <div className="flex items-center mt-2 md:mt-0">
+          {/* Request Quote Button */}
+          <div className="flex items-center justify-center">
             <Button asChild className="flex items-center bg-[#002147] hover:bg-[#193a6b] text-white px-4 py-1 text-xs md:text-sm rounded-md font-semibold">
               <Link to="/contact/quote" className="flex items-center">
                 <span className="flex items-center justify-center bg-white rounded-full h-6 w-6 mr-2">
