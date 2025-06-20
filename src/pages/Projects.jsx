@@ -62,7 +62,7 @@ const projectList = [
     title: "Gas Equipment Procurement",
     client: "MidWestern",
     description: "Procurement of Gas pressure regulator 25bar & cartridge Gas & Supply of FLO Choke Valve",
-    image: "/images/Projects/Gas.PNG",
+    image: "/images/Projects/Gas.webp",
     logo: "/images/webp/Midwestern.webp"
   },
   {
