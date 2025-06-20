@@ -12,9 +12,9 @@ export default function Footer() {
       {/* Top Orange Bar */}
       <div className="w-full bg-orange-500 px-4 md:px-8 py-4">
         <div className="max-w-6xl mx-auto">
-          {/* <span className="block text-base md:text-lg lg:text-xl font-medium text-white text-left">
-            We are providing good & on time services to our valuable customers.
-          </span> */}
+          <span className="block text-base md:text-lg lg:text-xl font-medium text-white text-left">
+            Delivering reliable and timely solutions for our valued clients.
+          </span>
         </div>
       </div>
 
