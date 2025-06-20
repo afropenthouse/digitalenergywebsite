@@ -70,7 +70,7 @@ const boardMembers = [
     name: "Victor Amadi-Emina",
     position: "Head, Trading & Shipping Operations",
     image: "/images/webp/victor.webp",
-    bio: "He is a trader and shipping operations professional in the downstream oil and gas. An expert with over 20 years in the industry having worked in many downstream oil and gas companies in Nigeria, trading different grades of refined petroleum products and crude oils. He has also worked in Europe where he handled physical and paper trading of various crude grades to major refineries in the USA, China, India and Japan."
+    bio: "He is a trading and shipping operations professional in the downstream oil and gas. An expert with over 20 years in the industry having worked in many downstream oil and gas companies in Nigeria, trading different grades of refined petroleum products and crude oils. He has also worked in Europe where he handled physical and paper trading of various crude grades to major refineries in the USA, China, India and Japan."
   },
   {
     name: "Chidinma Obi",
