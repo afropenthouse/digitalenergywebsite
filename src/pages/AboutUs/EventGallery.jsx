@@ -54,11 +54,6 @@ const galleryImages = [
 		alt: "Digital Energy Gallery",
 	},
 	{
-		id: 11,
-		src: "/images/Gallery_pics_webp/gallery_11.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
 		id: 12,
 		src: "/images/Gallery_pics_webp/gallery_12.webp",
 		alt: "Digital Energy Gallery",
@@ -83,7 +78,7 @@ const galleryImages = [
 		src: "/images/Gallery_pics_webp/gallery_16.webp",
 		alt: "Digital Energy Gallery",
 	},
-	//jhbnm
+	//check
 	{
 		id: 41,
 		src: "/images/Gallery_pics_webp/gallery_41.webp",
@@ -104,7 +99,7 @@ const galleryImages = [
 		src: "/images/Gallery_pics_webp/gallery_44.webp",
 		alt: "Digital Energy Gallery",
 	},
-	//hgfbn
+	//end
 	{
 		id: 17,
 		src: "/images/Gallery_pics_webp/gallery_17.webp",
@@ -192,7 +187,7 @@ const galleryImages = [
 	},
 	{
 		id: 34,
-		src: "/images/Gallery_pics_webp/gallery_34.webp",
+		src: "/images/Gallery_pics_webp/gallery_34.jpg",
 		alt: "Digital Energy Gallery",
 	},
 	{
@@ -206,11 +201,6 @@ const galleryImages = [
 		alt: "Digital Energy Gallery",
 	},
 	{
-		id: 37,
-		src: "/images/Gallery_pics_webp/gallery_37.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
 		id: 38,
 		src: "/images/Gallery_pics_webp/gallery_38.webp",
 		alt: "Digital Energy Gallery",
@@ -220,11 +210,53 @@ const galleryImages = [
 		src: "/images/Gallery_pics_webp/gallery_39.webp",
 		alt: "Digital Energy Gallery",
 	},
+	//new
 	{
-		id: 40,
-		src: "/images/Gallery_pics_webp/gallery_40.webp",
+		id: 45,
+		src: "/images/Gallery_pics_webp/gallery_45.webp",
 		alt: "Digital Energy Gallery",
 	},
+	{
+		id: 46,
+		src: "/images/Gallery_pics_webp/gallery_46.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 47,
+		src: "/images/Gallery_pics_webp/gallery_47.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 48,
+		src: "/images/Gallery_pics_webp/gallery_48.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 49,
+		src: "/images/Gallery_pics_webp/gallery_49.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 45,
+		src: "/images/Gallery_pics_webp/gallery_50.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 50,
+		src: "/images/Gallery_pics_webp/gallery_51.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 51,
+		src: "/images/Gallery_pics_webp/gallery_52.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 52,
+		src: "/images/Gallery_pics_webp/gallery_53.webp",
+		alt: "Digital Energy Gallery",
+	},
+	//kk
 ]
 
 const EventGallery = () => {

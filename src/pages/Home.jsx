@@ -420,7 +420,7 @@ const Home = () => {
       <section className="py-16 bg-blue-900">
         <div className="w-4/5 mx-auto">
           <h2 className="text-4xl font-light text-white mb-2 text-left">Latest Projects</h2>
-          <div className="w-20 h-1 bg-red-600 rounded mb-10 text-left"></div>
+          <div className="w-20 h-1 bg-orange-500 rounded mb-10 text-left"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
             {/* Project 1 */}
             <Link to="/projects" className="relative w-full h-64 block group rounded shadow-lg overflow-hidden">
