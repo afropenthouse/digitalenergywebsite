@@ -8,141 +8,86 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-blue-900 text-white">
-      {/* Decorative top border */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
-      
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Brand Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <div className="flex justify-center md:justify-start">
-              <div className="p-3 rounded-xl">
-                <img 
-                  src="/images/logofooter.png" 
-                  alt="Digital Energy Logo" 
-                  className="h-12 transition-transform hover:scale-105"
-                />
-              </div>
-            </div>
-            <p className="text-blue-100 text-center md:text-left max-w-md text-sm">
-              {t('footer.leading_indigenous_multi_diverse_energy_solutions_company_providing_comprehensive_services_across_the_entire_energy_value_chain')}
-            </p>
-            
-            {/* Social Media */}
-            <div className="flex justify-center md:justify-start space-x-4 pt-2">
-              {/* <motion.a 
-                href="#" 
-                className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
-                aria-label="Facebook"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Facebook className="h-5 w-5" />
-              </motion.a> */}
-              {/* <motion.a 
-                href="#" 
-                className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
-                aria-label="Twitter"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Twitter className="h-5 w-5" />
-              </motion.a> */}
-              <motion.a 
-                href="https://www.linkedin.com/company/digital-energy-and-interated-services-limited/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
-                aria-label="LinkedIn"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Linkedin className="h-5 w-5" />
-              </motion.a>
-              {/* <motion.a 
-                href="#" 
-                className="bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors"
-                aria-label="Instagram"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Instagram className="h-5 w-5" />
-              </motion.a> */}
-            </div>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h3 className="text-lg font-semibold text-center md:text-left">{t('footer.quick_links')}</h3>
-            <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
-              <Link to="/" className="text-blue-100 hover:text-white flex items-center group">
-                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">{t('footer.home')}</span>
-              </Link>
-              <Link to="/about/who-we-are" className="text-blue-100 hover:text-white flex items-center group">
-                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">{t('footer.about')}</span>
-              </Link>
-              <Link to="/services" className="text-blue-100 hover:text-white flex items-center group">
-                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">{t('footer.services')}</span>
-              </Link>
-              <Link to="/projects" className="text-blue-100 hover:text-white flex items-center group">
-                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">{t('footer.projects')}</span>
-              </Link>
-              <Link to="/oem" className="text-blue-100 hover:text-white flex items-center group">
-                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">{t('footer.oem')}</span>
-              </Link>
-              <Link to="/careers" className="text-blue-100 hover:text-white flex items-center group">
-                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">{t('footer.careers')}</span>
-              </Link>
-              <Link to="/contact" className="text-blue-100 hover:text-white flex items-center group">
-                <span className="bg-blue-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs group-hover:bg-orange-500 transition-colors">→</span>
-                <span className="group-hover:translate-x-1 transition-transform">{t('footer.contact')}</span>
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h3 className="text-lg font-semibold text-center md:text-left">{t('footer.contact_info')}</h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-center md:justify-start">
-                <MapPin className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">{t('footer.address')}</span>
-              </div>
-              <div className="flex items-center justify-center md:justify-start">
-                <Phone className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">{t('footer.phone')}</span>
-              </div>
-              <div className="flex items-center justify-center md:justify-start">
-                <Mail className="h-5 w-5 text-orange-400 mr-3" />
-                <span className="text-blue-100">{t('footer.email')}</span>
-              </div>
-            </div>
-          </motion.div>
+    <footer className="bg-blue-900 text-white w-full">
+      {/* Top Orange Bar */}
+      <div className="w-full bg-orange-500 px-4 md:px-8 py-4">
+        <div className="max-w-6xl mx-auto">
+          <span className="block text-base md:text-lg lg:text-xl font-medium text-white text-left">
+            We are providing good & on time services to our valuable customers.
+          </span>
         </div>
+      </div>
 
+      {/* Centered Contact Info Row */}
+      <div className="flex justify-center w-full mt-0">
+        <div className="bg-[#23272b] rounded-none w-[80vw] max-w-6xl flex flex-row justify-between items-center py-6 px-8 shadow-lg divide-x divide-gray-700">
+          {/* Phone */}
+          <div className="flex items-center space-x-2 pr-8">
+            <Phone className="h-6 w-6 text-orange-500" />
+            <span className="text-white font-semibold">Phone:</span>
+            <span className="text-gray-300">+234 (0) 201 453 6157</span>
+          </div>
+          {/* Email */}
+          <div className="flex items-center space-x-2 px-8">
+            <Mail className="h-6 w-6 text-orange-500" />
+            <span className="text-white font-semibold">Email:</span>
+            <span className="text-gray-300">info@digitalenergyng.com</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Content - 3 Columns */}
+      <div className="container mx-auto px-4 pt-10 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          {/* Logo & Tagline */}
+          <div className="flex flex-col items-start">
+            <img src="/images/logofooter.png" alt="Digital Energy Logo" className="h-14 mb-4" />
+            <p className="text-blue-100 text-base max-w-lg mb-6">
+              Leading indigenous multi-diverse energy solutions company providing comprehensive services across the entire energy value chain.
+            </p>
+            {/* LinkedIn */}
+            <a href="https://www.linkedin.com/company/digital-energy-and-interated-services-limited/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 bg-blue-800 p-2 rounded-full hover:bg-orange-500 transition-colors">
+              <Linkedin className="h-5 w-5" />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+          </div>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-white">QUICK LINKS</h3>
+            <ul className="text-blue-100 text-base space-y-2">
+              <li><Link to="/" className="flex items-center group"><span className="mr-2 text-orange-500">→</span>Home</Link></li>
+              <li><Link to="/about/who-we-are" className="flex items-center group"><span className="mr-2 text-orange-500">→</span>About Us</Link></li>
+              <li><Link to="/services" className="flex items-center group"><span className="mr-2 text-orange-500">→</span>Services</Link></li>
+              <li><Link to="/projects" className="flex items-center group"><span className="mr-2 text-orange-500">→</span>Projects</Link></li>
+              <li><Link to="/oem" className="flex items-center group"><span className="mr-2 text-orange-500">→</span>OEM</Link></li>
+              <li><Link to="/careers" className="flex items-center group"><span className="mr-2 text-orange-500">→</span>Careers</Link></li>
+              <li><Link to="/contact" className="flex items-center group"><span className="mr-2 text-orange-500">→</span>Contact</Link></li>
+            </ul>
+          </div>
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-white">Contact Info</h3>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <MapPin className="h-5 w-5 text-orange-400 mr-3 mt-1" />
+                <span className="text-blue-100">Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 text-orange-400 mr-3" />
+                <span className="text-blue-100">+234 (0) 201 453 6157</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="h-5 w-5 text-orange-400 mr-3" />
+                <span className="text-blue-100">info@digitalenergyng.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Copyright */}
         <div className="border-t border-blue-800 mt-12 pt-8">
           <div className="container mx-auto px-4">
             <div className="text-xs text-blue-200 text-center">
-              {t('footer.copyright', { year: new Date().getFullYear() })}
+              &copy; 2025 Digital Energy & Integrated Services Limited. All rights reserved.
             </div>
           </div>
         </div>

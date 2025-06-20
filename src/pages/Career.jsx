@@ -72,7 +72,7 @@ const Career = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50 pt-[160px]">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -183,16 +183,16 @@ const Career = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Current Openings</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {jobOpenings.length === 0 ? (
-                <div className="mt-8 p-8 bg-gray-50 rounded-lg">
-                  <p className="text-xl text-gray-600 mb-4">No positions available at the moment</p>
-                  <p className="text-gray-500">We're not currently hiring, but we're always looking for talented individuals to join our team. Please check back later or submit your resume for future opportunities.</p>
-                </div>
-              ) : (
-                "Explore exciting career opportunities across various departments"
-              )}
-            </p>
+            {jobOpenings.length === 0 ? (
+              <div className="mt-8 p-8 bg-gray-50 rounded-lg">
+                <p className="text-xl text-gray-600 mb-4">No positions available at the moment</p>
+                <p className="text-gray-500">We're not currently hiring, but we're always looking for talented individuals to join our team. Please check back later or submit your resume for future opportunities.</p>
+              </div>
+            ) : (
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Explore exciting career opportunities across various departments
+              </p>
+            )}
           </motion.div>
 
           {jobOpenings.length > 0 && (

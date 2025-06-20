@@ -24,15 +24,18 @@ import ScrollUP from "./components/Scroll/ScrollUP";
 import FabricationConstruction from './pages/Services/FabricationConstruction';
 import TradingServices from "./pages/Services/TradingServices";
 import Management from "./pages/AboutUs/Management";
+import ScrollToTop from "./components/ScrollToTop";
 import "./index.css";
 
 function AppRoutes() {
   const location = useLocation();
   const isHome = location.pathname === "/";
+
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Header />
-      <main className={`flex-grow ${isHome ? "" : "md:pt-20"}`}>
+      <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about">
