@@ -83,6 +83,28 @@ const galleryImages = [
 		src: "/images/Gallery_pics_webp/gallery_16.webp",
 		alt: "Digital Energy Gallery",
 	},
+	//jhbnm
+	{
+		id: 41,
+		src: "/images/Gallery_pics_webp/gallery_41.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 42,
+		src: "/images/Gallery_pics_webp/gallery_42.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 43,
+		src: "/images/Gallery_pics_webp/gallery_43.webp",
+		alt: "Digital Energy Gallery",
+	},
+	{
+		id: 44,
+		src: "/images/Gallery_pics_webp/gallery_44.webp",
+		alt: "Digital Energy Gallery",
+	},
+	//hgfbn
 	{
 		id: 17,
 		src: "/images/Gallery_pics_webp/gallery_17.webp",
@@ -245,7 +267,7 @@ const EventGallery = () => {
 	}
 
 	return (
-		<div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
+		<div className="pt-32 bg-gradient-to-b from-gray-50 to-white">
 			<div className="container mx-auto px-4 md:px-6 py-8">
 				<div className="space-y-12">
 					{/* Enhanced Hero Section */}
@@ -285,7 +307,7 @@ const EventGallery = () => {
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: 0.3 }}
-								className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+								className="text-xl text-white max-w-3xl leading-relaxed"
 							>
 								Explore our collection of images showcasing our projects,
 								infrastructure, and commitment to energy innovation.
