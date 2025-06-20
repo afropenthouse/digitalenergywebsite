@@ -178,7 +178,7 @@ const Home = () => {
       className="overflow-hidden pt-32"
     >
       {/* Hero Section with Slider */}
-      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center">
+      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center pt-[112px]">
         {/* Slider */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
@@ -198,8 +198,8 @@ const Home = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className="container mx-auto px-4 pt-32 pb-16 md:pt-44 md:pb-24 relative z-20">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
+        <div className="w-full flex justify-center items-center pb-16 md:pb-24 relative z-20">
+          <div className="max-w-4xl w-full text-center flex flex-col items-center justify-center px-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${currentSlide}`}
@@ -357,11 +357,11 @@ const Home = () => {
                 path: "/services/manpower"
               },
             ].map((service, idx) => (
-              <div key={service.title} className="bg-white border border-gray-200 rounded-xl flex flex-row items-center h-40 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="flex-shrink-0 h-full w-40 overflow-hidden rounded-l-xl">
+              <div key={service.title} className="bg-white border border-gray-200 rounded-xl flex flex-col md:flex-row items-center h-auto md:h-40 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex-shrink-0 w-full md:w-40 h-40 md:h-full overflow-hidden rounded-t-xl md:rounded-t-none md:rounded-l-xl">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
-                <div className="flex-1 pl-6 pr-4 flex flex-col justify-center h-full">
+                <div className="flex-1 pl-0 md:pl-6 pr-0 md:pr-4 flex flex-col justify-center h-auto md:h-full p-4 md:p-0">
                   <h3 className="text-2xl font-normal text-gray-900 mb-1 leading-snug">{service.title}</h3>
                   <p className="text-base text-gray-700 mb-2 leading-snug">{service.description}</p>
                   <a href={service.path} className="text-orange-500 font-medium flex items-center group hover:underline text-lg">
