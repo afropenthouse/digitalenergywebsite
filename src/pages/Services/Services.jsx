@@ -84,7 +84,8 @@ const services = [
     description: "Comprehensive O&M services to ensure optimal asset performance and reliability.",
     features: [
       "Preventive & Corrective Maintenance",
-      "Asset Integrity Management",
+      "Assets Integrity Management, Fabric Maintenance/ Sand Blasting & Corrosion Control",
+      "Oil & Gas Facilities Inspections, Testing & Commissioning",
       "Emergency Response",
       "Equipment Upgrades",
       "Performance Optimization",
