@@ -54,10 +54,11 @@ const services = [
     features: [
       "Civil, Structural & Mechanical Installation",
       "Pipeline Construction",
-      "Tank Farm Construction",
-      "Electrical & Instrumentation Works",
-      "Modular Systems Installation",
-      "Facility Upgrades",
+      "Tank Farm Construction, Upgrade/Repair & Maintenance",
+      "Electrical, Instrumentation & Automation",
+      "Assets Integrity Management, Fabric Maintenance/Sand Blasting & Corrosion Control",
+      "Oil & Gas Facilities Inspections, Testing & Commissioning",
+      "Machining Services of OCTG Pipes, Tubulars & Drill String Components"
     ],
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
   },
