@@ -71,7 +71,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-[160px] bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Enhanced Hero Section */}
@@ -158,7 +158,7 @@ export default function ContactForm() {
                                   <p className="text-gray-600">{office.address}</p>
                                 </div>
                                 {office.phone && (
-                                <div className="flex items-center">
+                                <div className="text-gray-700 mb-2 flex items-center">
                                   <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
                                   <div className="flex flex-col">
                                     <span>+234 (0) 201 453 6157</span>
@@ -246,28 +246,28 @@ export default function ContactForm() {
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Address</h3>
-                          <p className="text-gray-700 flex items-start">
+                          <div className="text-gray-700 flex items-start">
                             <MapPin className="h-5 w-5 text-gray-500 mt-0.5 mr-2 flex-shrink-0" />
                             {activeOffice.address}
-                          </p>
+                          </div>
                         </div>
                         
                         <div>
                           <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Contact</h3>
                           {activeOffice.phone && (
-                          <p className="text-gray-700 mb-2 flex items-center">
+                          <div className="text-gray-700 mb-2 flex items-center">
                             <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
                             <div className="flex flex-col">
                               <span>+234 (0) 201 453 6157</span>
                               <span>+234 (0) 903 990 3519</span>
                               <span>+234 (0) 810 125 9849</span>
                             </div>
-                          </p>
+                          </div>
                           )}
-                          <p className="text-gray-700 flex items-center">
+                          <div className="text-gray-700 flex items-center">
                             <Mail className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
                             {activeOffice.email}
-                          </p>
+                          </div>
                         </div>
                       </div>
                       
@@ -304,11 +304,11 @@ export default function ContactForm() {
                         <MapPin className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
                         <div>
                           <h3 className="font-semibold">Digital Energy Head Office</h3>
-                          <p className="text-blue-200">
+                          <div className="text-blue-200">
                             Tapa House, 3/5, Imam Dauda Street
                             <br />
                             Off Eric Moore Road, Surulere, Lagos, Nigeria
-                          </p>
+                          </div>
                         </div>
                       </div>
                       
@@ -316,13 +316,13 @@ export default function ContactForm() {
                         <Phone className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
                         <div>
                           <h3 className="font-semibold">Contact Numbers</h3>
-                          <p className="text-blue-200">
+                          <div className="text-blue-200">
                             +234 (0)   201 453 6157
                             <br />
                             +234 (0) 903 990 3519
                             <br />
                             +234 (0) 810 125 9849
-                          </p>
+                          </div>
                         </div>
                       </div>
                       
@@ -330,7 +330,7 @@ export default function ContactForm() {
                         <Mail className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
                         <div>
                           <h3 className="font-semibold">Email</h3>
-                          <p className="text-blue-200">info@digitalenergyng.com</p>
+                          <div className="text-blue-200">info@digitalenergyng.com</div>
                         </div>
                       </div>
                     </div>

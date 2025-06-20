@@ -69,7 +69,7 @@ const projectList = [
     title: "Fabrication & Supply",
     client: "Weatherford",
     description: "Fabrication and Supply of X-overs & 1-Gauge lumpsum service on multi wells pads",
-    image: "/images/Projects/FabricationSupply.jpg",
+    image: "/images/Projects/FabricationSupply.webp",
     logo: "/images/webp/weatherford.webp"
   },
   {
@@ -141,16 +141,16 @@ const Projects = () => {
     : projectList.filter(project => project.category === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[160px]">
       {/* Hero Section */}
-			<section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
+			<section className="relative bg-gradient-to-r from-blue-800 to-blue-800 text-white py-20 overflow-hidden">
 				<div className="absolute inset-0">
 					<img
 						src="/images/webp/Capture.webp"
 						alt="Projects"
 						className="w-full h-full object-cover opacity-40"
 					/>
-					<div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+					<div className="absolute inset-0 bg-gradient-to-r from-blue-800/70 to-blue-800/70" />
 					<div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
 				</div>
 				<div className="relative z-10 container mx-auto px-6 max-w-5xl">
@@ -158,7 +158,7 @@ const Projects = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.1 }}
-						className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
+						className="inline-block bg-blue-800/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
 					>
 						<p className="text-sm font-medium">Projects</p>
 					</motion.div>
@@ -174,7 +174,7 @@ const Projects = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.3 }}
-						className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+						className="text-xl text-white max-w-3xl leading-relaxed"
 					>
 						Strategic alliances with industry leaders for cutting-edge solutions
 					</motion.p>

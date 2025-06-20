@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react"
 import { Wrench, ShoppingCart, Building, CheckCircle, Settings, Users, HardHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import StatsSection from "@/components/StatsSection"
 import { Link } from "react-router-dom"
 import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
@@ -176,7 +175,7 @@ const Home = () => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       transition={{ duration: 0.5 }}
-      className="overflow-hidden"
+      className="overflow-hidden pt-32"
     >
       {/* Hero Section with Slider */}
       <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center">
@@ -200,14 +199,14 @@ const Home = () => {
           </AnimatePresence>
         </div>
         <div className="container mx-auto px-4 pt-32 pb-16 md:pt-44 md:pb-24 relative z-20">
-          <div className="max-w-4xl mx-auto lg:text-left flex flex-col items-center lg:items-start">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${currentSlide}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, x: -60 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 60 }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center lg:text-left">
                   <span className="block mt-14 sm:mt-2"><HighlightedText text={slides[currentSlide].title} /></span>
@@ -215,35 +214,42 @@ const Home = () => {
                     <HighlightedText text={slides[currentSlide].subtitle} />
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl text-center lg:text-left">
+                <motion.p
+                  className="text-lg md:text-xl text-white mb-8 max-w-2xl text-center lg:text-left"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -40 }}
+                  transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+                  key={`desc-${currentSlide}`}
+                >
                   <HighlightedText text={slides[currentSlide].description} />
-                </p>
+                </motion.p>
               </motion.div>
             </AnimatePresence>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full mt-4"
             >
-              <button
+              <Link
+                to="/services"
                 className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl shadow-lg overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center">
-                  {t('home.get_started')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform hidden sm:block" />
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform rotate-90 sm:hidden" />
+                  Services
                 </span>
-              </button>
-              <button
+              </Link>
+              <Link
+                to="/about/who-we-are"
                 className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-white/10 backdrop-blur-sm border-2 border-orange-500 rounded-xl hover:bg-orange-500/20 transition-colors"
               >
-                <Link to="/contact" className="relative flex items-center">
-                  {t('home.contact_us')}
+                <span className="relative flex items-center">
+                  About us
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </button>
+                </span>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -274,141 +280,99 @@ const Home = () => {
         >
           <ChevronRight className="w-7 h-7" />
         </button>
-        {/* Floating elements */}
-        <motion.div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          <div className="animate-bounce flex flex-col items-center">
-            <span className="text-sm text-blue-200 mb-2">Scroll to explore</span>
-            <div className="w-8 h-12 rounded-full border-2 border-orange-400 flex justify-center p-1">
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-                className="w-2 h-2 bg-orange-400 rounded-full"
-              />
-            </div>
-          </div>
-        </motion.div>
       </section>
 
       {/* About Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="order-2 lg:order-1"
-            >
-              <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
-                {t('home.our_story')}
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{t('home.transforming_solutions_title')}</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                {t('home.transforming_solutions_desc')}
+        <div className="w-full">
+           <div className="flex flex-col lg:flex-row justify-center items-center w-4/5 mx-auto min-h-[200px]">
+            {/* Left: Welcome heading only */}
+            <div className="flex-1 flex flex-col justify-center items-center text-center py-4">
+              <h2 className="text-5xl font-light text-gray-900 leading-tight">
+                Welcome to<br/>
+                <span className="font-normal text-orange-600">Digital energy</span>
+              </h2>
+            </div>
+            {/* Divider */}
+            <div className="hidden lg:block h-32 border-l-2 border-blue-800 mx-8" style={{ minHeight: '120px' }}></div>
+            {/* Right: Company intro and About Us content */}
+            <div className="flex-1 flex flex-col justify-center items-center text-center py-4">
+              <p className="text-xl text-gray-400 mb-2 font-normal">
+              We are a forward-thinking energy services company delivering end-to-end engineering, procurement, construction, and commissioning solutions to Nigeria's oil and gas industry. 
               </p>
-              <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-8 py-4">
-                <Link to="/about/who-we-are">{t('header.learnMore')}</Link>
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="relative order-1 lg:order-2"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/images/webp/pic_14.webp"
-                  alt="About Digital Energy"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                
-                {/* Decorative element */}
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl z-10 shadow-xl" />
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl z-10 shadow-xl" />
-              </div>
-            </motion.div>
+              <p className="text-xl text-blue-900 font-semibold">
+              From project conception to completion, we bring innovation, local expertise, and global standards to every challenge.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-8 sm:py-12 bg-white">
+      {/* Service Overview Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-8 sm:mb-12"
-          >
-            <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-1 rounded-full text-sm font-medium mb-3 sm:mb-4">
-              {t('home.our_services')}
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">{t('home.comprehensive_solutions_title')}</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('home.comprehensive_solutions_desc')}
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Service Overview</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mb-2">
+              We deliver a comprehensive suite of engineering, procurement, construction, commissioning, and manpower solutions tailored for the evolving needs of the energy sector.
             </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="h-full"
-              >
-                <Link to={service.path} className="h-full block">
-                  <div className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-200 bg-white rounded-xl overflow-hidden flex flex-col">
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div
-                        className={`absolute top-4 left-4 ${service.color} rounded-xl p-3 shadow-md`}
-                      >
-                        <service.icon className="h-6 w-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="p-6 flex-grow">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
-                        <HighlightedText text={service.title} />
-                      </h3>
-                      <p className="text-gray-600">
-                        <HighlightedText text={service.description} />
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+            <div className="w-16 h-1 bg-orange-500 rounded mt-2" />
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Engineering Services",
+                description: "Front-end engineering design (FEED), detailed engineering, and constructability studies across civil, mechanical, electrical, and process disciplines.",
+                image: "/images/webp/engineering.webp",
+                path: "/services/engineering"
+              },
+              {
+                title: "Procurement Services",
+                description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
+                image: "/images/webp/procurement3.webp",
+                path: "/services/procurement"
+              },
+              {
+                title: "Fabrication & Construction",
+                description: "Civil works, Steel structural Fabrication and erection, mechanical installation, piping, E&I, and facility upgrades.",
+                image: "/images/webp/fabrication.webp",
+                path: "/services/fabrication"
+              },
+              {
+                title: "Commissioning & Start-up",
+                description: "Pre-commissioning, commissioning, and start-up support services to ensure systems operate as designed.",
+                image: "/images/webp/commisioning.webp",
+                path: "/services/commissioning"
+              },
+              {
+                title: "Operations & Maintenance",
+                description: "End-to-end O&M services ensuring optimal asset performance, reduced downtime, and extended infrastructure life cycle.",
+                image: "/images/webp/operation.webp",
+                path: "/services/operations"
+              },
+              {
+                title: "Technical Manpower Supply",
+                description: "Certified Personnel | Project Staffing | IRATA Technicians | Specialized Roles",
+                image: "/images/webp/p8.webp",
+                path: "/services/manpower"
+              },
+            ].map((service, idx) => (
+              <div key={service.title} className="bg-white border border-gray-200 rounded-xl flex flex-row items-center h-40 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex-shrink-0 h-full w-40 overflow-hidden rounded-l-xl">
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1 pl-6 pr-4 flex flex-col justify-center h-full">
+                  <h3 className="text-2xl font-normal text-gray-900 mb-1 leading-snug">{service.title}</h3>
+                  <p className="text-base text-gray-700 mb-2 leading-snug">{service.description}</p>
+                  <a href={service.path} className="text-orange-500 font-medium flex items-center group hover:underline text-lg">
+                    <span className="mr-1">&rarr; Read More</span>
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
-
-          <div className="flex justify-center mt-12">
-            <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-8 py-4">
-              <Link to="/services">{t('home.view_all_services')}</Link>
-            </Button>
-          </div>
         </div>
       </section>
-
-      {/* Stats Section */}
-      <StatsSection />
 
       {/* CTA Section */}
       <section className="py-20 bg-white relative overflow-hidden">
@@ -449,6 +413,87 @@ const Home = () => {
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Latest Projects Section */}
+      <section className="py-16 bg-blue-900">
+        <div className="w-4/5 mx-auto">
+          <h2 className="text-4xl font-light text-white mb-2 text-left">Latest Projects</h2>
+          <div className="w-20 h-1 bg-red-600 rounded mb-10 text-left"></div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+            {/* Project 1 */}
+            <Link to="/projects" className="relative w-full h-64 block group rounded shadow-lg overflow-hidden">
+              <img src="/images/Projects/Maintenance.png" alt="Maintenance & Inspection Services" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                <h3 className="text-lg font-bold text-white mb-1">Maintenance & Inspection Services</h3>
+                <p className="italic text-white text-sm mb-1">NPDC</p>
+                <p className="text-white text-xs">Provision of maintaining and inspection, supply of PUP joints and cross over services for NPDC Operated Land and Swamp Assets on a call Basis</p>
+              </div>
+            </Link>
+            {/* Project 2 */}
+            <Link to="/projects" className="relative w-full h-64 block group rounded shadow-lg overflow-hidden">
+              <img src="/images/Projects/Machining Services.jpg" alt="Machining & Fabrication Services" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                <h3 className="text-lg font-bold text-white mb-1">Machining & Fabrication Services</h3>
+                <p className="italic text-white text-sm mb-1">Seplat</p>
+                <p className="text-white text-xs">Provision of machining and fabrication services for eastern assets</p>
+              </div>
+            </Link>
+            {/* Project 3 */}
+            <Link to="/projects" className="relative w-full h-64 block group rounded shadow-lg overflow-hidden">
+              <img src="/images/Projects/Tank_Farm.jpg" alt="Tank Farm Upgrade & Maintenance" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                <h3 className="text-lg font-bold text-white mb-1">Tank Farm Upgrade & Maintenance</h3>
+                <p className="italic text-white text-sm mb-1">Pivot Integrated Energy</p>
+                <p className="text-white text-xs">Upgrade and maintenance of 40 million liters Tank farm depot in Calabar EPZ</p>
+              </div>
+            </Link>
+            {/* Project 4 */}
+            <Link to="/projects" className="relative w-full h-64 block group rounded shadow-lg overflow-hidden">
+              <img src="/images/Projects/Tank_Farm2.jpg" alt="Lagos (Apapa) Tank Farm Maintenance" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                <h3 className="text-lg font-bold text-white mb-1">Lagos (Apapa) Tank Farm Maintenance</h3>
+                <p className="italic text-white text-sm mb-1">Pivot Integrated Energy</p>
+                <p className="text-white text-xs">Upgrade and maintenance of 30 million Litres Tank Farm depot in Apapa, Lagos</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Clients Scroller Section */}
+      <section className="py-8 bg-white">
+        <div className="w-4/5 mx-auto">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Our Clients</h2>
+          <div className="overflow-x-hidden scrollbar-hide whitespace-nowrap py-2">
+            <div className="relative w-full" style={{ overflow: 'hidden' }}>
+              <div className="flex animate-scroll-x space-x-8 items-center" style={{ width: 'max-content' }}>
+                {/* Logos duplicated for seamless loop */}
+                <img src="/images/Clients_webp/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/Total.webp" alt="Total Energies" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/seepco.webp" alt="SEEPCO" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/saipem.webp" alt="Saipem" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/Addax.webp" alt="Addax" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/Hydrocarbon.webp" alt="First Hydrocarbon" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/nnpc-18.webp" alt="NNPC 18" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/ewt.webp" alt="EWT Energy Works" className="h-16 w-auto object-contain" />
+                {/* Duplicate for infinite scroll */}
+                <img src="/images/Clients_webp/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/Total.webp" alt="Total Energies" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/seepco.webp" alt="SEEPCO" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/saipem.webp" alt="Saipem" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/Addax.webp" alt="Addax" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/Hydrocarbon.webp" alt="First Hydrocarbon" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/nnpc-18.webp" alt="NNPC 18" className="h-16 w-auto object-contain" />
+                <img src="/images/Clients_webp/ewt.webp" alt="EWT Energy Works" className="h-16 w-auto object-contain" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </motion.div>

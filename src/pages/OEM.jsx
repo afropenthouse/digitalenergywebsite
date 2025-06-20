@@ -132,7 +132,7 @@ const OEM = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[160px]">
       {/* Hero Section - Unchanged */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">

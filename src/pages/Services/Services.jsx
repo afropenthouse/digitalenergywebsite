@@ -200,16 +200,16 @@ const Services = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50 pt-[160px]">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-blue-800 to-blue-800 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/pic_2.png"
             alt="Services"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-800/70 to-blue-800/70" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
         </div>
         <div className="relative z-10 container mx-auto px-6 max-w-5xl">
@@ -217,7 +217,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
+            className="inline-block bg-blue-800/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
           >
             <p className="text-sm font-medium">Our Services</p>
           </motion.div>
@@ -233,7 +233,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+            className="text-xl text-white max-w-3xl leading-relaxed"
           >
             Comprehensive energy solutions across the entire value chain, delivering innovation, quality, and
             excellence in every project we undertake.
