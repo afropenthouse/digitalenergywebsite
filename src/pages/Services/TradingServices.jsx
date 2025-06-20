@@ -104,7 +104,7 @@ const TradingServices = () => {
   ]
 
   return (
-    <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-[160px] bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Hero Section */}

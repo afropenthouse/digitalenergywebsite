@@ -157,7 +157,7 @@ const Clients = () => {
   }
 
   return (
-    <div className="pt-20 bg-white">
+    <div className="pt-32 bg-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Hero Section */}
@@ -196,7 +196,7 @@ const Clients = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+                className="text-xl text-white max-w-3xl leading-relaxed"
               >
                 We're proud to partner with leading organizations in the energy sector,
                 delivering innovative solutions that drive success.

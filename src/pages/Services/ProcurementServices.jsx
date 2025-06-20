@@ -46,7 +46,7 @@ const ProcurementServices = () => {
   ]
 
   return (
-    <div className="pt-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-[160px] bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Hero Section */}
@@ -84,7 +84,7 @@ const ProcurementServices = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+                className="text-xl text-white max-w-3xl leading-relaxed"
               >
                 Supply Chain Management with global sourcing expertise.
               </motion.p>
