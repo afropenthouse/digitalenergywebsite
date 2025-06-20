@@ -113,11 +113,11 @@ export default function Header() {
             </div>
             <div className="flex items-center">
               <Phone className="h-4 w-4 mr-2 text-white" />
-              <span>+234 809 954 2111</span>
+              <span>+234 810 125 9849</span>
             </div>
             <div className="flex items-center">
               <Mail className="h-4 w-4 mr-2 text-white" />
-              <span>info@fairtex.com.ng</span>
+              <span>info@digitalenergyng.com</span>
             </div>
           </div>
           <div className="flex items-center mt-2 md:mt-0">
