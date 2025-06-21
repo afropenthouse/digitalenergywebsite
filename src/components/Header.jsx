@@ -87,10 +87,10 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed w-full z-50">
+    <header className="fixed left-0 right-0 top-0 w-full z-50">
       {/* Top Bar: Contact Info, Language, Google Logo & Request Quote */}
-      <div className="w-full bg-[#002147] text-white text-sm py-2">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0">
+      <div className="bg-[#002147] text-white text-sm py-2">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0">
           {/* Top section: Language + Contact Info */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6">
             {/* Google logo + Language dropdown */}
@@ -136,13 +136,9 @@ export default function Header() {
       </div>
       {/* Main Header Bar */}
       <div 
-        className={`bg-white transition-all duration-300 ${
-          isScrolled 
-            ? "shadow-md py-0" 
-            : "py-2"
-        }`}
+        className="bg-gray-100 transition-all duration-300 py-2"
       >
-        <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center">
@@ -200,7 +196,7 @@ export default function Header() {
       </div>
       {/* Bottom Navigation Bar */}
       <div className="bg-blue-800 text-white">
-        <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4">
           <nav className="hidden md:flex items-center justify-between">
             {navLinks.map((link) =>
               link.dropdown ? (
