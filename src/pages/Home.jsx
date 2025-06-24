@@ -3,6 +3,7 @@ import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react"
 import { Wrench, ShoppingCart, Building, CheckCircle, Settings, Users, HardHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
+import StatsSection from "@/components/StatsSection"
 import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 import { useSearch } from "@/context/SearchContext"
@@ -288,7 +289,7 @@ const Home = () => {
             <div className="flex-1 flex flex-col justify-center items-center text-center py-4">
               <h2 className="text-5xl font-light text-gray-900 leading-tight">
                 Welcome to<br/>
-                <span className="font-normal text-orange-600">Digital energy</span>
+                <span className="font-normal text-orange-600">Digital Energy</span>
               </h2>
             </div>
             {/* Divider */}
@@ -305,6 +306,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
       {/* Service Overview Section */}
       <section className="py-16 bg-white">
@@ -371,6 +373,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <StatsSection />
 
       {/* CTA Section */}
       <section className="py-20 bg-white relative overflow-hidden">

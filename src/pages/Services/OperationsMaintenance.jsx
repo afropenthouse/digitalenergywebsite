@@ -64,14 +64,14 @@ const OperationsMaintenance = () => {
   ]
 
   return (
-    <div className="pt-[160px] bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 md:py-24 rounded-2xl overflow-hidden"
+            className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 md:py-20 rounded-2xl overflow-hidden mt-8"
           >
             <div className="absolute inset-0">
               <img
@@ -80,6 +80,7 @@ const OperationsMaintenance = () => {
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
             </div>
             <div className="relative z-10 container mx-auto px-6 max-w-5xl">
               <motion.div
