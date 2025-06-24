@@ -329,7 +329,7 @@ const Home = () => {
               {
                 title: "Procurement Services",
                 description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
-                image: "/images/webp/procurement3.webp",
+                image: "/images/webp/procurement1.jpg",
                 path: "/services/procurement"
               },
               {
