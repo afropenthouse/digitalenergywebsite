@@ -2,261 +2,102 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Loader from "../Loader/Loader"
 
-const galleryImages = [
+const galleryCategories = [
 	{
-		id: 1,
-		src: "/images/Gallery_pics_webp/gallery_1.webp",
-		alt: "Digital Energy Gallery",
+		name: "Office & People",
+		images: [
+			{ src: "/images/Gallery_pics/Office & People/office1.webp", alt: "Office & People 1" },
+			{ src: "/images/Gallery_pics/Office & People/office2.webp", alt: "Office & People 2" },
+			{ src: "/images/Gallery_pics/Office & People/office3.webp", alt: "Office & People 3" },
+			{ src: "/images/Gallery_pics/Office & People/office4.webp", alt: "Office & People 4" },
+		],
 	},
 	{
-		id: 2,
-		src: "/images/Gallery_pics_webp/gallery_2.webp",
-		alt: "Digital Energy Gallery",
+		name: "Equipments",
+		images: [
+			{ src: "/images/Gallery_pics/Equipment/Equipment1.webp", alt: "Equipment 1" },
+			{ src: "/images/Gallery_pics/Equipment/Equipmen2.webp", alt: "Equipment 2" },
+			{ src: "/images/Gallery_pics/Equipment/Equipmen3.webp", alt: "Equipment 3" },
+			{ src: "/images/Gallery_pics/Equipment/Equipment4.webp", alt: "Equipment 4" },
+			{ src: "/images/Gallery_pics/Equipment/Equipment5.webp", alt: "Equipment 5" },
+			{ src: "/images/Gallery_pics/Equipment/Equipment6.webp", alt: "Equipment 6" },
+			{ src: "/images/Gallery_pics/Equipment/Equipment7.jpg", alt: "Equipment 7" },
+			{ src: "/images/Gallery_pics/Equipment/Equipment8.webp", alt: "Equipment 8" },
+			{ src: "/images/Gallery_pics/Equipment/Equipment9.webp", alt: "Equipment 9" },
+			{ src: "/images/Gallery_pics/Equipment/Equipment10.webp", alt: "Equipment 10" },
+		],
 	},
 	{
-		id: 3,
-		src: "/images/Gallery_pics_webp/gallery_3.webp",
-		alt: "Digital Energy Gallery",
+		name: "Fabrication/Construction",
+		images: [
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication1.webp", alt: "Fabrication 1" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication2.jpg", alt: "Fabrication 2" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication3.webp", alt: "Fabrication 3" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication4.webp", alt: "Fabrication 4" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication5.webp", alt: "Fabrication 5" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication6.jpg", alt: "Fabrication 6" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication8.jpg", alt: "Fabrication 8" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication9.jpg", alt: "Fabrication 9" },
+			{ src: "/images/Gallery_pics/Fabrication Construction/Fabrication10.jpg", alt: "Fabrication 10" },
+		],
 	},
 	{
-		id: 4,
-		src: "/images/Gallery_pics_webp/gallery_4.webp",
-		alt: "Digital Energy Gallery",
+		name: "Design/Frameworks",
+		images: [
+			{ src: "/images/Gallery_pics/DesignFrameworks/Design1.png", alt: "Design Frameworks 1" },
+		],
 	},
 	{
-		id: 5,
-		src: "/images/Gallery_pics_webp/gallery_5.webp",
-		alt: "Digital Energy Gallery",
+		name: "Inspections and Testing",
+		images: [
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection1.webp", alt: "Inspection 1" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection2.jpg", alt: "Inspection 2" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection3.jpg", alt: "Inspection 3" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection4.webp", alt: "Inspection 4" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection5.webp", alt: "Inspection 5" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection6.webp", alt: "Inspection 6" },
+		],
 	},
 	{
-		id: 6,
-		src: "/images/Gallery_pics_webp/gallery_6.webp",
-		alt: "Digital Energy Gallery",
+		name: "Instrumentation",
+		images: [
+			{ src: "/images/Gallery_pics/Instrumentation/inspection1.webp", alt: "Instrumentation 1" },
+			{ src: "/images/Gallery_pics/Instrumentation/inspection2.webp", alt: "Instrumentation 2" },
+			{ src: "/images/Gallery_pics/Instrumentation/inspection3.jpg", alt: "Instrumentation 3" },
+			{ src: "/images/Gallery_pics/Instrumentation/inspection4.webp", alt: "Instrumentation 4" },
+			{ src: "/images/Gallery_pics/Instrumentation/inspection5.webp", alt: "Instrumentation 5" },
+		],
 	},
 	{
-		id: 7,
-		src: "/images/Gallery_pics_webp/gallery_7.webp",
-		alt: "Digital Energy Gallery",
+		name: "Vessels",
+		images: [
+			{ src: "/images/Gallery_pics/Vessels/Vessel1.webp", alt: "Vessel 1" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel2.jpg", alt: "Vessel 2" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel3.jpg", alt: "Vessel 3" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel4.webp", alt: "Vessel 4" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel5.jpg", alt: "Vessel 5" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel6.webp", alt: "Vessel 6" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel7.webp", alt: "Vessel 7" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel8.webp", alt: "Vessel 8" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel9.webp", alt: "Vessel 9" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel10.jpg", alt: "Vessel 10" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel11.webp", alt: "Vessel 11" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel12.jpg", alt: "Vessel 12" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel13.webp", alt: "Vessel 13" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel14.webp", alt: "Vessel 14" },
+			{ src: "/images/Gallery_pics/Vessels/Vessel15.webp", alt: "Vessel 15" },
+		],
 	},
 	{
-		id: 8,
-		src: "/images/Gallery_pics_webp/gallery_8.webp",
-		alt: "Digital Energy Gallery",
+		name: "Corrosion",
+		images: [
+			{ src: "/images/Gallery_pics/Corrosion/Corrosion1.webp", alt: "Corrosion 1" },
+			{ src: "/images/Gallery_pics/Corrosion/Corrosion2.webp", alt: "Corrosion 2" },
+			{ src: "/images/Gallery_pics/Corrosion/Corrosion3.jpg", alt: "Corrosion 3" },
+			{ src: "/images/Gallery_pics/Corrosion/Corrosion4.webp", alt: "Corrosion 4" },
+			{ src: "/images/Gallery_pics/Corrosion/Corrosion5.jpg", alt: "Corrosion 5" },
+		],
 	},
-	{
-		id: 9,
-		src: "/images/Gallery_pics_webp/gallery_9.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 10,
-		src: "/images/Gallery_pics_webp/gallery_10.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 12,
-		src: "/images/Gallery_pics_webp/gallery_12.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 13,
-		src: "/images/Gallery_pics_webp/gallery_13.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 14,
-		src: "/images/Gallery_pics_webp/gallery_14.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 15,
-		src: "/images/Gallery_pics_webp/gallery_15.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 16,
-		src: "/images/Gallery_pics_webp/gallery_16.webp",
-		alt: "Digital Energy Gallery",
-	},
-	//check
-	{
-		id: 41,
-		src: "/images/Gallery_pics_webp/gallery_41.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 42,
-		src: "/images/Gallery_pics_webp/gallery_42.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 43,
-		src: "/images/Gallery_pics_webp/gallery_43.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 44,
-		src: "/images/Gallery_pics_webp/gallery_44.webp",
-		alt: "Digital Energy Gallery",
-	},
-	//end
-	{
-		id: 17,
-		src: "/images/Gallery_pics_webp/gallery_17.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 18,
-		src: "/images/Gallery_pics_webp/gallery_18.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 19,
-		src: "/images/Gallery_pics_webp/gallery_19.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 20,
-		src: "/images/Gallery_pics_webp/gallery_20.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 21,
-		src: "/images/Gallery_pics_webp/gallery_21.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 22,
-		src: "/images/Gallery_pics_webp/gallery_22.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 23,
-		src: "/images/Gallery_pics_webp/gallery_23.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 24,
-		src: "/images/Gallery_pics_webp/gallery_24.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 25,
-		src: "/images/Gallery_pics_webp/gallery_25.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 26,
-		src: "/images/Gallery_pics_webp/gallery_26.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 27,
-		src: "/images/Gallery_pics_webp/gallery_27.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 28,
-		src: "/images/Gallery_pics_webp/gallery_28.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 29,
-		src: "/images/Gallery_pics_webp/gallery_29.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 30,
-		src: "/images/Gallery_pics_webp/gallery_30.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 31,
-		src: "/images/Gallery_pics_webp/gallery_31.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 32,
-		src: "/images/Gallery_pics_webp/gallery_32.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 33,
-		src: "/images/Gallery_pics_webp/gallery_33.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 34,
-		src: "/images/Gallery_pics_webp/gallery_34.jpg",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 35,
-		src: "/images/Gallery_pics_webp/gallery_35.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 36,
-		src: "/images/Gallery_pics_webp/gallery_36.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 38,
-		src: "/images/Gallery_pics_webp/gallery_38.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 39,
-		src: "/images/Gallery_pics_webp/gallery_39.webp",
-		alt: "Digital Energy Gallery",
-	},
-	//new
-	{
-		id: 45,
-		src: "/images/Gallery_pics_webp/gallery_45.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 46,
-		src: "/images/Gallery_pics_webp/gallery_46.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 47,
-		src: "/images/Gallery_pics_webp/gallery_47.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 48,
-		src: "/images/Gallery_pics_webp/gallery_48.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 49,
-		src: "/images/Gallery_pics_webp/gallery_49.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 45,
-		src: "/images/Gallery_pics_webp/gallery_50.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 50,
-		src: "/images/Gallery_pics_webp/gallery_51.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 51,
-		src: "/images/Gallery_pics_webp/gallery_52.webp",
-		alt: "Digital Energy Gallery",
-	},
-	{
-		id: 52,
-		src: "/images/Gallery_pics_webp/gallery_53.webp",
-		alt: "Digital Energy Gallery",
-	},
-	//kk
 ]
 
 const EventGallery = () => {
@@ -265,7 +106,7 @@ const EventGallery = () => {
 	const [loadedImages, setLoadedImages] = useState(0)
 
 	useEffect(() => {
-		const totalImages = galleryImages.length + 1 // +1 for the hero image
+		const totalImages = galleryCategories.length + 1 // +1 for the hero image
 		const handleImageLoad = () => {
 			setLoadedImages(prev => {
 				const newCount = prev + 1
@@ -277,10 +118,12 @@ const EventGallery = () => {
 		}
 
 		// Preload all images
-		galleryImages.forEach(image => {
-			const img = new Image()
-			img.src = image.src
-			img.onload = handleImageLoad
+		galleryCategories.forEach(category => {
+			category.images.forEach(image => {
+				const img = new Image()
+				img.src = image.src
+				img.onload = handleImageLoad
+			})
 		})
 
 		// Preload hero image
@@ -347,30 +190,32 @@ const EventGallery = () => {
 						</div>
 					</motion.div>
 
-					{/* Gallery Grid */}
-					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-						{galleryImages.map((image, index) => (
-							<motion.div
-								key={image.id}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: index * 0.1 }}
-								className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
-							>
-								<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
-								<img
-									src={image.src}
-									alt={image.alt}
-									className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-									onClick={() => setSelectedImage(image)}
-								/>
-								<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-									
-								</div>
-							</motion.div>
-						))}
-					</div>
+					{/* Gallery Grid by Category */}
+					{galleryCategories.map((category, catIdx) => (
+						<div key={category.name} className="mb-12">
+							<h3 className="text-2xl font-bold mb-4 text-blue-900">{category.name}</h3>
+							<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+								{category.images.map((image, index) => (
+									<motion.div
+										key={image.src}
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ delay: index * 0.1 }}
+										className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+									>
+										<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+										<img
+											src={image.src}
+											alt={image.alt}
+											className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+											onClick={() => setSelectedImage(image)}
+										/>
+									</motion.div>
+								))}
+							</div>
+						</div>
+					))}
 
 					{/* Enhanced Lightbox */}
 					<AnimatePresence>
