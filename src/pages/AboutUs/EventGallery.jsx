@@ -106,36 +106,36 @@ const EventGallery = () => {
 	const [loadedImages, setLoadedImages] = useState(0)
 
 	useEffect(() => {
-		const totalImages = galleryCategories.length + 1 // +1 for the hero image
+		// Collect all image URLs (gallery + hero)
+		const allImageUrls = [
+			"/images/webp/energy.webp",
+			...galleryCategories.flatMap(category => category.images.map(image => image.src)),
+		];
+
+		let loadedCount = 0;
+		let isMounted = true;
 		const handleImageLoad = () => {
-			setLoadedImages(prev => {
-				const newCount = prev + 1
-				if (newCount === totalImages) {
-					setIsLoading(false)
-				}
-				return newCount
-			})
-		}
+			loadedCount += 1;
+			if (isMounted && loadedCount === allImageUrls.length) {
+				setIsLoading(false);
+			}
+			setLoadedImages(loadedCount);
+		};
 
 		// Preload all images
-		galleryCategories.forEach(category => {
-			category.images.forEach(image => {
-				const img = new Image()
-				img.src = image.src
-				img.onload = handleImageLoad
-			})
-		})
-
-		// Preload hero image
-		const heroImg = new Image()
-		heroImg.src = "/images/webp/energy.webp"
-		heroImg.onload = handleImageLoad
+		allImageUrls.forEach(url => {
+			const img = new window.Image();
+			img.src = url;
+			img.onload = handleImageLoad;
+			img.onerror = handleImageLoad;
+		});
 
 		return () => {
-			setIsLoading(true)
-			setLoadedImages(0)
-		}
-	}, [])
+			isMounted = false;
+			setIsLoading(true);
+			setLoadedImages(0);
+		};
+	}, []);
 
 	if (isLoading) {
 		return <Loader />
