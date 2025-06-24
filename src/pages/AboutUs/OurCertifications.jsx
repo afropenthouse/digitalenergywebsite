@@ -36,7 +36,7 @@ const certifications = [
     description: "Recognizes our ISO 9001:2015 certified Quality Management System for the manufacturing of pup joints, nuts, crossovers, couplings, and for pressure testing, non-destructive testing, and maintenance services.",
     icon: BadgeCheck,
     image: "/images/Manufacturing.jpg",
-    year: "2025-2028",
+    year: "2025",
   },
 ]
 
