@@ -1,20 +1,17 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ChevronDown, Phone, Mail, Globe, Search, ShoppingCart, User, Facebook, Twitter, Instagram, Youtube } from "lucide-react"
+import { Menu, X, ChevronDown, Phone, Mail, Globe, Search } from "lucide-react"
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
 import { useSearch } from "@/context/SearchContext"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
-  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState(null)
   const dropdownRef = useRef(null)
   const mobileMenuRef = useRef(null)
   const location = useLocation()
-  const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const navigate = useNavigate()
   const { t, i18n } = useTranslation();
@@ -22,19 +19,19 @@ export default function Header() {
 
   // Navigation links
   const aboutLinks = [
-    { name: t("header.about_who_we_are"), href: "/about/who-we-are" },
-    { name: t("header.management"), href: "/about/management" },
-    { name: t("header.our_history"), href: "/about/history" },
-    { name: t("header.our_certifications"), href: "/about/certifications" },
-    { name: t("header.event_gallery"), href: "/about/gallery" },
-    { name: t("header.clients"), href: "/about/clients" },
+    { name: "Who We Are", href: "/about/who-we-are" },
+    { name: "Management", href: "/about/management" },
+    { name: "Our History", href: "/about/history" },
+    { name: "Our Certifications", href: "/about/certifications" },
+    { name: "Event Gallery", href: "/about/gallery" },
+    { name: "Clients", href: "/about/clients" },
   ];
   
   const contactLinks = [
-    { name: t("header.contact_us"), href: "/contact" },
-    { name: t("header.request_quote"), href: "/contact/quote" },
-    { name: t("header.vendor_registration"), href: "/contact/vendor" },
-    { name: t("header.become_partner"), href: "/contact/partner" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Request Quote", href: "/contact/quote" },
+    { name: "Vendor Registration", href: "/contact/vendor" },
+    { name: "Become Partner", href: "/contact/partner" },
   ];
 
   useEffect(() => {
@@ -48,8 +45,7 @@ export default function Header() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsAboutDropdownOpen(false)
-        setIsContactDropdownOpen(false)
+        setActiveDropdown(null)
       }
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
         setIsMobileMenuOpen(false)
@@ -63,18 +59,17 @@ export default function Header() {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false)
-    setIsAboutDropdownOpen(false)
-    setIsContactDropdownOpen(false)
+    setActiveDropdown(null)
   }, [location.pathname])
 
   const navLinks = [
-    { key: "home", name: t("header.home"), href: "/" },
-    { key: "about", name: t("header.about"), href: "/about", dropdown: aboutLinks },
-    { key: "services", name: t("header.services"), href: "/services" },
-    { key: "projects", name: t("header.projects"), href: "/projects" },
-    { key: "oem", name: t("header.oem"), href: "/oem" },
-    { key: "careers", name: t("header.careers"), href: "/careers" },
-    { key: "contact", name: t("header.contact"), href: "/contact", dropdown: contactLinks },
+    { key: "home", name: "Home", href: "/" },
+    { key: "about", name: "About", href: "/about", dropdown: aboutLinks },
+    { key: "services", name: "Services", href: "/services" },
+    { key: "projects", name: "Projects", href: "/projects" },
+    { key: "oem", name: "OEM", href: "/oem" },
+    { key: "careers", name: "Careers", href: "/careers" },
+    { key: "contact", name: "Contact", href: "/contact", dropdown: contactLinks },
   ]
 
   const handleSearch = (e) => {
@@ -86,308 +81,149 @@ export default function Header() {
     }
   }
 
-  return (
-    <header className="fixed left-0 right-0 top-0 w-full z-50">
-      {/* Top Bar: Contact Info, Language, Google Logo & Request Quote */}
-      <div className="bg-[#002147] text-white text-sm py-2">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0">
-          {/* Top section: Language + Contact Info */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6">
-            {/* Google logo + Language dropdown */}
-            <div className="flex items-center mr-0 sm:mr-4">
-              <img src="/images/webp/Google.webp" alt="Google logo" className="h-6 w-auto mr-2" />
-              <div className="relative">
-                <select
-                  className="appearance-none bg-white text-[#002147] border border-gray-200 rounded px-3 py-1 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm font-medium min-w-[90px]"
-                  value={i18n.language}
-                  onChange={e => i18n.changeLanguage(e.target.value)}
-                >
-                  <option value="en">English</option>
-                  <option value="fr">Français</option>
-                  <option value="es">Español</option>
-                </select>
-                {/* Dropdown arrow */}
-                <span className="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 text-[#002147]">
-                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </span>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <Phone className="h-4 w-4 mr-2 text-white" />
-              <span>+234 810 125 9849</span>
-            </div>
-            <div className="flex items-center">
-              <Mail className="h-4 w-4 mr-2 text-white" />
-              <span>info@digitalenergyng.com</span>
-            </div>
-          </div>
-          {/* Request Quote Button */}
-          <div className="flex items-center justify-center">
-            <Button asChild className="flex items-center bg-[#002147] hover:bg-[#193a6b] text-white px-4 py-1 text-xs md:text-sm rounded-md font-semibold">
-              <Link to="/contact/quote" className="flex items-center">
-                <span className="flex items-center justify-center bg-white rounded-full h-6 w-6 mr-2">
-                  <Phone className="h-4 w-4 text-[#002147]" />
-                </span>
-                <span className="font-semibold">Request Quote</span>
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-      {/* Main Header Bar */}
-      <div 
-        className="bg-gray-100 transition-all duration-300 py-2"
-      >
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img 
-                src="/images/logo1.jpg" 
-                alt="Digital Energy Logo" 
-                className={`transition-all duration-300 ${
-                  isScrolled ? "h-12" : "h-14"
-                }`} 
-              />
-            </Link>
-            {/* Certification Logos */}
-            <div className="hidden md:flex items-center ml-8">
-              <img src="/images/Bms1.jpg" alt="ISO Certification" className="h-24 w-28 opacity-80 hover:opacity-100 transition-opacity" />
-              <img src="/images/Bms2.jpg" alt="ISO Certification" className="h-24 w-28 opacity-80 hover:opacity-100 transition-opacity -ml-4" />
-            </div>
-            {/* Right Actions */}
-            <div className="flex items-center space-x-4">
-              {/* Desktop Search */}
-              <div className="hidden md:flex items-center">
-                <form onSubmit={handleSearch} className="flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="h-10 pl-4 pr-4 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent w-48 text-black bg-white placeholder-gray-400"
-                  />
-                  <button
-                    type="submit"
-                    className="h-10 px-5 rounded-r-lg bg-blue-800 text-white font-semibold hover:bg-orange-500 transition-colors border-l border-gray-300"
-                  >
-                    Search
-                  </button>
-                </form>
-              </div>
-              {/* Mobile Menu Button */}
-              <div className="flex items-center md:hidden">
-                <button
-                  className="text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                  onClick={() => setSearchOpen(!searchOpen)}
-                >
-                  <Search className="h-6 w-6" />
-                </button>
-                <button
-                  className="text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors ml-2"
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                  {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Bottom Navigation Bar */}
-      <div className="bg-blue-800 text-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <nav className="hidden md:flex items-center justify-between">
-            {navLinks.map((link) =>
-              link.dropdown ? (
-                <div key={link.key} className="relative" ref={dropdownRef}>
-                  <button
-                    onClick={() => {
-                      if (link.key === "about") {
-                        setIsAboutDropdownOpen(!isAboutDropdownOpen)
-                        setIsContactDropdownOpen(false)
-                      } else if (link.key === "contact") {
-                        setIsContactDropdownOpen(!isContactDropdownOpen)
-                        setIsAboutDropdownOpen(false)
-                      }
-                    }}
-                    className={`flex items-center space-x-1 px-4 py-3 font-medium transition-colors duration-200 ${
-                      (link.key === "about" && aboutLinks.some(l => location.pathname === l.href)) ||
-                      (link.key === "contact" && contactLinks.some(l => location.pathname === l.href))
-                        ? "bg-blue-800 text-white" 
-                        : "hover:bg-blue-800 hover:text-white text-white"
-                    }`}
-                  >
-                    <span>{link.name}</span>
-                    <motion.span
-                      animate={{ 
-                        rotate: (link.key === "about" && isAboutDropdownOpen) || 
-                               (link.key === "contact" && isContactDropdownOpen) ? 180 : 0 
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ChevronDown className="w-4 h-4" />
-                    </motion.span>
-                  </button>
+  const toggleDropdown = (key) => {
+    setActiveDropdown(activeDropdown === key ? null : key)
+  }
 
-                  <AnimatePresence>
-                    {((link.key === "about" && isAboutDropdownOpen) || 
-                      (link.key === "contact" && isContactDropdownOpen)) && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute left-0 mt-1 bg-white rounded-lg shadow-lg py-2 border border-gray-100 min-w-[220px] z-10"
-                      >
-                        <div className="flex flex-col">
-                          {link.dropdown.map((l) => (
-                            <Link
-                              key={l.name}
-                              to={l.href}
-                              className={`px-4 py-2.5 text-sm whitespace-nowrap rounded-lg mx-2 transition-colors ${
-                                location.pathname === l.href
-                                  ? "bg-blue-800 text-white"
-                                  : "hover:bg-blue-800 hover:text-white text-gray-700"
-                              }`}
-                              onClick={() => {
-                                setIsAboutDropdownOpen(false)
-                                setIsContactDropdownOpen(false)
-                              }}
-                            >
-                              {l.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link 
-                  key={link.key}
-                  to={link.href}
-                  className={`relative font-medium px-4 py-3 transition-colors duration-200 ${
-                    location.pathname === link.href 
-                      ? "bg-blue-800 text-white" 
-                      : "hover:bg-blue-800 hover:text-white text-white"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              )
-            )}
-            <Link
-              to="/about/who-we-are"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-800 hover:text-white transition-colors shadow-sm ml-4"
+  return (
+    <header className={`fixed left-0 right-0 top-0 w-full z-50 ${isScrolled ? "shadow-lg" : ""}`}>
+      {/* Top Bar */}
+      <div className={`bg-blue-800 text-white transition-all duration-300 overflow-hidden ${isScrolled ? "h-0" : "h-10"}`}>
+        <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <Globe className="h-4 w-4 text-blue-200" />
+              <select
+                className="appearance-none bg-transparent text-white border-none px-1 py-0.5 focus:outline-none text-xs font-medium cursor-pointer hover:text-blue-100 transition-colors"
+                value={i18n.language}
+                onChange={e => i18n.changeLanguage(e.target.value)}
+              >
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+              </select>
+            </div>
+            
+            <div className="hidden md:flex items-center space-x-1.5">
+              <Phone className="h-3.5 w-3.5 text-blue-200" />
+              <span className="text-sm hover:text-blue-100 transition-colors">+234 (0) 201 453 6157</span>
+            </div>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-1.5">
+              <Mail className="h-3.5 w-3.5 text-blue-200" />
+              <span className="text-sm hover:text-blue-100 transition-colors">info@digitalenergyng.com</span>
+            </div>
+            
+            <Link 
+              to="/contact/quote" 
+              className="flex items-center space-x-1.5 group"
             >
-              {t("header.learnMore")}
+              <Phone className="h-3.5 w-3.5 text-blue-200 group-hover:text-white transition-colors" />
+              <span className="text-sm group-hover:text-white transition-colors">Request a Quote</span>
             </Link>
-          </nav>
+          </div>
         </div>
       </div>
-      {/* Mobile Search Bar */}
-      <AnimatePresence>
-        {searchOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white border-t border-gray-100"
-          >
-            <div className="container mx-auto px-4 py-3">
-              <form 
-                onSubmit={handleSearch}
-                className="flex items-center"
+
+      {/* Main Header */}
+      <div className={`bg-white transition-all duration-300 border-b border-blue-800 ${isScrolled ? "py-1 shadow-md" : "py-3"}`}>
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/images/logo1.png" 
+              alt="Digital Energy Logo" 
+              className={`transition-all duration-300 ${isScrolled ? "h-10" : "h-14"}`} 
+            />
+          </Link>
+          
+          <div className={`hidden md:flex items-center space-x-6 transition-opacity duration-300 ${isScrolled ? "opacity-0" : "opacity-100"}`}>
+            <img src="/images/Bms1.png" alt="ISO 9001:2015" className="h-14 w-auto" />
+            <img src="/images/Bms2.png" alt="ISO 45001:2018" className="h-14 w-auto" />
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <form 
+              onSubmit={handleSearch} 
+              className={`hidden md:flex items-center bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 ${isScrolled ? "scale-90" : "scale-100"}`}
+            >
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="h-10 pl-3 pr-2 text-sm focus:outline-none w-48 text-gray-700 bg-white placeholder-gray-400"
+              />
+              <button
+                type="submit"
+                className="h-10 px-3 bg-blue-800 text-white hover:bg-blue-700 flex items-center justify-center transition-colors"
               >
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="h-10 flex-1 px-4 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent text-black bg-white placeholder-gray-400"
-                />
-                <button 
-                  type="submit"
-                  className="h-10 px-5 rounded-r-lg bg-blue-800 text-white font-semibold hover:bg-orange-500 transition-colors border-l border-gray-300"
+                <Search className="h-4 w-4" />
+              </button>
+            </form>
+            
+            <button 
+              className="md:hidden text-blue-800 p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Full-width Navigation */}
+      <div className={`bg-blue-800 transition-all duration-300 ${isScrolled ? "shadow-md" : ""}`}>
+        <div className="w-full">
+          <nav className="hidden md:flex items-center justify-center h-14">
+            <div className="flex items-center w-full max-w-7xl mx-auto px-4">
+              {navLinks.map((link) => (
+                <div 
+                  key={link.key} 
+                  className="relative flex-1 text-center"
+                  ref={dropdownRef}
                 >
-                  Search
-                </button>
-              </form>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-gray-100"
-            ref={mobileMenuRef}
-          >
-            <div className="container mx-auto px-4 py-4">
-              <nav className="flex flex-col space-y-1">
-                {navLinks.map((link) =>
-                  link.dropdown ? (
-                    <div key={link.key}>
-                      <button 
-                        className={`flex items-center justify-between w-full px-4 py-3 font-medium transition-colors duration-200 ${
-                          (link.key === "about" && isAboutDropdownOpen) ||
-                          (link.key === "contact" && isContactDropdownOpen)
+                  {link.dropdown ? (
+                    <>
+                      <button
+                        onClick={() => toggleDropdown(link.key)}
+                        className={`flex items-center justify-center w-full h-14 space-x-1 px-2 font-medium transition-all duration-200
+                          ${activeDropdown === link.key || ((link.key === "about" && aboutLinks.some(l => location.pathname === l.href)) || (link.key === "contact" && contactLinks.some(l => location.pathname === l.href)))
                             ? "bg-blue-800 text-white"
-                            : "hover:bg-blue-800 hover:text-white text-gray-700"
-                        }`}
-                        onClick={() => {
-                          if (link.key === "about") {
-                            setIsAboutDropdownOpen(!isAboutDropdownOpen)
-                            setIsContactDropdownOpen(false)
-                          } else if (link.key === "contact") {
-                            setIsContactDropdownOpen(!isContactDropdownOpen)
-                            setIsAboutDropdownOpen(false)
-                          }
-                        }}
+                            : "hover:bg-blue-800 text-white"
+                          } relative group`}
                       >
                         <span>{link.name}</span>
-                        <motion.span
-                          animate={{ 
-                            rotate: (link.key === "about" && isAboutDropdownOpen) || 
-                                   (link.key === "contact" && isContactDropdownOpen) ? 180 : 0 
-                          }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <ChevronDown className="h-4 w-4" />
-                        </motion.span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                          activeDropdown === link.key ? "rotate-180" : ""
+                        }`} />
+                        {/* Hover underline effect */}
+                        <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 ${
+                          activeDropdown === link.key ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`}></span>
                       </button>
                       
                       <AnimatePresence>
-                        {((link.key === "about" && isAboutDropdownOpen) || 
-                          (link.key === "contact" && isContactDropdownOpen)) && (
+                        {activeDropdown === link.key && (
                           <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
+                            className="absolute left-0 right-0 mt-0 bg-white shadow-xl py-2 px-2 border border-gray-100 z-10 rounded-b-lg top-42"
                           >
-                            <div className="pl-4 space-y-1">
+                            <div className="flex flex-col items-end">
                               {link.dropdown.map((l) => (
                                 <Link
                                   key={l.name}
                                   to={l.href}
-                                  className={`block px-4 py-2.5 text-sm rounded-lg transition-colors ${
+                                  className={`block w-full py-2.5 text-sm whitespace-nowrap transition-colors rounded text-center ${
                                     location.pathname === l.href
                                       ? "bg-blue-800 text-white"
                                       : "hover:bg-blue-800 hover:text-white text-gray-700"
                                   }`}
-                                  onClick={() => {
-                                    setIsAboutDropdownOpen(false)
-                                    setIsContactDropdownOpen(false)
-                                    setIsMobileMenuOpen(false)
-                                  }}
+                                  onClick={() => setActiveDropdown(null)}
                                 >
                                   {l.name}
                                 </Link>
@@ -396,37 +232,137 @@ export default function Header() {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
+                    </>
                   ) : (
                     <Link
-                      key={link.key}
                       to={link.href}
-                      className={`px-4 py-3 rounded-lg font-medium transition-colors duration-200 ${
-                        location.pathname === link.href ? "bg-blue-800 text-white" : "hover:bg-blue-800 hover:text-white text-gray-700"
+                      className={`flex items-center justify-center w-full h-14 px-2 font-medium transition-colors duration-200 relative group ${
+                        location.pathname === link.href
+                          ? "bg-blue-900 text-white"
+                          : "hover:bg-blue-700 text-white"
                       }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.name}
+                      {/* Hover underline effect */}
+                      <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 ${
+                        location.pathname === link.href ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                      }`}></span>
                     </Link>
-                  )
-                )}
-                <div className="flex space-x-4 mt-4">
-                  <Button
-                    className="flex-1 bg-gray-900 hover:bg-gray-800"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <User className="h-4 w-4 mr-2" />
-                    {t("header.account")}
-                  </Button>
-                  <Button
-                    className="flex-1 bg-blue-800 hover:bg-blue-800"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <ShoppingCart className="h-4 w-4 mr-2" />
-                    {t("header.cart")}
-                  </Button>
+                  )}
                 </div>
-              </nav>
+              ))}
+              
+              <div className="flex-1 text-center">
+                <Link
+                  to="/about/who-we-are"
+                  className="inline-flex items-center justify-center h-10 px-4 text-sm font-medium text-blue-800 bg-white rounded-lg hover:bg-blue-50 transition-colors shadow-sm"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-white shadow-xl border-t border-gray-200"
+            ref={mobileMenuRef}
+          >
+            <div className="px-4 py-3">
+              <form onSubmit={handleSearch} className="flex items-center mb-4">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="flex-1 h-10 pl-3 pr-2 text-sm border border-gray-300 rounded-l-lg focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="h-10 px-3 bg-blue-800 text-white rounded-r-lg"
+                >
+                  <Search className="h-5 w-5" />
+                </button>
+              </form>
+              
+              <div className="space-y-1">
+                {navLinks.map((link) => (
+                  <div key={link.key} className="border-b border-gray-100 last:border-0">
+                    {link.dropdown ? (
+                      <div className="py-2">
+                        <button
+                          onClick={() => toggleDropdown(link.key)}
+                          className={`flex items-center justify-between w-full px-3 py-2 text-left font-medium rounded-lg ${
+                            (link.key === "about" && aboutLinks.some(l => location.pathname === l.href)) ||
+                            (link.key === "contact" && contactLinks.some(l => location.pathname === l.href))
+                              ? "bg-blue-800 text-white"
+                              : "text-gray-700 hover:bg-blue-50"
+                          }`}
+                        >
+                          <span>{link.name}</span>
+                          <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+                            activeDropdown === link.key ? "rotate-180" : ""
+                          }`} />
+                        </button>
+                        
+                        <AnimatePresence>
+                          {activeDropdown === link.key && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="pl-4 overflow-hidden"
+                            >
+                              <div className="py-2 space-y-1">
+                                {link.dropdown.map((l) => (
+                                  <Link
+                                    key={l.name}
+                                    to={l.href}
+                                    className={`block w-full py-2.5 text-sm whitespace-nowrap transition-colors rounded text-center ${
+                                      location.pathname === l.href
+                                        ? "bg-blue-800 text-white"
+                                        : "hover:bg-blue-800 hover:text-white text-gray-700"
+                                    }`}
+                                  >
+                                    {l.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className={`block px-3 py-2 font-medium rounded-lg ${
+                          location.pathname === link.href
+                            ? "bg-blue-800 text-white"
+                            : "text-gray-700 hover:bg-blue-50"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+                
+                <Link
+                  to="/about/who-we-are"
+                  className="block mt-2 px-4 py-2 text-center text-sm font-medium text-blue-800 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

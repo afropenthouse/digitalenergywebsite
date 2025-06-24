@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 import { useSearch } from "@/context/SearchContext"
-import { useTranslation } from "react-i18next"
 
 function HighlightedText({ text }) {
   const { searchTerm } = useSearch();
@@ -31,42 +30,41 @@ const Home = () => {
   const [loadedImages, setLoadedImages] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderInterval = useRef(null);
-  const { t } = useTranslation();
 
   const slides = [
     {
       id: 1,
-      title: t("home.slider1_title"),
-      subtitle: t("home.slider1_subtitle"),
-      description: t("home.slider1_desc"),
+      title: "Empowering Energy.",
+      subtitle: "Delivering Excellence.",
+      description: "Integrated Energy Solutions Tailored for the Future",
       image: "/images/webp/pic_2.webp"
     },
     {
       id: 2,
-      title: t("home.slider2_title"),
-      subtitle: t("home.slider2_subtitle"),
-      description: t("home.slider2_desc"),
+      title: "Innovative Solutions.",
+      subtitle: "Sustainable Future.",
+      description: "Cutting-edge technology for tomorrow's energy challenges",
       image: "/images/webp/pic_14.webp"
     },
     {
       id: 3,
-      title: t("home.slider3_title"),
-      subtitle: t("home.slider3_subtitle"),
-      description: t("home.slider3_desc"),
+      title: "Reliable Partnerships.",
+      subtitle: "Proven Results.",
+      description: "Trusted by industry leaders across the World",
       image: "/images/webp/p2.webp"
     },
     {
       id: 4,
-      title: t("home.slider4_title"),
-      subtitle: t("home.slider4_subtitle"),
-      description: t("home.slider4_desc"),
+      title: "Engineering Excellence.",
+      subtitle: "Operational Precision.",
+      description: "Precision engineering for complex energy projects",
       image: "/images/webp/pic_12.webp"
     },
     {
       id: 5,
-      title: t("home.slider5_title"),
-      subtitle: t("home.slider5_subtitle"),
-      description: t("home.slider5_desc"),
+      title: "Local Expertise.",
+      subtitle: "Global Standards.",
+      description: "Combining Nigerian knowledge with international best practices",
       image: "/images/webp/cli.webp"
     }
   ];
@@ -75,8 +73,8 @@ const Home = () => {
     {
       id: "engineering",
       icon: Wrench,
-      title: t("home.engineering_title"),
-      description: t("home.engineering_desc"),
+      title: "Engineering Title",
+      description: "Engineering Description",
       color: "bg-gradient-to-br from-blue-600 to-blue-800",
       image: "/images/webp/engineering.webp",
       path: "/services/engineering"
@@ -84,8 +82,8 @@ const Home = () => {
     {
       id: "procurement",
       icon: ShoppingCart,
-      title: t("home.procurement_title"),
-      description: t("home.procurement_desc"),
+      title: "Procurement Title",
+      description: "Procurement Description",
       color: "bg-gradient-to-br from-orange-500 to-orange-700",
       image: "/images/webp/procurement3.webp",
       path: "/services/procurement"
@@ -93,8 +91,8 @@ const Home = () => {
     {
       id: "fabrication",
       icon: HardHat,
-      title: t("home.fabrication_title"),
-      description: t("home.fabrication_desc"),
+      title: "Fabrication Title",
+      description: "Fabrication Description",
       color: "bg-gradient-to-br from-blue-600 to-blue-800",
       image: "/images/webp/fabrication.webp",
       path: "/services/fabrication"
@@ -102,8 +100,8 @@ const Home = () => {
     {
       id: "commissioning",
       icon: CheckCircle,
-      title: t("home.commissioning_title"),
-      description: t("home.commissioning_desc"),
+      title: "Commissioning Title",
+      description: "Commissioning Description",
       color: "bg-gradient-to-br from-orange-500 to-orange-700",
       image: "/images/webp/commisioning.webp",
       path: "/services/commissioning"
@@ -111,8 +109,8 @@ const Home = () => {
     {
       id: "operations",
       icon: Settings,
-      title: t("home.operations_title"),
-      description: t("home.operations_desc"),
+      title: "Operations Title",
+      description: "Operations Description",
       color: "bg-gradient-to-br from-blue-600 to-blue-800",
       image: "/images/webp/operation.webp",
       path: "/services/operations"
@@ -120,8 +118,8 @@ const Home = () => {
     {
       id: "manpower",
       icon: Users,
-      title: t("home.manpower_title"),
-      description: t("home.manpower_desc"),
+      title: "Manpower Title",
+      description: "Manpower Description",
       color: "bg-gradient-to-br from-orange-500 to-orange-700",
       image: "/images/webp/p8.webp",
       path: "/services/manpower"
@@ -175,10 +173,10 @@ const Home = () => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       transition={{ duration: 0.5 }}
-      className="overflow-hidden pt-32"
+      className="overflow-hidden"
     >
       {/* Hero Section with Slider */}
-      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center pt-[112px]">
+      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center pt-32">
         {/* Slider */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
@@ -198,8 +196,8 @@ const Home = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className="w-full flex justify-center items-center pb-16 md:pb-24 relative z-20">
-          <div className="max-w-4xl w-full text-center flex flex-col items-center justify-center px-4">
+        <div className="w-full flex justify-center items-center relative z-20">
+          <div className="max-w-4xl w-full text-center flex flex-col items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${currentSlide}`}
@@ -209,7 +207,7 @@ const Home = () => {
                 transition={{ duration: 0.7, ease: 'easeOut' }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center lg:text-left">
-                  <span className="block mt-14 sm:mt-2"><HighlightedText text={slides[currentSlide].title} /></span>
+                  <span className="block"><HighlightedText text={slides[currentSlide].title} /></span>
                   <span className="block text-orange-400 mt-2">
                     <HighlightedText text={slides[currentSlide].subtitle} />
                   </span>
@@ -232,22 +230,22 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full mt-4"
             >
-              <Link
-                to="/services"
+              <button
+                type="button"
                 className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl shadow-lg overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center">
-                  Services
+                  Get Started
+                  <svg className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </span>
-              </Link>
+              </button>
               <Link
-                to="/about/who-we-are"
-                className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-white/10 backdrop-blur-sm border-2 border-orange-500 rounded-xl hover:bg-orange-500/20 transition-colors"
+                to="/contact"
+                className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-600 to-orange-800 rounded-xl shadow-lg hover:bg-orange-700 transition-colors"
               >
                 <span className="relative flex items-center">
-                  About us
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  Contact
                 </span>
               </Link>
             </motion.div>
@@ -389,17 +387,17 @@ const Home = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-              {t('home.ready_title')}
+              Ready to Power Your Next Project?
             </h2>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto">
-              {t('home.ready_desc')}
+              Partner with Digital Energy for innovative, reliable, and sustainable energy solutions. Let's discuss how we can bring excellence to your next project.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild className="relative group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 text-lg shadow-lg">
                 <Link to="/contact/quote">
                   <span className="relative flex items-center">
-                    {t('home.request_quote')}
+                    Request Quote
                   </span>
                 </Link>
               </Button>
@@ -408,7 +406,7 @@ const Home = () => {
                 className="bg-gradient-to-r from-blue-700 to-blue-800 text-white px-8 py-4 text-lg shadow-lg hover:from-blue-800 hover:to-blue-900"
               >
                 <Link to="/contact">
-                  {t('home.contact_us')}
+                  Contact Us
                 </Link>
               </Button>
             </div>
@@ -494,7 +492,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       </section>
     </motion.div>
   )
