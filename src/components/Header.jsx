@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ChevronDown, Phone, Mail, Globe, Search } from "lucide-react"
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import { useTranslation } from "react-i18next"
 import { useSearch } from "@/context/SearchContext"
 
 export default function Header() {
@@ -14,7 +13,6 @@ export default function Header() {
   const location = useLocation()
   const [searchQuery, setSearchQuery] = useState("")
   const navigate = useNavigate()
-  const { t, i18n } = useTranslation();
   const { setSearchTerm } = useSearch();
 
   // Navigation links
@@ -93,15 +91,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Globe className="h-4 w-4 text-blue-200" />
-              <select
-                className="appearance-none bg-transparent text-white border-none px-1 py-0.5 focus:outline-none text-xs font-medium cursor-pointer hover:text-blue-100 transition-colors"
-                value={i18n.language}
-                onChange={e => i18n.changeLanguage(e.target.value)}
-              >
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <option value="es">Español</option>
-              </select>
+              <span className="text-xs font-medium text-white">English</span>
             </div>
             
             <div className="hidden md:flex items-center space-x-1.5">
