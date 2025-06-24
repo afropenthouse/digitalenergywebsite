@@ -1,27 +1,49 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
-import { MapPin, Clock, Users, GraduationCap, Heart, Award, ChevronRight } from "lucide-react"
+import { MapPin, Clock, Users, GraduationCap, Heart, Award, ChevronRight, X } from "lucide-react"
 import { useState, useEffect } from "react"
 import Loader from "./Loader/Loader"
 import { Link } from "react-router-dom"
 
-const jobOpenings = []
-
-// Uncomment there is an active position
-/*
 const jobOpenings = [
   {
     id: 1,
-    title: "Senior Mechanical Engineer",
-    location: "Lagos, Nigeria",
+    title: "Manual Machinist (API Experience Required)",
+    location: "Port-Harcourt",
     type: "Full-time",
-    experience: "5+ years",
-    description: "Lead mechanical engineering projects for oil & gas facilities",
-    department: "Engineering"
+    experience: "2–3 years",
+    description: "Operate lathes, milling machines, and drill presses. Requires OND/HND in Mechanical or Production Engineering, knowledge of API Spec 7-1, 5CT, 5B, DS-1, ability to read technical drawings and use precision tools. Experience with machining premium connections is a plus.",
+    applyLink: "https://forms.gle/t4gXTPteBNFy12We9"
+  },
+  {
+    id: 2,
+    title: "Machine Shop Supervisor",
+    location: "Port-Harcourt",
+    type: "Full-time",
+    experience: "5–7+ years",
+    description: "Supervise machinists, CNC operators, and shop staff. Plan and manage production schedules. Enforce quality and safety standards. Requires HND/BSc in Mechanical or Production Engineering, strong CNC and machining background, leadership experience, and knowledge of threads in Oil & Gas industry.",
+    applyLink: "https://forms.gle/11MzjtD96kvNvRMr6"
+  },
+  {
+    id: 3,
+    title: "Assistant Depot Operations Supervisor",
+    location: "Port-Harcourt (NPA FOT, Onne Rivers State)",
+    type: "Full-time",
+    experience: "2–5 years",
+    description: "Support daily fuel depot operations, supervise personnel, ensure HSSE compliance, maintain records. Requires HND/BSc in Engineering, Logistics, or related field, depot/terminal operations experience, HSE certifications (advantage), strong communication and leadership skills.",
+    applyLink: "https://forms.gle/JZzdeHKxcegXiBus6"
+  },
+  {
+    id: 4,
+    title: "Depot Laboratory Analyst",
+    location: "Port-Harcourt (NPA FOT, Onne Rivers State)",
+    type: "Full-time",
+    experience: "2+ years",
+    description: "Perform routine testing and quality assurance on petroleum products (PMS, AGO, DPK, ATK). Requires BSc in Chemistry or related field, experience in petroleum lab testing, familiarity with NMDPRA and ISO standards, ability to conduct and interpret tests.",
+    applyLink: "https://forms.gle/LLVpbifZFFnTUCFJA"
   }
 ]
-*/
 
 const benefits = [
   {
@@ -44,12 +66,14 @@ const benefits = [
 const Career = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [loadedImages, setLoadedImages] = useState(0)
+  const [showModal, setShowModal] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   useEffect(() => {
     const handleImageLoad = () => {
       setLoadedImages(prev => {
         const newCount = prev + 1
-        if (newCount === 1) { // Only hero image
+        if (newCount === 1) { 
           setIsLoading(false)
         }
         return newCount
@@ -71,15 +95,20 @@ const Career = () => {
     return <Loader />
   }
 
+  const handleModalClose = () => {
+    setShowModal(false)
+    setFormSubmitted(false)
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50 pt-[160px]">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[220px]">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/webp/pic_2.webp"
             alt="Career"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
@@ -99,7 +128,7 @@ const Career = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            Join our <span className="text-orange-400">Digital Energy</span>{" "}Team
+            Join our <span className="text-orange-400">Digital Energy</span> Team
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -211,12 +240,9 @@ const Career = () => {
                         <div className="flex-1">
                           <div className="flex items-center mb-2">
                             <h3 className="text-xl font-bold text-gray-900 mr-4">{job.title}</h3>
-                            <span className="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">
-                              {job.department}
-                            </span>
                           </div>
                           <p className="text-gray-600 mb-4">{job.description}</p>
-                          <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                          <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-2">
                             <div className="flex items-center">
                               <MapPin className="h-4 w-4 mr-1 text-primary-500" />
                               {job.location}
@@ -231,8 +257,15 @@ const Career = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="mt-4 lg:mt-0 lg:ml-6">
-                          <Button className="bg-primary-500 hover:bg-primary-600 text-white">Apply Now</Button>
+                        <div className="mt-4 lg:mt-0 lg:ml-6 flex items-end justify-end">
+                          <a
+                            href={job.applyLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow-sm transition-all duration-300 text-base"
+                          >
+                            Apply
+                          </a>
                         </div>
                       </div>
                     </CardContent>
@@ -257,24 +290,100 @@ const Career = () => {
             <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full mb-6">
               <p className="text-sm font-medium">Future Opportunities</p>
             </div>
-            
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Power Your Career?
             </h2>
-            
             <p className="text-xl text-indigo-100 mb-8 leading-relaxed max-w-2xl mx-auto">
               Even if you don't see your perfect role today, join our talent community for future opportunities at Digital Energy.
             </p>
-            
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-              <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white py-6 text-lg font-medium">
-                <Link to="/contact">
-                  Submit your Resume
-                </Link>
+              <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-6 text-lg font-medium" onClick={() => setShowModal(true)}>
+                Submit your Resume
               </Button>
             </div>
           </motion.div>
         </div>
+        {/* Modal Overlay */}
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full h-[100vh] flex flex-col justify-center p-4 md:p-6 relative animate-fadeInUp">
+              <button
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors"
+                onClick={handleModalClose}
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              {formSubmitted ? (
+                <div className="text-green-600 text-center font-semibold py-8">
+                  <h4 className="text-2xl mb-2">Resume Submitted Successfully!</h4>
+                  <p className="text-base font-normal text-gray-700">
+                    Thank you for submitting your resume.<br />
+                    Our team has received your application and will review your details.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Submit Your Resume</h3>
+                  <p className="text-gray-600 mb-6 text-center">Fill in your details and upload your PDF resume. We'll contact you if there's a fit!</p>
+                  <form
+                    action="https://api.web3forms.com/submit"
+                    method="POST"
+                    encType="multipart/form-data"
+                    className="space-y-4"
+                    onSubmit={() => setFormSubmitted(true)}
+                  >
+                    <input type="hidden" name="access_key" value="53162de4-b933-422e-85d8-284be6830a0f" />
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-1">Name <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        name="name"
+                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-1">Email <span className="text-red-500">*</span></label>
+                      <input
+                        type="email"
+                        name="email"
+                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-1">Message / Cover Letter <span className="text-gray-400 text-xs">(optional)</span></label>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-1">Resume (PDF only) <span className="text-red-500">*</span></label>
+                      <input
+                        type="file"
+                        name="resume"
+                        accept="application/pdf"
+                        className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-black"
+                        required
+                      />
+                    </div>
+                    <div className="flex justify-center">
+                      <button
+                        type="submit"
+                        className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md font-semibold disabled:opacity-60"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </section>
     </div>
   )

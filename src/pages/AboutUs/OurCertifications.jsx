@@ -30,6 +30,14 @@ const certifications = [
     image: "/images/Coren.jpg",
     year: "2023",
   },
+  {
+    name: "ISO 9001:2015 (Manufacturing)",
+    category: "Quality Management",
+    description: "Recognizes our ISO 9001:2015 certified Quality Management System for the manufacturing of pup joints, nuts, crossovers, couplings, and for pressure testing, non-destructive testing, and maintenance services.",
+    icon: BadgeCheck,
+    image: "/images/Manufacturing.jpg",
+    year: "2025",
+  },
 ]
 
 const OurCertifications = () => {
@@ -71,14 +79,14 @@ const OurCertifications = () => {
   }
 
   return (
-    <div className="pt-[160px] bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Enhanced Hero Section */}
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
-				className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 md:py-24 rounded-2xl overflow-hidden"
+				className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-8 md:py-12 rounded-2xl overflow-hidden mt-8"
 			>
 			<div className="absolute inset-0">
 				<img

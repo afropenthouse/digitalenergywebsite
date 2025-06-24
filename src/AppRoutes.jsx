@@ -25,6 +25,7 @@ import FabricationConstruction from './pages/Services/FabricationConstruction';
 import TradingServices from "./pages/Services/TradingServices";
 import Management from "./pages/AboutUs/Management";
 import ScrollToTop from "./components/ScrollToTop";
+import Layout from "./components/Layout";
 import "./index.css";
 
 function AppRoutes() {
@@ -34,40 +35,40 @@ function AppRoutes() {
   return (
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
-      <Header />
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about">
-            <Route path="who-we-are" element={<WhoWeAre />} />
-            <Route path="management" element={<Management />} />
-            <Route path="history" element={<OurHistory />} />
-            <Route path="certifications" element={<OurCertifications />} />
-            <Route path="gallery" element={<EventGallery />} />
-            <Route path="clients" element={<Clients />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about">
+              <Route path="who-we-are" element={<WhoWeAre />} />
+              <Route path="management" element={<Management />} />
+              <Route path="history" element={<OurHistory />} />
+              <Route path="certifications" element={<OurCertifications />} />
+              <Route path="gallery" element={<EventGallery />} />
+              <Route path="clients" element={<Clients />} />
+            </Route>
+            <Route path="contact">
+              <Route index element={<ContactForm />} />
+              <Route path="quote" element={<RequestQuote />} />
+              <Route path="vendor" element={<VendorRegistration />} />
+              <Route path="partner" element={<BecomePartner />} />
+            </Route>
+            <Route path="services">
+              <Route index element={<Services />} />
+              <Route path="engineering" element={<EngineeringServices />} />
+              <Route path="procurement" element={<ProcurementServices />} />
+              <Route path="commissioning" element={<CommissioningStartup />} />
+              <Route path="operations" element={<OperationsMaintenance />} />
+              <Route path="manpower" element={<TechnicalManpower />} />
+              <Route path="fabrication" element={<FabricationConstruction />} />
+              <Route path="trading" element={<TradingServices />} />
+            </Route>
+            <Route path="projects" element={<Projects />} />
+            <Route path="oem" element={<OEM />} />
+            <Route path="careers" element={<Career />} />
           </Route>
-          <Route path="/contact">
-            <Route index element={<ContactForm />} />
-            <Route path="quote" element={<RequestQuote />} />
-            <Route path="vendor" element={<VendorRegistration />} />
-            <Route path="partner" element={<BecomePartner />} />
-          </Route>
-          <Route path="/services">
-            <Route index element={<Services />} />
-            <Route path="engineering" element={<EngineeringServices />} />
-            <Route path="procurement" element={<ProcurementServices />} />
-            <Route path="commissioning" element={<CommissioningStartup />} />
-            <Route path="operations" element={<OperationsMaintenance />} />
-            <Route path="manpower" element={<TechnicalManpower />} />
-            <Route path="fabrication" element={<FabricationConstruction />} />
-            <Route path="trading" element={<TradingServices />} />
-          </Route>
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/oem" element={<OEM />} />
-          <Route path="/careers" element={<Career />} />
         </Routes>
       </main>
-      <Footer />
       <ScrollUP />
     </div>
   );
