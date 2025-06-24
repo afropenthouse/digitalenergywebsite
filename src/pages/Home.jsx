@@ -127,35 +127,70 @@ const Home = () => {
     },
   ];
 
+  // Service Overview images
+  const serviceOverviewImages = [
+    "/images/webp/engineering.webp",
+    "/images/webp/procurement1.jpg",
+    "/images/webp/fabrication.webp",
+    "/images/webp/commisioning.webp",
+    "/images/webp/operation.webp",
+    "/images/webp/p8.webp",
+  ];
+
+  // Latest Projects images
+  const projectImages = [
+    "/images/Projects/Maintenance.png",
+    "/images/Projects/Machining Services.jpg",
+    "/images/Projects/Tank_Farm.jpg",
+    "/images/Projects/Tank_Farm2.jpg",
+  ];
+
+  // Clients images (from the scroller section)
+  const clientImages = [
+    "/images/Clients_webp/nnpc.webp",
+    "/images/Clients_webp/chevron.webp",
+    "/images/Clients_webp/Total.webp",
+    "/images/Clients_webp/seepco.webp",
+    "/images/Clients_webp/seplat.webp",
+    "/images/Clients_webp/saipem.webp",
+    "/images/Clients_webp/Addax.webp",
+    "/images/Clients_webp/Hydrocarbon.webp",
+    "/images/Clients_webp/nnpc-18.webp",
+    "/images/Clients_webp/ewt.webp",
+  ];
+
+  // Collect all unique image URLs
+  const allImageUrls = Array.from(new Set([
+    ...slides.map(slide => slide.image),
+    ...services.map(service => service.image),
+    ...serviceOverviewImages,
+    ...projectImages,
+    ...clientImages,
+  ]));
+
   useEffect(() => {
+    let isMounted = true;
+    setIsLoading(true);
+    setLoadedImages(0);
+
+    let loadedCount = 0;
     const handleImageLoad = () => {
-      setLoadedImages(prev => {
-        const newCount = prev + 1
-        if (newCount === 2) {
-          setIsLoading(false)
+      loadedCount += 1;
+      if (isMounted) {
+        setLoadedImages(loadedCount);
+        if (loadedCount === allImageUrls.length) {
+          setIsLoading(false);
         }
-        return newCount
-      })
-    }
+      }
+    };
 
-    // Preload hero image
-    const heroImg = new Image()
-    heroImg.src = "/images/webp/pic_2.webp"
-    heroImg.onload = handleImageLoad
-    //
-    heroImg.onerror = handleImageLoad
-
-    const aboutImg = new Image()
-    aboutImg.src = "/images/webp/pic_14.webp"
-    aboutImg.onload = handleImageLoad
-    //
-    aboutImg.onerror = handleImageLoad
-
-    // Load service images in the background
-    services.forEach(service => {
-      const img = new Image()
-      img.src = service.image
-    })
+    // Preload all images
+    allImageUrls.forEach(url => {
+      const img = new window.Image();
+      img.src = url;
+      img.onload = handleImageLoad;
+      img.onerror = handleImageLoad;
+    });
 
     // Auto slide change
     sliderInterval.current = setInterval(() => {
@@ -163,11 +198,12 @@ const Home = () => {
     }, 6000);
 
     return () => {
-      setIsLoading(true)
-      setLoadedImages(0)
+      isMounted = false;
+      setIsLoading(true);
+      setLoadedImages(0);
       clearInterval(sliderInterval.current);
-    }
-  }, [])
+    };
+  }, []);
 
   if (isLoading) {
     return <Loader />
