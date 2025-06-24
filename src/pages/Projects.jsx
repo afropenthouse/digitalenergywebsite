@@ -55,14 +55,14 @@ const projectList = [
     title: "Machining Services",
     client: "Litewell Completions Services",
     description: "Provision of Machining services and cutting of BTC PIN X PIN 20 casting pipes - 56 jts - 122 thread connections",
-    image: "/images/Projects/Machining Services.jpg",
+    image: "/images/Projects/Machining Services2.webp",
     logo: "/images/webp/lite.webp"
   },
   {
     title: "Gas Equipment Procurement",
     client: "MidWestern",
     description: "Procurement of Gas pressure regulator 25bar & cartridge Gas & Supply of FLO Choke Valve",
-    image: "/images/Projects/Gas.webp",
+    image: "/images/Projects/Gas.jpg",
     logo: "/images/webp/Midwestern.webp"
   },
   {
@@ -77,7 +77,7 @@ const projectList = [
     client: "ENAGEED RESOURCES LTD",
     description: "Maintenance and the repair of faulty cathodic transformer rectifier at ENAGEED RESOURCES LTD, April 2025",
     image: "/images/Projects/CathodicTransformer.jpg",
-    logo: "/images/webp/Npdc.webp"
+    logo: "/images/webp/enageed.jpg"
   }
 ]
 
@@ -141,7 +141,7 @@ const Projects = () => {
     : projectList.filter(project => project.category === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[160px]">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[220px]">
       {/* Hero Section */}
 			<section className="relative bg-gradient-to-r from-blue-800 to-blue-800 text-white py-20 overflow-hidden">
 				<div className="absolute inset-0">

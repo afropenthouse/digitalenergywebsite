@@ -18,7 +18,7 @@ const FabricationConstruction = () => {
       icon: Factory
     },
     {
-      title: "Piping & Mechanical Erection",
+      title: "Pipeline Construction, Piping & Mechanical Erection",
       icon: Wrench
     },
     {
@@ -26,11 +26,11 @@ const FabricationConstruction = () => {
       icon: Cpu
     },
     {
-      title: "Storage Tank Construction",
+      title: "Storage Tank/ Pressure Vessels Construction",
       icon: Ruler
     },
     {
-      title: "Cross-Country & Infield Pipeline Laying",
+      title: "Concept, Design Engineering to Completion and Commisioning",
       icon: Settings
     }
   ]
@@ -83,14 +83,14 @@ const FabricationConstruction = () => {
   ]
 
   return (
-    <div className="pt-[160px] bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 md:py-24 rounded-2xl overflow-hidden"
+            className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 md:py-20 rounded-2xl overflow-hidden mt-8"
           >
             <div className="absolute inset-0">
               <img
@@ -99,6 +99,7 @@ const FabricationConstruction = () => {
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
             </div>
             <div className="relative z-10 container mx-auto px-6 max-w-5xl">
               <motion.div
@@ -162,11 +163,16 @@ const FabricationConstruction = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md">
+                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
                   <img
                     src="/images/webp/fabrication.webp"
                     alt="Fabrication & Construction"
-                    className="w-full h-[250px] object-cover"
+                    className="w-full md:w-1/2 h-[250px] object-cover"
+                  />
+                  <img
+                    src="/images/webp/Fabrication2.jpg"
+                    alt="Fabrication & Construction"
+                    className="w-full md:w-1/2 h-[250px] object-cover"
                   />
                 </div>
               </motion.div>
@@ -176,14 +182,14 @@ const FabricationConstruction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg mb-8 border border-gray-100"
+                className="bg-white rounded-2xl p-4 shadow-lg mb-4 border border-gray-100"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Construction Services</h3>
-                <p className="text-gray-700 mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Construction Services</h3>
+                <p className="text-gray-700 mb-4">
                   We offer turnkey construction services across a wide range of disciplines, ensuring timely project delivery and strict adherence to safety and quality standards. Our construction teams have decades of combined experience executing projects across Nigeria and internationally.
                 </p>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Scope of Construction Work:</h4>
-                <div className="grid md:grid-cols-2 gap-4">
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Scope of Construction Work:</h4>
+                <div className="grid md:grid-cols-2 gap-2">
                   {constructionServices.map((service, index) => (
                     <motion.div
                       key={index}
@@ -191,7 +197,7 @@ const FabricationConstruction = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      className="flex items-start space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors"
                     >
                       <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
                         <service.icon className="w-5 h-5 text-blue-600" />
@@ -207,14 +213,14 @@ const FabricationConstruction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg mb-8 border border-gray-100"
+                className="bg-white rounded-2xl p-4 shadow-lg mb-4 border border-gray-100"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Fabrication Services</h3>
-                <p className="text-gray-700 mb-6">
-                  DEISL delivers comprehensive fabrication services to support construction and engineering projects from concept to completion. Our Port Harcourt-based fabrication yard covers over 150,000 m² and is equipped with modern machinery, pressure testing setups, and a CNC-enabled machine shop integrated with 3D CAD systems.
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Fabrication Services</h3>
+                <p className="text-gray-700 mb-4">
+                  DEISL delivers comprehensive fabrication services to support construction and engineering projects from concept to completion. Our Port Harcourt-based fabrication yard covers over 6989 m² and is equipped with modern machinery, pressure testing setups, and a CNC-enabled machine shop integrated with 3D CAD systems.
                 </p>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Scope of Fabrication Work:</h4>
-                <div className="grid md:grid-cols-2 gap-4">
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Scope of Fabrication Work:</h4>
+                <div className="grid md:grid-cols-2 gap-2">
                   {fabricationServices.map((service, index) => (
                     <motion.div
                       key={index}
@@ -222,7 +228,7 @@ const FabricationConstruction = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      className="flex items-start space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors"
                     >
                       <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
                         <service.icon className="w-5 h-5 text-blue-600" />
