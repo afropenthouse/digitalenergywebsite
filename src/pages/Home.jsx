@@ -45,7 +45,7 @@ const Home = () => {
       title: "Innovative Solutions.",
       subtitle: "Sustainable Future.",
       description: "Cutting-edge technology for tomorrow's energy challenges",
-      image: "/images/webp/pic_14.webp"
+      image: "/images/webp/pic_9.webp"
     },
     {
       id: 3,

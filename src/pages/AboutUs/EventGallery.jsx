@@ -106,11 +106,8 @@ const EventGallery = () => {
 	const [loadedImages, setLoadedImages] = useState(0)
 
 	useEffect(() => {
-		// Collect all image URLs (gallery + hero)
-		const allImageUrls = [
-			"/images/webp/energy.webp",
-			...galleryCategories.flatMap(category => category.images.map(image => image.src)),
-		];
+		// Collect all gallery image URLs only (exclude hero)
+		const allImageUrls = galleryCategories.flatMap(category => category.images.map(image => image.src));
 
 		let loadedCount = 0;
 		let isMounted = true;
@@ -122,7 +119,7 @@ const EventGallery = () => {
 			setLoadedImages(loadedCount);
 		};
 
-		// Preload all images
+		// Preload all gallery images
 		allImageUrls.forEach(url => {
 			const img = new window.Image();
 			img.src = url;
