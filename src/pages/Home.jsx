@@ -169,28 +169,29 @@ const Home = () => {
   ]));
 
   useEffect(() => {
-    let isMounted = true;
-    setIsLoading(true);
-    setLoadedImages(0);
-
-    let loadedCount = 0;
     const handleImageLoad = () => {
-      loadedCount += 1;
-      if (isMounted) {
-        setLoadedImages(loadedCount);
-        if (loadedCount === allImageUrls.length) {
-          setIsLoading(false);
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 4) {
+          setIsLoading(false)
         }
-      }
-    };
+        return newCount
+      })
+    }
 
-    // Preload all images
-    allImageUrls.forEach(url => {
-      const img = new window.Image();
-      img.src = url;
-      img.onload = handleImageLoad;
-      img.onerror = handleImageLoad;
-    });
+    // Preload the first 4 hero slider images
+    for (let i = 0; i < 4; i++) {
+      const img = new Image()
+      img.src = slides[i].image
+      img.onload = handleImageLoad
+      img.onerror = handleImageLoad
+    }
+
+    // Load service images in the background
+    services.forEach(service => {
+      const img = new Image()
+      img.src = service.image
+    })
 
     // Auto slide change
     sliderInterval.current = setInterval(() => {
@@ -198,12 +199,11 @@ const Home = () => {
     }, 6000);
 
     return () => {
-      isMounted = false;
-      setIsLoading(true);
-      setLoadedImages(0);
+      setIsLoading(true)
+      setLoadedImages(0)
       clearInterval(sliderInterval.current);
-    };
-  }, []);
+    }
+  }, [])
 
   if (isLoading) {
     return <Loader />
