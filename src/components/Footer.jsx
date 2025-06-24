@@ -2,18 +2,15 @@
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
 import { Link } from "react-router-dom"
-import { useTranslation } from "react-i18next"
 
 export default function Footer() {
-  const { t } = useTranslation();
-
   return (
     <footer className="bg-blue-900 text-white w-full">
       {/* Top Orange Bar */}
       <div className="w-full bg-orange-500 px-4 md:px-8 py-4">
         <div className="max-w-6xl mx-auto">
           <span className="block text-base md:text-lg lg:text-xl font-medium text-white text-left">
-            Delivering reliable and timely solutions for our valued clients.
+            Empowering your success with dependable and prompt energy solutions.
           </span>
         </div>
       </div>

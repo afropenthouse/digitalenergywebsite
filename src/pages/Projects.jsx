@@ -141,7 +141,7 @@ const Projects = () => {
     : projectList.filter(project => project.category === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[160px]">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[220px]">
       {/* Hero Section */}
 			<section className="relative bg-gradient-to-r from-blue-800 to-blue-800 text-white py-20 overflow-hidden">
 				<div className="absolute inset-0">

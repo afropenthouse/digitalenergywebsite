@@ -72,14 +72,14 @@ const Career = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-[160px]">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[220px]">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/webp/pic_2.webp"
             alt="Career"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
@@ -99,7 +99,7 @@ const Career = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            Join our <span className="text-orange-400">Digital Energy</span>{" "}Team
+            Join our <span className="text-orange-400">Digital Energy</span> Team
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

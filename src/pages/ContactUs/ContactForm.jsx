@@ -18,6 +18,7 @@ const offices = [
     id: "portharcourt",
     name: "Port Harcourt Terminal Office",
     address: "Digital Energy Close, Off Igboeche road, by Eleme Junction, Port Harcourt, Nigeria",
+    phone: "+2348037190006, +2348071518707",
     email: "info@digitalenergyng.com",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.962371287539!2d7.007092715264468!3d4.815081096509545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d26a7b1e1f4d%3A0x4d9e0f1c3d3d3d3d!2sEleme%20Junction%2C%20Port%20Harcourt!5e0!3m2!1sen!2sng!4v1648226912495!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/ZmNvaNozUm2CV3iD7"
@@ -71,14 +72,14 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="pt-[160px] bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
           {/* Enhanced Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 md:py-24 rounded-2xl overflow-hidden"
+            className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-8 md:py-12 rounded-2xl overflow-hidden mt-8"
           >
             <div className="absolute inset-0">
               <img
@@ -161,9 +162,9 @@ export default function ContactForm() {
                                 <div className="text-gray-700 mb-2 flex items-center">
                                   <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
                                   <div className="flex flex-col">
-                                    <span>+234 (0) 201 453 6157</span>
-                                    <span>+234 (0) 903 990 3519</span>
-                                    <span>+234 (0) 810 125 9849</span>
+                                    {office.phone.split(',').map((num, idx) => (
+                                      <span key={idx}>{num.trim()}</span>
+                                    ))}
                                   </div>
                                 </div>
                                 )}
@@ -258,9 +259,9 @@ export default function ContactForm() {
                           <div className="text-gray-700 mb-2 flex items-center">
                             <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
                             <div className="flex flex-col">
-                              <span>+234 (0) 201 453 6157</span>
-                              <span>+234 (0) 903 990 3519</span>
-                              <span>+234 (0) 810 125 9849</span>
+                              {activeOffice.phone.split(',').map((num, idx) => (
+                                <span key={idx} className="text-gray-800 font-semibold">{num.trim()}</span>
+                              ))}
                             </div>
                           </div>
                           )}
