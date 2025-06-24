@@ -122,15 +122,16 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src="/images/logo1.png" 
+              src="/images/logo.png"
+              // src="/images/logo1.png" 
               alt="Digital Energy Logo" 
               className={`transition-all duration-300 ${isScrolled ? "h-10" : "h-14"}`} 
             />
           </Link>
           
           <div className={`hidden md:flex items-center space-x-6 transition-opacity duration-300 ${isScrolled ? "opacity-0" : "opacity-100"}`}>
-            <img src="/images/Bms1.png" alt="ISO 9001:2015" className="h-14 w-auto" />
-            <img src="/images/Bms2.png" alt="ISO 45001:2018" className="h-14 w-auto" />
+            <img src="/images/webp/Bms1.webp" alt="ISO 9001:2015" className="h-14 w-auto" />
+            <img src="/images/webp.Bms2" alt="ISO 45001:2018" className="h-14 w-auto" />
           </div>
           
           <div className="flex items-center space-x-4">

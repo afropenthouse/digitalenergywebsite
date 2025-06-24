@@ -142,10 +142,14 @@ const Home = () => {
     const heroImg = new Image()
     heroImg.src = "/images/webp/pic_2.webp"
     heroImg.onload = handleImageLoad
+    //
+    heroImg.onerror = handleImageLoad
 
     const aboutImg = new Image()
     aboutImg.src = "/images/webp/pic_14.webp"
     aboutImg.onload = handleImageLoad
+    //
+    aboutImg.onerror = handleImageLoad
 
     // Load service images in the background
     services.forEach(service => {
