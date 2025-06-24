@@ -9,7 +9,7 @@ const offices = [
     id: "headoffice",
     name: "Head Office",
     address: "Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria",
-    phone: "+234 (0) 201 453 6157, +234 (0) 903 990 3519, +234 (0) 810 125 9849",
+    phone: "+234 (0) 201 453 6157, +234 (0) 913 161 6700, +234 (0) 811 671 1091",
     email: "info@digitalenergyng.com",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4843897!2d3.3506531!3d6.484395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c097389e891%3A0xbf38477be5143794!2sThe%20SMAT%20Place%2C%20Tapa%20House%2C%20Imam%20Dauda!5e0!3m2!1sen!2sng!4v1709565342570!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/bZjh7PQzzVDYdKXi9"
@@ -18,7 +18,7 @@ const offices = [
     id: "portharcourt",
     name: "Port Harcourt Terminal Office",
     address: "Digital Energy Close, Off Igboeche road, by Eleme Junction, Port Harcourt, Nigeria",
-    phone: "+2348037190006, +2348071518707",
+    phone: "+234 (0) 803 719 0006",
     email: "info@digitalenergyng.com",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.962371287539!2d7.007092715264468!3d4.815081096509545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d26a7b1e1f4d%3A0x4d9e0f1c3d3d3d3d!2sEleme%20Junction%2C%20Port%20Harcourt!5e0!3m2!1sen!2sng!4v1648226912495!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/ZmNvaNozUm2CV3iD7"
@@ -27,7 +27,7 @@ const offices = [
     id: "chevron",
     name: "Chevron Office",
     address: "House 8, Dr. Chimezie Street, Chevy View Estate, along Chevron drive, off Lekki-Epe expressway, Lagos",
-    phone: "+234 (0) 708 607 8838, +234 (0) 707 752 5861, +234 (0) 810 125 9849",
+    phone: "+234 (0) 708 607 8838, +234 (0) 903 990 3519",
     email: "info@digitalenergyng.com",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5857968337845!2d3.523592415231038!3d6.441822595339119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4c9ae5c0e1d%3A0xceb1b726f6a4e2e!2sLekki-Epe%20Expressway%2C%20Lagos!5e0!3m2!1sen!2sng!4v1648226741251!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/fnkN9uYG9aiFyaKG8"
@@ -260,7 +260,7 @@ export default function ContactForm() {
                             <Phone className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
                             <div className="flex flex-col">
                               {activeOffice.phone.split(',').map((num, idx) => (
-                                <span key={idx} className="text-gray-800 font-semibold">{num.trim()}</span>
+                                <span key={idx} className="text-gray-800">{num.trim()}</span>
                               ))}
                             </div>
                           </div>
@@ -318,11 +318,11 @@ export default function ContactForm() {
                         <div>
                           <h3 className="font-semibold">Contact Numbers</h3>
                           <div className="text-blue-200">
-                            +234 (0)   201 453 6157
+                            +234 (0) 201 453 6157
                             <br />
-                            +234 (0) 903 990 3519
+                            +234 (0) 913 161 6700
                             <br />
-                            +234 (0) 810 125 9849
+                            +234 (0) 811 671 1091
                           </div>
                         </div>
                       </div>
