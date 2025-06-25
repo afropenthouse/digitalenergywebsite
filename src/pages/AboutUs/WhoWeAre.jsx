@@ -255,7 +255,7 @@ const WhoWeAre = () => {
               className="max-w-4xl mx-auto"
             >
               <img
-                src="/images/info.png"
+                src="/images/core.png"
                 alt="Core Values Information"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />
