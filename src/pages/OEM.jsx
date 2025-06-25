@@ -1,13 +1,13 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
-import { CheckCircle, Award, Globe, Users } from "lucide-react"
+import { CheckCircle, Award, Globe, Users, MapPin, Building2 } from "lucide-react"
 import { useState, useEffect } from "react"
 import Loader from "./Loader/Loader"
 
 // Country flag components
 const FlagIcon = ({ country }) => {
-  const flagClasses = "w-6 h-6 rounded-sm object-cover"
+  const flagClasses = "w-5 h-5 rounded-sm object-cover"
   
   // Simplified flag representation using emojis
   const flags = {
@@ -24,14 +24,14 @@ const FlagIcon = ({ country }) => {
   if (country === "Tunisia & Houston, Texas USA") {
     return (
       <div className="flex items-center space-x-1">
-        <span className={`${flagClasses} flex items-center justify-center text-xl`}>🇹🇳</span>
-        <span className={`${flagClasses} flex items-center justify-center text-xl`}>🇺🇸</span>
+        <span className="text-lg">🇹🇳</span>
+        <span className="text-lg">🇺🇸</span>
       </div>
     )
   }
   
   return (
-    <span className={`${flagClasses} flex items-center justify-center text-xl mr-2`}>
+    <span className="text-lg">
       {flags[country] || "🌐"}
     </span>
   )
@@ -46,7 +46,7 @@ const partners = [
   },
   {
     name: "Power Electronics",
-    logo: "/images/webp/Triol.webp",
+    logo: "/images/webp/Triol.png",
     description: "Manufacturer and provider of Power Electronics and software products",
     country: "Ukraine"
   },
@@ -173,70 +173,84 @@ const OEM = () => {
       </section>
 
       {/* Strategic Partnerships Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto max-w-7xl">
+          {/* Section Header */}
           <div className="text-center mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-gray-900 mb-4"
+              className="text-4xl font-bold text-gray-900 mb-4"
             >
-              Our Partners
+              Our <span className="text-blue-600">Global Partners</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-gray-600 max-w-xl mx-auto"
+              className="text-gray-600 max-w-2xl mx-auto text-lg"
             >
-              We collaborate with leading companies to deliver exceptional value
+              We collaborate with industry-leading manufacturers worldwide to deliver cutting-edge solutions and exceptional value to our clients
             </motion.p>
           </div>
 
           {/* Partnership Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="h-full"
               >
-                <Card className="h-full border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
-                  <CardContent className="p-6 h-full flex flex-col">
-                    {/* Partner Header */}
-                    <div className="flex items-center mb-4 pb-3 border-b border-gray-100">
+                <Card className="h-full border-0 rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col justify-between">
+                  <CardContent className="p-0 h-full flex flex-col">
+                    {/* Logo Section */}
+                    <div className="relative bg-white p-6 flex items-center justify-center min-h-[220px]">
+                      <div className="absolute top-4 right-4 flex flex-col items-center gap-1 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-md">
+                        <FlagIcon country={partner.country} />
+                        <span className="text-xs font-semibold text-gray-700 mt-1">{partner.country}</span>
+                      </div>
                       <img 
                         src={partner.logo} 
                         alt={partner.name} 
-                        className="w-20 h-20 object-contain mr-4"
+                        className="w-44 h-44 object-contain"
                       />
-                      <div>
-                        <h3 className="font-bold text-gray-900 text-lg">{partner.name}</h3>
-                        <div className="flex items-center mt-1">
-                          <FlagIcon country={partner.country} />
-                          <span className="text-sm text-gray-600">{partner.country}</span>
+                    </div>
+                    {/* Content Section */}
+                    <div className="px-5 pt-4 pb-2 flex-grow flex flex-col">
+                      {/* Partner Name & Location */}
+                      <div className="mb-2">
+                        <h3 className="font-bold text-lg text-gray-900 mb-1">
+                          {partner.name}
+                        </h3>
+                        <div className="flex items-center text-gray-600 mb-1">
+                          <MapPin className="w-4 h-4 mr-1.5 text-gray-400" />
+                          <span className="text-xs font-medium">{partner.country}</span>
                         </div>
                       </div>
-                    </div>
-                    
-                    {/* Description */}
-                    <div className="flex-grow">
-                      <div className="text-gray-600 text-sm leading-relaxed">
-                        {partner.description}
+                      {/* Description */}
+                      <div className="flex-grow mb-2">
+                        <p className="text-gray-600 text-xs leading-relaxed">
+                          {partner.description}
+                        </p>
                       </div>
-                    </div>
-                    
-                    {/* Product/Services Label */}
-                    <div className="mt-4 pt-3 border-t border-gray-100">
-                      <span className="inline-block bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                        Products & Services
-                      </span>
+                      {/* Footer */}
+                      <div className="pt-2 border-t border-gray-100 mt-auto">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                            OEM Partner
+                          </span>
+                          <div className="w-7 h-7 bg-blue-50 rounded-full flex items-center justify-center">
+                            <CheckCircle className="w-4 h-4 text-blue-600" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

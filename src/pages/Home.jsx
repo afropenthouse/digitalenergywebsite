@@ -322,7 +322,7 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 bg-gradient-to-b from-gray-50 to-white">
         <div className="w-full">
            <div className="flex flex-col lg:flex-row justify-center items-center w-4/5 mx-auto min-h-[200px]">
             {/* Left: Welcome heading only */}
@@ -349,7 +349,7 @@ const Home = () => {
 
 
       {/* Service Overview Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Service Overview</h2>
@@ -402,7 +402,7 @@ const Home = () => {
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 pl-0 md:pl-6 pr-0 md:pr-4 flex flex-col justify-center h-auto md:h-full p-4 md:p-0">
-                  <h3 className="text-2xl font-normal text-gray-900 mb-1 leading-snug">{service.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1 leading-snug">{service.title}</h3>
                   <p className="text-base text-gray-700 mb-2 leading-snug">{service.description}</p>
                   <a href={service.path} className="text-orange-500 font-medium flex items-center group hover:underline text-lg">
                     <span className="mr-1">&rarr; Read More</span>

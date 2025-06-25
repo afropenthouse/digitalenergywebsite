@@ -97,6 +97,9 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-1.5">
               <Phone className="h-3.5 w-3.5 text-blue-200" />
               <span className="text-sm hover:text-blue-100 transition-colors">+234 (0) 201 453 6157</span>
+              <span className="mx-2 text-blue-200">|</span>
+              <Phone className="h-3.5 w-3.5 text-blue-200" />
+              <span className="text-sm hover:text-blue-100 transition-colors">+234 (0) 810 125 9849</span>
             </div>
           </div>
           
@@ -129,8 +132,8 @@ export default function Header() {
           </Link>
           
           <div className={`hidden md:flex items-center space-x-6 transition-opacity duration-300 ${isScrolled ? "opacity-0" : "opacity-100"}`}>
-            <img src="/images/Bms1.png" alt="ISO 9001:2015" className="h-14 w-auto" />
-            <img src="/images/Bms2.png" alt="ISO 45001:2018" className="h-14 w-auto" />
+            <img src="/images/Bms1.png" alt="ISO 9001:2015" className="h-16 w-auto" />
+            <img src="/images/Bms2.png" alt="ISO 45001:2018" className="h-16 w-auto" />
           </div>
           
           <div className="flex items-center space-x-4">
