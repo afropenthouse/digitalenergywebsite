@@ -322,7 +322,7 @@ export default function ContactForm() {
                             <br />
                             +234 (0) 913 161 6700
                             <br />
-                            +234 (0) 811 671 1091
+                            +234 (0) 810 125 9849
                           </div>
                         </div>
                       </div>
