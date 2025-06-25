@@ -165,12 +165,12 @@ const FabricationConstruction = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
                   <img
-                    src="/images/webp/fabrication.webp"
+                    src="/images/webp/Fabrication2.jpg"
                     alt="Fabrication & Construction"
                     className="w-full md:w-1/2 h-[250px] object-cover"
                   />
                   <img
-                    src="/images/webp/Fabrication2.jpg"
+                    src="/images/webp/Fabrication1.webp"
                     alt="Fabrication & Construction"
                     className="w-full md:w-1/2 h-[250px] object-cover"
                   />

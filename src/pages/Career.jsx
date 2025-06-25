@@ -10,7 +10,7 @@ const jobOpenings = [
   {
     id: 1,
     title: "Manual Machinist (API Experience Required)",
-    location: "Port-Harcourt",
+    location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
     experience: "2–3 years",
     description: "Operate lathes, milling machines, and drill presses. Requires OND/HND in Mechanical or Production Engineering, knowledge of API Spec 7-1, 5CT, 5B, DS-1, ability to read technical drawings and use precision tools. Experience with machining premium connections is a plus.",
@@ -19,7 +19,7 @@ const jobOpenings = [
   {
     id: 2,
     title: "Machine Shop Supervisor",
-    location: "Port-Harcourt",
+    location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
     experience: "5–7+ years",
     description: "Supervise machinists, CNC operators, and shop staff. Plan and manage production schedules. Enforce quality and safety standards. Requires HND/BSc in Mechanical or Production Engineering, strong CNC and machining background, leadership experience, and knowledge of threads in Oil & Gas industry.",
@@ -28,7 +28,7 @@ const jobOpenings = [
   {
     id: 3,
     title: "Assistant Depot Operations Supervisor",
-    location: "Port-Harcourt (NPA FOT, Onne Rivers State)",
+    location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
     experience: "2–5 years",
     description: "Support daily fuel depot operations, supervise personnel, ensure HSSE compliance, maintain records. Requires HND/BSc in Engineering, Logistics, or related field, depot/terminal operations experience, HSE certifications (advantage), strong communication and leadership skills.",
@@ -37,11 +37,20 @@ const jobOpenings = [
   {
     id: 4,
     title: "Depot Laboratory Analyst",
-    location: "Port-Harcourt (NPA FOT, Onne Rivers State)",
+    location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
     experience: "2+ years",
     description: "Perform routine testing and quality assurance on petroleum products (PMS, AGO, DPK, ATK). Requires BSc in Chemistry or related field, experience in petroleum lab testing, familiarity with NMDPRA and ISO standards, ability to conduct and interpret tests.",
     applyLink: "https://forms.gle/LLVpbifZFFnTUCFJA"
+  },
+  {
+    id: 5,
+    title: "CNC Operator (FANUC-Controlled Machines)",
+    location: "Port-Harcourt, Lagos & Warri",
+    type: "Full-time",
+    experience: "2+ years",
+    description: "Operate and set up FANUC-controlled CNC lathes to produce high-precision components, including API and Premium connections. Requires OND or equivalent, 2+ years CNC machining experience, and strong skills in threading, inspection, and interpreting engineering drawings.",
+    applyLink: "https://forms.gle/hhtxE91tKQyLj5vi9"
   }
 ]
 
@@ -294,96 +303,16 @@ const Career = () => {
               Ready to Power Your Career?
             </h2>
             <p className="text-xl text-indigo-100 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Even if you don't see your perfect role today, join our talent community for future opportunities at Digital Energy.
+              Can't find the right position for you? We're always excited to connect with talented professionals. Reach out to us for future opportunities or to learn more about careers at Digital Energy.
             </p>
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-              <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-6 text-lg font-medium" onClick={() => setShowModal(true)}>
-                Submit your Resume
-              </Button>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg flex flex-col items-center">
+              <span className="text-lg text-white font-medium mb-2">For enquiries, contact</span>
+              <span className="text-2xl font-semibold text-orange-200 bg-white/20 px-4 py-2 rounded-lg select-all break-all" style={{textDecoration: 'none'}}>
+                hrmofficeltd@gmail.com
+              </span>
             </div>
           </motion.div>
         </div>
-        {/* Modal Overlay */}
-        {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full h-[100vh] flex flex-col justify-center p-4 md:p-6 relative animate-fadeInUp">
-              <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors"
-                onClick={handleModalClose}
-                aria-label="Close"
-              >
-                <X className="w-6 h-6" />
-              </button>
-              {formSubmitted ? (
-                <div className="text-green-600 text-center font-semibold py-8">
-                  <h4 className="text-2xl mb-2">Resume Submitted Successfully!</h4>
-                  <p className="text-base font-normal text-gray-700">
-                    Thank you for submitting your resume.<br />
-                    Our team has received your application and will review your details.
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Submit Your Resume</h3>
-                  <p className="text-gray-600 mb-6 text-center">Fill in your details and upload your PDF resume. We'll contact you if there's a fit!</p>
-                  <form
-                    action="https://api.web3forms.com/submit"
-                    method="POST"
-                    encType="multipart/form-data"
-                    className="space-y-4"
-                    onSubmit={() => setFormSubmitted(true)}
-                  >
-                    <input type="hidden" name="access_key" value="53162de4-b933-422e-85d8-284be6830a0f" />
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-1">Name <span className="text-red-500">*</span></label>
-                      <input
-                        type="text"
-                        name="name"
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-1">Email <span className="text-red-500">*</span></label>
-                      <input
-                        type="email"
-                        name="email"
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-1">Message / Cover Letter <span className="text-gray-400 text-xs">(optional)</span></label>
-                      <textarea
-                        name="message"
-                        rows={3}
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-1">Resume (PDF only) <span className="text-red-500">*</span></label>
-                      <input
-                        type="file"
-                        name="resume"
-                        accept="application/pdf"
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-black"
-                        required
-                      />
-                    </div>
-                    <div className="flex justify-center">
-                      <button
-                        type="submit"
-                        className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md font-semibold disabled:opacity-60"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </>
-              )}
-            </div>
-          </div>
-        )}
       </section>
     </div>
   )
