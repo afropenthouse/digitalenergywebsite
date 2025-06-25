@@ -146,18 +146,23 @@ const EngineeringServices = () => {
                 </div>
               </motion.div>
 
-              {/* Image Section */}
+              {/* Image Section 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md">
+                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
                   <img
-                    src="/images/webp/engineering.webp"
+                    src="/images/webp/engineering1.jpg"
                     alt="Engineering Services"
-                    className="w-full h-[250px] object-cover"
+                    className="w-full md:w-1/2 h-[250px] object-cover"
+                  />
+                  <img
+                    src="/images/webp/engineering2.jpg"
+                    alt="Engineering Energy"
+                    className="w-full md:w-1/2 h-[250px] object-cover"
                   />
                 </div>
               </motion.div>
