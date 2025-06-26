@@ -294,47 +294,21 @@ export default function ContactForm() {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-800 to-blue-900 rounded-2xl shadow-xl p-8 text-white">
-                    <h2 className="text-3xl font-bold mb-4">Head Office</h2>
-                    <p className="text-blue-200 mb-6">
-                      Our main corporate office where our executive leadership and strategic teams are located.
+                  <div className="bg-gradient-to-br from-blue-800 to-blue-900 rounded-2xl shadow-xl p-8 text-white flex flex-col items-center justify-center">
+                    <h2 className="text-3xl font-bold mb-4">Get in touch</h2>
+                    <p className="text-blue-200 mb-6 text-center max-w-md">
+                      Have a question or need assistance? Start a WhatsApp chat with us for fast and friendly support.
                     </p>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-start">
-                        <MapPin className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
-                        <div>
-                          <h3 className="font-semibold">Digital Energy Head Office</h3>
-                          <div className="text-blue-200">
-                            Tapa House, 3/5, Imam Dauda Street
-                            <br />
-                            Off Eric Moore Road, Surulere, Lagos, Nigeria
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <Phone className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
-                        <div>
-                          <h3 className="font-semibold">Contact Numbers</h3>
-                          <div className="text-blue-200">
-                            +234 (0) 201 453 6157
-                            <br />
-                            +234 (0) 913 161 6700
-                            <br />
-                            +234 (0) 810 125 9849
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <Mail className="h-6 w-6 text-orange-300 mt-0.5 mr-3 flex-shrink-0" />
-                        <div>
-                          <h3 className="font-semibold">Email</h3>
-                          <div className="text-blue-200">info@digitalenergyng.com</div>
-                        </div>
-                      </div>
-                    </div>
+                    <a
+                      href="https://wa.me/2348073776875"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-200 mb-2"
+                    >
+                      <img src="/images/webp/whatsapp.webp" alt="WhatsApp" className="w-7 h-7" />
+                      Chat on WhatsApp
+                    </a>
+                    <span className="text-blue-100 text-sm mt-2">Our team is online and ready to assist you during business hours.</span>
                   </div>
                 </motion.div>
               </div>
