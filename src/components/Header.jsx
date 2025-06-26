@@ -121,7 +121,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className={`bg-white transition-all duration-300 border-b border-blue-800 ${isScrolled ? "py-1 shadow-md" : "py-3"}`}>
+      <div className={`bg-white transition-all duration-300 border-b border-blue-800 ${isScrolled ? "py-1 shadow-md" : "py-5 md:py-3"}`}>
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
@@ -169,7 +169,7 @@ export default function Header() {
       {/* Full-width Navigation */}
       <div className={`bg-blue-800 transition-all duration-300 ${isScrolled ? "shadow-md" : ""}`}>
         <div className="w-full">
-          <nav className="hidden md:flex items-center justify-center h-14">
+          <nav className="hidden md:flex items-center justify-center h-20 md:h-14">
             <div className="flex items-center w-full max-w-7xl mx-auto px-4">
               {navLinks.map((link) => (
                 <div 
