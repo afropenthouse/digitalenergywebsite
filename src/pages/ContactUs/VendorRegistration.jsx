@@ -20,6 +20,7 @@ const vendorCategories = [
 const VendorRegistration = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [loadedImages, setLoadedImages] = useState(0)
+  const [result, setResult] = useState("")
 
   useEffect(() => {
     const handleImageLoad = () => {
@@ -42,6 +43,24 @@ const VendorRegistration = () => {
       setLoadedImages(0)
     }
   }, [])
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
+    const formData = new FormData(event.target);
+    formData.append("access_key", "53162de4-b933-422e-85d8-284be6830a0f");
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult(data.message || "Something went wrong!");
+    }
+  };
 
   if (isLoading) {
     return <Loader />
@@ -107,7 +126,8 @@ const VendorRegistration = () => {
                   <div className="shadow-xl border-0 bg-white rounded-lg p-8">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Vendor Information</h2>
 
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={onSubmit}>
+                      <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex="-1" autoComplete="off" />
                       {/* Company Information */}
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-4">Company Details</h3>
@@ -116,6 +136,7 @@ const VendorRegistration = () => {
                             <label className="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
                             <input
                               type="text"
+                              name="company_name"
                               placeholder="Your company name"
                               required
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -125,6 +146,7 @@ const VendorRegistration = () => {
                             <label className="block text-sm font-medium text-gray-700 mb-2">Registration Number *</label>
                             <input
                               type="text"
+                              name="registration_number"
                               placeholder="Company registration number"
                               required
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -138,13 +160,14 @@ const VendorRegistration = () => {
                           <label className="block text-sm font-medium text-gray-700 mb-2">Year Established</label>
                           <input
                             type="number"
+                            name="year_established"
                             placeholder="e.g., 2010"
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                           />
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">Number of Employees</label>
-                          <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                          <select name="number_of_employees" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
                             <option value="">Select range</option>
                             <option value="1-10">1-10</option>
                             <option value="11-50">11-50</option>
@@ -158,6 +181,7 @@ const VendorRegistration = () => {
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Company Address *</label>
                         <textarea
+                          name="company_address"
                           placeholder="Full company address"
                           rows={3}
                           required
@@ -174,6 +198,7 @@ const VendorRegistration = () => {
                             <label className="block text-sm font-medium text-gray-700 mb-2">Contact Person *</label>
                             <input
                               type="text"
+                              name="contact_person"
                               placeholder="Full name"
                               required
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -183,6 +208,7 @@ const VendorRegistration = () => {
                             <label className="block text-sm font-medium text-gray-700 mb-2">Position/Title *</label>
                             <input
                               type="text"
+                              name="position"
                               placeholder="e.g., Procurement Manager"
                               required
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -195,6 +221,7 @@ const VendorRegistration = () => {
                             <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
                             <input
                               type="email"
+                              name="email"
                               placeholder="company@example.com"
                               required
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -204,6 +231,7 @@ const VendorRegistration = () => {
                             <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
                             <input
                               type="tel"
+                              name="phone"
                               placeholder="+234 (0) 123 456 7890"
                               required
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -215,6 +243,7 @@ const VendorRegistration = () => {
                           <label className="block text-sm font-medium text-gray-700 mb-2">Website</label>
                           <input
                             type="url"
+                            name="website"
                             placeholder="https://www.example.com"
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                           />
@@ -228,6 +257,7 @@ const VendorRegistration = () => {
                         <div className="mb-4">
                           <label className="block text-sm font-medium text-gray-700 mb-2">Vendor Category *</label>
                           <select
+                            name="vendor_category"
                             required
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                           >
@@ -245,6 +275,7 @@ const VendorRegistration = () => {
                             Products/Services Description *
                           </label>
                           <textarea
+                            name="products_services_description"
                             placeholder="Detailed description of your products or services"
                             rows={4}
                             required
@@ -260,6 +291,7 @@ const VendorRegistration = () => {
                         <div className="mb-4">
                           <label className="block text-sm font-medium text-gray-700 mb-2">Certifications</label>
                           <textarea
+                            name="certifications"
                             placeholder="List relevant certifications (ISO, industry-specific, etc.)"
                             rows={3}
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -269,6 +301,7 @@ const VendorRegistration = () => {
                         <div className="mb-4">
                           <label className="block text-sm font-medium text-gray-700 mb-2">Previous Experience</label>
                           <textarea
+                            name="previous_experience"
                             placeholder="Brief description of relevant projects or experience"
                             rows={3}
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -276,16 +309,9 @@ const VendorRegistration = () => {
                         </div>
 
                         <div className="flex items-center space-x-2 mb-4">
-                          <input type="checkbox" id="attachments" className="rounded" />
+                          <input type="checkbox" id="attachments" name="attachments" className="rounded" />
                           <label htmlFor="attachments" className="text-sm font-medium">
                             I would like to attach supporting documents (certifications, company profile, etc.)
-                          </label>
-                        </div>
-
-                        <div className="flex items-center space-x-2">
-                          <input type="checkbox" id="terms" required className="rounded" />
-                          <label htmlFor="terms" className="text-sm font-medium">
-                            I agree to the terms and conditions
                           </label>
                         </div>
 
@@ -295,6 +321,7 @@ const VendorRegistration = () => {
                             <ArrowRight className="h-5 w-5" />
                           </Button>
                         </div>
+                        <span className="block mt-2 text-center text-blue-600">{result}</span>
                       </div>
                     </form>
                   </div>

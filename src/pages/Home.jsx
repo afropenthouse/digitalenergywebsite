@@ -273,7 +273,7 @@ const Home = () => {
             >
               <button
                 type="button"
-                className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl shadow-lg overflow-hidden"
+                className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl shadow-lg overflow-hidden hidden sm:inline-flex"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center">
@@ -320,6 +320,18 @@ const Home = () => {
           <ChevronRight className="w-7 h-7" />
         </button>
       </section>
+      {/* Download Profile Button */}
+      <a
+        href="/Profile.pdf"
+        download
+        className="absolute bottom-8 right-8 z-30 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-200 flex items-center gap-2"
+        style={{ textDecoration: 'none' }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+        </svg>
+        Download Profile
+      </a>
 
       {/* About Section */}
       <section className="py-12 bg-gradient-to-b from-gray-50 to-white">

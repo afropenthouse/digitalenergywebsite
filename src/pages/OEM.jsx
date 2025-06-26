@@ -40,7 +40,7 @@ const FlagIcon = ({ country }) => {
 const partners = [
   {
     name: "Elster",
-    logo: "/images/webp/Honeywell.webp",
+    logo: "/images/webp/Honeywell.png",
     description: "Elster manufactures energy measuring systems, ultrasonic, turbine, rotary and diaphragm meters as well as gas pressure regulators for low, medium and high pressure. Electronic station flow computers, volume correctors, innovative data read-out and evaluation systems as well as automatic remote data read-out devices are in the electronics products range. Further more turnkey gas regulating and measuring stations of every size or test rigs for calibration of custody transfer gas meters complete the range of products focused on gas.",
     country: "United Kingdom"
   },
@@ -52,7 +52,7 @@ const partners = [
   },
   {
     name: "Oily Water Systems",
-    logo: "/images/webp/ultra.webp",
+    logo: "/images/webp/ultra.png",
     description: "Specializes in the design and supply of high-performance oily water separation systems.",
     country: "Australia"
   },
@@ -76,13 +76,13 @@ const partners = [
   },
   {
     name: "MAX Industrial Tools",
-    logo: "/images/webp/Max.webp",
+    logo: "/images/webp/max.webp",
     description: "Since 1942, MAX has been recognized, worldwide, as a leading manufacturer of high-end industrial tools and office products.",
     country: "United States of America"
   },
   {
     name: "STAUFF USA",
-    logo: "/images/webp/Stauff.webp",
+    logo: "/images/webp/stauff.jpg",
     description: "For over 50 Years STAUFF USA has been serving the needs of Hydraulic Distributors and Equipment Manufacturers Using decades of experience and state-of-the-art production technologies, STAUFF has the reputation of being one of the world's most respected manufacturers of pipe clamps, test points, connectors, quick release couplings, filters, valves, diagtronics, hydraulic accessories and Custom Manufactured manipulated tube assemblies.",
     country: "United States of America"
   },
@@ -219,7 +219,7 @@ const OEM = () => {
                       <img 
                         src={partner.logo} 
                         alt={partner.name} 
-                        className="w-44 h-44 object-contain"
+                        className={`w-44 h-44 object-contain${(partner.name === "MAX Industrial Tools" || partner.name === "Elster") ? " mt-10" : ""}${partner.name === "Elster" ? " mr-10" : ""}`}
                       />
                     </div>
                     {/* Content Section */}

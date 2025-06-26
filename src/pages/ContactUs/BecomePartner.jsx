@@ -32,6 +32,7 @@ const partnershipTypes = [
 const BecomePartner = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [loadedImages, setLoadedImages] = useState(0)
+	const [result, setResult] = useState("")
 
 	useEffect(() => {
 		const handleImageLoad = () => {
@@ -60,6 +61,24 @@ const BecomePartner = () => {
 			setLoadedImages(0)
 		}
 	}, [])
+
+	const onSubmit = async (event) => {
+		event.preventDefault();
+		setResult("Sending...");
+		const formData = new FormData(event.target);
+		formData.append("access_key", "53162de4-b933-422e-85d8-284be6830a0f");
+		const response = await fetch("https://api.web3forms.com/submit", {
+			method: "POST",
+			body: formData
+		});
+		const data = await response.json();
+		if (data.success) {
+			setResult("Form Submitted Successfully");
+			event.target.reset();
+		} else {
+			setResult(data.message || "Something went wrong!");
+		}
+	};
 
 	if (isLoading) {
 		return <Loader />
@@ -270,7 +289,7 @@ const BecomePartner = () => {
 							<div className="max-w-3xl mx-auto">
 								<Card className="border-0 shadow-xl">
 									<CardContent className="p-8">
-										<form className="space-y-6">
+										<form className="space-y-6" onSubmit={onSubmit}>
 											<div className="grid md:grid-cols-2 gap-4">
 												<div>
 													<label className="block text-sm font-medium text-gray-700 mb-2">
@@ -278,6 +297,7 @@ const BecomePartner = () => {
 													</label>
 													<input
 														type="text"
+														name="company_name"
 														placeholder="Your company name"
 														required
 														className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -289,6 +309,7 @@ const BecomePartner = () => {
 													</label>
 													<input
 														type="text"
+														name="industry"
 														placeholder="Your industry"
 														required
 														className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -303,6 +324,7 @@ const BecomePartner = () => {
 													</label>
 													<input
 														type="text"
+														name="contact_person"
 														placeholder="Full name"
 														required
 														className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -314,6 +336,7 @@ const BecomePartner = () => {
 													</label>
 													<input
 														type="text"
+														name="position"
 														placeholder="Your position"
 														required
 														className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -328,6 +351,7 @@ const BecomePartner = () => {
 													</label>
 													<input
 														type="email"
+														name="email"
 														placeholder="your@email.com"
 														required
 														className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -339,6 +363,7 @@ const BecomePartner = () => {
 													</label>
 													<input
 														type="tel"
+														name="phone"
 														placeholder="+234 (0) 123 456 7890"
 														required
 														className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -351,6 +376,7 @@ const BecomePartner = () => {
 													Partnership Interest *
 												</label>
 												<select
+													name="partnership_interest"
 													required
 													className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
 												>
@@ -368,18 +394,12 @@ const BecomePartner = () => {
 													Message *
 												</label>
 												<textarea
+													name="message"
 													rows={4}
 													placeholder="Tell us about your partnership goals"
 													required
 													className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
 												/>
-											</div>
-
-											<div className="flex items-center space-x-2">
-												<input type="checkbox" id="terms" required className="rounded" />
-												<label htmlFor="terms" className="text-sm font-medium">
-													I agree to the terms and conditions
-												</label>
 											</div>
 
 											<div className="mt-8">
@@ -388,6 +408,7 @@ const BecomePartner = () => {
 													<ArrowRight className="h-5 w-5" />
 												</Button>
 											</div>
+											<span className="block mt-2 text-center text-blue-600">{result}</span>
 										</form>
 									</CardContent>
 								</Card>
