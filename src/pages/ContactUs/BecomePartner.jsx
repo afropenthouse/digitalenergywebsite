@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Handshake, Globe, TrendingUp, Shield } from "lucide-react"
+import { ArrowRight, Handshake, Globe, TrendingUp, Shield, CheckCircle, XCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 import Loader from "../Loader/Loader"
 
@@ -33,6 +33,7 @@ const BecomePartner = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [loadedImages, setLoadedImages] = useState(0)
 	const [result, setResult] = useState("")
+	const [isSubmitting, setIsSubmitting] = useState(false)
 
 	useEffect(() => {
 		const handleImageLoad = () => {
@@ -64,9 +65,9 @@ const BecomePartner = () => {
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
-		setResult("Sending...");
+		setIsSubmitting(true);
 		const formData = new FormData(event.target);
-		formData.append("access_key", "53162de4-b933-422e-85d8-284be6830a0f");
+		formData.append("access_key", "8c2d5db6-15f0-4015-84db-8519f7f5a099");
 		const response = await fetch("https://api.web3forms.com/submit", {
 			method: "POST",
 			body: formData
@@ -78,6 +79,7 @@ const BecomePartner = () => {
 		} else {
 			setResult(data.message || "Something went wrong!");
 		}
+		setIsSubmitting(false);
 	};
 
 	if (isLoading) {
@@ -403,12 +405,28 @@ const BecomePartner = () => {
 											</div>
 
 											<div className="mt-8">
-												<Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-2">
-													Submit Partnership Request
+												<Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-2" disabled={isSubmitting}>
+													{isSubmitting ? "Sending..." : "Submit Partnership Request"}
 													<ArrowRight className="h-5 w-5" />
 												</Button>
 											</div>
-											<span className="block mt-2 text-center text-blue-600">{result}</span>
+											{result && (
+												<div className={`flex flex-col items-center justify-center mt-4 p-4 rounded-lg text-center shadow-md w-full
+													${result.toLowerCase().includes('success') ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}
+												>
+													{result.toLowerCase().includes('success') ? (
+														<>
+															<CheckCircle className="w-10 h-10 text-green-500 mb-2" />
+															<span className="text-green-700 font-semibold text-lg">Thank you! Your partnership request was submitted successfully.</span>
+														</>
+													) : (
+														<>
+															<XCircle className="w-10 h-10 text-red-500 mb-2" />
+															<span className="text-red-700 font-semibold text-lg">{result}</span>
+														</>
+													)}
+												</div>
+											)}
 										</form>
 									</CardContent>
 								</Card>

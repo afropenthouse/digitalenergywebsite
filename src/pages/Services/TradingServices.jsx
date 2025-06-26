@@ -115,7 +115,7 @@ const TradingServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/marketing.webp"
+                src="/images/webp/marketing2.webp"
                 alt="Petroleum Products Trading"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -183,11 +183,16 @@ const TradingServices = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md">
+                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
                   <img
-                    src="/images/webp/marketing.webp"
+                    src="/images/webp/marketing1.jpeg"
                     alt="Petroleum Products Trading"
-                    className="w-full h-[250px] object-cover"
+                    className="w-full md:w-1/2 h-[250px] object-cover"
+                  />
+                  <img
+                    src="/images/webp/marketing2.webp"
+                    alt="Fuel Trading"
+                    className="w-full md:w-1/2 h-[250px] object-cover"
                   />
                 </div>
               </motion.div>

@@ -58,6 +58,8 @@ const galleryCategories = [
 			{ src: "/images/Gallery_pics/Fields & Operations/Field12.webp", alt: "Field 12" },
 			{ src: "/images/Gallery_pics/Fields & Operations/Field13.webp", alt: "Field 13" },
 			{ src: "/images/Gallery_pics/Fields & Operations/Field14.webp", alt: "Field 14" },
+			{ src: "/images/Gallery_pics/Fields & Operations/Field15.webp", alt: "Field 15" },
+			{ src: "/images/Gallery_pics/Fields & Operations/Field16.webp", alt: "Field 16" },
 		],
 	},
 	{
@@ -69,6 +71,10 @@ const galleryCategories = [
 			{ src: "/images/Gallery_pics/Equiqments and Fittings/Fittings4.jpg", alt: "Fittings 4" },
 			{ src: "/images/Gallery_pics/Equiqments and Fittings/Fittings5.webp", alt: "Fittings 5" },
 			{ src: "/images/Gallery_pics/Equiqments and Fittings/Fittings6.webp", alt: "Fittings 6" },
+			{ src: "/images/Gallery_pics/Equiqments and Fittings/Fittings7.webp", alt: "Fittings 7" },
+			{ src: "/images/Gallery_pics/Equiqments and Fittings/Fittings8.jpg", alt: "Fittings 8" },
+			{ src: "/images/Gallery_pics/Equiqments and Fittings/Fittings9.jpg", alt: "Fittings 9" },
+			{ src: "/images/Gallery_pics/Equiqments and Fittings/Fittings10.webp", alt: "Fittings 10" },
 		],
 	},
 	{
@@ -79,12 +85,18 @@ const galleryCategories = [
 			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection3.webp", alt: "Inspection 3" },
 			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection4.webp", alt: "Inspection 4" },
 			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection5.jpg", alt: "Inspection 5" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection6.webp", alt: "Inspection 6" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection7.webp", alt: "Inspection 7" },
+			{ src: "/images/Gallery_pics/InspectionsTesting/Inspection8.jpg", alt: "Inspection 8" },
 		],
 	},
 	{
 		name: "Instrumentation",
 		images: [
 			{ src: "/images/Gallery_pics/Instrumentation/instrument1.png", alt: "Instrumentation 1" },
+			{ src: "/images/Gallery_pics/Instrumentation/instrument2.webp", alt: "Instrumentation 2" },
+			{ src: "/images/Gallery_pics/Instrumentation/instrument3.webp", alt: "Instrumentation 3" },
+			{ src: "/images/Gallery_pics/Instrumentation/instrument4.webp", alt: "Instrumentation 4" },
 		],
 	},
 	{
