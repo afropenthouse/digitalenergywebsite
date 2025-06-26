@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { ArrowRight, FileText, Clock, CheckCircle } from "lucide-react"
+import { ArrowRight, FileText, Clock, CheckCircle, XCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 import Loader from "../Loader/Loader"
 
@@ -15,6 +15,8 @@ const services = [
 const RequestQuote = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [loadedImages, setLoadedImages] = useState(0)
+  const [result, setResult] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     const handleImageLoad = () => {
@@ -37,6 +39,25 @@ const RequestQuote = () => {
       setLoadedImages(0)
     }
   }, [])
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(event.target);
+    formData.append("access_key", "8c2d5db6-15f0-4015-84db-8519f7f5a099");
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult(data.message || "Something went wrong!");
+    }
+    setIsSubmitting(false);
+  };
 
   if (isLoading) {
     return <Loader />
@@ -102,12 +123,14 @@ const RequestQuote = () => {
                   <div className="border border-gray-200 bg-white rounded-xl shadow-lg p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Project Details</h2>
 
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={onSubmit}>
+                      <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex="-1" autoComplete="off" />
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
                           <input
                             type="text"
+                            name="first_name"
                             placeholder="Your first name"
                             required
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -117,6 +140,7 @@ const RequestQuote = () => {
                           <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
                           <input
                             type="text"
+                            name="last_name"
                             placeholder="Your last name"
                             required
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -129,6 +153,7 @@ const RequestQuote = () => {
                           <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
                           <input
                             type="email"
+                            name="email"
                             placeholder="your.email@example.com"
                             required
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -138,6 +163,7 @@ const RequestQuote = () => {
                           <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
                           <input
                             type="tel"
+                            name="phone"
                             placeholder="+234 (0) 123 456 7890"
                             required
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -149,6 +175,7 @@ const RequestQuote = () => {
                         <label className="block text-sm font-medium text-gray-700 mb-2">Company *</label>
                         <input
                           type="text"
+                          name="company"
                           placeholder="Company name"
                           required
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -158,6 +185,7 @@ const RequestQuote = () => {
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Service Needed *</label>
                         <select
+                          name="service_needed"
                           required
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
@@ -173,6 +201,7 @@ const RequestQuote = () => {
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Project Brief *</label>
                         <textarea
+                          name="project_brief"
                           placeholder="Describe your project requirements"
                           rows={4}
                           required
@@ -180,25 +209,31 @@ const RequestQuote = () => {
                         />
                       </div>
 
-                      <div className="flex items-center">
-                        <input 
-                          type="checkbox" 
-                          id="terms" 
-                          required 
-                          className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500" 
-                        />
-                        <label htmlFor="terms" className="ml-2 text-sm text-gray-600">
-                          I agree to the terms and privacy policy
-                        </label>
-                      </div>
-
                       <button
                         type="submit"
                         className="w-full bg-blue-700 hover:bg-blue-800 text-white px-6 py-4 rounded-lg flex items-center justify-center transition-all shadow-lg hover:shadow-blue-700/20"
+                        disabled={isSubmitting}
                       >
-                        Submit Request
+                        {isSubmitting ? "Sending..." : "Submit Request"}
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </button>
+                      {result && (
+                        <div className={`flex flex-col items-center justify-center mt-4 p-4 rounded-lg text-center shadow-md w-full
+                          ${result.toLowerCase().includes('success') ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}
+                        >
+                          {result.toLowerCase().includes('success') ? (
+                            <>
+                              <CheckCircle className="w-10 h-10 text-green-500 mb-2" />
+                              <span className="text-green-700 font-semibold text-lg">Thank you! Your request was submitted successfully.</span>
+                            </>
+                          ) : (
+                            <>
+                              <XCircle className="w-10 h-10 text-red-500 mb-2" />
+                              <span className="text-red-700 font-semibold text-lg">{result}</span>
+                            </>
+                          )}
+                        </div>
+                      )}
                     </form>
                   </div>
                 </motion.div>
