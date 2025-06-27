@@ -307,9 +307,13 @@ const Career = () => {
             </p>
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg flex flex-col items-center">
               <span className="text-lg text-white font-medium mb-2">For enquiries, contact</span>
-              <span className="text-2xl font-semibold text-orange-200 bg-white/20 px-4 py-2 rounded-lg select-all break-all" style={{textDecoration: 'none'}}>
+              <a
+                href="mailto:hrmofficeltd@gmail.com"
+                className="text-2xl font-semibold text-orange-200 bg-white/20 px-4 py-2 rounded-lg select-all break-all hover:underline"
+                style={{textDecoration: 'none'}}
+              >
                 hrmofficeltd@gmail.com
-              </span>
+              </a>
             </div>
           </motion.div>
         </div>
