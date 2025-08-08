@@ -17,6 +17,15 @@ const jobOpenings = [
     applyLink: "https://forms.gle/t4gXTPteBNFy12We9"
   },
   {
+    id: 6,
+    title: "Automobile Market Place App User Representative",
+    location: "Lagos",
+    type: "Hybrid",
+    experience: "Sales/app marketing experience preferred",
+    description: "Promote our new automobile app, onboard users, and drive registrations. OND/HND/Bachelor’s in Marketing or related field required. Excellent communication and digital marketing skills preferred.",
+    applyLink: "https://forms.gle/TKS3SNg4vhfDpg5ZA"
+  },
+  {
     id: 2,
     title: "Machine Shop Supervisor",
     location: "Port-Harcourt, Lagos & Warri",
