@@ -7,17 +7,9 @@ import Loader from "./Loader/Loader"
 import { Link } from "react-router-dom"
 
 const jobOpenings = [
+  
   {
     id: 1,
-    title: "Manual Machinist (API Experience Required)",
-    location: "Port-Harcourt, Lagos & Warri",
-    type: "Full-time",
-    experience: "2–3 years",
-    description: "Operate lathes, milling machines, and drill presses. Requires OND/HND in Mechanical or Production Engineering, knowledge of API Spec 7-1, 5CT, 5B, DS-1, ability to read technical drawings and use precision tools. Experience with machining premium connections is a plus.",
-    applyLink: "https://forms.gle/t4gXTPteBNFy12We9"
-  },
-  {
-    id: 6,
     title: "Automobile Market Place App User Representative",
     location: "Lagos",
     type: "Hybrid",
@@ -27,6 +19,16 @@ const jobOpenings = [
   },
   {
     id: 2,
+    title: "Manual Machinist (API Experience Required)",
+    location: "Port-Harcourt, Lagos & Warri",
+    type: "Full-time",
+    experience: "2–3 years",
+    description: "Operate lathes, milling machines, and drill presses. Requires OND/HND in Mechanical or Production Engineering, knowledge of API Spec 7-1, 5CT, 5B, DS-1, ability to read technical drawings and use precision tools. Experience with machining premium connections is a plus.",
+    applyLink: "https://forms.gle/t4gXTPteBNFy12We9"
+  },
+  
+  {
+    id: 3,
     title: "Machine Shop Supervisor",
     location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
@@ -35,7 +37,7 @@ const jobOpenings = [
     applyLink: "https://forms.gle/11MzjtD96kvNvRMr6"
   },
   {
-    id: 3,
+    id: 4,
     title: "Assistant Depot Operations Supervisor",
     location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
@@ -44,7 +46,7 @@ const jobOpenings = [
     applyLink: "https://forms.gle/JZzdeHKxcegXiBus6"
   },
   {
-    id: 4,
+    id: 5,
     title: "Depot Laboratory Analyst",
     location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
@@ -53,7 +55,7 @@ const jobOpenings = [
     applyLink: "https://forms.gle/LLVpbifZFFnTUCFJA"
   },
   {
-    id: 5,
+    id: 6,
     title: "CNC Operator (FANUC-Controlled Machines)",
     location: "Port-Harcourt, Lagos & Warri",
     type: "Full-time",
