@@ -11,7 +11,7 @@ const offices = [
     address: "Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria",
     phone: "+234 (0) 201 453 6157, +234 (0) 913 161 6700, +234 (0) 810 125 9849",
     email: "info@digitalenergyng.com",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4843897!2d3.3506531!3d6.484395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c097389e891%3A0xbf38477be5143794!2sThe%20SMAT%20Place%2C%20Tapa%20House%2C%20Imam%20Dauda!5e0!3m2!1sen!2sng!4v1709565342570!5m2!1sen!2sng",
+  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.277500498059!2d3.3524532731171313!3d6.486500223596092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c0bedc75ef5%3A0x45bf9811da30ea66!2sDigital%20Energy!5e0!3m2!1sen!2sng!4v1755083451316!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/bZjh7PQzzVDYdKXi9"
   },
   {
