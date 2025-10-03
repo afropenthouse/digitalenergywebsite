@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { CheckCircle, Award, Globe, Users, MapPin, Building2 } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 
 // Country flag components
@@ -96,34 +96,35 @@ const partners = [
 
 const OEM = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [loadedImages, setLoadedImages] = useState(0)
+  const timeoutRef = useRef()
 
   useEffect(() => {
-    const handleImageLoad = () => {
-      setLoadedImages(prev => {
-        const newCount = prev + 1
-        if (newCount === partners.length + 1) { // All partner logos + hero image
-          setIsLoading(false)
-        }
-        return newCount
-      })
+    // Only wait for the hero image to avoid blocking render on every logo.
+    // Add a timeout fallback in case the hero image is slow or fails.
+    const heroImg = new Image()
+    let heroLoaded = false
+
+    const onHeroLoad = () => {
+      heroLoaded = true
+      clearTimeout(timeoutRef.current)
+      setIsLoading(false)
     }
 
-    // Preload hero image
-    const heroImg = new Image()
     heroImg.src = "/images/webp/Capture.webp"
-    heroImg.onload = handleImageLoad
+    heroImg.onload = onHeroLoad
+    heroImg.onerror = () => {
+      // If hero fails, still remove loader after fallback
+      clearTimeout(timeoutRef.current)
+      setIsLoading(false)
+    }
 
-    // Preload partner logos
-    partners.forEach(partner => {
-      const img = new Image()
-      img.src = partner.logo // Already using WebP paths
-      img.onload = handleImageLoad
-    })
+    // Fallback: stop showing loader after 900ms even if hero not loaded
+    timeoutRef.current = setTimeout(() => {
+      if (!heroLoaded) setIsLoading(false)
+    }, 900)
 
     return () => {
-      setIsLoading(true)
-      setLoadedImages(0)
+      clearTimeout(timeoutRef.current)
     }
   }, [])
 
@@ -219,6 +220,8 @@ const OEM = () => {
                       <img 
                         src={partner.logo} 
                         alt={partner.name} 
+                        loading="lazy"
+                        decoding="async"
                         className={`w-44 h-44 object-contain${(partner.name === "MAX Industrial Tools" || partner.name === "Elster") ? " mt-10" : ""}${partner.name === "Elster" ? " mr-10" : ""}`}
                       />
                     </div>
