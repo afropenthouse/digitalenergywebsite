@@ -43,7 +43,7 @@ const governanceValues = [
 
 const boardMembers = [
   {
-    name: "Simon Chukwunweluwa Ugwuoke",
+    name: "Simon Chukwunweluwa Ugwoke",
     position: "MD & CEO",
     image: "/images/webp/simon.webp",
     bio: "Simon is a serial entrepreneur and a leader per excellence with experience spanning decades. He is a graduate of the University of Nigeria Nsukka and has obtained several other certifications and trainings both locally and internationally. Simon directs the day to day affairs of the Digital Energy business"
