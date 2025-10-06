@@ -18,7 +18,7 @@ import CommissioningStartup from "./pages/Services/CommissioningStartup";
 import OperationsMaintenance from "./pages/Services/OperationsMaintenance";
 import TechnicalManpower from "./pages/Services/TechnicalManpower";
 import Projects from "./pages/Projects";
-import OEM from "./pages/OEM";
+
 import Career from "./pages/Career";
 import ScrollUP from "./components/Scroll/ScrollUP";
 import FabricationConstruction from './pages/Services/FabricationConstruction';
@@ -27,6 +27,7 @@ import Management from "./pages/AboutUs/Management";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
 import "./index.css";
+import FabricationYard from "./pages/FabricationYard";
 
 function AppRoutes() {
   const location = useLocation();
@@ -61,10 +62,12 @@ function AppRoutes() {
               <Route path="operations" element={<OperationsMaintenance />} />
               <Route path="manpower" element={<TechnicalManpower />} />
               <Route path="fabrication" element={<FabricationConstruction />} />
+              <Route path="fabrication-yard" element={<FabricationYard />} />
               <Route path="trading" element={<TradingServices />} />
             </Route>
             <Route path="projects" element={<Projects />} />
-            <Route path="oem" element={<OEM />} />
+            <Route path="fabrication-yard" element={<FabricationYard />} />
+
             <Route path="careers" element={<Career />} />
           </Route>
         </Routes>
@@ -74,4 +77,4 @@ function AppRoutes() {
   );
 }
 
-export default AppRoutes; 
+export default AppRoutes;
