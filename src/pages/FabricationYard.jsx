@@ -5,9 +5,9 @@ import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 
 const galleryItems = [
-  { title: "5 CNCs, Lathes Machines", images: ["/Fabrication_images/machine.jpg"] },
+  { title: "5 CNCs, Lathes Machines", images: ["/Fabrication_images/machine.webp"] },
   { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/Fabrication_images/blasting.jpg"] },
-  { title: "Fabrication Shop", images: ["/Fabrication_images/fab1.jpg", "/Fabrication_images/fab2.jpg", "/Fabrication_images/fab3.jpg"] },
+  { title: "Fabrication Shop", images: ["/Fabrication_images/fab1.webp", "/Fabrication_images/fab2.webp", "/Fabrication_images/fab3.webp"] },
   { title: "Forklift", images: ["/Fabrication_images/forklift.jpg"] },
   { title: "Lathe Machines", images: ["/Fabrication_images/lathe1.jpg", "/Fabrication_images/lathe2.jpg", "/Fabrication_images/lathe3.jpg"] },
   { title: "Machine Shop", images: ["/Fabrication_images/shop1.jpg", "/Fabrication_images/shop2.jpg", "/Fabrication_images/shop3.jpg", "/Fabrication_images/shop4.jpg", "/Fabrication_images/shop5.jpg"] },
@@ -32,7 +32,7 @@ function FabricationYard() {
       setIsLoading(false)
     }
 
-    heroImg.src = "/Fabrication_images/cap.jpg"
+    heroImg.src = "/Fabrication_images/cap.webp"
     heroImg.onload = onHeroLoad
     heroImg.onerror = () => {
       clearTimeout(timeoutRef.current)
@@ -53,7 +53,7 @@ function FabricationYard() {
       {/* Hero */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/Fabrication_images/cap.jpg" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
+          <img src="/Fabrication_images/cap.webp" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
         </div>
