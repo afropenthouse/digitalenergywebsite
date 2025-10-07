@@ -7,9 +7,9 @@ import Loader from "./Loader/Loader"
 const galleryItems = [
   { title: "CNCs & Lathes Machines", images: ["/Fabrication_images/machine.webp"] },
   { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/Fabrication_images/blasting.jpg"] },
-  { title: "Fabrication Shop", images: ["/Fabrication_images/fab1.webp", "/Fabrication_images/fab2.webp", "/Fabrication_images/fab3.webp"] },
+  { title: "Fabrication Shop", images: ["/Fabrication_images/fab1.webp", "/Fabrication_images/fab2.webp", "/Fabrication_images/fab3.webp", "/Fabrication_images/fab4.webp"] },
   { title: "Forklift", images: ["/Fabrication_images/forklift.jpg"] },
-  { title: "Lathe Machines", images: ["/Fabrication_images/lathe1.jpg", "/Fabrication_images/lathe2.jpg", "/Fabrication_images/lathe3.jpg"] },
+  { title: "Lathe Machines", images: ["/Fabrication_images/lathe1.jpg", "/Fabrication_images/lathe2.jpg", "/Fabrication_images/lathe3.jpg", "/Fabrication_images/lathe4.jpg"] },
   { title: "Machine Shop", images: ["/Fabrication_images/shop1.jpg", "/Fabrication_images/shop2.jpg", "/Fabrication_images/shop4.jpg", "/Fabrication_images/shop5.jpg"] },
   { title: "Redial Drilling Machines", images: ["/Fabrication_images/drilling.jpeg"] },
   { title: "Dilling Casing Pipes (OCTG)", images: ["/Fabrication_images/pipes.jpg"] },
@@ -59,13 +59,13 @@ function FabricationYard() {
         </div>
         <div className="relative z-10 container mx-auto px-6 max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6">
-            <p className="text-sm font-medium">Fabrication Yard</p>
+            <p className="text-sm font-medium">Workshop</p>
           </motion.div>
           <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-4xl md:text-5xl font-bold mb-6">
-            Fabrication Yard & Workshop
+             Workshop & Fabrication Yard
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-xl text-blue-100 max-w-3xl leading-relaxed">
-            State-of-the-art yard supporting EPCIC — precision, efficiency, and safety across onshore and offshore fabrication.
+            State-of-the-art yard supporting EPCIC, precision, efficiency, safety across onshore and offshore fabrication.
           </motion.p>
         </div>
       </section>
