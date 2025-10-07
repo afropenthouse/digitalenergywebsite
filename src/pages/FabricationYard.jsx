@@ -5,14 +5,14 @@ import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 
 const galleryItems = [
-  { title: "5 CNCs, Lathes Machines", images: ["/Fabrication_images/machine.webp"] },
+  { title: "CNCs & Lathes Machines", images: ["/Fabrication_images/machine.webp"] },
   { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/Fabrication_images/blasting.jpg"] },
   { title: "Fabrication Shop", images: ["/Fabrication_images/fab1.webp", "/Fabrication_images/fab2.webp", "/Fabrication_images/fab3.webp"] },
   { title: "Forklift", images: ["/Fabrication_images/forklift.jpg"] },
   { title: "Lathe Machines", images: ["/Fabrication_images/lathe1.jpg", "/Fabrication_images/lathe2.jpg", "/Fabrication_images/lathe3.jpg"] },
-  { title: "Machine Shop", images: ["/Fabrication_images/shop1.jpg", "/Fabrication_images/shop2.jpg", "/Fabrication_images/shop3.jpg", "/Fabrication_images/shop4.jpg", "/Fabrication_images/shop5.jpg"] },
-  { title: "Redialed Drilling Machines", images: ["/Fabrication_images/drilling.jpeg"] },
-  { title: "Dilling Casing Pipes", images: ["/Fabrication_images/pipes.jpg"] },
+  { title: "Machine Shop", images: ["/Fabrication_images/shop1.jpg", "/Fabrication_images/shop2.jpg", "/Fabrication_images/shop4.jpg", "/Fabrication_images/shop5.jpg"] },
+  { title: "Redial Drilling Machines", images: ["/Fabrication_images/drilling.jpeg"] },
+  { title: "Dilling Casing Pipes (OCTG)", images: ["/Fabrication_images/pipes.jpg"] },
   { title: "Bucking machine", images: ["/Fabrication_images/Bucking.jpg"] },
   { title: "Band saw", images: ["/Fabrication_images/Band.jpg"] },
   { title: "Workshop with 20T overhead Crane", images: ["/Fabrication_images/crane.jpg"] },
