@@ -6,7 +6,7 @@ import Loader from "./Loader/Loader"
 
 const galleryItems = [
   { title: "CNCs & Lathes Machines", images: ["/Fabrication_images/machine.webp"] },
-  { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/Fabrication_images/blasting.jpg"] },
+  { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/Fabrication_images/blasting.jpg", "/Fabrication_images/blasting2.jpeg", "/Fabrication_images/blasting3.jpeg", "/Fabrication_images/blasting4.jpeg"] },
   { title: "Fabrication Shop", images: ["/Fabrication_images/fab1.webp", "/Fabrication_images/fab2.webp", "/Fabrication_images/fab3.webp", "/Fabrication_images/fab4.webp"] },
   { title: "Forklift", images: ["/Fabrication_images/forklift.jpg"] },
   { title: "Lathe Machines", images: ["/Fabrication_images/lathe1.jpg", "/Fabrication_images/lathe2.jpg", "/Fabrication_images/lathe3.jpg", "/Fabrication_images/lathe4.jpg"] },
@@ -16,6 +16,9 @@ const galleryItems = [
   { title: "Bucking machine", images: ["/Fabrication_images/Bucking.jpg"] },
   { title: "Band saw", images: ["/Fabrication_images/Band.jpg"] },
   { title: "Workshop with 20T overhead Crane", images: ["/Fabrication_images/crane.jpg"] },
+  { title: "Air compressor 375cfm", images: ["/Fabrication_images/air.jpeg"] },
+  { title: "Blasting Pot", images: ["/Fabrication_images/pot.jpeg"] },
+  { title: "Air tank", images: ["/Fabrication_images/tank.jpeg"] },
 ]
 
 function FabricationYard() {
