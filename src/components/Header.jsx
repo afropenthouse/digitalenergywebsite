@@ -64,6 +64,7 @@ export default function Header() {
     { key: "home", name: "Home", href: "/" },
     { key: "about", name: "About", href: "/about", dropdown: aboutLinks },
     { key: "services", name: "Services", href: "/services" },
+    { key: "hsc-policy", name: "HSC Policy", href: "/hsc-policy" },
     { key: "projects", name: "Projects", href: "/projects" },
     { key: "fabrication-yard", name: "Workshop", href: "/fabrication-yard" },
     { key: "careers", name: "Careers", href: "/careers" },
