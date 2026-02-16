@@ -18,6 +18,7 @@ import CommissioningStartup from "./pages/Services/CommissioningStartup";
 import OperationsMaintenance from "./pages/Services/OperationsMaintenance";
 import TechnicalManpower from "./pages/Services/TechnicalManpower";
 import Projects from "./pages/Projects";
+import HSCPolicy from "./pages/HSCPolicy";
 
 import Career from "./pages/Career";
 import ScrollUP from "./components/Scroll/ScrollUP";
@@ -68,6 +69,7 @@ function AppRoutes() {
             <Route path="projects" element={<Projects />} />
             <Route path="fabrication-yard" element={<FabricationYard />} />
 
+            <Route path="hsc-policy" element={<HSCPolicy />} />
             <Route path="careers" element={<Career />} />
           </Route>
         </Routes>

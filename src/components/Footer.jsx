@@ -78,6 +78,9 @@ export default function Footer() {
               <Link to="/fabrication-yard" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
                 <span className="mr-1 text-orange-500">→</span>Workshop
               </Link>
+              <Link to="/hsc-policy" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
+                <span className="mr-1 text-orange-500">→</span>HSC Policy
+              </Link>
               <Link to="/careers" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
                 <span className="mr-1 text-orange-500">→</span>Careers
               </Link>
