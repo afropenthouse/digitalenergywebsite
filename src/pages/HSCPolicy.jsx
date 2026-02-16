@@ -62,12 +62,8 @@ export default function HSCPolicy() {
           >
             <span>Download HSC Policy Statement (PDF)</span>
           </a>
-          <p className="mt-3 text-sm text-gray-500">
-            The document will open or download in your browser depending on your settings.
-          </p>
         </motion.div>
       </div>
     </div>
   )
 }
-
