@@ -16,12 +16,10 @@ export default function HSCPolicy() {
             HSC Policy
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Health, Safety and Environment (HSC) Policy
+            Quality Policy Statement
           </h1>
-          <p className="text-lg text-gray-700 max-w-3xl">
-            Digital Energy & Integrated Services Limited is committed to providing a safe,
-            healthy and environmentally responsible workplace for our employees, clients,
-            contractors and the communities where we operate.
+          <p className="text-lg text-gray-700 max-w">
+            Digital Energy & Integrated Services Limited is dedicated to delivering safe, reliable, and high-quality services across engineering, procurement, construction/fabrication, commissioning, project management, and more within the Oil & Gas and allied industries. We are committed to meeting and exceeding customer expectations by understanding client requirements and maintaining the highest standards of quality, safety, and environmental responsibility.
           </p>
         </motion.div>
 
@@ -32,20 +30,10 @@ export default function HSCPolicy() {
           className="mt-10 space-y-4 text-gray-700 text-base md:text-lg leading-relaxed"
         >
           <p>
-            We integrate health, safety and environmental considerations into all aspects
-            of our operations and decision-making. Our goal is to prevent incidents,
-            protect people, safeguard the environment and ensure compliance with
-            applicable laws, regulations and industry standards.
+            Our policy is built on continual improvement, compliance with ISO 9001 and API Q1 standards, and a commitment to statutory, regulatory, and customer requirements. We empower our workforce, set measurable quality objectives, and promote innovation and operational excellence throughout our services.
           </p>
           <p>
-            Every employee and contractor is empowered to stop any activity that may pose
-            an unacceptable risk and is encouraged to proactively identify and report
-            hazards. Through continuous improvement, training and leadership commitment,
-            we strive to achieve zero harm in everything we do.
-          </p>
-          <p>
-            The full HSC Policy Statement provides detailed guidance on our commitments,
-            responsibilities and expectations for all stakeholders.
+            For the complete Quality Policy Statement and details on our commitments, responsibilities, and expectations, please download and read the full PDF below.
           </p>
         </motion.div>
 
