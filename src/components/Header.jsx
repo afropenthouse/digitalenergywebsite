@@ -60,16 +60,21 @@ export default function Header() {
     setActiveDropdown(null)
   }, [location.pathname])
 
+  const policiesLinks = [
+    { name: "HSE Policy", href: "/hsc-policy" },
+    { name: "QPS Policy", href: "/qps" },
+  ];
+
   const navLinks = [
     { key: "home", name: "Home", href: "/" },
     { key: "about", name: "About", href: "/about", dropdown: aboutLinks },
     { key: "services", name: "Services", href: "/services" },
-    { key: "hsc-policy", name: "HSE Policy", href: "/hsc-policy" },
+    { key: "policies", name: "Policies", href: "/hsc-policy", dropdown: policiesLinks },
     { key: "projects", name: "Projects", href: "/projects" },
     { key: "fabrication-yard", name: "Workshop", href: "/fabrication-yard" },
     { key: "careers", name: "Careers", href: "/careers" },
     { key: "contact", name: "Contact", href: "/contact", dropdown: contactLinks },
-  ]
+  ];
 
   const handleSearch = (e) => {
     e.preventDefault();
