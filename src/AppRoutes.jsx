@@ -1,3 +1,4 @@
+import QPS from "./pages/QPS";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,7 +19,7 @@ import CommissioningStartup from "./pages/Services/CommissioningStartup";
 import OperationsMaintenance from "./pages/Services/OperationsMaintenance";
 import TechnicalManpower from "./pages/Services/TechnicalManpower";
 import Projects from "./pages/Projects";
-import HSCPolicy from "./pages/HSCPolicy";
+import HSEPolicy from "./pages/HSEPolicy";
 
 import Career from "./pages/Career";
 import ScrollUP from "./components/Scroll/ScrollUP";
@@ -69,7 +70,8 @@ function AppRoutes() {
             <Route path="projects" element={<Projects />} />
             <Route path="fabrication-yard" element={<FabricationYard />} />
 
-            <Route path="hsc-policy" element={<HSCPolicy />} />
+            <Route path="hsc-policy" element={<HSEPolicy />} />
+            <Route path="qps" element={<QPS />} />
             <Route path="careers" element={<Career />} />
           </Route>
         </Routes>
