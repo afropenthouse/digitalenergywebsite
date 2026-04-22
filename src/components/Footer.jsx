@@ -79,7 +79,10 @@ export default function Footer() {
                 <span className="mr-1 text-orange-500">→</span>Workshop
               </Link>
               <Link to="/hsc-policy" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
-                <span className="mr-1 text-orange-500">→</span>HSC Policy
+                <span className="mr-1 text-orange-500">→</span>HSE Policy
+              </Link>
+              <Link to="/qps" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors font-semibold">
+                <span className="mr-1 text-orange-500">→</span>QPS
               </Link>
               <Link to="/careers" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
                 <span className="mr-1 text-orange-500">→</span>Careers
