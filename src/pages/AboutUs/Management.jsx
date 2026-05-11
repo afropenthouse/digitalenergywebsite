@@ -85,12 +85,6 @@ const boardMembers = [
     bio: "She is a Seasoned Business Development Manager with 22 years of dedicated experience, committed to driving strategic growth and fostering long-term partnerships. Thrives on turning ideas into opportunities. She is a graduate of the University of Calabar and has obtained several other certifications and training in the same field."
   },
   {
-    name: "Anthony Chukwuemeka Uche",
-    position: "Head, Depot Operations",
-    image: "/images/webp/Anthony.webp",
-    bio: "Proven with 19 years experience in the Pharmaceutical and Oil & Gas industries. He specialized in fields of Sales & Marketing, Business Development, and Operations. He holds BSc (Hons) in Marine Biology from University of Lagos and MBA in (Business Administration) from Enugu State University of Technology, Enugu (ESUT)."
-  },
-  {
     name: "Ezechi Ajibo",
     position: "Company Secretary",
     image: "/images/webp/eze.webp",
