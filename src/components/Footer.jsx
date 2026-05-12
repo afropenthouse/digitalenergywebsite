@@ -81,7 +81,9 @@ export default function Footer() {
               <Link to="/hsc-policy" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
                 <span className="mr-1 text-orange-500">→</span>Policies
               </Link>
-              {/* QPS Policy link removed as per request */}
+              <Link to="/qms" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
+                <span className="mr-1 text-orange-500">→</span>QMS Policy
+              </Link>
               <Link to="/careers" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
                 <span className="mr-1 text-orange-500">→</span>Careers
               </Link>
