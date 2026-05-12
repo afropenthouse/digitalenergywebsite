@@ -62,7 +62,7 @@ export default function Header() {
 
   const policiesLinks = [
     { name: "HSE Policy", href: "/hsc-policy" },
-    { name: "QPS Policy", href: "/qps" },
+    { name: "QMS Policy", href: "/qms" },
   ];
 
   const navLinks = [
