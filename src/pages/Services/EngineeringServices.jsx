@@ -21,8 +21,8 @@ const EngineeringServices = () => {
 
     // Preload images
     const images = [
-      '/images/webp/engineering.webp',
-      '/images/webp/engineering.webp'
+      '/images/Services/EngineeringServices/engineering.webp',
+      '/images/Services/EngineeringServices/engineering.webp'
     ]
 
     images.forEach(src => {
@@ -81,7 +81,7 @@ const EngineeringServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/engineering.webp"
+                src="/images/Services/EngineeringServices/engineering.webp"
                 alt="Engineering Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -153,17 +153,21 @@ const EngineeringServices = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
-                  <img
-                    src="/images/webp/engineering1.jpg"
-                    alt="Engineering Services"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
-                  <img
-                    src="/images/webp/engineering2.jpg"
-                    alt="Engineering Energy"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/EngineeringServices/engineering1.jpg"
+                      alt="Design & Planning"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/EngineeringServices/engineering2.jpg"
+                      alt="Technical Analysis"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
                 </div>
               </motion.div>
 

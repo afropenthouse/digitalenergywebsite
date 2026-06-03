@@ -36,7 +36,7 @@ const VendorRegistration = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/p88.webp" // Updated to WebP format
+    heroImg.src = "/images/Shared/p88.webp" // Updated to WebP format
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -80,7 +80,7 @@ const VendorRegistration = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/p88.png"
+                src="/images/Shared/p88.png"
                 alt="Vendor Registration"
                 className="w-full h-full object-cover opacity-40"
               />

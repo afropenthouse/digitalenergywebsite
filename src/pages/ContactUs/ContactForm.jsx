@@ -58,7 +58,7 @@ export default function ContactForm() {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/p88.webp" // Updated to WebP format
+    heroImg.src = "/images/Shared/p88.webp" // Updated to WebP format
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -75,15 +75,16 @@ export default function ContactForm() {
     <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
+
           {/* Enhanced Hero Section */}
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-8 md:py-12 rounded-2xl overflow-hidden mt-8"
           >
             <div className="absolute inset-0">
               <img
-                src="/images/p88.png"
+                src="/images/Shared/p88.png"
                 alt="Contact Us"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -305,7 +306,7 @@ export default function ContactForm() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-200 mb-2"
                     >
-                      <img src="/images/webp/whatsapp.webp" alt="WhatsApp" className="w-7 h-7" />
+                      <img src="/images/ContactUs/whatsapp.webp" alt="WhatsApp" className="w-7 h-7" />
                       Chat on WhatsApp
                     </a>
                     <span className="text-blue-100 text-sm mt-2">Our team is online and ready to assist you during business hours.</span>

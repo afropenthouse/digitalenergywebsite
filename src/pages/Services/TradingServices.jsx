@@ -21,8 +21,8 @@ const TradingServices = () => {
 
     // Preload images
     const images = [
-      '/images/webp/marketing.webp',
-      '/images/webp/marketing.webp'
+      '/images/Services/TradingServices/marketing.webp',
+      '/images/Services/TradingServices/marketing.webp'
     ]
 
     images.forEach(src => {
@@ -114,11 +114,11 @@ const TradingServices = () => {
             className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 md:py-20 rounded-2xl overflow-hidden mt-8"
           >
             <div className="absolute inset-0">
-              <img
-                src="/images/webp/marketing2.webp"
-                alt="Petroleum Products Trading"
-                className="w-full h-full object-cover opacity-40"
-              />
+            <img
+              src="/images/Services/TradingServices/marketing2.webp"
+              alt="Petroleum Products Trading"
+              className="w-full h-full object-cover opacity-40"
+            />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
             </div>
             <div className="relative z-10 container mx-auto px-6 max-w-5xl">
@@ -183,17 +183,21 @@ const TradingServices = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
-                  <img
-                    src="/images/webp/marketing1.jpeg"
-                    alt="Petroleum Products Trading"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
-                  <img
-                    src="/images/webp/marketing2.webp"
-                    alt="Fuel Trading"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/TradingServices/marketing1.jpeg"
+                      alt="Trading Operations"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/TradingServices/marketing2.webp"
+                      alt="Product Supply"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
                 </div>
               </motion.div>
 

@@ -79,12 +79,12 @@ const WhoWeAre = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/pic_2.webp"
+    heroImg.src = "/images/Home/pic_2.webp"
     heroImg.onload = handleImageLoad
 
     // Preload info image
     const infoImg = new Image()
-    infoImg.src = "/images/info.png"
+    infoImg.src = "/images/AboutUs/info.png"
     infoImg.onload = handleImageLoad
 
     return () => {
@@ -101,6 +101,7 @@ const WhoWeAre = () => {
     <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
+
           {/* Enhanced Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -109,8 +110,8 @@ const WhoWeAre = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/pic_2.webp"
-                alt="About Us"
+                src="/images/Home/pic_2.webp"
+                alt="Who We Are"
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
@@ -255,7 +256,7 @@ const WhoWeAre = () => {
               className="max-w-4xl mx-auto"
             >
               <img
-                src="/images/core.png"
+                src="/images/AboutUs/info.png"
                 alt="Core Values Information"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />

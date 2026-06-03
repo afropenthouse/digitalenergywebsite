@@ -188,7 +188,7 @@ const Services = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/pic_2.webp" // Updated to WebP format
+    heroImg.src = "/images/Home/pic_2.webp" // Updated to WebP format
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -207,7 +207,7 @@ const Services = () => {
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-800 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/webp/pic_2.webp"
+            src="/images/Home/pic_2.webp"
             alt="Services"
             className="w-full h-full object-cover opacity-40"
           />

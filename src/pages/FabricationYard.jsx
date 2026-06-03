@@ -5,20 +5,20 @@ import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 
 const galleryItems = [
-  { title: "CNCs & Lathes Machines", images: ["/Fabrication_images/machine.webp"] },
-  { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/Fabrication_images/blasting.jpg", "/Fabrication_images/blasting2.jpeg", "/Fabrication_images/blasting3.jpeg", "/Fabrication_images/blasting4.jpeg"] },
-  { title: "Fabrication Shop", images: ["/Fabrication_images/fab1.webp", "/Fabrication_images/fab2.webp", "/Fabrication_images/fab3.webp", "/Fabrication_images/fab4.webp"] },
-  { title: "Forklift", images: ["/Fabrication_images/forklift.jpg"] },
-  { title: "Lathe Machines", images: ["/Fabrication_images/lathe1.jpg", "/Fabrication_images/lathe2.jpg", "/Fabrication_images/lathe3.jpg", "/Fabrication_images/lathe4.jpg"] },
-  { title: "Machine Shop", images: ["/Fabrication_images/shop1.jpg", "/Fabrication_images/shop2.jpg", "/Fabrication_images/shop4.jpg", "/Fabrication_images/shop5.jpg"] },
-  { title: "Redial Drilling Machines", images: ["/Fabrication_images/drilling.jpeg"] },
-  { title: "Dilling Casing Pipes (OCTG)", images: ["/Fabrication_images/pipes.jpg"] },
-  { title: "Bucking machine", images: ["/Fabrication_images/Bucking.jpg"] },
-  { title: "Band saw", images: ["/Fabrication_images/Band.jpg"] },
-  { title: "Workshop with 20T overhead Crane", images: ["/Fabrication_images/crane.jpg"] },
-  { title: "Air compressor 375cfm", images: ["/Fabrication_images/air.jpeg"] },
-  { title: "Blasting Pot", images: ["/Fabrication_images/pot.jpeg"] },
-  { title: "Air tank", images: ["/Fabrication_images/tank.jpeg"] },
+  { title: "CNCs & Lathes Machines", images: ["/images/Workshop/machine.webp"] },
+  { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/images/Workshop/blasting.jpg", "/images/Workshop/blasting2.jpeg", "/images/Workshop/blasting3.jpeg", "/images/Workshop/blasting4.jpeg"] },
+  { title: "Fabrication Shop", images: ["/images/Workshop/fab1.webp", "/images/Workshop/fab2.webp", "/images/Workshop/fab3.webp", "/images/Workshop/fab4.webp"] },
+  { title: "Forklift", images: ["/images/Workshop/forklift.jpg"] },
+  { title: "Lathe Machines", images: ["/images/Workshop/lathe1.jpg", "/images/Workshop/lathe2.jpg", "/images/Workshop/lathe3.jpg", "/images/Workshop/lathe4.jpg"] },
+  { title: "Machine Shop", images: ["/images/Workshop/shop1.jpg", "/images/Workshop/shop2.jpg", "/images/Workshop/shop4.jpg", "/images/Workshop/shop5.jpg"] },
+  { title: "Redial Drilling Machines", images: ["/images/Workshop/drilling.jpeg"] },
+  { title: "Dilling Casing Pipes (OCTG)", images: ["/images/Workshop/pipes.jpg"] },
+  { title: "Bucking machine", images: ["/images/Workshop/Bucking.jpg"] },
+  { title: "Band saw", images: ["/images/Workshop/Band.jpg"] },
+  { title: "Workshop with 20T overhead Crane", images: ["/images/Workshop/crane.jpg"] },
+  { title: "Air compressor 375cfm", images: ["/images/Workshop/air.jpeg"] },
+  { title: "Blasting Pot", images: ["/images/Workshop/pot.jpeg"] },
+  { title: "Air tank", images: ["/images/Workshop/tank.jpeg"] },
 ]
 
 function FabricationYard() {
@@ -35,7 +35,7 @@ function FabricationYard() {
       setIsLoading(false)
     }
 
-    heroImg.src = "/Fabrication_images/cap.webp"
+    heroImg.src = "/images/Workshop/cap.webp"
     heroImg.onload = onHeroLoad
     heroImg.onerror = () => {
       clearTimeout(timeoutRef.current)
@@ -56,7 +56,7 @@ function FabricationYard() {
       {/* Hero */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/Fabrication_images/cap.webp" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
+          <img src="/images/Workshop/cap.webp" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
         </div>

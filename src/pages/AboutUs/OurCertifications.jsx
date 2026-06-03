@@ -10,7 +10,7 @@ const certifications = [
     category: "Quality Management",
     description: "Represents our commitment to delivering consistent quality in products and services, ensuring customer satisfaction, and fostering continuous improvement.",
     icon: BadgeCheck,
-    image: "/images/ISO_1.jpg",
+    image: "/images/Certifications/ISO_1.jpg",
     year: "2022",
   },
   {
@@ -18,7 +18,7 @@ const certifications = [
     category: "Occupational Health and Safety Management system",
     description: "Highlights our dedication to maintaining a safe and healthy workplace by implementing effective occupational health and safety management practices.",
     icon: Shield,
-    image: "/images/ISO_2.jpg",
+    image: "/images/Certifications/ISO_2.jpg",
     year: "2022",
 	  issue: "Issued in 2022",
   },
@@ -27,7 +27,7 @@ const certifications = [
     category: "Engineering Practice",
     description: "Licensed by the Council for the Regulation of Engineering in Nigeria (COREN) to practice engineering in Nigeria, meeting all requirements contained in the COREN Act. Registration Number: ECF1051",
     icon: Star,
-    image: "/images/Coren.jpg",
+    image: "/images/Certifications/Coren.jpg",
     year: "2023",
   },
   {
@@ -35,7 +35,7 @@ const certifications = [
     category: "Quality Management",
     description: "Recognizes our ISO 9001:2015 certified Quality Management System for the manufacturing of pup joints, nuts, crossovers, couplings, and for pressure testing, non-destructive testing, and maintenance services.",
     icon: BadgeCheck,
-    image: "/images/Manufacturing.jpg",
+    image: "/images/Certifications/Manufacturing.jpg",
     year: "2025",
   },
 ]
@@ -65,7 +65,7 @@ const OurCertifications = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/p88.webp"
+    heroImg.src = "/images/Shared/p88.webp"
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -90,7 +90,7 @@ const OurCertifications = () => {
 			>
 			<div className="absolute inset-0">
 				<img
-					src="/images/webp/p88.webp"
+					src="/images/Shared/p88.webp"
 					alt="Certifications"
 					className="w-full h-full object-cover opacity-40"
 				/>

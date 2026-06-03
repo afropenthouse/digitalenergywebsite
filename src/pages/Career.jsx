@@ -102,7 +102,7 @@ const Career = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/pic_2.webp"
+    heroImg.src = "/images/Home/pic_2.webp"
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -126,7 +126,7 @@ const Career = () => {
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/webp/pic_2.webp"
+            src="/images/Home/pic_2.webp"
             alt="Career"
             className="w-full h-full object-cover opacity-40"
           />

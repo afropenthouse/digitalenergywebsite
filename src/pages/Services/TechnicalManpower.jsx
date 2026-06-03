@@ -21,8 +21,8 @@ const TechnicalManpower = () => {
 
     // Preload images
     const images = [
-      '/images/webp/p8.webp',
-      '/images/webp/p8.webp'
+      '/images/Services/TechnicalManpower/p8.webp',
+      '/images/Services/TechnicalManpower/p8.webp'
     ]
 
     images.forEach(src => {
@@ -133,7 +133,7 @@ const TechnicalManpower = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/p8.webp"
+                src="/images/Services/TechnicalManpower/p8.webp"
                 alt="Technical Manpower Supply"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -203,7 +203,7 @@ const TechnicalManpower = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/webp/p8.webp"
+                    src="/images/Services/TechnicalManpower/p8.webp"
                     alt="Technical Manpower"
                     className="w-full h-[250px] object-cover"
                   />

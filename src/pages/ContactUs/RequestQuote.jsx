@@ -31,7 +31,7 @@ const RequestQuote = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/p88.webp" // Updated to WebP format
+    heroImg.src = "/images/Shared/p88.webp" // Updated to WebP format
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -75,7 +75,7 @@ const RequestQuote = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/p88.png"
+                src="/images/Shared/p88.png"
                 alt="Request Quote"
                 className="w-full h-full object-cover opacity-40"
               />

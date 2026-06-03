@@ -75,7 +75,7 @@ const OperationsMaintenance = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/operation.webp"
+                src="/images/Services/OperationsMaintenance/operation.webp"
                 alt="Operations & Maintenance Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -145,12 +145,12 @@ const OperationsMaintenance = () => {
                 className="mb-8"
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
-                  <img
-                    src="/images/webp/operation.webp"
-                    alt="Operations & Maintenance"
-                    className="w-full h-[250px] object-cover"
-                  />
-                </div>
+                    <img
+                      src="/images/Services/OperationsMaintenance/operation.webp"
+                      alt="Operations"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
               </motion.div>
 
               {/* Services Grid */}
