@@ -12,107 +12,107 @@ const clientCategories = [
       {
         id: 1,
         name: "NNPC",
-        logo: "/images/Clients_webp/nnpc.webp",
+        logo: "/images/Shared/Logos/nnpc.webp",
       },
       {
         id: 2,
         name: "Chevron",
-        logo: "/images/Clients_webp/chevron.webp",
+        logo: "/images/Shared/Logos/chevron.webp",
       },
       {
         id: 3,
         name: "Total Energies",
-        logo: "/images/Clients_webp/Total.webp",
+        logo: "/images/Shared/Logos/Total.webp",
       },
       {
         id: 4,
         name: "SEEPCO",
-        logo: "/images/Clients_webp/seepco.webp",
+        logo: "/images/Shared/Logos/seepco.webp",
       },
       {
         id: 5,
         name: "SEPLAT",
-        logo: "/images/Clients_webp/seplat.webp",
+        logo: "/images/Shared/Logos/seplat.webp",
       },
       {
         id: 6,
         name: "Saipem",
-        logo: "/images/Clients_webp/saipem.webp",
+        logo: "/images/Shared/Logos/saipem.webp",
       },
       {
         id: 7,
         name: "Addax",
-        logo: "/images/Clients_webp/Addax.webp",
+        logo: "/images/Shared/Logos/Addax.webp",
       },
       {
         id: 8,
         name: "First Hydrocarbon",
-        logo: "/images/Clients_webp/Hydrocarbon.webp",
+        logo: "/images/Shared/Logos/Hydrocarbon.webp",
       },
       {
         id: 9,
         name: "NNPC 18",
-        logo: "/images/Clients_webp/nnpc-18.webp",
+        logo: "/images/Shared/Logos/nnpc-18.webp",
       },
       {
         id: 10,
         name: "EWT Energy Works",
-        logo: "/images/Clients_webp/ewt.webp",
+        logo: "/images/Shared/Logos/ewt.webp",
       },
       {
         id: 11,
         name: "Neconde Energy",
-        logo: "/images/Clients_webp/Neconde.webp",
+        logo: "/images/Shared/Logos/Neconde.webp",
       },
       {
         id: 12,
         name: "Conoil",
-        logo: "/images/Clients_webp/conoil.webp",
+        logo: "/images/Shared/Logos/conoil.webp",
       },
       {
         id: 13,
         name: "Mid Western",
-        logo: "/images/Clients_webp/Midwestern.webp",
+        logo: "/images/Shared/Logos/Midwestern.webp",
       },
       {
         id: 14,
         name: "SUPANOVA ENERGY SERVICES LTD",
-        logo: "/images/Clients_webp/supanova.webp",
+        logo: "/images/Shared/Logos/supanova.webp",
       },
       {
         id: 15,
         name: "First Bank",
-        logo: "/images/Clients_webp/firstbank.webp",
+        logo: "/images/Shared/Logos/firstbank.webp",
       },
       {
         id: 16,
         name: "Stanbic IBTC Bank",
-        logo: "/images/Clients_webp/Stanbic ibtc.webp",
+        logo: "/images/Shared/Logos/Stanbic ibtc.webp",
       },
       {
         id: 17,
         name: "Fidelity Bank",
-        logo: "/images/Clients_webp/fidelity.webp",
+        logo: "/images/Shared/Logos/fidelity.webp",
       },
       {
         id: 18,
         name: "Agrited Nigeria Limited",
-        logo: "/images/Clients_webp/Agrited.webp",
+        logo: "/images/Shared/Logos/Agrited.webp",
       },
       {
         id: 19,
         name: "Christ Embassy",
-        logo: "/images/Clients_webp/Christ Embassey.webp",
+        logo: "/images/Shared/Logos/Christ Embassey.webp",
       },
       {
         id: 20,
         name: "JohnsCreek",
-        logo: "/images/Clients_webp/John Creek.webp",
+        logo: "/images/Shared/Logos/John Creek.webp",
       },
       {
         id: 21,
         name: "Hydron Carbon Limited",
-        logo: "/images/Clients_webp/Hydron-Energy.webp",
+        logo: "/images/Shared/Logos/Hydron-Energy.webp",
       },
     ]
   }
@@ -143,7 +143,7 @@ const Clients = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/cli.webp"
+    heroImg.src = "/images/Management/cli.webp"
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -160,7 +160,8 @@ const Clients = () => {
     <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-16">
-          {/* Hero Section */}
+
+          {/* Enhanced Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,7 +169,7 @@ const Clients = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/cli.webp"
+                src="/images/Management/cli.webp"
                 alt="Our Clients"
                 className="w-full h-full object-cover opacity-40"
               />

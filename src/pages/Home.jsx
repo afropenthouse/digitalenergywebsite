@@ -35,38 +35,38 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      title: "Empowering Energy.",
-      subtitle: "Delivering Excellence.",
-      description: "Integrated Energy Solutions Tailored for the Future",
-      image: "/images/webp/pic_2.webp"
+      title: "Innovative Energy Solutions",
+      subtitle: "Excellence in Engineering.",
+      description: "Delivering world-class engineering and technical services to the oil and gas industry",
+      image: "/images/Home/pic_2.webp"
     },
     {
       id: 2,
-      title: "Innovative Solutions.",
-      subtitle: "Sustainable Future.",
-      description: "Cutting-edge technology for tomorrow's energy challenges",
-      image: "/images/webp/pic_9.webp"
+      title: "Global Standards",
+      subtitle: "Local Expertise.",
+      description: "Combining international best practices with deep local industry knowledge",
+      image: "/images/Home/pic_9.webp"
     },
     {
       id: 3,
-      title: "Reliable Partnerships.",
-      subtitle: "Proven Results.",
-      description: "Trusted by industry leaders across the World",
-      image: "/images/webp/p2.webp"
+      title: "Precision Engineering",
+      subtitle: "Advanced Fabrication.",
+      description: "State-of-the-art fabrication yard equipped for complex industrial projects",
+      image: "/images/Workshop/p2.webp"
     },
     {
       id: 4,
-      title: "Engineering Excellence.",
-      subtitle: "Operational Precision.",
-      description: "Precision engineering for complex energy projects",
-      image: "/images/webp/pic_12.webp"
+      title: "Reliable Operations",
+      subtitle: "Maximum Efficiency.",
+      description: "Ensuring optimal performance through expert maintenance and operations",
+      image: "/images/Home/pic_12.webp"
     },
     {
       id: 5,
       title: "Local Expertise.",
       subtitle: "Global Standards.",
       description: "Combining Nigerian knowledge with international best practices",
-      image: "/images/webp/cli.webp"
+      image: "/images/Management/cli.webp"
     }
   ];
 
@@ -77,7 +77,7 @@ const Home = () => {
       title: "Engineering Title",
       description: "Engineering Description",
       color: "bg-gradient-to-br from-blue-600 to-blue-800",
-      image: "/images/webp/engineering.webp",
+      image: "/images/Services/EngineeringServices/engineering.webp",
       path: "/services/engineering"
     },
     {
@@ -86,7 +86,7 @@ const Home = () => {
       title: "Procurement Title",
       description: "Procurement Description",
       color: "bg-gradient-to-br from-orange-500 to-orange-700",
-      image: "/images/webp/procurement3.webp",
+      image: "/images/Services/ProcurementServices/procurement3.jpg",
       path: "/services/procurement"
     },
     {
@@ -95,7 +95,7 @@ const Home = () => {
       title: "Fabrication Title",
       description: "Fabrication Description",
       color: "bg-gradient-to-br from-blue-600 to-blue-800",
-      image: "/images/webp/fabrication.webp",
+      image: "/images/Services/FabricationConstruction/fabrication.webp",
       path: "/services/fabrication"
     },
     {
@@ -104,7 +104,7 @@ const Home = () => {
       title: "Commissioning Title",
       description: "Commissioning Description",
       color: "bg-gradient-to-br from-orange-500 to-orange-700",
-      image: "/images/webp/commisioning.webp",
+      image: "/images/Services/CommissioningStartup/commisioning.webp",
       path: "/services/commissioning"
     },
     {
@@ -113,7 +113,7 @@ const Home = () => {
       title: "Operations Title",
       description: "Operations Description",
       color: "bg-gradient-to-br from-blue-600 to-blue-800",
-      image: "/images/webp/operation.webp",
+      image: "/images/Services/OperationsMaintenance/operation.webp",
       path: "/services/operations"
     },
     {
@@ -122,19 +122,19 @@ const Home = () => {
       title: "Manpower Title",
       description: "Manpower Description",
       color: "bg-gradient-to-br from-orange-500 to-orange-700",
-      image: "/images/webp/p8.webp",
+      image: "/images/Services/TechnicalManpower/p8.webp",
       path: "/services/manpower"
     },
   ];
 
   // Service Overview images
   const serviceOverviewImages = [
-    "/images/webp/engineering.webp",
-    "/images/webp/procurement1.jpg",
-    "/images/webp/fabrication.webp",
-    "/images/webp/commisioning.webp",
-    "/images/webp/operation.webp",
-    "/images/webp/p8.webp",
+    "/images/Services/EngineeringServices/engineering.webp",
+    "/images/Services/ProcurementServices/procurement1.jpg",
+    "/images/Services/FabricationConstruction/fabrication.webp",
+    "/images/Services/CommissioningStartup/commisioning.webp",
+    "/images/Services/OperationsMaintenance/operation.webp",
+    "/images/Services/TechnicalManpower/p8.webp",
   ];
 
   // Latest Projects images
@@ -145,18 +145,13 @@ const Home = () => {
     "/images/Projects/Tank_Farm2.jpg",
   ];
 
-  // Clients images (from the scroller section)
-  const clientImages = [
-    "/images/Clients_webp/nnpc.webp",
-    "/images/Clients_webp/chevron.webp",
-    "/images/Clients_webp/Total.webp",
-    "/images/Clients_webp/seepco.webp",
-    "/images/Clients_webp/seplat.webp",
-    "/images/Clients_webp/saipem.webp",
-    "/images/Clients_webp/Addax.webp",
-    "/images/Clients_webp/Hydrocarbon.webp",
-    "/images/Clients_webp/nnpc-18.webp",
-    "/images/Clients_webp/ewt.webp",
+  const clientLogos = [
+    "/images/Shared/Logos/nnpc.webp",
+    "/images/Shared/Logos/chevron.webp",
+    "/images/Shared/Logos/Total.webp",
+    "/images/Shared/Logos/seplat.webp",
+    "/images/Shared/Logos/pivot.webp",
+    "/images/Shared/Logos/Npdc.webp",
   ];
 
   // Collect all unique image URLs
@@ -165,7 +160,7 @@ const Home = () => {
     ...services.map(service => service.image),
     ...serviceOverviewImages,
     ...projectImages,
-    ...clientImages,
+    ...clientLogos,
   ]));
 
   useEffect(() => {
@@ -375,37 +370,37 @@ const Home = () => {
               {
                 title: "Engineering Services",
                 description: "Front-end engineering design (FEED), detailed engineering, and constructability studies across civil, mechanical, electrical, and process disciplines.",
-                image: "/images/webp/engineering.webp",
+                image: "/images/Services/EngineeringServices/engineering.webp",
                 path: "/services/engineering"
               },
               {
                 title: "Procurement Services",
                 description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
-                image: "/images/webp/procurement1.jpg",
+                image: "/images/Services/ProcurementServices/procurement1.jpg",
                 path: "/services/procurement"
               },
               {
                 title: "Fabrication & Construction",
                 description: "Civil works, Steel structural Fabrication and erection, mechanical installation, piping, E&I, and facility upgrades.",
-                image: "/images/webp/fabrication.webp",
+                image: "/images/Services/FabricationConstruction/fabrication.webp",
                 path: "/services/fabrication"
               },
               {
                 title: "Commissioning & Start-up",
                 description: "Pre-commissioning, commissioning, and start-up support services to ensure systems operate as designed.",
-                image: "/images/webp/commisioning.webp",
+                image: "/images/Services/CommissioningStartup/commisioning.webp",
                 path: "/services/commissioning"
               },
               {
                 title: "Operations & Maintenance",
                 description: "End-to-end O&M services ensuring optimal asset performance, reduced downtime, and extended infrastructure life cycle.",
-                image: "/images/webp/operation.webp",
+                image: "/images/Services/OperationsMaintenance/operation.webp",
                 path: "/services/operations"
               },
               {
                 title: "Technical Manpower Supply",
                 description: "Certified Personnel | Project Staffing | IRATA Technicians | Specialized Roles",
-                image: "/images/webp/p8.webp",
+                image: "/images/Services/TechnicalManpower/p8.webp",
                 path: "/services/manpower"
               },
             ].map((service, idx) => (
@@ -432,7 +427,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/images/webp/pic_2.webp')] bg-cover bg-center opacity-5" />
+          <div className="absolute inset-0 bg-[url('/images/Home/pic_2.webp')] bg-cover bg-center opacity-5" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -525,27 +520,19 @@ const Home = () => {
             <div className="relative w-full" style={{ overflow: 'hidden' }}>
               <div className="flex animate-scroll-x space-x-8 items-center" style={{ width: 'max-content' }}>
                 {/* Logos duplicated for seamless loop */}
-                <img src="/images/Clients_webp/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/Total.webp" alt="Total Energies" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/seepco.webp" alt="SEEPCO" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/saipem.webp" alt="Saipem" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/Addax.webp" alt="Addax" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/Hydrocarbon.webp" alt="First Hydrocarbon" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/nnpc-18.webp" alt="NNPC 18" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/ewt.webp" alt="EWT Energy Works" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/Total.webp" alt="Total" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/pivot.webp" alt="Pivot" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/Npdc.webp" alt="NPDC" className="h-16 w-auto object-contain" />
                 {/* Duplicate for infinite scroll */}
-                <img src="/images/Clients_webp/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/Total.webp" alt="Total Energies" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/seepco.webp" alt="SEEPCO" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/saipem.webp" alt="Saipem" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/Addax.webp" alt="Addax" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/Hydrocarbon.webp" alt="First Hydrocarbon" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/nnpc-18.webp" alt="NNPC 18" className="h-16 w-auto object-contain" />
-                <img src="/images/Clients_webp/ewt.webp" alt="EWT Energy Works" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/Total.webp" alt="Total" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/pivot.webp" alt="Pivot" className="h-16 w-auto object-contain" />
+                <img src="/images/Shared/Logos/Npdc.webp" alt="NPDC" className="h-16 w-auto object-contain" />
               </div>
             </div>
           </div>

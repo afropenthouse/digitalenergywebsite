@@ -60,7 +60,7 @@ const OurHistory = () => {
 
 		// Preload hero image
 		const heroImg = new Image()
-		heroImg.src = "/images/webp/p7.webp"
+		heroImg.src = "/images/AboutUs/History/p7.webp"
 		heroImg.onload = handleImageLoad
 
 		return () => {
@@ -85,7 +85,7 @@ const OurHistory = () => {
 					>
 						<div className="absolute inset-0">
 							<img
-								src="/images/webp/p7.webp"
+								src="/images/AboutUs/History/p7.webp"
 								alt="Our History"
 								className="w-full h-full object-cover opacity-40"
 							/>

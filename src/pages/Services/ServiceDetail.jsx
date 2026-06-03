@@ -29,7 +29,7 @@ const services = [
       "Integrated approach that considers the entire project lifecycle",
       "Innovative solutions to complex engineering challenges",
     ],
-    image: "/images/pic_2.jpg",
+    image: "/images/Home/pic_2.webp",
     color: "bg-primary-500",
   },
   {
@@ -51,7 +51,7 @@ const services = [
       "Efficient logistics and timely delivery",
       "Transparent procurement processes",
     ],
-    image: "/images/procurement.jpg",
+    image: "/images/Services/ProcurementServices/procurement3.jpg",
     color: "bg-secondary-500",
   },
   {
@@ -73,7 +73,7 @@ const services = [
       "Quality workmanship and attention to detail",
       "Efficient project management to minimize disruptions",
     ],
-    image: "/images/pic_5.jpg",
+    image: "/images/Services/FabricationConstruction/fabrication.webp",
     color: "bg-primary-500",
   },
   {
@@ -95,7 +95,7 @@ const services = [
       "Comprehensive documentation for future reference",
       "Training for operations personnel",
     ],
-    image: "/src/assets/pic_6.png",
+    image: "/images/Services/CommissioningStartup/commisioning.webp",
     color: "bg-secondary-500",
   },
   {
@@ -117,7 +117,7 @@ const services = [
       "Reduced operational costs",
       "Improved safety and environmental performance",
     ],
-    image: "/images/pic_8.png",
+    image: "/images/Services/OperationsMaintenance/operation.webp",
     color: "bg-primary-500",
   },
   {
@@ -139,7 +139,7 @@ const services = [
       "Reduced recruitment and training costs",
       "Certified and experienced professionals",
     ],
-    image: "/images/",
+    image: "/images/Services/TechnicalManpower/p8.webp",
     color: "bg-secondary-500",
   },
   {
@@ -161,7 +161,7 @@ const services = [
       "Data-driven insights for optimization",
       "Enhanced safety through automated systems",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/Home/pic_2.webp",
     color: "bg-primary-500",
   },
   {
@@ -183,7 +183,7 @@ const services = [
       "Knowledge transfer and skill development",
       "Customized training solutions for specific needs",
     ],
-    image: "/images/",
+    image: "/images/Gallery/Training/Training1.webp",
     color: "bg-secondary-500",
   },
   {
@@ -205,7 +205,7 @@ const services = [
       "Efficient logistics and delivery",
       "Compliance with regulatory requirements",
     ],
-    image: "/images/",
+    image: "/images/Services/TradingServices/marketing.webp",
     color: "bg-primary-500",
   },
 ]
@@ -229,7 +229,7 @@ const ServiceDetail = () => {
 
     // Preload service image
     const serviceImg = new Image()
-    serviceImg.src = service.image.replace(/\.[^/.]+$/, ".webp") // Convert to WebP
+    serviceImg.src = service.image
     serviceImg.onload = handleImageLoad
 
     return () => {

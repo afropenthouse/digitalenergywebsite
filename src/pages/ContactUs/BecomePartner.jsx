@@ -47,8 +47,8 @@ const BecomePartner = () => {
 		}
 
 		const images = [
-			"/images/webp/p88.webp", 
-			"/images/webp/p88.webp" 
+			"/images/Shared/p88.webp", 
+			"/images/Shared/p88.webp" 
 		]
 
 		images.forEach(src => {
@@ -98,7 +98,7 @@ const BecomePartner = () => {
 					>
 						<div className="absolute inset-0">
 							<img
-								src="/images/p88.png"
+								src="/images/Shared/p88.png"
 								alt="Become a Partner"
 								className="w-full h-full object-cover opacity-40"
 							/>
@@ -258,7 +258,7 @@ const BecomePartner = () => {
 								>
 									<div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
 										<img
-											src="/images/p88.png"
+											src="/images/Shared/p88.png"
 											alt="Partnership"
 											className="w-full h-full object-cover"
 										/>

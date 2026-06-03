@@ -21,8 +21,8 @@ const CommissioningStartup = () => {
 
     // Preload images
     const images = [
-      '/images/webp/commisioning.webp',
-      '/images/webp/commisioning.webp'
+      '/images/Services/CommissioningStartup/commisioning.webp',
+      '/images/Services/CommissioningStartup/commisioning.webp'
     ]
 
     images.forEach(src => {
@@ -112,7 +112,7 @@ const CommissioningStartup = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/commisioning.webp"
+                src="/images/Services/CommissioningStartup/commisioning.webp"
                 alt="Commissioning & Start-up Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -183,7 +183,7 @@ const CommissioningStartup = () => {
               >
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
-                    src="/images/webp/commisioning.webp"
+                    src="/images/Services/CommissioningStartup/commisioning.webp"
                     alt="Commissioning & Start-up"
                     className="w-full h-[250px] object-cover"
                   />

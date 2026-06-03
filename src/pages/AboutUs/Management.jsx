@@ -45,49 +45,49 @@ const boardMembers = [
   {
     name: "Simon Chukwunweluwa Ugwoke",
     position: "MD & CEO",
-    image: "/images/webp/simon.webp",
+    image: "/images/Management/simon.webp",
     bio: "Simon is a serial entrepreneur and a leader per excellence with experience spanning decades. He is a graduate of the University of Nigeria Nsukka and has obtained several other certifications and trainings both locally and internationally. Simon directs the day to day affairs of the Digital Energy business"
   },
   {
     name: "Engr. Olutayo Ajayi",
     position: "ED, Technical Services",
-    image: "/images/webp/tayo.webp",
+    image: "/images/Management/tayo.webp",
     bio: "He is a seasoned mechanical engineer with a B.Sc. degree in Mechanical Engineering and over 28 years of global experience in managing complex projects in the power, oil, and gas sectors. A COREN registered Engineer and member of Nigerian Society of Engineers (MNSE), he boasts a proven track record of delivering multi-million-dollar projects."
   },
   {
     name: "Mr. Fredrick Okeagu",
     position: "ED, HR & Management Services",
-    image: "/images/webp/fred.webp",
+    image: "/images/Management/fred.webp",
     bio: "Global Speaker, a Certified Management Consultant and HR professional with over 15 years experience. He is a doctoral student (Ph.D) in IRHRM, an MSc graduate in IHRM, and holds a PGD in Guidance & Counselling. He is Certified with CIPM, Nigeria, KPI Institute- Australia and a member of the Africa HR Confederation (AHRC)."
   },
   {
     name: "Ibeako Amarachi",
     position: "Group Head Information Tech",
-    image: "/images/webp/amara.webp",
+    image: "/images/Management/amara.webp",
     bio: "A highly ambitious and self-driven IT professional with 15+ years experience in security management systems, business continuity, and network planning. A Certified Information Security Manager (CISM) with extensive experience in overseeing and safeguarding an organization's computer security infrastructure."
   },
   {
     name: "Victor Amadi-Emina",
     position: "Head, Trading & Shipping Operations",
-    image: "/images/webp/victor.webp",
+    image: "/images/Management/victor.webp",
     bio: "He is a trading and shipping operations professional in the downstream oil and gas. An expert with over 20 years in the industry having worked in many downstream oil and gas companies in Nigeria, trading different grades of refined petroleum products and crude oils. He has also worked in Europe where he handled physical and paper trading of various crude grades to major refineries in the USA, China, India and Japan."
   },
   {
     name: "Chidinma Obi",
     position: "Head of Accounts",
-    image: "/images/webp/obi.webp",
+    image: "/images/Management/obi.webp",
     bio: "Chidinma is a highly detailed and ethical Accountant with over 13 years of experience in internal audit, finance, bookkeeping, and analytics. She holds a degree in Accounting from Ahmadu Bello University, Zaria, and is a member of The Institute of Chartered Accountants of Nigeria (ICAN) and the Nigerian Institute of Management (NIM). She also has extensive experience in the Real Estate, Shipping, and Logistics sectors."
   },
   {
     name: "Kiki N.C. Ejiaku",
     position: "Business Development Manager",
-    image: "/images/webp/kike2.webp",
+    image: "/images/Management/kike2.webp",
     bio: "She is a Seasoned Business Development Manager with 22 years of dedicated experience, committed to driving strategic growth and fostering long-term partnerships. Thrives on turning ideas into opportunities. She is a graduate of the University of Calabar and has obtained several other certifications and training in the same field."
   },
   {
     name: "Ezechi Ajibo",
     position: "Company Secretary",
-    image: "/images/webp/eze.webp",
+    image: "/images/Management/eze.webp",
     bio: "Seasoned lawyer with 15+ years of experience in international joint ventures, contract negotiations, debt recoveries, and real estate law. Proven track record of advising multinational companies, including Sanofi Aventis, Doehler Group, and Merck. Recently appointed as Legal Adviser and Company Secretary to Digital Energy Group of companies (2023)."
   }
 ]
@@ -146,7 +146,7 @@ const Management = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/cli.webp"
+    heroImg.src = "/images/Management/cli.webp"
     heroImg.onload = handleImageLoad
 
     return () => {
@@ -172,7 +172,7 @@ const Management = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/cli.webp"
+                src="/images/Management/cli.webp"
                 alt="Our Management"
                 className="w-full h-full object-cover opacity-40"
               />

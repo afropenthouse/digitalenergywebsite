@@ -14,70 +14,70 @@ const projectList = [
     client: "NPDC",
     description: "Provision of maintaining and inspection, supply of PUP joints and cross over services for NPDC Operated Land and Swamp Assets on a call Basis",
     image: "/images/Projects/Maintenance.png",
-    logo: "/images/webp/Npdc.webp"
+    logo: "/images/Shared/Logos/Npdc.webp"
   },
   {
     title: "Machining & Fabrication Services",
     client: "Seplat",
     description: "Provision of machining and fabrication services for eastern assets",
     image: "/images/Projects/Machining Services.jpg",
-    logo: "/images/webp/seplat.webp"
+    logo: "/images/Shared/Logos/seplat.webp"
   },
   {
     title: "Tank Farm Upgrade & Maintenance",
     client: "Pivot Integrated Energy",
     description: "Upgrade and maintenance of 40 million liters Tank farm depot in Calabar EPZ",
     image: "/images/Projects/Tank_Farm.jpg",
-    logo: "/images/webp/pivot.webp"
+    logo: "/images/Shared/Logos/pivot.webp"
   },
   {
     title: "Lagos (Apapa) Tank Farm Maintenance",
     client: "Pivot Integrated Energy",
     description: "Upgrade and maintenance of 30 million Litres Tank Farm depot in Apapa, Lagos",
     image: "/images/Projects/Tank_Farm2.jpg",
-    logo: "/images/webp/pivot.webp"
+    logo: "/images/Shared/Logos/pivot.webp"
   },
   {
     title: "Modular Refinery Upgrade",
     client: "Fuel Direct LTD",
     description: "Upgrade and maintenance of Duport Midstream 2500B/D Modular Refinery in Ebokpa, Edo State",
     image: "/images/Projects/modular-refinery.jpg",
-    logo: "/images/webp/fuel.webp"
+    logo: "/images/Shared/Logos/fuel.webp"
   },
   {
     title: "Booster Compressor Tie-in",
     client: "Seplat",
     description: "Booster compressor phase 2 tie-in project",
     image: "/images/Projects/BoosterCompressor.jpg.jpg",
-    logo: "/images/webp/seplat.webp"
+    logo: "/images/Shared/Logos/seplat.webp"
   },
   {
     title: "Machining Services",
     client: "Litewell Completions Services",
     description: "Provision of Machining services and cutting of BTC PIN X PIN 20 casting pipes - 56 jts - 122 thread connections",
     image: "/images/Projects/Machining Services2.webp",
-    logo: "/images/webp/lite.webp"
+    logo: "/images/Shared/Logos/lite.webp"
   },
   {
     title: "Gas Equipment Procurement",
     client: "MidWestern",
     description: "Procurement of Gas pressure regulator 25bar & cartridge Gas & Supply of FLO Choke Valve",
     image: "/images/Projects/Gas.jpg",
-    logo: "/images/webp/Midwestern.webp"
+    logo: "/images/Shared/Logos/Midwestern.webp"
   },
   {
     title: "Fabrication & Supply",
     client: "Weatherford",
     description: "Fabrication and Supply of X-overs & 1-Gauge lumpsum service on multi wells pads",
     image: "/images/Projects/FabricationSupply.webp",
-    logo: "/images/webp/weatherford.webp"
+    logo: "/images/Shared/Logos/weatherford.webp"
   },
   {
     title: "Cathodic Transformer Rectifier Maintenance",
     client: "ENAGEED RESOURCES LTD",
     description: "Maintenance and the repair of faulty cathodic transformer rectifier at ENAGEED RESOURCES LTD, April 2025",
     image: "/images/Projects/CathodicTransformer.jpg",
-    logo: "/images/webp/enageed.jpg"
+    logo: "/images/Shared/Logos/enageed.jpg"
   }
 ]
 
@@ -110,7 +110,7 @@ const Projects = () => {
 
     // Preload hero image
     const heroImg = new Image()
-    heroImg.src = "/images/webp/Capture.webp"
+    heroImg.src = "/images/Projects/Capture.webp"
     heroImg.onload = handleImageLoad
 
     // Preload project images and logos
@@ -146,7 +146,7 @@ const Projects = () => {
 			<section className="relative bg-gradient-to-r from-blue-800 to-blue-800 text-white py-20 overflow-hidden">
 				<div className="absolute inset-0">
 					<img
-						src="/images/webp/Capture.webp"
+						src="/images/Projects/Capture.webp"
 						alt="Projects"
 						className="w-full h-full object-cover opacity-40"
 					/>

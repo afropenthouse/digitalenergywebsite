@@ -40,9 +40,9 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div className="flex flex-col items-start">
             <img 
-              src="/images/logofooter.png" 
+              src="/images/Shared/logofooter.png" 
               alt="Digital Energy Logo" 
-              className="h-12 mb-4"
+              className="h-16 w-auto mb-6"
             />
             <p className="text-blue-100 text-sm mb-4">
               Leading indigenous multi-diverse energy solutions company providing comprehensive services across the entire energy value chain.

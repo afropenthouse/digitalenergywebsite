@@ -94,7 +94,7 @@ const FabricationConstruction = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/fabrication.webp"
+                src="/images/Services/FabricationConstruction/fabrication.webp"
                 alt="Fabrication & Construction Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -163,17 +163,21 @@ const FabricationConstruction = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
-                  <img
-                    src="/images/webp/Fabrication2.jpg"
-                    alt="Fabrication & Construction"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
-                  <img
-                    src="/images/webp/Fabrication1.webp"
-                    alt="Fabrication & Construction"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/FabricationConstruction/Fabrication2.jpg"
+                      alt="Workshop Fabrication"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/FabricationConstruction/Fabrication1.webp"
+                      alt="Site Construction"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
                 </div>
               </motion.div>
 

@@ -57,10 +57,10 @@ const ProcurementServices = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/webp/procurement4.jpg"
-                alt="Procurement Services"
-                className="w-full h-full object-cover opacity-40"
-              />
+                  src="/images/Services/ProcurementServices/procurement4.jpg"
+                  alt="Procurement Services"
+                  className="w-full h-full object-cover opacity-40"
+                />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
             </div>
@@ -126,17 +126,21 @@ const ProcurementServices = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row gap-4">
-                  <img
-                    src="/images/webp/procurement2.jpg"
-                    alt="Procurement Services"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
-                  <img
-                    src="/images/webp/procurement1.jpg"
-                    alt="Procurement Services"
-                    className="w-full md:w-1/2 h-[250px] object-cover"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/ProcurementServices/procurement2.jpg"
+                      alt="Global Sourcing"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/ProcurementServices/procurement1.jpg"
+                      alt="Equipment Supply"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
                 </div>
               </motion.div>
 
