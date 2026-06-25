@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div className="flex flex-col items-start">
             <img 
-              src="/images/Shared/logofooter.png" 
+              src="/images/Misc/logofooter.webp" 
               alt="Digital Energy Logo" 
               className="h-16 w-auto mb-6"
             />
