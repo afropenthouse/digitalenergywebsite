@@ -292,7 +292,7 @@ const FabricationConstruction = () => {
                   ))}
                 </div>
                 <p className="text-gray-700 mt-4 text-sm">
-                  Digital Energy ensures that every structure, system, or facility we build meets the highest levels of functionality, safety, and durability, supporting our clients through the full project lifecycle — from engineering and fabrication to construction and commissioning.
+                  Digital Energy ensures that every structure, system, or facility we build meets the highest levels of functionality, safety, and durability, supporting our clients through the full project lifecycle - from engineering and fabrication to construction and commissioning.
                 </p>
               </motion.div>
             </div>

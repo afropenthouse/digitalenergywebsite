@@ -169,7 +169,7 @@ const WhoWeAre = () => {
               
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <span className="font-bold text-blue-800">DIGITAL ENERGY & INTEGRATED SERVICES LIMITED (DEISL)</span> is a leading indigenous, multi-faceted energy solutions company, delivering end-to-end services across the entire energy value chain—upstream, midstream, and downstream.
+                  <span className="font-bold text-blue-800">DIGITAL ENERGY & INTEGRATED SERVICES LIMITED (DEISL)</span> is a leading indigenous, multi-faceted energy solutions company, delivering end-to-end services across the entire energy value chain-upstream, midstream, and downstream.
                 </p>
                 <p>
                   We offer integrated EPCOM contracting, petroleum product trading, marine logistics, project management, and ICT services, all tailored to meet the evolving needs of the Nigerian industry. Through the digitalization of the energy lifecycle, we ensure greater efficiency, transparency, and value delivery.
@@ -180,7 +180,7 @@ const WhoWeAre = () => {
                 </p>
 
                 <p>
-                  Our service offerings cover the complete project lifecycle—from conceptual design and engineering to commissioning and long-term asset support. Backed by a management team with extensive combined experience across upstream, midstream, and downstream operations, DEISL is well-positioned to deliver consistent value.
+                  Our service offerings cover the complete project lifecycle-from conceptual design and engineering to commissioning and long-term asset support. Backed by a management team with extensive combined experience across upstream, midstream, and downstream operations, DEISL is well-positioned to deliver consistent value.
                 </p>
 
                 <p>
@@ -262,7 +262,7 @@ const WhoWeAre = () => {
               className="max-w-4xl mx-auto"
             >
               <img
-                src="/images/Misc/info.png"
+                src="/images/Misc/client2.jpg"
                 alt="Core Values Information"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />

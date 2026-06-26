@@ -112,7 +112,7 @@ function FabricationYard() {
       <section className="py-6 px-4">
         <div className="container mx-auto max-w-5xl">
           <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-gray-700 text-base">
-            Every structure fabricated at our yard reflects our commitment to innovation, workmanship, and safety excellence. The accompanying images showcase our facility, equipment, and team in action — bringing engineering designs to life.
+            Every structure fabricated at our yard reflects our commitment to innovation, workmanship, and safety excellence. The accompanying images showcase our facility, equipment, and team in action - bringing engineering designs to life.
           </motion.p>
         </div>
       </section>

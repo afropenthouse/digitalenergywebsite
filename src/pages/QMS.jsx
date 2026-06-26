@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const policyPdf = "/DEISL-HSE%20POLICY%20STATEMENT.pdf";
+const policyPdf = "/QMS.pdf";
 
 export default function QMS() {
   return (
