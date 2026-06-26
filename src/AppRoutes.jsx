@@ -1,4 +1,5 @@
 import QMS from "./pages/QMS";
+import Policies from "./pages/Policies";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -72,6 +73,7 @@ function AppRoutes() {
 
             <Route path="hsc-policy" element={<HSEPolicy />} />
             <Route path="qms" element={<QMS />} />
+            <Route path="policies" element={<Policies />} />
             <Route path="careers" element={<Career />} />
           </Route>
         </Routes>

@@ -77,15 +77,21 @@ const WhoWeAre = () => {
       })
     }
 
+    const handleImageError = () => {
+      handleImageLoad()
+    }
+
     // Preload hero image
     const heroImg = new Image()
     heroImg.src = "/images/Home/pic_2.webp"
     heroImg.onload = handleImageLoad
+    heroImg.onerror = handleImageError
 
     // Preload info image
     const infoImg = new Image()
-    infoImg.src = "/images/AboutUs/info.png"
+    infoImg.src = "/images/Misc/info.png"
     infoImg.onload = handleImageLoad
+    infoImg.onerror = handleImageError
 
     return () => {
       setIsLoading(true)
@@ -256,7 +262,7 @@ const WhoWeAre = () => {
               className="max-w-4xl mx-auto"
             >
               <img
-                src="/images/AboutUs/info.png"
+                src="/images/Misc/info.png"
                 alt="Core Values Information"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />

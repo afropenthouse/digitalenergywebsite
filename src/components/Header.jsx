@@ -23,6 +23,9 @@ export default function Header() {
     { name: "Our Certifications", href: "/about/certifications" },
     { name: "Event Gallery", href: "/about/gallery" },
     { name: "Clients", href: "/about/clients" },
+    { type: "header", name: "Policies" },
+    { name: "HSE Policy", href: "/hsc-policy" },
+    { name: "QMS Policy", href: "/qms" },
   ];
   
   const contactLinks = [
@@ -60,16 +63,12 @@ export default function Header() {
     setActiveDropdown(null)
   }, [location.pathname])
 
-  const policiesLinks = [
-    { name: "HSE Policy", href: "/hsc-policy" },
-    { name: "QMS Policy", href: "/qms" },
-  ];
+
 
   const navLinks = [
     { key: "home", name: "Home", href: "/" },
     { key: "about", name: "About", href: "/about", dropdown: aboutLinks },
     { key: "services", name: "Services", href: "/services" },
-    { key: "policies", name: "Policies", href: "/hsc-policy", dropdown: policiesLinks },
     { key: "projects", name: "Projects", href: "/projects" },
     { key: "fabrication-yard", name: "Workshop", href: "/fabrication-yard" },
     { key: "careers", name: "Careers", href: "/careers" },
@@ -214,18 +213,27 @@ export default function Header() {
                           >
                             <div className="flex flex-col items-end">
                               {link.dropdown.map((l) => (
-                                <Link
-                                  key={l.name}
-                                  to={l.href}
-                                  className={`block w-full py-2.5 text-sm whitespace-nowrap transition-colors rounded text-center ${
-                                    location.pathname === l.href
-                                      ? "bg-blue-800 text-white"
-                                      : "hover:bg-blue-800 hover:text-white text-gray-700"
-                                  }`}
-                                  onClick={() => setActiveDropdown(null)}
-                                >
-                                  {l.name}
-                                </Link>
+                                l.type === "header" ? (
+                                  <div
+                                    key={l.name}
+                                    className="w-full py-2 text-xs font-bold text-gray-500 uppercase tracking-wider border-t border-gray-100 mt-1 pt-2 text-center"
+                                  >
+                                    {l.name}
+                                  </div>
+                                ) : (
+                                  <Link
+                                    key={l.name}
+                                    to={l.href}
+                                    className={`block w-full py-2.5 text-sm whitespace-nowrap transition-colors rounded text-center ${
+                                      location.pathname === l.href
+                                        ? "bg-blue-800 text-white"
+                                        : "hover:bg-blue-800 hover:text-white text-gray-700"
+                                    }`}
+                                    onClick={() => setActiveDropdown(null)}
+                                  >
+                                    {l.name}
+                                  </Link>
+                                )
                               ))}
                             </div>
                           </motion.div>
@@ -321,21 +329,30 @@ export default function Header() {
                               transition={{ duration: 0.2 }}
                               className="pl-4 overflow-hidden"
                             >
-                              <div className="py-2 space-y-1">
-                                {link.dropdown.map((l) => (
-                                  <Link
-                                    key={l.name}
-                                    to={l.href}
-                                    className={`block w-full py-2.5 text-sm whitespace-nowrap transition-colors rounded text-center ${
-                                      location.pathname === l.href
-                                        ? "bg-blue-800 text-white"
-                                        : "hover:bg-blue-800 hover:text-white text-gray-700"
-                                    }`}
-                                  >
-                                    {l.name}
-                                  </Link>
-                                ))}
-                              </div>
+                               <div className="py-2 space-y-1">
+                                 {link.dropdown.map((l) => (
+                                   l.type === "header" ? (
+                                     <div
+                                       key={l.name}
+                                       className="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider border-t border-gray-100 mt-1 pt-2 text-center"
+                                     >
+                                       {l.name}
+                                     </div>
+                                   ) : (
+                                     <Link
+                                       key={l.name}
+                                       to={l.href}
+                                       className={`block w-full py-2.5 text-sm whitespace-nowrap transition-colors rounded text-center ${
+                                         location.pathname === l.href
+                                           ? "bg-blue-800 text-white"
+                                           : "hover:bg-blue-800 hover:text-white text-gray-700"
+                                       }`}
+                                     >
+                                       {l.name}
+                                     </Link>
+                                   )
+                                 ))}
+                               </div>
                             </motion.div>
                           )}
                         </AnimatePresence>
