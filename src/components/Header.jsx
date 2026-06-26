@@ -21,7 +21,7 @@ export default function Header() {
     { name: "Management", href: "/about/management" },
     { name: "Our History", href: "/about/history" },
     { name: "Our Certifications", href: "/about/certifications" },
-    { name: "Event Gallery", href: "/about/gallery" },
+    { name: "Picture Gallery", href: "/about/gallery" },
     { name: "Clients", href: "/about/clients" },
     { type: "header", name: "Policies" },
     { name: "HSE Policy", href: "/hsc-policy" },
