@@ -38,6 +38,15 @@ const certifications = [
     image: "/images/Certifications/Manufacturing.jpg",
     year: "2025",
   },
+  {
+    name: "ISPON Corporate Membership",
+    category: "Safety Professionals",
+    description: "Elected as a CORPORATE member by the Institute of Safety Professionals of Nigeria (ISPON), having satisfied the conditions laid down in the ISPON Act 2014 and the General Policy Guidelines.",
+    icon: BadgeCheck,
+    image: "/images/Certifications/SAFETY.jpg",
+    year: "2025",
+    issue: "Issued July 31, 2025",
+  },
 ]
 
 const OurCertifications = () => {
