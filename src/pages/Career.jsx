@@ -221,6 +221,35 @@ const Career = () => {
         </div>
       </section>
 
+      {/* Submit Your CV Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <div className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full mb-4 font-medium">
+              Grow With Digital Energy
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Submit Your CV
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Interested in joining our team? Send your CV to our HR department and we'll reach out when opportunities arise.
+            </p>
+            <a
+              href="mailto:hello@hrmoffice.org"
+              className="inline-block px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg transition-colors duration-300 text-lg"
+            >
+              Submit Your CV via Email
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Job Openings */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
