@@ -23,7 +23,7 @@ const certifications = [
 	  issue: "Issued in 2022",
   },
   {
-    name: "COREN Biennial Practising Licence",
+    name: "COREN",
     category: "Engineering Practice",
     description: "Licensed by the Council for the Regulation of Engineering in Nigeria (COREN) to practice engineering in Nigeria, meeting all requirements contained in the COREN Act. Registration Number: ECF1051",
     icon: Star,
@@ -38,50 +38,50 @@ const certifications = [
     image: "/images/Certifications/Manufacturing.jpg",
     year: "2025",
   },
-  {
-    name: "ISPON Corporate Membership",
-    category: "Safety Professionals",
-    description: "Elected as a CORPORATE member by the Institute of Safety Professionals of Nigeria (ISPON), having satisfied the conditions laid down in the ISPON Act 2014 and the General Policy Guidelines.",
-    icon: BadgeCheck,
-    image: "/images/Certifications/SAFETY.jpg",
-    year: "2025",
-    issue: "Issued July 31, 2025",
-  },
+  // {
+  //   name: "ISPON Corporate Membership",
+  //   category: "Safety Professionals",
+  //   description: "Elected as a CORPORATE member by the Institute of Safety Professionals of Nigeria (ISPON), having satisfied the conditions laid down in the ISPON Act 2014 and the General Policy Guidelines.",
+  //   icon: BadgeCheck,
+  //   image: "/images/Certifications/SAFETY.jpg",
+  //   year: "2025",
+  //   issue: "Issued July 31, 2025",
+  // },
 ]
 
-const OurCertifications = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [loadedImages, setLoadedImages] = useState(0)
+  const OurCertifications = () => {
+    const [isLoading, setIsLoading] = useState(true)
+    const [loadedImages, setLoadedImages] = useState(0)
 
-  useEffect(() => {
-    const totalImages = certifications.length + 1 // +1 for the hero image
-    const handleImageLoad = () => {
-      setLoadedImages(prev => {
-        const newCount = prev + 1
-        if (newCount === totalImages) {
-          setIsLoading(false)
-        }
-        return newCount
+    useEffect(() => {
+      const totalImages = certifications.length + 1 // +1 for the hero image
+      const handleImageLoad = () => {
+        setLoadedImages(prev => {
+          const newCount = prev + 1
+          if (newCount === totalImages) {
+            setIsLoading(false)
+          }
+          return newCount
+        })
+      }
+
+      certifications.forEach(cert => {
+        const img = new Image()
+        img.src = cert.image
+        img.onload = handleImageLoad
+        img.onerror = handleImageLoad
       })
-    }
 
-    // Preload all certification images
-    certifications.forEach(cert => {
-      const img = new Image()
-      img.src = cert.image
-      img.onload = handleImageLoad
-    })
+      const heroImg = new Image()
+      heroImg.src = "/images/Shared/p88.webp"
+      heroImg.onload = handleImageLoad
+      heroImg.onerror = handleImageLoad
 
-    // Preload hero image
-    const heroImg = new Image()
-    heroImg.src = "/images/Shared/p88.webp"
-    heroImg.onload = handleImageLoad
-
-    return () => {
-      setIsLoading(true)
-      setLoadedImages(0)
-    }
-  }, [])
+      return () => {
+        setIsLoading(true)
+        setLoadedImages(0)
+      }
+    }, [])
 
   if (isLoading) {
     return <Loader />
@@ -195,7 +195,7 @@ const OurCertifications = () => {
                             <span>{cert.validity}</span>
                           </div>
                           <div className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">
-                            {cert.name === "COREN Biennial Practising Licence" ? "COREN" : "ISO Standard"}
+                            {cert.name === "COREN" ? "COREN" : "ISO Standard"}
                           </div>
                         </div>
                       </div>
