@@ -209,7 +209,7 @@ const CSR = () => {
 							viewport={{ once: true }}
 							className="text-center mb-10"
 						>
-							<h3 className="text-3xl font-bold text-gray-900 mb-2">Corona Lekki School Family Fun Day Events</h3>
+							<h3 className="text-3xl font-bold text-gray-900 mb-2">Corona Lekki School 2026 Family Event</h3>
 						</motion.div>
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
@@ -217,9 +217,9 @@ const CSR = () => {
 							viewport={{ once: true }}
 							className="text-left mb-10"
 						>
-							<h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Creating Smiles at Corona School Lekki's "Game On Fun" Event</h4>
+							<h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Creating Smiles at Corona School Lekki's "Game On Fun on" Sport day</h4>
 							<p className="text-base md:text-lg text-gray-700 leading-relaxed">
-								Laughter, teamwork, excitement, and unforgettable memories filled the atmosphere as Corona School, Lekki hosted its Game On Fun event and Digital Energy was delighted to be part of the experience as a proud sponsor.
+								Laughter, teamwork, excitement, and unforgettable memories filled the atmosphere as Corona School, Lekki hosted its Game On Fun on event and Digital Energy was delighted to be part of the experience as a proud  diamond sponsor.
 							</p>
 						</motion.div>
 						<motion.div
