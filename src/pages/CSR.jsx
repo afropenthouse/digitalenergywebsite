@@ -4,11 +4,11 @@ import Loader from "./Loader/Loader"
 import { X } from "lucide-react"
 
 const csrImages = [
-	{ src: "/images/CSR/luth1.jpeg", alt: "CSR Event 1" },
-	{ src: "/images/CSR/luth2.jpeg", alt: "CSR Event 2" },
-	{ src: "/images/CSR/luth3.jpeg", alt: "CSR Event 3" },
-	{ src: "/images/CSR/luth4.jpeg", alt: "CSR Event 4" },
-	{ src: "/images/CSR/luth5.jpeg", alt: "CSR Event 5" },
+	{ src: "/images/CSR/luth1.jpeg", alt: "Medical Outreach in LUTH - 1" },
+	{ src: "/images/CSR/luth2.jpeg", alt: "Medical Outreach in LUTH - 2" },
+	{ src: "/images/CSR/luth3.jpeg", alt: "Medical Outreach in LUTH - 3" },
+	{ src: "/images/CSR/luth4.jpeg", alt: "Medical Outreach in LUTH - 4" },
+	{ src: "/images/CSR/luth5.jpeg", alt: "Medical Outreach in LUTH - 5" },
 ]
 
 const CSR = () => {
@@ -97,6 +97,14 @@ const CSR = () => {
 
 					{/* CSR Gallery */}
 					<div className="max-w-6xl mx-auto">
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							className="text-center mb-10"
+						>
+							<h3 className="text-3xl font-bold text-gray-900 mb-2">Medical Outreach in LUTH</h3>
+						</motion.div>
 						<motion.div
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
