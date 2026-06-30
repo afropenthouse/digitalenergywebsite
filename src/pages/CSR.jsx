@@ -217,7 +217,7 @@ const CSR = () => {
 							viewport={{ once: true }}
 							className="text-left mb-10"
 						>
-							<h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Creating Smiles at Corona School Lekki's "Game On Fun on" Sport day</h4>
+							<h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Creating Smiles at Corona School Lekki's "Game On Fun on" Sports day</h4>
 							<p className="text-base md:text-lg text-gray-700 leading-relaxed">
 								Laughter, teamwork, excitement, and unforgettable memories filled the atmosphere as Corona School, Lekki hosted its Game On Fun on event and Digital Energy was delighted to be part of the experience as a proud  diamond sponsor.
 							</p>
