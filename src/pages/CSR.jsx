@@ -95,6 +95,24 @@ const CSR = () => {
 						</div>
 					</motion.div>
 
+					{/* CSR Write-up */}
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						className="max-w-3xl mx-auto text-center"
+					>
+						<p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+							Communities thrive when businesses choose to give back.
+						</p>
+						<p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+							We are proud to have participated in different meaningful CSR activities that reinforces our commitment to responsible corporate citizenship.
+						</p>
+						<p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+							Together, we can build stronger communities for tomorrow.
+						</p>
+					</motion.div>
+
 					{/* PDF Download */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
