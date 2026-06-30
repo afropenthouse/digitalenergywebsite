@@ -241,6 +241,7 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 60 }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
+                className="mt-8"
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center lg:text-left">
                   <span className="block"><HighlightedText text={slides[currentSlide].title} /></span>
