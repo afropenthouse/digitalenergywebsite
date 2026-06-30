@@ -100,7 +100,7 @@ const CSR = () => {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						className="max-w-3xl text-left"
+						className="max-w-6xl text-left -mt-8"
 					>
 						<p className="text-base md:text-lg text-gray-700 leading-relaxed">
 							Communities thrive when businesses choose to give back. We are proud to have participated in different meaningful CSR activities that reinforces our commitment to responsible corporate citizenship. Together, we can build stronger communities for tomorrow.
