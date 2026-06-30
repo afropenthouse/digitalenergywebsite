@@ -11,6 +11,13 @@ const csrImages = [
 	{ src: "/images/CSR/luth5.jpeg", alt: "Medical Outreach in LUTH - 5" },
 ]
 
+const coronaImages = [
+	{ src: "/images/CSR/corona1.jpeg", alt: "Corona Lekki School Family Fun Day - 1" },
+	{ src: "/images/CSR/corona2.jpeg", alt: "Corona Lekki School Family Fun Day - 2" },
+	{ src: "/images/CSR/corona3.jpeg", alt: "Corona Lekki School Family Fun Day - 3" },
+	{ src: "/images/CSR/corona4.jpeg", alt: "Corona Lekki School Family Fun Day - 4" },
+]
+
 const CSR = () => {
 	const [selectedImage, setSelectedImage] = useState(null)
 	const [isLoading, setIsLoading] = useState(true)
@@ -143,6 +150,43 @@ const CSR = () => {
 							className="grid grid-cols-2 md:grid-cols-3 gap-4"
 						>
 							{csrImages.map((image, index) => (
+								<motion.div
+									key={image.src}
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ delay: index * 0.1 }}
+									className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+									onClick={() => setSelectedImage(image)}
+								>
+									<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+									<img
+										src={image.src}
+										alt={image.alt}
+										className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+									/>
+								</motion.div>
+							))}
+						</motion.div>
+					</div>
+
+					{/* Corona Lekki School Gallery */}
+					<div className="max-w-6xl mx-auto mt-16">
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							className="text-center mb-10"
+						>
+							<h3 className="text-3xl font-bold text-gray-900 mb-2">Corona Lekki School Family Fun Day Pictures</h3>
+						</motion.div>
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ duration: 0.5 }}
+							className="grid grid-cols-2 md:grid-cols-3 gap-4"
+						>
+							{coronaImages.map((image, index) => (
 								<motion.div
 									key={image.src}
 									initial={{ opacity: 0, y: 20 }}
