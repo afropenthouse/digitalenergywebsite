@@ -5,20 +5,24 @@ import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 
 const galleryItems = [
-  { title: "CNCs & Lathes Machines", images: ["/images/Workshop/machine.webp"] },
-  { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/images/Workshop/blasting.jpg", "/images/Workshop/blasting2.jpeg", "/images/Workshop/blasting3.jpeg", "/images/Workshop/blasting4.jpeg"] },
-  { title: "Fabrication Shop", images: ["/images/Workshop/fab1.webp", "/images/Workshop/fab2.webp", "/images/Workshop/fab3.webp", "/images/Workshop/fab4.webp"] },
-  { title: "Forklift", images: ["/images/Workshop/forklift.jpg"] },
-  { title: "Lathe Machines", images: ["/images/Workshop/lathe1.jpg", "/images/Workshop/lathe2.jpg", "/images/Workshop/lathe3.jpg", "/images/Workshop/lathe4.jpg"] },
-  { title: "Machine Shop", images: ["/images/Workshop/shop1.jpg", "/images/Workshop/shop2.jpg", "/images/Workshop/shop4.jpg", "/images/Workshop/shop5.jpg"] },
-  { title: "Redial Drilling Machines", images: ["/images/Workshop/drilling.jpeg"] },
-  { title: "Dilling Casing Pipes (OCTG)", images: ["/images/Workshop/pipes.jpg"] },
-  { title: "Bucking machine", images: ["/images/Workshop/Bucking.jpg"] },
-  { title: "Band saw", images: ["/images/Workshop/Band.jpg"] },
-  { title: "Workshop with 20T overhead Crane", images: ["/images/Workshop/crane.jpg"] },
-  { title: "Air compressor 375cfm", images: ["/images/Workshop/air.jpeg"] },
+  { title: "Aerial View of Our Facility", images: ["/images/Workshop/facility.jpeg"] },
+  { title: "CNCs & Lathes Machines", subtitle: "Machine shop", images: ["/images/Workshop/mac1.jpeg", "/images/Workshop/mac2.jpeg", "/images/Workshop/mac3.jpeg", "/images/Workshop/mac4.jpeg", "/images/Workshop/mac5.jpeg", "/images/Workshop/mac6.jpeg", "/images/Workshop/mac7.jpeg", "/images/Workshop/mac8.jpeg"], cols: 4 },
+  { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/images/Workshop/work1.jpeg", "/images/Workshop/work2.jpeg", "/images/Workshop/work3.jpeg", "/images/Workshop/blasting2.jpeg", "/images/Workshop/blasting3.jpeg", "/images/Workshop/blasting4.jpeg"], cols: 3 },
+  { title: "Fabrication Shop", images: ["/images/Workshop/fab11.jpeg", "/images/Workshop/fab22.jpeg", "/images/Workshop/fab33.jpeg", "/images/Workshop/fab44.jpeg", "/images/Workshop/fab1.webp", "/images/Workshop/fab4.webp"], cols: 3 },
+  { title: "Forklift", images: ["/images/Workshop/fork1.jpeg", "/images/Workshop/fork2.jpeg"], cols: 1 },
+  { title: "Redial Drilling Machines", images: ["/images/Workshop/drilling.jpeg", "/images/Workshop/drill1.jpeg", "/images/Workshop/drill2.jpeg"], cols: 2 },
+  { title: "Dilling Casing Pipes (OCTG)", images: ["/images/Workshop/pipes.jpg", "/images/Workshop/dilling1.jpeg", "/images/Workshop/dilling2.jpeg"], cols: 2 },
+  { title: "Bucking machine", images: ["/images/Workshop/buk1.jpeg", "/images/Workshop/buk2.jpeg", "/images/Workshop/buk3.jpeg", "/images/Workshop/buk4.jpeg"] },
+  { title: "Band saw", images: ["/images/Workshop/band.jpeg"] },
+  { title: "Air compressor", images: ["/images/Workshop/air2.jpeg", "/images/Workshop/air1.jpeg", "/images/Workshop/air.jpeg"], cols: 2 },
   { title: "Blasting Pot", images: ["/images/Workshop/pot.jpeg"] },
   { title: "Air tank", images: ["/images/Workshop/tank.jpeg"] },
+  { title: "Phosphate Chemical Analysis", images: ["/images/Workshop/phos.jpeg"] },
+  { title: "Manganese Phosphate Bath", images: ["/images/Workshop/bath.jpeg"] },
+  { title: "SPINDLE BORE SIZE 2-3/8'' TO 11''", subtitle: "MANUAL LATHE MACHINE", images: ["/images/Workshop/manual1.jpg"] },
+  { title: "SPINDLE BORE SIZE: 2-3/8'' TO 15''", subtitle: "MANUAL LATHE MACHINE", images: ["/images/Workshop/lathe.jpg"] },
+  { title: "SPINDLE BORE SIZE: 2-3/8'' TO 11''", subtitle: "FANUC CONTROL CNC MACHINE", images: ["/images/Workshop/fanuc.jpg"] },
+  { title: "SPINDLE BORE SIZE: 2-3/8'' TO 15''", subtitle: "FANUC CONTROL CNC MACHINE", images: ["/images/Workshop/control.jpg"] },
 ]
 
 function FabricationYard() {
@@ -35,7 +39,7 @@ function FabricationYard() {
       setIsLoading(false)
     }
 
-    heroImg.src = "/images/Workshop/cap.webp"
+    heroImg.src = "/images/Workshop/fab.jpeg"
     heroImg.onload = onHeroLoad
     heroImg.onerror = () => {
       clearTimeout(timeoutRef.current)
@@ -56,7 +60,7 @@ function FabricationYard() {
       {/* Hero */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/Workshop/cap.webp" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
+          <img src="/images/Workshop/fab.jpeg" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
         </div>
@@ -123,15 +127,21 @@ function FabricationYard() {
           <motion.h3 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-3xl font-bold text-gray-900 mb-8 text-center">Facility Gallery</motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {galleryItems.map((item, index) => (
-              <motion.div key={index} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+              <motion.div key={index} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }} className={(item.cols === 4 || item.cols === 3) ? "md:col-span-2 lg:col-span-2" : ""}>
                 <Card className="h-full border-0 rounded-2xl overflow-hidden shadow-lg bg-white">
                   <CardContent className="p-0">
-                    <div className="px-5 pt-5">
-                      <h4 className="font-semibold text-gray-900 text-lg">{item.title}</h4>
+                    <div className="px-5 pt-5 text-center">
+                      {item.subtitle ? (<><h4 className="font-bold text-gray-900 text-xl mb-1">{item.subtitle}</h4><p className="text-sm text-gray-500">{item.title}</p></>) :                       <h4 className="font-bold text-gray-900 text-lg">{item.title}</h4>}
                     </div>
-                    <div className={`p-5 ${item.images.length > 1 ? "grid grid-cols-2 gap-3" : ""}`}>
+                    <div className={`p-5 ${item.images.length > 1 ? (item.cols === 4 ? "grid grid-cols-4 gap-3" : item.cols === 3 ? "grid grid-cols-3 gap-3" : "grid grid-cols-2 gap-3") : ""}`}>
                       {item.images.map((src, i) => (
-                        <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-64 object-cover rounded-xl"} />
+                        item.cols === 2 && i === 2 ? (
+                          <div key={i} className="col-span-2 flex justify-center">
+                            <motion.img src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="h-40 object-cover rounded-lg" />
+                          </div>
+                        ) : (
+                          <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-64 object-cover rounded-xl"} />
+                        )
                       ))}
                     </div>
                   </CardContent>

@@ -49,7 +49,7 @@ export default function Footer() {
             </p>
             {/* LinkedIn */}
             <a 
-              href="https://www.linkedin.com/company/digital-energy-and-interated-services-limited/posts/?feedView=all" 
+              href="https://www.linkedin.com/company/digitalenergyng" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center space-x-2 bg-blue-800 hover:bg-orange-500 p-2 rounded-full transition-colors duration-300"
