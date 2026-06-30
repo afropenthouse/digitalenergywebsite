@@ -20,6 +20,7 @@ import CommissioningStartup from "./pages/Services/CommissioningStartup";
 import OperationsMaintenance from "./pages/Services/OperationsMaintenance";
 import TechnicalManpower from "./pages/Services/TechnicalManpower";
 import Projects from "./pages/Projects";
+import CSR from "./pages/CSR";
 import HSEPolicy from "./pages/HSEPolicy";
 
 import Career from "./pages/Career";
@@ -69,6 +70,7 @@ function AppRoutes() {
               <Route path="trading" element={<TradingServices />} />
             </Route>
             <Route path="projects" element={<Projects />} />
+            <Route path="csr" element={<CSR />} />
             <Route path="fabrication-yard" element={<FabricationYard />} />
 
             <Route path="hsc-policy" element={<HSEPolicy />} />
