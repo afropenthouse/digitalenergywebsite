@@ -7,16 +7,18 @@ import Loader from "../Loader/Loader"
 const offices = [
   {
     id: "headoffice",
+    category: "Domestic",
     name: "Head Office",
     address: "Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria",
     phone: "+234 (0) 201 453 6157, +234 (0) 913 161 6700, +234 (0) 810 125 9849",
     email: "info@digitalenergyng.com",
-  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.277500498059!2d3.3524532731171313!3d6.486500223596092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c0bedc75ef5%3A0x45bf9811da30ea66!2sDigital%20Energy!5e0!3m2!1sen!2sng!4v1755083451316!5m2!1sen!2sng",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.277500498059!2d3.3524532731171313!3d6.486500223596092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c0bedc75ef5%3A0x45bf9811da30ea66!2sDigital%20Energy!5e0!3m2!1sen!2sng!4v1755083451316!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/bZjh7PQzzVDYdKXi9"
   },
   {
     id: "portharcourt",
-    name: "Port Harcourt Workshop Office",
+    category: "Domestic",
+    name: "Port Harcourt Workshop",
     address: "Digital Energy Close, Off Igboeche road, by Eleme Junction, Port Harcourt, Nigeria",
     phone: "+234 (0) 703 468 8358, +234 707 945 8903",
     email: "info@digitalenergyng.com",
@@ -25,12 +27,33 @@ const offices = [
   },
   {
     id: "chevron",
+    category: "Domestic",
     name: "Chevron Office",
     address: "House 8, Dr. Chimezie Street, Chevy View Estate, along Chevron drive, off Lekki-Epe expressway, Lagos",
     phone: "+234 (0) 907 069 5062, +234 (0) 811 671 1091, +234 (0) 810 125 9849",
     email: "info@digitalenergyng.com",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5857968337845!2d3.523592415231038!3d6.441822595339119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4c9ae5c0e1d%3A0xceb1b726f6a4e2e!2sLekki-Epe%20Expressway%2C%20Lagos!5e0!3m2!1sen!2sng!4v1648226741251!5m2!1sen!2sng",
     directionsUrl: "https://maps.app.goo.gl/fnkN9uYG9aiFyaKG8"
+  },
+  {
+    id: "dubai",
+    category: "International",
+    name: "Dubai UAE",
+    address: "Office 1207 Armada Tower 2, Jumeirah Lake Towers, Dubai, UAE",
+    phone: "+971 52 888 2518",
+    email: "info@digitalenergyng.com",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.0623404888!2d55.0740785!3d25.1971071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43a62161654f%3A0x4f1e7df34f3b3c!2sJumeirah%20Lakes%20Towers%2C%20Dubai%2C%20United%20Arab%20Emirates!5e0!3m2!1sen!2sng!4v1648226741251!5m2!1sen!2sng",
+    directionsUrl: "https://maps.app.goo.gl/dubai-office"
+  },
+  {
+    id: "china",
+    category: "International",
+    name: "China Office",
+    address: "Building 7, Dongtou Chang'an Northeast, Shangrao Avenue, Jiangxi, China",
+    phone: "+8613207037021",
+    email: "info@digitalenergyng.com",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.0623404888!2d115.9313654!3d28.4612396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x342b73e4a5e69837%3A0x4f1e7df34f3b3c!2sShangrao%2C%20Jiangxi%2C%20China!5e0!3m2!1sen!2sng!4v1648226741251!5m2!1sen!2sng",
+    directionsUrl: "https://maps.app.goo.gl/china-office"
   }
 ]
 
@@ -148,11 +171,13 @@ export default function ContactForm() {
                           <div className="flex items-start">
                             <div className="flex-1">
                               <div className="flex items-center mb-2">
-                                <div className={`w-3 h-3 rounded-full mr-3 ${
-                                  office.id === "headoffice" ? "bg-orange-500" :
-                                  office.id === "portharcourt" ? "bg-green-500" : "bg-purple-500"
-                                }`}></div>
-                                <h3 className="text-xl font-bold text-gray-900">{office.name}</h3>
+                                 <div className={`w-3 h-3 rounded-full mr-3 ${
+                                   office.id === "headoffice" ? "bg-orange-500" :
+                                   office.id === "portharcourt" ? "bg-green-500" :
+                                   office.id === "dubai" ? "bg-blue-500" :
+                                   office.id === "china" ? "bg-red-500" : "bg-purple-500"
+                                 }`}></div>
+                                 <h3 className="text-lg font-bold text-gray-900">{office.name}</h3>
                               </div>
                               <div className="pl-6 space-y-3">
                                 <div className="flex items-start">
