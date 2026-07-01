@@ -243,58 +243,58 @@ const FabricationConstruction = () => {
                 </div>
               </motion.div>
 
-              {/* Facilities & Capabilities */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg mb-8 border border-gray-100"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Facilities & Capabilities</h3>
-                <div className="grid md:grid-cols-2 gap-2">
-                  {facilities.map((facility, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-center space-x-2 py-1 hover:bg-blue-50 transition-colors"
-                    >
-                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></span>
-                      <span className="text-gray-700 text-sm">{facility}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+               {/* Facilities */}
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 className="bg-white rounded-2xl p-6 shadow-lg mb-4 border border-gray-100"
+               >
+                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Facilities</h3>
+                 <div className="grid md:grid-cols-2 gap-2">
+                   {facilities.map((facility, index) => (
+                     <motion.div
+                       key={index}
+                       initial={{ opacity: 0, x: -20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: index * 0.1 }}
+                       className="flex items-center space-x-2 py-1 hover:bg-blue-50 transition-colors"
+                     >
+                       <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></span>
+                       <span className="text-gray-700 text-sm">{facility}</span>
+                     </motion.div>
+                   ))}
+                 </div>
+               </motion.div>
 
-              {/* Value Proposition */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Value Proposition</h3>
-                <div className="grid md:grid-cols-2 gap-2">
-                  {valueProps.map((prop, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-center space-x-2 py-1 hover:bg-blue-50 transition-colors"
-                    >
-                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></span>
-                      <span className="text-gray-700 text-sm">{prop}</span>
-                    </motion.div>
-                  ))}
-                </div>
-                <p className="text-gray-700 mt-4 text-sm">
-                  Digital Energy ensures that every structure, system, or facility we build meets the highest levels of functionality, safety, and durability, supporting our clients through the full project lifecycle - from engineering and fabrication to construction and commissioning.
-                </p>
-              </motion.div>
+               {/* Capabilities */}
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 className="bg-white rounded-2xl p-6 shadow-lg mb-8 border border-gray-100"
+               >
+                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Capabilities</h3>
+                 <div className="grid md:grid-cols-2 gap-2">
+                   {valueProps.map((prop, index) => (
+                     <motion.div
+                       key={index}
+                       initial={{ opacity: 0, x: -20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: index * 0.1 }}
+                       className="flex items-center space-x-2 py-1 hover:bg-blue-50 transition-colors"
+                     >
+                       <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></span>
+                       <span className="text-gray-700 text-sm">{prop}</span>
+                     </motion.div>
+                   ))}
+                 </div>
+                 <p className="text-gray-700 mt-4 text-sm">
+                   Digital Energy ensures that every structure, system, or facility we build meets the highest levels of functionality, safety, and durability, supporting our clients through the full project lifecycle - from engineering and fabrication to construction and commissioning.
+                 </p>
+               </motion.div>
             </div>
           </div>
         </div>
