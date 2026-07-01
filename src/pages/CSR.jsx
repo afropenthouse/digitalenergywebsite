@@ -189,7 +189,9 @@ const CSR = () => {
 											alt={image.alt}
 											className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 											controls={false}
+											muted
 											playsInline
+											preload="metadata"
 										/>
 									) : (
 										<img
@@ -337,6 +339,8 @@ const CSR = () => {
 								alt={selectedImage.alt}
 								className="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl"
 								controls
+								muted
+								preload="metadata"
 							/>
 								) : (
 									<img
