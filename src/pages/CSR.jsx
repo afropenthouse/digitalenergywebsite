@@ -11,6 +11,13 @@ const csrImages = [
 	{ src: "/images/CSR/luth5.jpeg", alt: "Medical Outreach in LUTH - 5" },
 ]
 
+const lagosImages = [
+	{ src: "/images/CSR/lag243.jpeg", alt: "Food and Medical Outreach 2024 - 1" },
+	{ src: "/images/CSR/lag241.jpeg", alt: "Food and Medical Outreach 2024 - 2" },
+	{ src: "/images/CSR/lag242.jpeg", alt: "Food and Medical Outreach 2024 - 3" },
+	{ src: "/images/CSR/lag244.mp4", alt: "Food and Medical Outreach 2024 - 4", type: "video" },
+]
+
 const coronaImages = [
 	{ src: "/images/CSR/corona1.jpeg", alt: "Corona Lekki School Family Fun Day - 1" },
 	{ src: "/images/CSR/corona2.jpeg", alt: "Corona Lekki School Family Fun Day - 2" },
@@ -22,32 +29,36 @@ const coronaImages = [
 ]
 
 const CSR = () => {
-	const allImages = [...csrImages, ...coronaImages]
+	const allImages = [...lagosImages, ...csrImages, ...coronaImages]
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [selectedImage, setSelectedImage] = useState(null)
 	const [isLoading, setIsLoading] = useState(true)
 	const [loadedImages, setLoadedImages] = useState(0)
 
 	useEffect(() => {
-		const handleImageLoad = () => {
+		const handleLoad = () => {
 			setLoadedImages(prev => {
 				const newCount = prev + 1
-				if (newCount === csrImages.length + coronaImages.length) {
+				if (newCount === lagosImages.length + csrImages.length + coronaImages.length) {
 					setIsLoading(false)
 				}
 				return newCount
 			})
 		}
 
-		const handleImageError = () => {
-			handleImageLoad()
-		}
-
 		allImages.forEach(image => {
-			const img = new Image()
-			img.src = image.src
-			img.onload = handleImageLoad
-			img.onerror = handleImageError
+			if (image.type === "video") {
+				const video = document.createElement("video")
+				video.preload = "metadata"
+				video.src = image.src
+				video.onloadedmetadata = handleLoad
+				video.onerror = handleLoad
+			} else {
+				const img = new Image()
+				img.src = image.src
+				img.onload = handleLoad
+				img.onerror = handleLoad
+			}
 		})
 
 		return () => {
@@ -145,27 +156,56 @@ const CSR = () => {
 						</p>
 					</motion.div>
 
-					{/* PDF Download */}
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						className="text-center max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
-					>
-						<h3 className="text-2xl font-bold text-gray-900 mb-2">LUTH Medical Outreach</h3>
-						
-						<a
-							href="/images/CSR/LUTH%20LETTER_001.pdf"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-md transition-colors duration-200"
+					{/* Lagos Outreach Gallery */}
+					<div className="max-w-6xl mx-auto mt-16">
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							className="text-center mb-10"
 						>
-							LUTH Outreach Letter (PDF)
-						</a>
-					</motion.div>
+							<h3 className="text-3xl font-bold text-gray-900 mb-2">Food and Medical Outreach 2024</h3>
+						</motion.div>
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ duration: 0.5 }}
+							className="grid grid-cols-2 md:grid-cols-3 gap-4"
+						>
+							{lagosImages.map((image, index) => (
+								<motion.div
+									key={image.src}
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ delay: index * 0.1 }}
+									className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+									onClick={() => openLightbox(image)}
+								>
+									<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+									{image.type === "video" ? (
+										<video
+											src={image.src}
+											alt={image.alt}
+											className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+											controls={false}
+											muted
+											playsInline
+										/>
+									) : (
+										<img
+											src={image.src}
+											alt={image.alt}
+											className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+										/>
+									)}
+								</motion.div>
+							))}
+						</motion.div>
+					</div>
 
-					{/* CSR Gallery */}
-					<div className="max-w-6xl mx-auto">
+					{/* LUTH Medical Outreach Gallery */}
+				<div className="max-w-6xl mx-auto">
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
@@ -200,6 +240,25 @@ const CSR = () => {
 							))}
 						</motion.div>
 					</div>
+
+					{/* PDF Download */}
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						className="text-center max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+					>
+						<h3 className="text-2xl font-bold text-gray-900 mb-2">LUTH Medical Outreach</h3>
+						
+						<a
+							href="/images/CSR/LUTH%20LETTER_001.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-md transition-colors duration-200"
+						>
+							LUTH Outreach Letter (PDF)
+						</a>
+					</motion.div>
 
 					{/* Corona Lekki School Gallery */}
 					<div className="max-w-6xl mx-auto mt-16">
@@ -273,11 +332,21 @@ const CSR = () => {
 									<X className="w-6 h-6" />
 								</button>
 
+								{selectedImage.type === "video" ? (
+									<video
+										src={selectedImage.src}
+										alt={selectedImage.alt}
+										className="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl"
+										controls
+										autoPlay
+									/>
+								) : (
 									<img
 										src={selectedImage.src}
 										alt={selectedImage.alt}
 										className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
 									/>
+								)}
 
 									<button
 										className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white z-50"
