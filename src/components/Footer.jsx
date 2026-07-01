@@ -23,6 +23,8 @@ export default function Footer() {
             <Phone className="h-5 w-5 text-orange-500" />
             <span className="text-white font-medium">Phone:</span>
             <span className="text-gray-300">+234 (0) 201 453 6157</span>
+            <span className="text-gray-300 ml-2">|</span>
+            <span className="text-gray-300">+234 (0) 703 468 8358</span>
           </div>
           
           {/* Email */}
@@ -105,7 +107,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-orange-500 mr-3" />
-                <span className="text-blue-100 text-sm">+234 (0) 201 453 6157</span>
+                <span className="text-blue-100 text-sm">+234 (0) 201 453 6157 <span className="mx-2">|</span> +234 (0) 703 468 8358</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-orange-500 mr-3" />
