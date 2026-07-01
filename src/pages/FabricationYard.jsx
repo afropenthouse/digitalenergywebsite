@@ -131,7 +131,7 @@ function FabricationYard() {
                    <Card className="h-full border-0 rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col">
                      <CardContent className="p-0 flex flex-col h-full">
                        <div className="px-5 pt-5 text-center flex-shrink-0">
-                         {item.subtitle ? (<><h4 className="font-bold text-gray-900 text-xl mb-1">{item.subtitle}</h4><p className="text-sm text-gray-500">{item.title}</p></>) :                       <h4 className="font-bold text-gray-900 text-lg">{item.title}</h4>}
+                          {item.subtitle ? (<><h4 className="font-bold text-gray-900 text-xl mb-1 uppercase">{item.subtitle}</h4><p className="text-sm text-gray-500 uppercase">{item.title}</p></>) :                       <h4 className="font-bold text-gray-900 text-lg uppercase">{item.title}</h4>}
                        </div>
                         <div className={`${item.tight ? "p-0" : "p-5"} flex-1 ${item.images.length > 1 ? (item.cols === 4 ? "grid grid-cols-4 gap-3" : item.cols === 3 ? "grid grid-cols-3 gap-3" : item.cols === 2 && item.tight ? "grid grid-cols-3 gap-2" : item.cols === 2 ? "grid grid-cols-2 gap-2" : "grid grid-cols-1 gap-1") : ""}`}>
                           {item.images.map((src, i) => (
