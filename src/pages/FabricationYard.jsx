@@ -60,7 +60,7 @@ function FabricationYard() {
       {/* Hero */}
       <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/Workshop/fab.jpeg" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
+          <img src="/images/Workshop/fab.jpeg" alt="Fabrication Yard" className="w-full h-full object-contain opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
         </div>

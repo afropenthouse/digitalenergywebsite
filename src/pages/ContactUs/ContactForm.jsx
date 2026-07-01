@@ -16,7 +16,7 @@ const offices = [
   },
   {
     id: "portharcourt",
-    name: "Port Harcourt Terminal Office",
+    name: "Port Harcourt Workshop Office",
     address: "Digital Energy Close, Off Igboeche road, by Eleme Junction, Port Harcourt, Nigeria",
     phone: "+234 (0) 703 468 8358, +234 707 945 8903",
     email: "info@digitalenergyng.com",
