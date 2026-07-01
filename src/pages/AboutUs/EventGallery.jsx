@@ -42,7 +42,7 @@ const galleryCategories = [
 		],
 	},
 	{
-		name: "Fields Operations",
+		name: "Field Operations",
 		images: [
 			{ src: "/images/Gallery/Fields & Operations/Field1.webp", alt: "Field 1" },
 			{ src: "/images/Gallery/Fields & Operations/Field2.webp", alt: "Field 2" },
