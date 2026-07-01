@@ -90,9 +90,9 @@ function FabricationYard() {
       </section>
 
       {/* Highlights */}
-      <section className="py-8 px-4">
+      <section className="py-2 px-4">
         <div className="container mx-auto max-w-6xl">
-          <motion.h3 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-3xl font-bold text-gray-900 mb-6 text-center">Key Highlights</motion.h3>
+          <motion.h3 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-3xl font-bold text-gray-900 mb-2 text-center">Key Highlights</motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
             {[
               "High-capacity fabrication bays with overhead cranes and heavy-duty lifting equipment",
@@ -113,7 +113,7 @@ function FabricationYard() {
       </section>
 
       {/* Note */}
-      <section className="py-6 px-4">
+      <section className="pt-2 px-4">
         <div className="container mx-auto max-w-5xl">
           <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-gray-700 text-base">
             Every structure fabricated at our yard reflects our commitment to innovation, workmanship, and safety excellence. The accompanying images showcase our facility, equipment, and team in action - bringing engineering designs to life.
@@ -140,7 +140,7 @@ function FabricationYard() {
                             ) : item.cols === 2 && i >= 1 && item.tight ? (
                               <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="w-full h-40 object-cover rounded-none" />
                             ) : (
-                              <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-full object-cover rounded-xl"} />
+                               <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-80 object-contain rounded-xl"} />
                             )
                           ))}
                       </div>
