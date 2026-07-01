@@ -156,55 +156,106 @@ export default function ContactForm() {
                   >
                     <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Offices</h2>
                     
-                    <div className="space-y-6">
-                      {offices.map((office) => (
-                        <motion.div
-                          key={office.id}
-                          whileHover={{ scale: 1.02 }}
-                          className={`cursor-pointer p-6 rounded-xl border-2 transition-all ${
-                            activeOffice.id === office.id
-                              ? "border-orange-500 bg-orange-50"
-                              : "border-gray-100 hover:border-orange-300"
-                          }`}
-                          onClick={() => setActiveOffice(office)}
-                        >
-                          <div className="flex items-start">
-                            <div className="flex-1">
-                              <div className="flex items-center mb-2">
-                                 <div className={`w-3 h-3 rounded-full mr-3 ${
-                                   office.id === "headoffice" ? "bg-orange-500" :
-                                   office.id === "portharcourt" ? "bg-green-500" :
-                                   office.id === "dubai" ? "bg-blue-500" :
-                                   office.id === "china" ? "bg-red-500" : "bg-purple-500"
-                                 }`}></div>
-                                 <h3 className="text-lg font-bold text-gray-900">{office.name}</h3>
-                              </div>
-                              <div className="pl-6 space-y-3">
-                                <div className="flex items-start">
-                                  <MapPin className="h-5 w-5 text-gray-500 mt-0.5 mr-3 flex-shrink-0" />
-                                  <p className="text-gray-600">{office.address}</p>
-                                </div>
-                                {office.phone && (
-                                <div className="text-gray-700 mb-2 flex items-center">
-                                  <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
-                                  <div className="flex flex-col">
-                                    {office.phone.split(',').map((num, idx) => (
-                                      <span key={idx}>{num.trim()}</span>
-                                    ))}
-                                  </div>
-                                </div>
-                                )}
-                                <div className="flex items-center">
-                                  <Mail className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
-                                  <p className="text-gray-600">{office.email}</p>
-                                </div>
-                              </div>
-                            </div>
-                            <ChevronRight className="h-5 w-5 text-gray-400" />
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
+                     <div className="space-y-6">
+                       {offices.filter(o => o.category === "Domestic").map((office) => (
+                         <motion.div
+                           key={office.id}
+                           whileHover={{ scale: 1.02 }}
+                           className={`cursor-pointer p-6 rounded-xl border-2 transition-all ${
+                             activeOffice.id === office.id
+                               ? "border-orange-500 bg-orange-50"
+                               : "border-gray-100 hover:border-orange-300"
+                           }`}
+                           onClick={() => setActiveOffice(office)}
+                         >
+                           <div className="flex items-start">
+                             <div className="flex-1">
+                               <div className="flex items-center mb-2">
+                                  <div className={`w-3 h-3 rounded-full mr-3 ${
+                                    office.id === "headoffice" ? "bg-orange-500" :
+                                    office.id === "portharcourt" ? "bg-green-500" :
+                                    office.id === "chevron" ? "bg-purple-500" : "bg-gray-500"
+                                  }`}></div>
+                                  <h3 className="text-lg font-bold text-gray-900">{office.name}</h3>
+                               </div>
+                               <div className="pl-6 space-y-3">
+                                 <div className="flex items-start">
+                                   <MapPin className="h-5 w-5 text-gray-500 mt-0.5 mr-3 flex-shrink-0" />
+                                   <p className="text-gray-600">{office.address}</p>
+                                 </div>
+                                 {office.phone && (
+                                 <div className="text-gray-700 mb-2 flex items-center">
+                                   <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
+                                   <div className="flex flex-col">
+                                     {office.phone.split(',').map((num, idx) => (
+                                       <span key={idx}>{num.trim()}</span>
+                                     ))}
+                                   </div>
+                                 </div>
+                                 )}
+                                 <div className="flex items-center">
+                                   <Mail className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
+                                   <p className="text-gray-600">{office.email}</p>
+                                 </div>
+                               </div>
+                             </div>
+                             <ChevronRight className="h-5 w-5 text-gray-400" />
+                           </div>
+                         </motion.div>
+                       ))}
+                     </div>
+
+                     <div className="mt-8 mb-2">
+                       <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider border-b border-gray-200 pb-2">International Procurement Support Offices</h3>
+                     </div>
+
+                     <div className="space-y-6">
+                       {offices.filter(o => o.category === "International").map((office) => (
+                         <motion.div
+                           key={office.id}
+                           whileHover={{ scale: 1.02 }}
+                           className={`cursor-pointer p-6 rounded-xl border-2 transition-all ${
+                             activeOffice.id === office.id
+                               ? "border-orange-500 bg-orange-50"
+                               : "border-gray-100 hover:border-orange-300"
+                           }`}
+                           onClick={() => setActiveOffice(office)}
+                         >
+                           <div className="flex items-start">
+                             <div className="flex-1">
+                               <div className="flex items-center mb-2">
+                                  <div className={`w-3 h-3 rounded-full mr-3 ${
+                                    office.id === "dubai" ? "bg-blue-500" :
+                                    office.id === "china" ? "bg-red-500" : "bg-gray-500"
+                                  }`}></div>
+                                  <h3 className="text-lg font-bold text-gray-900">{office.name}</h3>
+                               </div>
+                               <div className="pl-6 space-y-3">
+                                 <div className="flex items-start">
+                                   <MapPin className="h-5 w-5 text-gray-500 mt-0.5 mr-3 flex-shrink-0" />
+                                   <p className="text-gray-600">{office.address}</p>
+                                 </div>
+                                 {office.phone && (
+                                 <div className="text-gray-700 mb-2 flex items-center">
+                                   <Phone className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
+                                   <div className="flex flex-col">
+                                     {office.phone.split(',').map((num, idx) => (
+                                       <span key={idx}>{num.trim()}</span>
+                                     ))}
+                                   </div>
+                                 </div>
+                                 )}
+                                 <div className="flex items-center">
+                                   <Mail className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
+                                   <p className="text-gray-600">{office.email}</p>
+                                 </div>
+                               </div>
+                             </div>
+                             <ChevronRight className="h-5 w-5 text-gray-400" />
+                           </div>
+                         </motion.div>
+                       ))}
+                     </div>
                   </motion.div>
 
                   <motion.div
