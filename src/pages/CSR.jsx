@@ -189,7 +189,6 @@ const CSR = () => {
 											alt={image.alt}
 											className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 											controls={false}
-											muted
 											playsInline
 										/>
 									) : (
@@ -212,7 +211,7 @@ const CSR = () => {
 							viewport={{ once: true }}
 							className="text-center mb-10"
 						>
-							<h3 className="text-3xl font-bold text-gray-900 mb-2">Medical Outreach in LUTH</h3>
+							<h3 className="text-3xl font-bold text-gray-900 mb-2">2026 Medical Outreach - LUTH</h3>
 						</motion.div>
 						<motion.div
 							initial={{ opacity: 0 }}
@@ -333,13 +332,12 @@ const CSR = () => {
 								</button>
 
 								{selectedImage.type === "video" ? (
-									<video
-										src={selectedImage.src}
-										alt={selectedImage.alt}
-										className="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl"
-										controls
-										autoPlay
-									/>
+							<video
+								src={selectedImage.src}
+								alt={selectedImage.alt}
+								className="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl"
+								controls
+							/>
 								) : (
 									<img
 										src={selectedImage.src}
