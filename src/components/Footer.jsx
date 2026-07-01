@@ -97,6 +97,12 @@ export default function Footer() {
                   Tapa House, 3/5, Imam Dauda Street, Off Eric Moore Road, Surulere, Lagos, Nigeria
                 </span>
               </div>
+              <div className="flex items-start">
+                <MapPin className="h-5 w-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
+                <span className="text-blue-100 text-sm">
+                  Digital Energy Close, Off Igboeche road, by Eleme Junction, Port Harcourt, Nigeria
+                </span>
+              </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-orange-500 mr-3" />
                 <span className="text-blue-100 text-sm">+234 (0) 201 453 6157</span>
