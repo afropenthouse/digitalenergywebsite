@@ -233,9 +233,9 @@ const FabricationConstruction = () => {
                        </motion.div>
                       ))}
                     </div>
-                  <p className="text-gray-700 mt-6 text-sm">
-                     Every project we undertake is driven by engineering excellence, quality workmanship, and an unwavering commitment to delivering safe, reliable, and fit-for-purpose solutions.
-                  </p>
+                   <p className="text-gray-700 mt-6 text-sm text-center">
+                      Every project we undertake is driven by engineering excellence, quality workmanship, and an unwavering <br />commitment to delivering safe, reliable, and fit-for-purpose solutions.
+                   </p>
               </motion.div>
 
                {/* Facilities */}
@@ -245,9 +245,8 @@ const FabricationConstruction = () => {
                  viewport={{ once: true }}
                  className="bg-white rounded-2xl p-6 shadow-lg mb-4 border border-gray-100"
                >
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Facilities & Technical Infrastructure</h3>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Features</h4>
-                  <div className="grid md:grid-cols-2 gap-1">
+                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Facilities & Technical Infrastructure</h3>
+                   <div className="grid md:grid-cols-2 gap-1">
                     {facilities.map((facility, index) => (
                       <motion.div
                         key={index}
@@ -294,7 +293,7 @@ const FabricationConstruction = () => {
                      </motion.div>
                    ))}
                  </div>
-                 <p className="text-gray-700 mt-4 text-sm">
+                  <p className="text-gray-700 mt-4 text-sm text-center">
                    Digital Energy ensures that every structure, system, or facility we build meets the highest levels of functionality, safety, and durability, supporting our clients through the full project lifecycle - from engineering and fabrication to construction and commissioning.
                  </p>
                </motion.div>
