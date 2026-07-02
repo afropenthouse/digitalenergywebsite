@@ -245,7 +245,7 @@ const Projects = () => {
                    <img 
                        src={project.logo} 
                        alt={`${project.client} logo`}
-                       className={project.client === 'Chevron' ? 'w-12 h-12 object-contain' : 'w-20 h-20 object-contain'}
+                       className={project.client === 'Chevron' ? 'w-12 h-12 object-contain' : project.client === 'Clinton' ? 'w-[104px] h-[104px] object-contain' : 'w-20 h-20 object-contain'}
                      />
                     <div className="ml-4">
                       <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
