@@ -55,7 +55,7 @@ const projectList = [
     title: "Machining & Fabrication Services",
     client: "Seplat",
     description: "Provision of machining and fabrication services for eastern assets",
-    image: "/images/Projects/fabrication.jpeg",
+    image: "/images/Projects/uu.jpeg",
     logo: "/images/Shared/Logos/seplat.webp"
   },
   {
