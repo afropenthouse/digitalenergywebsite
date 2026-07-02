@@ -14,7 +14,7 @@ const FabricationConstruction = () => {
       icon: HardHat
     },
     {
-      title: "Plant & Non-Plant Facilities Construction",
+      title: "Plant & Non-Plant Facility Construction",
       icon: Factory
     },
     {
@@ -37,41 +37,37 @@ const FabricationConstruction = () => {
 
   const fabricationServices = [
     {
-      title: "Shop Fabrication – Piping and Structures",
-      icon: Factory
-    },
-    {
-      title: "Pressure Tanks & Vessels",
+      title: "Structural steel fabrication",
       icon: Building2
     },
     {
-      title: "Pipe Fabrication (2\" diameter and above)",
-      icon: Settings
-    },
-    {
-      title: "Electrical & Pipe Steel Supports",
+      title: "Process piping and pipe spool fabrication",
       icon: Wrench
     },
     {
-      title: "Steel Structures (Platforms, Ladders, Stairs)",
-      icon: Building2
-    },
-    {
-      title: "Pipe Spools and Skids for Pumps/Compressors",
+      title: "Pressure vessels and specialized process equipment",
       icon: Factory
     },
     {
-      title: "Specialized Mechanical & Electrical Components",
+      title: "Precision CNC machining integrated with 3D CAD systems",
       icon: Cpu
+    },
+    {
+      title: "Hydrostatic testing and quality assurance",
+      icon: Shield
+    },
+    {
+      title: "On-site fabrication, field installation, and rapid mobilization",
+      icon: HardHat
     }
   ]
 
   const facilities = [
-    "Coded Welding to ASME IX, BS 4870 & BS EN 288",
-    "In-house Metal Forming and Assembly",
-    "Hydro and Functional Test Areas",
-    "CNC Machining Linked to 3D CAD for Precision Manufacturing",
-    "On-site Fabrication and Mobilization for Remote Projects"
+    "Certified welding stations qualified to ASME Section IX, BS 4870,\nand BS EN 288",
+    "Fully equipped metal forming and fabrication workshops",
+    "Dedicated hydrostatic, pressure, and functional testing facilities",
+    "CNC precision machining integrated with 3D CAD engineering systems",
+    "Mobile fabrication teams and field support for on-site and remote project execution"
   ]
 
   const valueProps = [
@@ -136,8 +132,8 @@ const FabricationConstruction = () => {
               <ServicesNav />
             </div>
 
-            {/* Content Area */}
-            <div className="flex-1">
+             {/* Content Area */}
+              <div className="flex-1">
               {/* Overview Section */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -157,12 +153,12 @@ const FabricationConstruction = () => {
               </motion.div>
 
               {/* Image Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-8"
-              >
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                  className="mb-8"
+               >
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative rounded-lg overflow-hidden shadow-md">
                     <img
@@ -192,8 +188,8 @@ const FabricationConstruction = () => {
                 <p className="text-gray-700 mb-4">
                   We offer turnkey construction services across a wide range of disciplines, ensuring timely project delivery and strict adherence to safety and quality standards. Our construction teams have decades of combined experience executing projects across Nigeria and internationally.
                 </p>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Scope of Construction Work:</h4>
-                <div className="grid md:grid-cols-2 gap-2">
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Workscope</h4>
+                <div className="grid md:grid-cols-2 gap-1">
                   {constructionServices.map((service, index) => (
                     <motion.div
                       key={index}
@@ -201,12 +197,10 @@ const FabricationConstruction = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-start space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors"
+                      className="flex items-start space-x-1 py-1"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                        <service.icon className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <span className="text-gray-700">{service.title}</span>
+                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></span>
+                      <span className="text-gray-700 text-sm">{service.title}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -220,27 +214,28 @@ const FabricationConstruction = () => {
                 className="bg-white rounded-2xl p-4 shadow-lg mb-4 border border-gray-100"
               >
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Fabrication Services</h3>
-                <p className="text-gray-700 mb-4">
-                  DEISL delivers comprehensive fabrication services to support construction and engineering projects from concept to completion. Our Port Harcourt-based fabrication yard covers over 6989 m² and is equipped with modern machinery, pressure testing setups, and a CNC-enabled machine shop integrated with 3D CAD systems.
-                </p>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Scope of Fabrication Work:</h4>
-                <div className="grid md:grid-cols-2 gap-2">
-                  {fabricationServices.map((service, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-start space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                        <service.icon className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <span className="text-gray-700">{service.title}</span>
-                    </motion.div>
-                  ))}
-                </div>
+                 <p className="text-gray-700 mb-4">
+                   Operating from our 6,989 m² fabrication facility at Igbo-Eche Street, Off Eleme Junction, Port Harcourt, Rivers State, DEISL offers advanced fabrication and machining services supported by modern technology and skilled craftsmen.
+                 </p>
+                   <h4 className="text-xl font-semibold text-gray-900 mb-2">Key Capabilities</h4>
+                    <div className="grid md:grid-cols-2 gap-1">
+                      {fabricationServices.map((service, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1 }}
+                          className="flex items-start space-x-1 py-1"
+                        >
+                         <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></span>
+                         <span className="text-gray-700 text-sm">{service.title}</span>
+                       </motion.div>
+                      ))}
+                    </div>
+                  <p className="text-gray-700 mt-6 text-sm">
+                     Every project we undertake is driven by engineering excellence, quality workmanship, and an unwavering commitment to delivering safe, reliable, and fit-for-purpose solutions.
+                  </p>
               </motion.div>
 
                {/* Facilities */}
@@ -250,19 +245,27 @@ const FabricationConstruction = () => {
                  viewport={{ once: true }}
                  className="bg-white rounded-2xl p-6 shadow-lg mb-4 border border-gray-100"
                >
-                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Facilities</h3>
-                 <div className="grid md:grid-cols-2 gap-2">
-                   {facilities.map((facility, index) => (
-                     <motion.div
-                       key={index}
-                       initial={{ opacity: 0, x: -20 }}
-                       whileInView={{ opacity: 1, x: 0 }}
-                       viewport={{ once: true }}
-                       transition={{ delay: index * 0.1 }}
-                       className="flex items-center space-x-2 py-1 hover:bg-blue-50 transition-colors"
-                     >
-                       <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></span>
-                       <span className="text-gray-700 text-sm">{facility}</span>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Facilities & Technical Infrastructure</h3>
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Features</h4>
+                  <div className="grid md:grid-cols-2 gap-1">
+                    {facilities.map((facility, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex items-start space-x-1 py-1"
+                      >
+                        <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></span>
+                        <span className="text-gray-700 text-sm">
+                          {facility.split('\n').map((line, idx, arr) => (
+                            <React.Fragment key={idx}>
+                              {line}
+                              {idx < arr.length - 1 && <br />}
+                            </React.Fragment>
+                          ))}
+                        </span>
                      </motion.div>
                    ))}
                  </div>
