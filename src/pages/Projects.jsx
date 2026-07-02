@@ -56,21 +56,21 @@ const projectList = [
   {
     title: "Rosetti Pivot Ltd",
     client: "Rosetti Pivot Ltd",
-    description: "Supply Of Materials For UBIT Post SD (Rpl-Mrubsd-032)",
+    description: "Supply of Flame-Retardant Tarpaulin Sheet & Fire Blanket for Surfer Ladder and UBIT PP Base Maintenance Project",
     image: "/images/Projects/rop.jpg",
     logo: "/images/Shared/Logos/rp.jpg"
   },
   {
-    title: "Provision of CAWC FLB C15 Generator Spares",
+    title: "NNPC 18",
     client: "NNPC 18",
     description: "Provision of CAWC FLB C15 Generator Spares in support of OML- 18 Operations",
     image: "/images/Projects/nnpccc.png",
     logo: "/images/Shared/Logos/nnpc.png"
   },
   {
-    title: "Provision of CAWC FLB C15 Generator Spares",
-    client: "NNPC 18",
-    description: "Provision of CAWC FLB C15 Generator Spares in support of OML- 18 Operations",
+    title: "Maintenance Works",
+    client: "Enageed",
+    description: "",
     image: "/images/Projects/enggg.jpg",
     logo: "/images/Shared/Logos/enageed.jpg"
   },
