@@ -217,9 +217,9 @@ const FabricationConstruction = () => {
                   <p className="text-gray-700 mb-4">
                     Operating from our 6,989 m² fabrication facility at KM 3 Digital Energy Close, Igbo-Eche road, Off Eleme Junction, Port Harcourt, Rivers State, DEISL offers advanced fabrication and machining services supported by modern technology and skilled craftsmen.
                   </p>
-                  <p className="text-gray-700 mt-4 text-sm mb-4">
-                    Every project we undertake is driven by engineering excellence, quality workmanship, and an unwavering commitment to delivering safe, reliable, and fit-for-purpose solutions.
-                  </p>
+                   <p className="text-gray-700 mt-2 mb-2">
+                     Every project we undertake is driven by engineering excellence, quality workmanship, and an unwavering commitment to delivering safe, reliable, and fit-for-purpose solutions.
+                   </p>
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">Key Capabilities</h4>
                  <div className="grid md:grid-cols-2 gap-1">
                    {fabricationServices.map((service, index) => (
