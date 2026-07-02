@@ -10,6 +10,41 @@ const projects = []
 
 const projectList = [
   {
+    title: "Facility Maintenance Services",
+    client: "Chevron",
+    description: "Provision of Services for Columns, Drums, Vessels and Furnaces",
+    image: "/images/Projects/maintaenance.jpg",
+    logo: "/images/Shared/Logos/chevron.webp"
+  },
+  {
+    title: "ATAMBA B-MR-014",
+    client: "Matrix",
+    description: "Procurement and Installation Of Water Transfer Centrifugal Pump And Accessories",
+    image: "/images/Projects/matrixbig.jpg",
+    logo: "/images/Shared/Logos/matrix.png"
+  },
+  {
+    title: "Machining Services",
+    client: "Clinton",
+    description: "Make-up float equipment's, 9-5/8'' casing joint to float shoe / float collar, 13-3/8'' casing joint to float shoe / float collar",
+    image: "/images/Projects/machine.png",
+    logo: "/images/Shared/Logos/clinton.png"
+  },
+  {
+    title: "Machining Services",
+    client: "Hilong",
+    description: "Drill pipes repair, connection: 5-1/2'' HLDS FH, BTC / VAM TOP",
+    image: "/images/Projects/ser1.png",
+    logo: "/images/Shared/Logos/hilong.png"
+  },
+  {
+    title: "Drilling Tools Support Services",
+    client: "ND Western",
+    description: "Produce various lengths of pup joints from free issue casing, connection: 9-5/8'' VAM TOP",
+    image: "/images/Projects/drilling.png",
+    logo: "/images/Shared/Logos/nd-.jpg"
+  },
+  {
     title: "Maintenance & Inspection Services",
     client: "NPDC",
     description: "Provision of maintaining and inspection, supply of PUP joints and cross over services for NPDC Operated Land and Swamp Assets on a call Basis",
@@ -20,7 +55,7 @@ const projectList = [
     title: "Machining & Fabrication Services",
     client: "Seplat",
     description: "Provision of machining and fabrication services for eastern assets",
-    image: "/images/Projects/Machining Services.jpg",
+    image: "/images/Projects/fabrication.jpeg",
     logo: "/images/Shared/Logos/seplat.webp"
   },
   {
@@ -82,12 +117,12 @@ const projectList = [
 ]
 
 const projectCategories = [
-  { name: "All", count: 10 },
+  { name: "All", count: 13 },
   { name: "Infrastructure", count: 2 },
   { name: "Energy", count: 2 },
   { name: "Manufacturing", count: 2 },
   { name: "Procurement", count: 2 },
-  { name: "Maintenance", count: 1 },
+  { name: "Maintenance", count: 2 },
   { name: "Fabrication", count: 1 }
 ]
 
@@ -205,11 +240,11 @@ const Projects = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center mb-3">
-                    <img 
-                      src={project.logo} 
-                      alt={`${project.client} logo`}
-                      className="w-20 h-20 object-contain"
-                    />
+                   <img 
+                       src={project.logo} 
+                       alt={`${project.client} logo`}
+                       className={project.client === 'Chevron' ? 'w-12 h-12 object-contain' : 'w-20 h-20 object-contain'}
+                     />
                     <div className="ml-4">
                       <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
                       <p className="text-sm text-blue-600 font-medium">{project.client}</p>
