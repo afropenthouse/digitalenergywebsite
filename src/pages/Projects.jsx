@@ -90,7 +90,7 @@ const projectList = [
     title: "Machining Services",
     client: "Litewell Completions Services",
     description: "Provision of Machining services and cutting of BTC PIN X PIN 20 casting pipes - 56 jts - 122 thread connections",
-    image: "/images/Projects/mac55.jpeg",
+    image: "/images/Projects/fabb5.jpeg",
     logo: "/images/Shared/Logos/lite.webp"
   },
   {
