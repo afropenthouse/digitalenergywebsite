@@ -271,15 +271,15 @@ const FabricationConstruction = () => {
                  </div>
                </motion.div>
 
-               {/* Capabilities */}
-               <motion.div
-                 initial={{ opacity: 0, y: 20 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true }}
-                 className="bg-white rounded-2xl p-6 shadow-lg mb-8 border border-gray-100"
-               >
-                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Capabilities</h3>
-                 <div className="grid md:grid-cols-2 gap-2">
+                {/* Operational Strengths */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-6 shadow-lg mb-8 border border-gray-100"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Operational Strengths</h3>
+                  <div className="grid md:grid-cols-2 gap-1">
                    {valueProps.map((prop, index) => (
                      <motion.div
                        key={index}
