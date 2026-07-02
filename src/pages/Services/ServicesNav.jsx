@@ -54,32 +54,34 @@ const ServicesNav = () => {
 
   return (
     <div className="hidden md:block">
-      <div className="flex flex-col space-y-1">
-        {services.map((service) => {
-          const isActive = location.pathname === service.path
-          const Icon = service.icon
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-3">
+        <div className="flex flex-col space-y-1">
+          {services.map((service) => {
+            const isActive = location.pathname === service.path
+            const Icon = service.icon
 
-          return (
-            <Link
-              key={service.id}
-              to={service.path}
-              className={`relative flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
-                isActive ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-              }`}
-            >
-              {isActive && (
-                <motion.div
-                  layoutId="activeService"
-                  className="absolute left-0 w-1 h-full bg-blue-600 rounded-r-full"
-                  initial={false}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
-              <Icon className="w-5 h-5" />
-              <span className="font-medium">{service.title}</span>
-            </Link>
-          )
-        })}
+            return (
+              <Link
+                key={service.id}
+                to={service.path}
+                className={`relative flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
+                  isActive ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeService"
+                    className="absolute left-0 w-1 h-full bg-blue-600 rounded-r-full"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+                <Icon className="w-5 h-5" />
+                <span className="font-medium">{service.title}</span>
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
