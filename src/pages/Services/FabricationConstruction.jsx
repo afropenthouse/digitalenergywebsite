@@ -214,31 +214,31 @@ const FabricationConstruction = () => {
                 className="bg-white rounded-2xl p-4 shadow-lg mb-4 border border-gray-100"
               >
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Fabrication Services</h3>
-                 <p className="text-gray-700 mb-4">
-                   Operating from our 6,989 m² fabrication facility at Igbo-Eche Street, Off Eleme Junction, Port Harcourt, Rivers State, DEISL offers advanced fabrication and machining services supported by modern technology and skilled craftsmen.
-                 </p>
-                   <h4 className="text-xl font-semibold text-gray-900 mb-2">Key Capabilities</h4>
-                    <div className="grid md:grid-cols-2 gap-1">
-                      {fabricationServices.map((service, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.1 }}
-                          className="flex items-start space-x-1 py-1"
-                        >
-                         <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></span>
-                         <span className="text-gray-700 text-sm">{service.title}</span>
-                       </motion.div>
-                      ))}
-                    </div>
-                   <p className="text-gray-700 mt-6 text-sm text-center">
-                      Every project we undertake is driven by engineering excellence, quality workmanship, and an unwavering <br />commitment to delivering safe, reliable, and fit-for-purpose solutions.
-                   </p>
-              </motion.div>
+                  <p className="text-gray-700 mb-4">
+                    Operating from our 6,989 m² fabrication facility at KM 3 Digital Energy Close, Igbo-Eche road, Off Eleme Junction, Port Harcourt, Rivers State, DEISL offers advanced fabrication and machining services supported by modern technology and skilled craftsmen.
+                  </p>
+                  <p className="text-gray-700 mt-4 text-sm mb-4">
+                    Every project we undertake is driven by engineering excellence, quality workmanship, and an unwavering commitment to delivering safe, reliable, and fit-for-purpose solutions.
+                  </p>
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Key Capabilities</h4>
+                 <div className="grid md:grid-cols-2 gap-1">
+                   {fabricationServices.map((service, index) => (
+                     <motion.div
+                       key={index}
+                       initial={{ opacity: 0, x: -20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: index * 0.1 }}
+                       className="flex items-start space-x-1 py-1"
+                     >
+                       <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></span>
+                       <span className="text-gray-700 text-sm">{service.title}</span>
+                     </motion.div>
+                   ))}
+                 </div>
+               </motion.div>
 
-               {/* Facilities */}
+               {/* Facilities & Technical Infrastructure */}
                <motion.div
                  initial={{ opacity: 0, y: 20 }}
                  whileInView={{ opacity: 1, y: 0 }}
@@ -293,7 +293,7 @@ const FabricationConstruction = () => {
                      </motion.div>
                    ))}
                  </div>
-                  <p className="text-gray-700 mt-4 text-sm text-center">
+                   <p className="text-gray-700 mt-4 text-sm">
                    Digital Energy ensures that every structure, system, or facility we build meets the highest levels of functionality, safety, and durability, supporting our clients through the full project lifecycle - from engineering and fabrication to construction and commissioning.
                  </p>
                </motion.div>
