@@ -47,6 +47,34 @@ const projectList = [
     logo: "/images/Shared/Logos/nd-.jpg"
   },
   {
+    title: "",
+    client: "ENAGEED RESOURCES LTD",
+    description: "Supply and Installation of outdoor 40dBm Quad Band GSM Signal Repeaters",
+    image: "/images/Projects/supply.png",
+    logo: "/images/Shared/Logos/enageed.jpg"
+  },
+  {
+    title: "Rosetti Pivot Ltd",
+    client: "Rosetti Pivot Ltd",
+    description: "Supply Of Materials For UBIT Post SD (Rpl-Mrubsd-032)",
+    image: "/images/Projects/rop.jpg",
+    logo: "/images/Shared/Logos/rp.jpg"
+  },
+  {
+    title: "Provision of CAWC FLB C15 Generator Spares",
+    client: "NNPC 18",
+    description: "Provision of CAWC FLB C15 Generator Spares in support of OML- 18 Operations",
+    image: "/images/Projects/nnpccc.png",
+    logo: "/images/Shared/Logos/nnpc.png"
+  },
+  {
+    title: "Provision of CAWC FLB C15 Generator Spares",
+    client: "NNPC 18",
+    description: "Provision of CAWC FLB C15 Generator Spares in support of OML- 18 Operations",
+    image: "/images/Projects/enggg.jpg",
+    logo: "/images/Shared/Logos/enageed.jpg"
+  },
+  {
     title: "Maintenance & Inspection Services",
     client: "NPDC",
     description: "Provision of maintaining and inspection, supply of PUP joints and cross over services for NPDC Operated Land and Swamp Assets on a call Basis",
@@ -119,7 +147,7 @@ const projectList = [
 ]
 
 const projectCategories = [
-  { name: "All", count: 13 },
+  { name: "All", count: 17 },
   { name: "Infrastructure", count: 2 },
   { name: "Energy", count: 2 },
   { name: "Manufacturing", count: 2 },
@@ -249,7 +277,16 @@ const Projects = () => {
                      />
                     <div className="ml-4">
                       <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
-                      <p className="text-sm text-blue-600 font-medium">{project.client}</p>
+                       <p className="text-sm font-medium">
+                         {project.client === 'Matrix' ? (
+                           <>
+                             <span className="text-blue-600">Matrix</span>
+                              <span className="text-gray-900">{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Matrix E & P</span>
+                           </>
+                         ) : (
+                           project.client
+                         )}
+                       </p>
                     </div>
                   </div>
                   <p className="text-gray-600">{project.description}</p>
