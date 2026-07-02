@@ -144,35 +144,30 @@ const ProcurementServices = () => {
                 </div>
               </motion.div>
 
-              {/* Procurement Phases */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-4 shadow-lg mb-4 border border-gray-100"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Procurement Process Covers the Following Phases:</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {phases.map((phase, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-start space-x-4 p-2 rounded-lg hover:bg-blue-50 transition-colors"
-                    >
-                      <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                        <phase.icon className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{phase.title}</h4>
-                        <p className="text-gray-600 text-sm">{phase.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+               {/* Procurement Phases */}
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 className="bg-white rounded-2xl p-4 shadow-lg mb-4 border border-gray-100"
+               >
+                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Procurement Process Covers the Following Phases:</h3>
+                 <div className="grid md:grid-cols-2 gap-1">
+                   {phases.map((phase, index) => (
+                     <motion.div
+                       key={index}
+                       initial={{ opacity: 0, x: -20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: index * 0.1 }}
+                       className="flex items-start space-x-1 py-1"
+                     >
+                       <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></span>
+                       <span className="text-gray-700 text-sm">{phase.title}</span>
+                     </motion.div>
+                   ))}
+                 </div>
+               </motion.div>
 
               {/* Technology Section */}
               <motion.div
