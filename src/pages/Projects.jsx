@@ -10,7 +10,7 @@ const projects = []
 
 const projectList = [
   {
-    title: "Facility Maintenance Services",
+    title: "Upgrade & Maintenance Services",
     client: "Chevron",
     description: "Provision of Services for Columns, Drums, Vessels and Furnaces",
     image: "/images/Projects/maintaenance.jpg",
