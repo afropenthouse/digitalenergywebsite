@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { HardHat, Building2, Wrench, Factory, Cpu, Ruler, Shield, Users, Globe, Settings } from 'lucide-react'
 import ServicesNav from './ServicesNav'
 
+// Fabrication & Construction Services
 const FabricationConstruction = () => {
   const constructionServices = [
     {
