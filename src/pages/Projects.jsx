@@ -47,7 +47,7 @@ const projectList = [
     logo: "/images/Shared/Logos/nd-.jpg"
   },
   {
-    title: "",
+    title: "ENAGEED RESOURCES LTD",
     client: "ENAGEED RESOURCES LTD",
     description: "Supply and Installation of outdoor 40dBm Quad Band GSM Signal Repeaters",
     image: "/images/Projects/supply.png",
