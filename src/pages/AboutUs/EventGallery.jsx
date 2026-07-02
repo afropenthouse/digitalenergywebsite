@@ -4,6 +4,10 @@ import Loader from "../Loader/Loader"
 
 const galleryCategories = [
 	{
+		name: "Our Team & Facilities",
+		images: [],
+	},
+	{
 		name: "Office & People",
 		images: [
 			{ src: "/images/Gallery/Office & People/office1.webp", alt: "Office & People 1" },
@@ -19,6 +23,13 @@ const galleryCategories = [
 			{ src: "/images/Gallery/Equipment/Equipment3.webp", alt: "Equipment 3" },
 			{ src: "/images/Gallery/Equipment/Equipment4.webp", alt: "Equipment 4" },
 			{ src: "/images/Gallery/Equipment/Equipment5.webp", alt: "Equipment 5" },
+			{ src: "/images/Gallery/Equipment/equ6.jpeg", alt: "Equipment 6" },
+			{ src: "/images/Gallery/Equipment/equ7.jpeg", alt: "Equipment 7" },
+			{ src: "/images/Gallery/Equipment/equ8.jpeg", alt: "Equipment 8" },
+			{ src: "/images/Gallery/Equipment/equ9.jpeg", alt: "Equipment 9" },
+			{ src: "/images/Gallery/Equipment/equ10.jpeg", alt: "Equipment 10" },
+			{ src: "/images/Gallery/Equipment/equ11.jpg", alt: "Equipment 11" },
+			{ src: "/images/Gallery/Equipment/equ12.jpg", alt: "Equipment 12" },
 		],
 	},
 	{
@@ -199,8 +210,8 @@ const EventGallery = () => {
 
 					{/* Gallery Grid by Category */}
 					{galleryCategories.map((category, catIdx) => (
-						<div key={category.name} className="mb-12">
-							<h3 className="text-2xl font-bold mb-4 text-blue-900">{category.name}</h3>
+						<div key={category.name} className="mb-6">
+							<h3 className={`text-2xl font-bold mb-4 ${category.name === 'Our Team & Facilities' ? 'text-black' : 'text-blue-900'}`}>{category.name}</h3>
 							<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 								{category.images.map((image, index) => (
 									<motion.div
