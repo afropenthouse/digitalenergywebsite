@@ -21,13 +21,13 @@ const TradingServices = () => {
 
     // Preload images
     const images = [
-      '/images/Services/TradingServices/marketing.webp',
-      '/images/Services/TradingServices/marketing.webp'
+      '/images/Services/TradingServices/mak1.jpeg',
+      '/images/Services/TradingServices/mak2.jpeg'
     ]
 
     images.forEach(src => {
       const img = new Image()
-      img.src = src.replace(/\.[^/.]+$/, ".webp") // Convert to WebP
+      img.src = src
       img.onload = handleImageLoad
     })
 
@@ -115,7 +115,7 @@ const TradingServices = () => {
           >
             <div className="absolute inset-0">
             <img
-              src="/images/Services/TradingServices/marketing2.webp"
+              src="/images/Services/TradingServices/mak2.jpeg"
               alt="Petroleum Products Trading"
               className="w-full h-full object-cover opacity-40"
             />
@@ -186,15 +186,15 @@ const TradingServices = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="relative rounded-lg overflow-hidden shadow-md">
                     <img
-                      src="/images/Services/TradingServices/marketing1.jpeg"
-                      alt="Trading Operations"
+                      src="/images/Services/TradingServices/mak1.jpeg"
+                      alt="Marketing Operations"
                       className="w-full h-[250px] object-cover"
                     />
                   </div>
                   <div className="relative rounded-lg overflow-hidden shadow-md">
                     <img
-                      src="/images/Services/TradingServices/marketing2.webp"
-                      alt="Product Supply"
+                      src="/images/Services/TradingServices/mak2.jpeg"
+                      alt="Supply Chain Logistics"
                       className="w-full h-[250px] object-cover"
                     />
                   </div>
