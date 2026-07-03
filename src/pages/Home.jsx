@@ -211,9 +211,9 @@ const Home = () => {
       transition={{ duration: 0.5 }}
       className="overflow-hidden"
     >
-      {/* Hero Section with Slider */}
-      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[90vh] flex items-center pt-32">
-        {/* Slider */}
+      {/* ===== HERO SECTION – Sleek with glassmorphism ===== */}
+      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[75vh] flex items-center pt-24">
+        {/* Background Slider */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
             <motion.div
@@ -232,102 +232,111 @@ const Home = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className="w-full flex justify-center items-center relative z-20">
+
+        {/* Content Container – Glass panel */}
+        <div className="w-full flex justify-center items-center relative z-20 px-4">
           <div className="max-w-4xl w-full text-center flex flex-col items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${currentSlide}`}
-                initial={{ opacity: 0, x: -60 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 60 }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-                className="mt-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 md:p-10 border border-white/20 shadow-2xl"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center lg:text-left">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white text-center">
                   <span className="block"><HighlightedText text={slides[currentSlide].title} /></span>
-                  <span className="block text-orange-400 mt-2">
+                  <span className="block text-orange-400 mt-1.5">
                     <HighlightedText text={slides[currentSlide].subtitle} />
                   </span>
                 </h1>
                 <motion.p
-                  className="text-lg md:text-xl text-white mb-8 max-w-2xl text-center lg:text-left"
-                  initial={{ opacity: 0, y: 40 }}
+                  className="text-base md:text-lg text-white/90 mb-6 max-w-2xl text-center mx-auto"
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                   key={`desc-${currentSlide}`}
                 >
                   <HighlightedText text={slides[currentSlide].description} />
                 </motion.p>
+
+                {/* Buttons */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full mt-2"
+                >
+                  <button
+                    type="button"
+                    className="relative group inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-full shadow-lg overflow-hidden transition-all duration-300 hover:shadow-orange-500/30 hover:scale-105"
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    <span className="relative flex items-center">
+                      Get Started
+                      <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                  </button>
+                  <Link
+                    to="/contact"
+                    className="relative group inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-700 to-blue-800 rounded-full shadow-lg hover:shadow-blue-800/30 hover:scale-105 transition-all duration-300"
+                  >
+                    <span className="relative flex items-center">Contact</span>
+                  </Link>
+                </motion.div>
               </motion.div>
             </AnimatePresence>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full mt-4"
-            >
-              <button
-                type="button"
-                className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl shadow-lg overflow-hidden hidden sm:inline-flex"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                <span className="relative flex items-center">
-                  Get Started
-                  <svg className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </span>
-              </button>
-              <Link
-                to="/contact"
-                className="relative group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-orange-600 to-orange-800 rounded-xl shadow-lg hover:bg-orange-700 transition-colors"
-              >
-                <span className="relative flex items-center">
-                  Contact
-                </span>
-              </Link>
-            </motion.div>
           </div>
         </div>
-        {/* Slider Controls */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+
+        {/* Slider Controls – Sleeker */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                currentSlide === index ? 'bg-orange-400 scale-125' : 'bg-white/50'
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentSlide === index 
+                  ? 'bg-orange-400 scale-125 shadow-lg shadow-orange-400/30' 
+                  : 'bg-white/30 hover:bg-white/60'
               }`}
             />
           ))}
         </div>
-        {/* Left/Right Arrow Controls */}
+
+        {/* Arrow Controls – Glass effect */}
         <button
           onClick={() => setCurrentSlide((currentSlide - 1 + slides.length) % slides.length)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-orange-500/80 text-white hover:text-white rounded-full p-2 shadow-lg transition-colors"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-orange-500/80 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 border border-white/20"
           aria-label="Previous Slide"
         >
-          <ChevronLeft className="w-7 h-7" />
+          <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-orange-500/80 text-white hover:text-white rounded-full p-2 shadow-lg transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm hover:bg-orange-500/80 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 border border-white/20"
           aria-label="Next Slide"
         >
-          <ChevronRight className="w-7 h-7" />
+          <ChevronRight className="w-6 h-6" />
         </button>
       </section>
-      {/* Download Profile Button */}
+
+      {/* Download Profile Button – Sleeker */}
       <a
         href="/Profile.pdf"
         download
-        className="absolute bottom-8 right-8 z-30 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-200 flex items-center gap-2"
+        className="fixed bottom-8 right-8 z-30 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105 hover:shadow-orange-500/30"
         style={{ textDecoration: 'none' }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
         </svg>
         Download Profile
       </a>
+
+      {/* ==== REMAINDER OF THE PAGE (unchanged) ==== */}
 
       {/* About Section */}
       <section className="py-12 bg-gradient-to-b from-gray-50 to-white">
@@ -354,7 +363,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
 
       {/* Service Overview Section */}
       <section className="py-10 bg-white">
@@ -447,7 +455,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button asChild className="relative group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 text-lg shadow-lg">
+              <Button asChild className="relative group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-orange-500/30 transition-all duration-300">
                 <Link to="/contact/quote">
                   <span className="relative flex items-center">
                     Request Quote
@@ -456,7 +464,7 @@ const Home = () => {
               </Button>
 
               <Button asChild
-                className="bg-gradient-to-r from-blue-700 to-blue-800 text-white px-8 py-4 text-lg shadow-lg hover:from-blue-800 hover:to-blue-900"
+                className="bg-gradient-to-r from-blue-700 to-blue-800 text-white px-8 py-4 text-lg shadow-lg hover:shadow-blue-800/30 transition-all duration-300 hover:from-blue-800 hover:to-blue-900"
               >
                 <Link to="/contact">
                   Contact Us
