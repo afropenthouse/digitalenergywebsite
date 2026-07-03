@@ -5,20 +5,20 @@ import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 
 const galleryItems = [
-  { title: "AERIAL VIEW OF OUR FACILITY", images: ["/images/Workshop/facility.jpeg"] },
-  { title: "CNCS & LATHES MACHINES", subtitle: "MACHINE SHOP", images: ["/images/Workshop/mac1.jpeg", "/images/Workshop/mac2.jpeg", "/images/Workshop/mac3.jpeg", "/images/Workshop/mac4.jpeg", "/images/Workshop/mac5.jpeg", "/images/Workshop/mac6.jpeg", "/images/Workshop/mac7.jpeg", "/images/Workshop/mac8.jpeg"], cols: 4 },
-  { title: "BLASTING & PAINTING SHOP WITH 10T OVERHEAD CRANE", images: ["/images/Workshop/work1.jpeg", "/images/Workshop/work2.jpeg", "/images/Workshop/work3.jpeg", "/images/Workshop/blasting2.jpeg", "/images/Workshop/blasting3.jpeg", "/images/Workshop/blasting4.jpeg"], cols: 3 },
-  { title: "FABRICATION SHOP", images: ["/images/Workshop/fab11.jpeg", "/images/Workshop/fab22.jpeg", "/images/Workshop/fab33.jpeg", "/images/Workshop/fab44.jpeg", "/images/Workshop/fab1.webp", "/images/Workshop/fab4.webp"], cols: 3 },
-  { title: "FORKLIFT", images: ["/images/Workshop/fork1.jpeg", "/images/Workshop/fork2.jpeg"], cols: 1 },
-  { title: "REDIAL DRILLING MACHINES", images: ["/images/Workshop/drilling.jpeg", "/images/Workshop/drill1.jpeg", "/images/Workshop/drill2.jpeg"], cols: 2 },
-  { title: "DILLING CASING PIPES (OCTG)", images: ["/images/Workshop/pipes.jpg", "/images/Workshop/dilling1.jpeg", "/images/Workshop/dilling2.jpeg"], cols: 2 },
-  { title: "BUCKING MACHINE", images: ["/images/Workshop/buk1.jpeg", "/images/Workshop/buk2.jpeg", "/images/Workshop/buk3.jpeg", "/images/Workshop/buk4.jpeg"] },
-  { title: "BAND SAW", images: ["/images/Workshop/band.jpeg"] },
-  { title: "AIR COMPRESSOR", images: ["/images/Workshop/air2.jpeg", "/images/Workshop/air1.jpeg", "/images/Workshop/air.jpeg"], cols: 2 },
-  { title: "BLASTING POT", images: ["/images/Workshop/pot.jpeg"] },
-  { title: "AIR TANK", images: ["/images/Workshop/tank.jpeg"] },
-  { title: "PHOSPHATE CHEMICAL ANALYSIS", images: ["/images/Workshop/phos.jpeg"] },
-  { title: "MANGANESE PHOSPHATE BATH", images: ["/images/Workshop/bath.jpeg"] },
+  { title: "Aerial View of Our Facility", images: ["/images/Workshop/facility.jpeg"] },
+  { title: "CNCs & Lathes Machines", subtitle: "Machine shop", images: ["/images/Workshop/mac1.jpeg", "/images/Workshop/mac2.jpeg", "/images/Workshop/mac3.jpeg", "/images/Workshop/mac4.jpeg", "/images/Workshop/mac5.jpeg", "/images/Workshop/mac6.jpeg", "/images/Workshop/mac7.jpeg", "/images/Workshop/mac8.jpeg"], cols: 4 },
+  { title: "Forklift", images: ["/images/Workshop/fork1.jpeg", "/images/Workshop/fork2.jpeg"], cols: 1 },
+  { title: "Fabrication Shop", images: ["/images/Workshop/fab11.jpeg", "/images/Workshop/fab22.jpeg", "/images/Workshop/fab33.jpeg", "/images/Workshop/fab44.jpeg", "/images/Workshop/fab1.webp", "/images/Workshop/fab4.webp"], cols: 3 },
+  { title: "Blasting Pot", images: ["/images/Workshop/pot.jpeg"] },
+  { title: "Blasting & Painting Shop with 10T Overhead crane", images: ["/images/Workshop/work1.jpeg", "/images/Workshop/work2.jpeg", "/images/Workshop/work3.jpeg", "/images/Workshop/blasting2.jpeg", "/images/Workshop/blasting3.jpeg", "/images/Workshop/blasting4.jpeg"], cols: 3 },
+  { title: "Radial Drilling Machines", images: ["/images/Workshop/drilling.jpeg", "/images/Workshop/drill1.jpeg", "/images/Workshop/drill2.jpeg"], cols: 1 },
+  { title: "Drilling Casing Pipes (OCTG)", images: ["/images/Workshop/pipes.jpg", "/images/Workshop/dilling1.jpeg", "/images/Workshop/dilling2.jpeg"], cols: 1 },
+  { title: "Bucking machine", images: ["/images/Workshop/buk3.jpeg", "/images/Workshop/buk1.jpeg", "/images/Workshop/buk2.jpeg", "/images/Workshop/buk4.jpeg"], cols: 2, tight: true },
+  { title: "Band saw", images: ["/images/Workshop/band.jpeg"] },
+  { title: "Air compressor", images: ["/images/Workshop/air2.jpeg", "/images/Workshop/air1.jpeg", "/images/Workshop/air.jpeg"], cols: 2 },
+  { title: "Air tank", images: ["/images/Workshop/tank.jpeg"] },
+  { title: "Phosphate Chemical Analysis", images: ["/images/Workshop/phos.jpeg"] },
+  { title: "Manganese Phosphate Bath", images: ["/images/Workshop/bath.jpeg"] },
   { title: "SPINDLE BORE SIZE 2-3/8'' TO 11''", subtitle: "MANUAL LATHE MACHINE", images: ["/images/Workshop/manual1.jpg"] },
   { title: "SPINDLE BORE SIZE: 2-3/8'' TO 15''", subtitle: "MANUAL LATHE MACHINE", images: ["/images/Workshop/lathe.jpg"] },
   { title: "SPINDLE BORE SIZE: 2-3/8'' TO 11''", subtitle: "FANUC CONTROL CNC MACHINE", images: ["/images/Workshop/fanuc.jpg"] },
@@ -58,14 +58,13 @@ function FabricationYard() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-[220px]">
       {/* Hero */}
-      <section className="px-4 py-20">
-        <div className="relative mx-auto min-h-[420px] md:min-h-[520px] max-w-7xl overflow-hidden text-white flex items-center">
-          <div className="absolute inset-0">
-            <img src="/images/Workshop/fab.jpeg" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
-          </div>
-          <div className="relative z-10 container mx-auto px-6 max-w-5xl">
+      <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/Workshop/fab.jpeg" alt="Fabrication Yard" className="w-full h-full object-cover opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6 max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6">
             <p className="text-sm font-medium">Workshop</p>
           </motion.div>
@@ -75,7 +74,6 @@ function FabricationYard() {
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-xl text-blue-100 max-w-3xl leading-relaxed">
             State-of-the-art yard supporting EPCIC, precision, efficiency, safety across onshore and offshore fabrication.
           </motion.p>
-          </div>
         </div>
       </section>
 
@@ -92,10 +90,10 @@ function FabricationYard() {
       </section>
 
       {/* Highlights */}
-      <section className="py-8 px-4">
+      <section className="py-2 px-4">
         <div className="container mx-auto max-w-6xl">
-          <motion.h3 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-3xl font-bold text-gray-900 mb-6 text-center">Key Highlights</motion.h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.h3 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-3xl font-bold text-gray-900 mb-2 text-center">Key Highlights</motion.h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
             {[
               "High-capacity fabrication bays with overhead cranes and heavy-duty lifting equipment",
               "Certified welders and QA/QC professionals trained to international standards",
@@ -103,11 +101,11 @@ function FabricationYard() {
               "Integrated testing and inspection zone for NDT, hydrotesting, and dimensional checks",
               "Strict adherence to QHSE and Nigerian Content regulations",
             ].map((item, idx) => (
-              <motion.div key={idx} variants={listItem} custom={idx} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="flex items-start space-x-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-                <div className="mt-1 w-8 h-8 bg-blue-50 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-blue-600" />
+              <motion.div key={idx} variants={listItem} custom={idx} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="aspect-square bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold mb-3">
+                  {idx + 1}
                 </div>
-                <p className="text-gray-700 text-sm md:text-base">{item}</p>
+                <p className="text-gray-700 text-xs sm:text-sm">{item}</p>
               </motion.div>
             ))}
           </div>
@@ -115,7 +113,7 @@ function FabricationYard() {
       </section>
 
       {/* Note */}
-      <section className="py-6 px-4">
+      <section className="pt-2 px-4">
         <div className="container mx-auto max-w-5xl">
           <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-gray-700 text-base">
             Every structure fabricated at our yard reflects our commitment to innovation, workmanship, and safety excellence. The accompanying images showcase our facility, equipment, and team in action - bringing engineering designs to life.
@@ -127,27 +125,27 @@ function FabricationYard() {
       <section className="py-10 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto max-w-7xl">
           <motion.h3 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-3xl font-bold text-gray-900 mb-8 text-center">Facility Gallery</motion.h3>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
              {galleryItems.map((item, index) => (
                <motion.div key={index} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }} className={(item.cols === 4 || item.cols === 3) ? "md:col-span-2 lg:col-span-2" : ""}>
-                 <Card className={`h-full border-0 rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col ${index === 0 ? 'lg:self-stretch' : ''}`}>
-                   <CardContent className="p-0 flex flex-col h-full">
-                     <div className="px-5 pt-5 text-center">
-                       {item.subtitle ? (<><h4 className="font-bold text-gray-900 text-xl mb-1">{item.subtitle}</h4><p className="text-sm text-gray-500">{item.title}</p></>) :                       <h4 className="font-bold text-gray-900 text-lg">{item.title}</h4>}
-                     </div>
-                     <div className={`p-5 flex-1 flex items-stretch ${item.images.length > 1 ? (item.cols === 4 ? "grid grid-cols-4 gap-3" : item.cols === 3 ? "grid grid-cols-3 gap-3" : "grid grid-cols-2 gap-3") : ""}`}>
-                       {item.images.map((src, i) => (
-                         item.cols === 2 && i === 2 ? (
-                           <div key={i} className="col-span-2 flex justify-center">
-                             <motion.img src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="h-40 object-contain rounded-lg" />
-                           </div>
-                         ) : (
-                           <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={index === 0 && item.images.length === 1 ? "w-full h-full object-cover rounded-xl" : item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-64 object-cover rounded-xl"} />
-                         )
-                       ))}
-                     </div>
-                   </CardContent>
-                 </Card>
+                   <Card className="h-full border-0 rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col">
+                     <CardContent className="p-0 flex flex-col h-full">
+                       <div className="px-5 pt-5 text-center flex-shrink-0">
+                          {item.subtitle ? (<><h4 className="font-bold text-gray-900 text-xl mb-1 uppercase">{item.subtitle}</h4><p className="text-sm text-gray-500 uppercase">{item.title}</p></>) :                       <h4 className="font-bold text-gray-900 text-lg uppercase">{item.title}</h4>}
+                       </div>
+                        <div className={`${item.tight ? "p-0" : "p-5"} flex-1 ${item.images.length > 1 ? (item.cols === 4 ? "grid grid-cols-4 gap-3" : item.cols === 3 ? "grid grid-cols-3 gap-3" : item.cols === 2 && item.tight ? "grid grid-cols-3 gap-2" : item.cols === 2 ? "grid grid-cols-2 gap-2" : "grid grid-cols-1 gap-1") : ""}`}>
+                          {item.images.map((src, i) => (
+                            item.tight && i === 0 ? (
+                              <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="col-span-3 w-full h-auto object-contain rounded-none" />
+                            ) : item.cols === 2 && i >= 1 && item.tight ? (
+                              <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="w-full h-40 object-cover rounded-none" />
+                            ) : (
+                               <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-80 object-contain rounded-xl"} />
+                            )
+                          ))}
+                      </div>
+                    </CardContent>
+                  </Card>
                </motion.div>
              ))}
            </div>
@@ -166,4 +164,3 @@ const listItem = {
   hidden: { opacity: 0, y: 10 },
   visible: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.4 } })
 }
-
