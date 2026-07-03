@@ -114,6 +114,61 @@ const clientCategories = [
         name: "Hydron Carbon Limited",
         logo: "/images/Shared/Logos/Hydron-Energy.webp",
       },
+      {
+        id: 22,
+        name: "Matrix E & P",
+        logo: "/images/Shared/Logos/matrix.png",
+      },
+      {
+        id: 23,
+        name: "Clinton",
+        logo: "/images/Shared/Logos/clinton.png",
+      },
+      {
+        id: 24,
+        name: "Hilong",
+        logo: "/images/Shared/Logos/hilong.png",
+      },
+      {
+        id: 25,
+        name: "ND Western",
+        logo: "/images/Shared/Logos/nd-.jpg",
+      },
+      {
+        id: 26,
+        name: "ENAGEED RESOURCES LTD",
+        logo: "/images/Shared/Logos/enageed.jpg",
+      },
+      {
+        id: 27,
+        name: "Rosetti Pivot Ltd",
+        logo: "/images/Shared/Logos/rp.jpg",
+      },
+      {
+        id: 28,
+        name: "NPDC",
+        logo: "/images/Shared/Logos/Npdc.webp",
+      },
+      {
+        id: 29,
+        name: "Pivot Integrated Energy",
+        logo: "/images/Shared/Logos/pivot.webp",
+      },
+      {
+        id: 30,
+        name: "Fuel Direct LTD",
+        logo: "/images/Shared/Logos/fuel.webp",
+      },
+      {
+        id: 31,
+        name: "Litewell Completions Services",
+        logo: "/images/Shared/Logos/lite.webp",
+      },
+      {
+        id: 32,
+        name: "Weatherford",
+        logo: "/images/Shared/Logos/weatherford.webp",
+      },
     ]
   }
 ]
