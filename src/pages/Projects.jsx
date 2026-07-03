@@ -273,20 +273,17 @@ const Projects = () => {
                    <img 
                        src={project.logo} 
                        alt={`${project.client} logo`}
-                       className={project.client === 'Chevron' ? 'w-12 h-12 object-contain' : project.client === 'Clinton' ? 'w-[104px] h-[104px] object-contain' : 'w-20 h-20 object-contain'}
+                       className={project.client === 'Chevron' ? 'w-12 h-12 object-contain' : project.client === 'Clinton' ? 'w-[128px] h-[128px] object-contain' : 'w-20 h-20 object-contain'}
                      />
                     <div className="ml-4">
                       <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
-                       <p className="text-sm font-medium">
-                         {project.client === 'Matrix' ? (
-                           <>
-                             <span className="text-blue-600">Matrix</span>
-                              <span className="text-gray-900">{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Matrix E & P</span>
-                           </>
-                         ) : (
-                           project.client
-                         )}
-                       </p>
+                      <p className="text-sm font-medium">
+                        {project.client === 'Matrix' ? (
+                          <span className="text-blue-600">Matrix E & P</span>
+                        ) : (
+                          project.client
+                        )}
+                      </p>
                     </div>
                   </div>
                   <p className="text-gray-600">{project.description}</p>
