@@ -140,7 +140,7 @@ const Home = () => {
   // Latest Projects images
   const projectImages = [
     "/images/Projects/Maintenance.png",
-    "/images/Projects/uu.jpeg",
+    "/images/Projects/Machining Services.jpg",
     "/images/Projects/Tank_Farm.jpg",
     "/images/Projects/Tank_Farm2.jpg",
   ];
@@ -484,7 +484,7 @@ const Home = () => {
             </Link>
             {/* Project 2 */}
             <Link to="/projects" className="relative w-full h-64 block group rounded shadow-lg overflow-hidden">
-              <img src="/images/Projects/uu.jpeg" alt="Machining & Fabrication Services" className="w-full h-full object-cover" />
+              <img src="/images/Projects/Machining Services.jpg" alt="Machining & Fabrication Services" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
                 <h3 className="text-lg font-bold text-white mb-1">Machining & Fabrication Services</h3>
                 <p className="italic text-white text-sm mb-1">Seplat</p>
