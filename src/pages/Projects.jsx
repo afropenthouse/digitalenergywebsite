@@ -70,7 +70,7 @@ const projectList = [
   {
     title: "Maintenance Works",
     client: "Enageed",
-    description: "",
+    description: "Mechanical maintenance and repairs of export pumps at Oziengbe Flowstation",
     image: "/images/Projects/enggg.jpg",
     logo: "/images/Shared/Logos/enageed.jpg"
   },
@@ -134,7 +134,7 @@ const projectList = [
     title: "Fabrication & Supply",
     client: "Weatherford",
     description: "Fabrication and Supply of X-overs & 1-Gauge lumpsum service on multi wells pads",
-    image: "/images/Projects/FabricationSupply.webp",
+    image: "/images/Projects/reddd.jpeg",
     logo: "/images/Shared/Logos/weatherford.webp"
   },
   {
@@ -273,7 +273,7 @@ const Projects = () => {
                    <img 
                        src={project.logo} 
                        alt={`${project.client} logo`}
-                       className={project.client === 'Chevron' ? 'w-12 h-12 object-contain' : project.client === 'Clinton' ? 'w-[128px] h-[128px] object-contain' : 'w-20 h-20 object-contain'}
+                       className={project.client === 'Chevron' ? 'w-12 h-12 object-contain' : project.client === 'Clinton' ? 'w-[128px] h-[128px] object-contain' : project.client === 'Enageed' ? 'w-20 h-20 object-contain' : 'w-20 h-20 object-contain'}
                      />
                     <div className="ml-4">
                       <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
