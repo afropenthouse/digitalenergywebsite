@@ -81,7 +81,7 @@ const boardMembers = [
   {
     name: "Kiki N.C. Ejiaku",
     position: "Business Development Manager",
-    image: "/images/Management/kike2.webp",
+    image: "/images/Management/kiki2.jpeg",
     bio: "She is a Seasoned Business Development Manager with 22 years of dedicated experience, committed to driving strategic growth and fostering long-term partnerships. Thrives on turning ideas into opportunities. She is a graduate of the University of Calabar and has obtained several other certifications and training in the same field."
   },
   {
@@ -230,31 +230,31 @@ const Management = () => {
               </motion.p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {boardMembers.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group relative"
-                  style={styles.perspective1000}
-                >
-                  <div className="aspect-[4/5] relative overflow-hidden">
-                    {/* Flip container */}
-                    <div 
-                      className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
-                      style={styles.transformStyle3d}
-                    >
-                      {/* Front of card */}
-                      <div 
-                        className="absolute w-full h-full"
-                        style={styles.backfaceHidden}
-                      >
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
+{boardMembers.map((member, index) => (
+                 <motion.div
+                   key={member.name}
+                   initial={{ opacity: 0, y: 20 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                   className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group relative"
+                   style={styles.perspective1000}
+                 >
+                   <div className="aspect-[4/5] relative overflow-hidden">
+                     {/* Flip container */}
+                     <div 
+                       className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
+                       style={styles.transformStyle3d}
+                     >
+                       {/* Front of card */}
+                       <div 
+                         className="absolute w-full h-full"
+                         style={styles.backfaceHidden}
+                       >
+                         <img
+                           src={member.image}
+                           alt={member.name}
+                           className={`w-full h-full ${member.name === "Kiki N.C. Ejiaku" ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-110`}
+                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                       </div>
                       
