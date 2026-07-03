@@ -81,7 +81,7 @@ const boardMembers = [
   {
     name: "Kiki N.C. Ejiaku",
     position: "Business Development Manager",
-    image: "/images/Management/kiki2.jpeg",
+    image: "/images/Management/kiki3.jpg",
     bio: "She is a Seasoned Business Development Manager with 22 years of dedicated experience, committed to driving strategic growth and fostering long-term partnerships. Thrives on turning ideas into opportunities. She is a graduate of the University of Calabar and has obtained several other certifications and training in the same field."
   },
   {
@@ -253,7 +253,7 @@ const Management = () => {
                          <img
                            src={member.image}
                            alt={member.name}
-                           className={`w-full h-full ${member.name === "Kiki N.C. Ejiaku" ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-110`}
+                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                          />
                         <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                       </div>
