@@ -18,6 +18,7 @@ import EngineeringServices from "./pages/Services/EngineeringServices";
 import ProcurementServices from "./pages/Services/ProcurementServices";
 import CommissioningStartup from "./pages/Services/CommissioningStartup";
 import OperationsMaintenance from "./pages/Services/OperationsMaintenance";
+import AssetIntegrityMarineSupport from "./pages/Services/AssetIntegrityMarineSupport";
 import TechnicalManpower from "./pages/Services/TechnicalManpower";
 import Projects from "./pages/Projects";
 import CSR from "./pages/CSR";
@@ -26,6 +27,7 @@ import HSEPolicy from "./pages/HSEPolicy";
 import Career from "./pages/Career";
 import ScrollUP from "./components/Scroll/ScrollUP";
 import FabricationConstruction from './pages/Services/FabricationConstruction';
+import FabricationConstructionServices from './pages/Services/FabricationConstructionServices';
 import TradingServices from "./pages/Services/TradingServices";
 import Management from "./pages/AboutUs/Management";
 import ScrollToTop from "./components/ScrollToTop";
@@ -64,14 +66,16 @@ function AppRoutes() {
               <Route path="procurement" element={<ProcurementServices />} />
               <Route path="commissioning" element={<CommissioningStartup />} />
               <Route path="operations" element={<OperationsMaintenance />} />
+              <Route path="asset-integrity" element={<AssetIntegrityMarineSupport />} />
               <Route path="manpower" element={<TechnicalManpower />} />
               <Route path="fabrication" element={<FabricationConstruction />} />
-              <Route path="fabrication-yard" element={<FabricationYard />} />
+              <Route path="fabrication-construction" element={<FabricationConstructionServices />} />
+              <Route path="Workshop" element={<FabricationYard />} />
               <Route path="trading" element={<TradingServices />} />
             </Route>
             <Route path="projects" element={<Projects />} />
             <Route path="csr" element={<CSR />} />
-            <Route path="fabrication-yard" element={<FabricationYard />} />
+            <Route path="Workshop" element={<FabricationYard />} />
 
             <Route path="hsc-policy" element={<HSEPolicy />} />
             <Route path="qms" element={<QMS />} />

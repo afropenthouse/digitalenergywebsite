@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Wrench, ShoppingCart, HardHat, Settings, Users, UserCheck, CheckCircle, Fuel } from 'lucide-react'
+import { Wrench, ShoppingCart, HardHat, Settings, Users, UserCheck, CheckCircle, Fuel, Shield } from 'lucide-react'
 
 const services = [
   {
@@ -17,22 +17,34 @@ const services = [
     path: '/services/procurement'
   },
   {
-    id: 'fabrication',
-    title: 'Fabrication & Construction Services',
+    id: 'fabrication-octg',
+    title: 'Fabrication and Machining of OCTG Pipes and Joints',
     icon: HardHat,
     path: '/services/fabrication'
   },
   {
     id: 'commissioning',
-    title: 'Commissioning & Start-up',
+    title: 'Construction, Installation and Site/Offshore Hookups',
     icon: CheckCircle,
     path: '/services/commissioning'
+  },
+  {
+    id: 'fabrication',
+    title: 'Fabrication & Construction Services',
+    icon: HardHat,
+    path: '/services/fabrication-construction'
   },
   {
     id: 'operations',
     title: 'Operations & Maintenance',
     icon: Settings,
     path: '/services/operations'
+  },
+  {
+    id: 'asset-integrity',
+    title: 'Asset Integrity & Marine Support',
+    icon: Shield,
+    path: '/services/asset-integrity'
   },
   {
     id: 'manpower',
@@ -42,7 +54,7 @@ const services = [
   },
   {
     id: 'trading',
-    title: 'Marketing, Supply & Trading',
+    title: 'Marketing, Supply & Trading of Petroleum Products',
     icon: Fuel,
     path: '/services/trading'
   }

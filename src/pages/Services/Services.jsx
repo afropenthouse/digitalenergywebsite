@@ -9,6 +9,7 @@ import {
   Users,
   HardHat,
   Fuel,
+  Shield,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 import Loader from "../Loader/Loader"
@@ -46,27 +47,27 @@ const services = [
     color: "bg-gradient-to-br from-blue-700 to-blue-900",
   },
   {
-    id: "fabrication",
-    title: "Fabrication & Construction",
+    id: "fabrication-octg",
+    title: "Fabrication and Machining of OCTG Pipes and Joints",
     icon: HardHat,
     path: "/services/fabrication",
-    description: "Full-scale construction services for onshore and offshore energy projects.",
+    description: "Precision fabrication, OCTG pipe and joints machining, and manufacturing services from our world-class Port Harcourt facility.",
     features: [
-      "Civil, Structural & Mechanical Installation",
-      "Pipeline Construction",
-      "Tank Farm Construction, Upgrade/Repair & Maintenance",
-      "Electrical, Instrumentation & Automation",
-      "Assets Integrity Management, Fabric Maintenance/Sand Blasting & Corrosion Control",
-      "Oil & Gas Facilities Inspections, Testing & Commissioning",
-      "Machining Services of OCTG Pipes, Tubulars & Drill String Components"
+      "Supply of OCTG Pipes and Joints",
+      "API & Premium Threading",
+      "Oilwell Swaging & End Preparation",
+      "Bucking: Breakout and Make-up Operations",
+      "Inspection & Repairs",
+      "Drilling Jar Redressing",
+      "Manufacturing of Conductors & connectors, Crossovers & pup joints, Coupling, threading, Drilling & completion accessories"
     ],
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
   },
   {
     id: "commissioning",
     icon: CheckCircle,
-    title: "Commissioning & Start-up",
-    description: "Ensuring systems are tested, verified, and fully operational according to specifications.",
+    title: "Construction, Installation and Site/Offshore Hookups",
+    description: "Pre-commissioning, mechanical completion, functional testing, and handover documentation.",
     features: [
       "Pre-commissioning Activities",
       "Mechanical Completion",
@@ -76,6 +77,23 @@ const services = [
       "Handover Documentation",
     ],
     color: "bg-gradient-to-br from-blue-700 to-blue-900",
+  },
+  {
+    id: "fabrication",
+    title: "Fabrication & Construction Services",
+    icon: HardHat,
+    path: "/services/fabrication-construction",
+    description: "Digital Energy & Integrated Services Limited (DEISL) provides a fully integrated suite of Fabrication and Construction services, delivering innovative and cost-effective solutions for both onshore and offshore energy projects.",
+    features: [
+      "Site Development & Pile Foundations",
+      "Civil, Structural, Mechanical, and E&I Installation",
+      "Plant & Non-Plant Facility Construction",
+      "Pipeline Construction, Piping & Mechanical Erection",
+      "Electrical & Instrumentation Works",
+      "Storage Tank/ Pressure Vessels Construction",
+      "Concept, Design Engineering to Completion and Commissioning"
+    ],
+    color: "bg-gradient-to-br from-orange-500 to-orange-700",
   },
   {
     id: "operations",
@@ -92,6 +110,21 @@ const services = [
       "24/7 Support Services",
     ],
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
+  },
+  {
+    id: "asset-integrity",
+    icon: Shield,
+    title: "Asset Integrity & Marine Support",
+    description: "Marine support, tank & vessel cleaning, and industrial cleaning services for safe and efficient operations.",
+    path: "/services/asset-integrity",
+    features: [
+      "Marine Support, Tank & Vessel Cleaning Services",
+      "Industrial Cleaning Capability",
+      "Remote Cleaning and Flushing Techniques",
+      "Confined Space Entry Procedures",
+      "High-Specification Vacuum Equipment"
+    ],
+    color: "bg-gradient-to-br from-blue-700 to-blue-900",
   },
   {
     id: "manpower",

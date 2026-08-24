@@ -103,7 +103,7 @@ const CommissioningStartup = () => {
   return (
     <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
-        <div className="space-y-16">
+        <div className="space-y-8">
           {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ const CommissioningStartup = () => {
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">Our Services</p>
+                <p className="text-sm font-medium">Construction, Installation and Site/Offshore Hookups</p>
               </motion.div>
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ const CommissioningStartup = () => {
                 transition={{ delay: 0.2 }}
                 className="text-4xl md:text-5xl font-bold mb-6"
               >
-                Commissioning & <span className="text-orange-400">Start-up</span>
+                Construction, Installation and <span className="text-orange-400">Site/Offshore Hookups</span>
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -234,4 +234,4 @@ const CommissioningStartup = () => {
   )
 }
 
-export default CommissioningStartup 
+export default CommissioningStartup

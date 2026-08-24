@@ -72,7 +72,7 @@ const EngineeringServices = () => {
   return (
     <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
-        <div className="space-y-16">
+        <div className="space-y-8">
           {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

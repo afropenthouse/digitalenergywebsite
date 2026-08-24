@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "../components/ui/card"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, ChevronDown } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import Loader from "./Loader/Loader"
 
@@ -28,6 +28,11 @@ const galleryItems = [
 function FabricationYard() {
   const [isLoading, setIsLoading] = useState(true)
   const timeoutRef = useRef()
+  const [openSection, setOpenSection] = useState(null)
+
+  const toggleSection = (id) => {
+    setOpenSection(openSection === id ? null : id)
+  }
 
   useEffect(() => {
     const heroImg = new Image()
@@ -79,20 +84,21 @@ function FabricationYard() {
 
       {/* Intro */}
       <section className="py-14 px-4 bg-gradient-to-b from-gray-50 to-white">
-        <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="container mx-auto max-w-5xl space-y-6 text-gray-800">
-          <motion.p variants={fadeUp} className="text-lg">
-            At Digital Energy, our state-of-the-art Fabrication Yard and Workshop serve as the backbone of our Engineering, Procurement, Construction, Installation and Commissioning (EPCIC) capabilities. Strategically located and equipped to handle a wide range of onshore and offshore fabrication projects, our facility is designed for precision, efficiency, and safety.
-          </motion.p>
-          <motion.p variants={fadeUp} className="text-lg">
-            Our workshop is equipped with modern tools, cranes, and handling systems that allow us to execute complex structural, piping, and mechanical fabrications with exceptional quality control. From pressure vessels and process skids to structural steel works and well-test packages, we deliver fabrication solutions that meet ASME, API, and ISO standards.
-          </motion.p>
+        <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="container mx-auto max-w-5xl">
+          <div className="space-y-6 text-gray-700">
+            <motion.p variants={fadeUp} className="text-lg leading-relaxed">
+              At Digital Energy, our state-of-the-art Fabrication Yard and Workshop serve as the backbone of our Engineering, Procurement, Construction, Installation and Commissioning (EPCIC) capabilities. Strategically located and equipped to handle a wide range of onshore and offshore fabrication projects, our facility is designed for precision, efficiency, and safety.
+            </motion.p>
+            <motion.p variants={fadeUp} className="text-lg leading-relaxed">
+              Our workshop is equipped with modern tools, cranes, and handling systems that allow us to execute complex structural, piping, and mechanical fabrications with exceptional quality control. From pressure vessels and process skids to structural steel works and well-test packages, we deliver fabrication solutions that meet ASME, API, and ISO standards.
+            </motion.p>
+          </div>
         </motion.div>
       </section>
 
       {/* Highlights */}
       <section className="py-2 px-4">
         <div className="container mx-auto max-w-6xl">
-          <motion.h3 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="text-3xl font-bold text-gray-900 mb-2 text-center">Key Highlights</motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
             {[
               "High-capacity fabrication bays with overhead cranes and heavy-duty lifting equipment",
@@ -121,6 +127,78 @@ function FabricationYard() {
         </div>
       </section>
 
+      {/* Fabrication Yard Section */}
+      <section className="py-14 px-4 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <div className="space-y-6 text-gray-700">
+            <p className="leading-relaxed">
+              DEISL delivers comprehensive fabrication services to support construction and engineering projects from concept to completion. Operating from our 6,989 m² fabrication yard at Igbo-Eche Street, Off Eleme Junction, Port Harcourt, Rivers State, we are equipped with modern fabrication and welding equipment, pressure testing facilities, and a CNC-enabled machine shop integrated with 3D CAD technology. Our facility is designed to execute complex fabrication works efficiently while meeting the highest standards of quality, safety, and project delivery.
+            </p>
+          </div>
+
+          <div className="space-y-3 mt-8">
+            {[
+              {
+                id: 'scope',
+                title: 'Scope of Fabrication Work',
+                items: ["Shop Fabrication – Piping and Structures", "Pressure Tanks & Vessels", "Pipe Fabrication (2\" diameter and above)", "Electrical & Pipe Steel Supports", "Steel Structures (Platforms, Ladders, Stairs)", "Pipe Spools and Skids for Pumps/Compressors", "Specialized Mechanical & Electrical Components"]
+              },
+              {
+                id: 'facilities',
+                title: 'Facilities',
+                items: ["Coded Welding to ASME IX, BS 4870 & BS EN 288", "In-house Metal Forming and Assembly", "Hydro and Functional Test Areas", "CNC Machining Linked to 3D CAD for Precision Manufacturing", "On-site Fabrication and Mobilization for Remote Projects"]
+              },
+              {
+                id: 'capabilities',
+                title: 'Capabilities',
+                items: ["End-to-end construction and fabrication capabilities", "Rapid mobilization and execution of time-critical projects", "ISO-certified quality and HSE management systems", "Experienced workforce and certified technical personnel", "Focus on local content development and community engagement"]
+              }
+            ].map((section) => (
+              <div key={section.id} className="border border-gray-200 rounded-xl overflow-hidden">
+                <button
+                  onClick={() => toggleSection(section.id)}
+                  className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-blue-50 transition-colors text-left"
+                >
+                  <span className="text-lg font-semibold text-gray-900">{section.title}</span>
+                  <motion.div
+                    animate={{ rotate: openSection === section.id ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown className="w-5 h-5 text-blue-600" />
+                  </motion.div>
+                </button>
+                <AnimatePresence initial={false}>
+                  {openSection === section.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-4 bg-white">
+                        <ul className="space-y-2">
+                          {section.items.map((item, idx) => (
+                            <li key={idx} className="flex items-start space-x-2">
+                              <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                              <span className="text-gray-700 text-sm">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-gray-700 mt-6">
+            Digital Energy ensures that every structure, system, or facility we build meets the highest levels of functionality, safety, and durability, supporting our clients through the full project lifecycle - from engineering and fabrication to construction and commissioning.
+          </p>
+        </div>
+      </section>
+
       {/* Gallery */}
       <section className="py-10 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto max-w-7xl">
@@ -132,21 +210,21 @@ function FabricationYard() {
                      <CardContent className="p-0 flex flex-col h-full">
                        <div className="px-5 pt-5 text-center flex-shrink-0">
                           {item.subtitle ? (<><h4 className="font-bold text-gray-900 text-xl mb-1 uppercase">{item.subtitle}</h4><p className="text-sm text-gray-500 uppercase">{item.title}</p></>) :                       <h4 className="font-bold text-gray-900 text-lg uppercase">{item.title}</h4>}
+                        </div>
+                         <div className={`${item.tight ? "p-0" : "p-5"} flex-1 ${item.images.length > 1 ? (item.cols === 4 ? "grid grid-cols-4 gap-3" : item.cols === 3 ? "grid grid-cols-3 gap-3" : item.cols === 2 && item.tight ? "grid grid-cols-3 gap-2" : item.cols === 2 ? "grid grid-cols-2 gap-2" : "grid grid-cols-1 gap-1") : ""}`}>
+                           {item.images.map((src, i) => (
+                             item.tight && i === 0 ? (
+                               <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="col-span-3 w-full h-auto object-contain rounded-none" />
+                             ) : item.cols === 2 && i >= 1 && item.tight ? (
+                               <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="w-full h-40 object-cover rounded-none" />
+                             ) : (
+                                <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-80 object-contain rounded-xl"} />
+                             )
+                           ))}
                        </div>
-                        <div className={`${item.tight ? "p-0" : "p-5"} flex-1 ${item.images.length > 1 ? (item.cols === 4 ? "grid grid-cols-4 gap-3" : item.cols === 3 ? "grid grid-cols-3 gap-3" : item.cols === 2 && item.tight ? "grid grid-cols-3 gap-2" : item.cols === 2 ? "grid grid-cols-2 gap-2" : "grid grid-cols-1 gap-1") : ""}`}>
-                          {item.images.map((src, i) => (
-                            item.tight && i === 0 ? (
-                              <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="col-span-3 w-full h-auto object-contain rounded-none" />
-                            ) : item.cols === 2 && i >= 1 && item.tight ? (
-                              <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className="w-full h-40 object-cover rounded-none" />
-                            ) : (
-                               <motion.img key={i} src={src} alt={`${item.title} ${i + 1}`} loading="lazy" decoding="async" whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} className={item.images.length > 1 ? "w-full h-40 object-cover rounded-lg" : "w-full h-80 object-contain rounded-xl"} />
-                            )
-                          ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-               </motion.div>
+                     </CardContent>
+                   </Card>
+                </motion.div>
              ))}
            </div>
         </div>
