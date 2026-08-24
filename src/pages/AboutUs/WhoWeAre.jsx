@@ -172,19 +172,19 @@ const WhoWeAre = () => {
                   <span className="font-bold text-blue-800">DIGITAL ENERGY & INTEGRATED SERVICES LIMITED (DEISL)</span> is a leading indigenous, multi-faceted energy solutions company, delivering end-to-end services across the entire energy value chain-upstream, midstream, and downstream.
                 </p>
                 <p>
-                  We offer integrated EPCOM contracting, petroleum product trading, marine logistics, project management, and ICT services, all tailored to meet the evolving needs of the Nigerian industry. Through the digitalization of the energy lifecycle, we ensure greater efficiency, transparency, and value delivery.
+                  We provide integrated EPCOM contracting and ancillary services including petroleum products trading, asset integrity, marine logistics, project management, manpower and equipment supply, training, and ICT services. All our solutions are tailored to meet the evolving needs of Nigeria's power and oil & gas industry. Through the digitalization of the energy lifecycle, we drive greater efficiency, transparency, and value delivery.
                 </p>
 
                 <p>
-                  Over the years, we have developed the skills, resources, and strategic partnerships required to successfully execute complex projects to the satisfaction of our clients. Our capabilities span across key sectors including Oil & Gas, Power, Petrochemicals, Refining, and General Infrastructure.
+                  Over the years, we have built the expertise, resources, and strategic partnerships required to execute complex projects to the highest standards. Our capabilities span key sectors: Oil & Gas, Power, Petrochemicals, Refining, and General Infrastructure.
                 </p>
 
                 <p>
-                  Our service offerings cover the complete project lifecycle-from conceptual design and engineering to commissioning and long-term asset support. Backed by a management team with extensive combined experience across upstream, midstream, and downstream operations, DEISL is well-positioned to deliver consistent value.
+                  Our services cover the complete project lifecycle from conceptual design and engineering to commissioning and long-term asset support. Backed by a management team with extensive experience across upstream, midstream, and downstream operations, DEISL is positioned to deliver consistent and reliable value.
                 </p>
 
                 <p>
-                  At Digital Energy, we are committed to customer satisfaction, operational excellence, and responsiveness in all our engagements.
+                  At Digital Energy, we are committed to customer satisfaction, operational excellence, and responsiveness in every engagement.
                 </p>
 
               </div>
@@ -232,7 +232,7 @@ const WhoWeAre = () => {
                       <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
                     </div>
                     <p className="text-gray-700 text-lg">
-                      To exceed customer expectations, drive sustainable growth, and deliver value through innovative solutions, exceptional quality services, and an unwavering commitment to safety, social responsibility, and environmental stewardship.
+                      To drive sustainable growth and deliver exceptional value through innovative solutions, operational excellence, and an unwavering commitment to safety, people, and the environment
                     </p>
               </motion.div>
                 </div>
@@ -262,7 +262,7 @@ const WhoWeAre = () => {
               className="max-w-4xl mx-auto"
             >
               <img
-                src="/images/Misc/client2.jpg"
+                src="/images/Misc/clients22.jpg"
                 alt="Core Values Information"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />

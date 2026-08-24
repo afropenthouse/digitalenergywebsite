@@ -77,7 +77,7 @@ export default function Footer() {
               <Link to="/projects" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
                 <span className="mr-1 text-orange-500">→</span>Projects
               </Link>
-              <Link to="/fabrication-yard" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
+               <Link to="/Workshop" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">
                 <span className="mr-1 text-orange-500">→</span>Workshop
               </Link>
               <Link to="/careers" className="text-blue-100 hover:text-orange-400 text-sm flex items-center transition-colors">

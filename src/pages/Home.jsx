@@ -31,41 +31,42 @@ const Home = () => {
   const [loadedImages, setLoadedImages] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderInterval = useRef(null);
+  const clientsScrollRef = useRef(null);
 
   const slides = [
     {
       id: 1,
-      title: "Innovative Energy Solutions",
-      subtitle: "Excellence in Engineering.",
-      description: "Delivering world-class engineering and technical services to the oil and gas industry",
+      title: "Reliable EPCOM Contractor/Partner",
+      subtitle: "Integrated Energy Solutions, Delivered.",
+      description: "Engineering | Procurement | Construction | Commissioning | Operations | Maintenance. Delivering world-class EPCOM services to the Oil, Gas & Power industry in Nigeria and beyond.",
       image: "/images/Home/pic_2.webp"
     },
     {
       id: 2,
-      title: "Global Standards",
-      subtitle: "Local Expertise.",
-      description: "Combining international best practices with deep local industry knowledge",
+      title: "Best Fabrication, Installation and Machining Services",
+      subtitle: "Precision Fabrication, Hook-up and Machining of OCTG Materials and Joints",
+      description: "Expert Fabrication Engineering, Modular & Platform fabrication, OCTG Machining, and Offshore Installation and Hookup to ensure safe, on-time project delivery.",
       image: "/images/Home/pic_9.webp"
     },
     {
       id: 3,
-      title: "Precision Engineering",
-      subtitle: "Advanced Fabrication.",
-      description: "State-of-the-art fabrication yard equipped for complex industrial projects",
+      title: "Asset Integrity & Marine Services",
+      subtitle: "Best Asset Integrity Management and Offshore Marine Support Excellence.",
+      description: "Comprehensive Asset Integrity Management and Marine Support Services designed to maximize asset uptime and efficiency.",
       image: "/images/Workshop/p2.webp"
     },
     {
       id: 4,
-      title: "Reliable Operations",
-      subtitle: "Maximum Efficiency.",
-      description: "Ensuring optimal performance through expert maintenance and operations",
+      title: "Compliance to Global and Local Code, Standard and Client Specification",
+      subtitle: "Global Standards. Nigerian Expertise.",
+      description: "We combine international best practices with deep local knowledge to execute safely, efficiently, and in-country.",
       image: "/images/Home/pic_12.webp"
     },
     {
       id: 5,
-      title: "Local Expertise.",
-      subtitle: "Global Standards.",
-      description: "Combining Nigerian knowledge with international best practices",
+      title: "Commitment",
+      subtitle: "Your Trusted Indigenous Partner",
+      description: "As a wholly Nigerian company, we deliver innovative, safe, and cost-effective solutions that drive growth in the energy sector.",
       image: "/images/Management/cli.webp"
     }
   ];
@@ -149,9 +150,35 @@ const Home = () => {
     "/images/Shared/Logos/nnpc.webp",
     "/images/Shared/Logos/chevron.webp",
     "/images/Shared/Logos/Total.webp",
+    "/images/Shared/Logos/seepco.webp",
     "/images/Shared/Logos/seplat.webp",
-    "/images/Shared/Logos/pivot.webp",
+    "/images/Shared/Logos/saipem.webp",
+    "/images/Shared/Logos/Addax.webp",
+    "/images/Shared/Logos/Hydrocarbon.webp",
+    "/images/Shared/Logos/nnpc-18.webp",
+    "/images/Shared/Logos/ewt.webp",
+    "/images/Shared/Logos/Neconde.webp",
+    "/images/Shared/Logos/conoil.webp",
+    "/images/Shared/Logos/Midwestern.webp",
+    "/images/Shared/Logos/supanova.webp",
+    "/images/Shared/Logos/firstbank.webp",
+    "/images/Shared/Logos/Stanbic ibtc.webp",
+    "/images/Shared/Logos/fidelity.webp",
+    "/images/Shared/Logos/Agrited.webp",
+    "/images/Shared/Logos/Christ Embassey.webp",
+    "/images/Shared/Logos/John Creek.webp",
+    "/images/Shared/Logos/Hydron-Energy.webp",
+    "/images/Shared/Logos/matrix.png",
+    "/images/Shared/Logos/clinton.png",
+    "/images/Shared/Logos/hilong.png",
+    "/images/Shared/Logos/nd-.jpg",
+    "/images/Shared/Logos/enageed.jpg",
+    "/images/Shared/Logos/rp.jpg",
     "/images/Shared/Logos/Npdc.webp",
+    "/images/Shared/Logos/pivot.webp",
+    "/images/Shared/Logos/fuel.webp",
+    "/images/Shared/Logos/lite.webp",
+    "/images/Shared/Logos/weatherford.webp",
   ];
 
   // Collect all unique image URLs
@@ -200,6 +227,23 @@ const Home = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const el = clientsScrollRef.current;
+    if (!el) return;
+    let raf;
+    const speed = 0.5;
+    const step = () => {
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+        el.scrollLeft = 0;
+      } else {
+        el.scrollLeft += speed;
+      }
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [])
+
   if (isLoading) {
     return <Loader />
   }
@@ -212,7 +256,7 @@ const Home = () => {
       className="overflow-hidden"
     >
       {/* ===== HERO SECTION – Sleek with glassmorphism ===== */}
-      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[75vh] flex items-center pt-24">
+      <section className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden min-h-[88vh] flex items-center pt-24">
         {/* Background Slider */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
@@ -245,14 +289,14 @@ const Home = () => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 md:p-10 border border-white/20 shadow-2xl"
               >
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white text-center">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white text-center leading-snug">
                   <span className="block"><HighlightedText text={slides[currentSlide].title} /></span>
-                  <span className="block text-orange-400 mt-1.5">
+                  <span className="block text-orange-400 mt-1 text-lg md:text-xl lg:text-2xl">
                     <HighlightedText text={slides[currentSlide].subtitle} />
                   </span>
                 </h1>
                 <motion.p
-                  className="text-base md:text-lg text-white/90 mb-6 max-w-2xl text-center mx-auto"
+                  className="text-base md:text-lg text-white/90 mb-5 max-w-2xl text-center mx-auto"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -354,10 +398,10 @@ const Home = () => {
             {/* Right: Company intro and About Us content */}
             <div className="flex-1 flex flex-col justify-center items-center text-center py-4">
               <p className="text-xl text-gray-400 mb-2 font-normal">
-              We are a forward-thinking energy services company delivering end-to-end engineering, procurement, construction, and commissioning solutions to Nigeria's oil and gas industry. 
+               A forward-thinking energy services company delivering end-to-end EPCOM solutions for Nigeria's Power and Oil & Gas industry.
               </p>
               <p className="text-xl text-blue-900 font-semibold">
-              From project conception to completion, we bring innovation, local expertise, and global standards to every challenge.
+              From conceptual Engineering to commissioning, Operations and Maintenance. We combine innovation, local expertise, and global standards to deliver safe, efficient, and reliable projects.
               </p>
             </div>
           </div>
@@ -370,7 +414,7 @@ const Home = () => {
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Service Overview</h2>
             <p className="text-lg text-gray-600 max-w-2xl mb-2">
-              We deliver a comprehensive suite of engineering, procurement, construction, commissioning, and manpower solutions tailored for the evolving needs of the energy sector.
+              We deliver integrated Engineering, Procurement, Construction/Commissioning, Operations and Maintenance (EPCOM) and ancillary services including Project Management, Manpower & Equipment Supply, Fabrication, and Machining, Asset Integrity Management & Marine Support Services tailored to meet the evolving demands of the power and oil & gas sector.
             </p>
             <div className="w-16 h-1 bg-orange-500 rounded mt-2" />
           </div>
@@ -378,49 +422,67 @@ const Home = () => {
             {[
               {
                 title: "Engineering Services",
-                description: "Front-end engineering design (FEED), detailed engineering, and constructability studies across civil, mechanical, electrical, and process disciplines.",
+                description: "Full-cycle engineering capability: FEED, Detailed Design, and Fabrication/Installation Engineering. Supported by HAZOP, HAZID, and Constructability reviews across Process, Piping, Mechanical, Civil, Structural, Electrical, and Instrumentation disciplines.",
                 image: "/images/Services/EngineeringServices/engineering.webp",
                 path: "/services/engineering"
               },
               {
                 title: "Procurement Services",
-                description: "Global and local sourcing of materials, equipment, and services with a focus on cost, quality, and local content compliance.",
+                description: "End-to-end procurement with global reach and local expertise. The right materials at the right price and at the right time. From global vendors to Nigerian suppliers, we manage sourcing to meet your project's cost, quality, and Local Content requirements compliance.",
                 image: "/images/Services/ProcurementServices/procurement1.jpg",
                 path: "/services/procurement"
               },
               {
-                title: "Fabrication & Construction",
-                description: "Civil works, Steel structural Fabrication and erection, mechanical installation, piping, E&I, and facility upgrades.",
+                title: "Fabrication & Machining of OCTG Pipes and Joints",
+                description: "Built in Our Shop. Built to Spec. Machined to Last. Ready for Site. OCTG Solutions: We provide fabrication, threading, and repair of OCTG pipes and joints for drilling and production operations ensuring reliability downhole and on surface. We fabricate piping spools and structural steel assemblies in a controlled workshop environment to ensure quality, accuracy, and faster site installation.",
                 image: "/images/Services/FabricationConstruction/fabrication.webp",
                 path: "/services/fabrication"
               },
               {
-                title: "Commissioning & Start-up",
-                description: "Pre-commissioning, commissioning, and start-up support services to ensure systems operate as designed.",
+                title: "Construction, Installation and Site/Offshore Hookups",
+                description: "Built Right. Installed Safe. Hooked Up Right. We deliver full-scope construction and installation services across power and oil & gas facilities, we execute civil, structural, mechanical, piping, and E&I works, plus site and offshore hookups for greenfield projects and brownfield facility upgrades.",
+                image: "/images/Services/CommissioningStartup/commisioning.webp",
+                path: "/services/commissioning"
+              },
+              {
+                title: "Pre-commissioning, Commissioning & Start-up",
+                description: "From Testing to First Oil / First Power. We manage pre-commissioning, commissioning, and start-up activities to de-risk your project and ensure systems perform safely from day one.",
                 image: "/images/Services/CommissioningStartup/commisioning.webp",
                 path: "/services/commissioning"
               },
               {
                 title: "Operations & Maintenance",
-                description: "End-to-end O&M services ensuring optimal asset performance, reduced downtime, and extended infrastructure life cycle.",
+                description: "Keep Your Assets Running. At Peak Performance. We provide full-scope O&M services ensuring safety, reliability, optimal asset performance, reduced downtime, Spare parts management, Shutdowns and extended infrastructure life cycle from daily operations to predictive, preventive and corrective maintenance services.",
                 image: "/images/Services/OperationsMaintenance/operation.webp",
                 path: "/services/operations"
               },
               {
+                title: "Asset Integrity & Marine Support",
+                description: "Safety. Compliance. Uptime. Proactive asset integrity management and marine services designed to protect your assets, meet regulatory requirements, sustain operational efficiency both offshore and onshore, extend asset life, prevent failures, and keep your operations running safely and optimally.",
+                image: "/images/Services/OperationsMaintenance/om2.jpeg",
+                path: "/services/operations"
+              },
+              {
+                title: "Project Management",
+                description: "Your Project. Our Accountability. We plan, coordinate, and execute complex projects with disciplined project controls to deliver safely, on schedule, and to specification.",
+                image: "/images/Projects/matrixbig.jpg",
+                path: "/services"
+              },
+              {
                 title: "Technical Manpower Supply",
-                description: "Certified Personnel | Project Staffing | IRATA Technicians | Specialized Roles",
+                description: "The Right People. Right on Time. Project staffing solutions with certified and experienced personnel. From IRATA and NDT to supervision and specialized trades fully compliant and ready to work.",
                 image: "/images/Services/TechnicalManpower/p8.webp",
                 path: "/services/manpower"
               },
             ].map((service, idx) => (
-              <div key={service.title} className="bg-white border border-gray-200 rounded-xl flex flex-col md:flex-row items-center h-auto md:h-40 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="flex-shrink-0 w-full md:w-40 h-40 md:h-full overflow-hidden rounded-t-xl md:rounded-t-none md:rounded-l-xl">
+              <div key={service.title} className="bg-white border border-gray-200 rounded-xl flex flex-col md:flex-row items-center h-auto md:min-h-56 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex-shrink-0 w-full md:w-48 h-48 md:h-56 overflow-hidden rounded-t-xl md:rounded-t-none md:rounded-l-xl">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
-                <div className="flex-1 pl-0 md:pl-6 pr-0 md:pr-4 flex flex-col justify-center h-auto md:h-full p-4 md:p-0">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-1 leading-snug">{service.title}</h3>
-                  <p className="text-base text-gray-700 mb-2 leading-snug">{service.description}</p>
-                  <a href={service.path} className="text-orange-500 font-medium flex items-center group hover:underline text-lg">
+                <div className="flex-1 flex flex-col justify-center h-auto md:h-full p-5 md:p-6">
+                  <h3 className="text-base md:text-base font-bold text-gray-900 mb-2 leading-snug">{service.title}</h3>
+                  <p className="text-sm md:text-sm text-gray-700 mb-3 leading-relaxed">{service.description}</p>
+                  <a href={service.path} className="text-orange-500 font-medium flex items-center group hover:underline text-sm md:text-base">
                     <span className="mr-1">&rarr; Read More</span>
                   </a>
                 </div>
@@ -525,24 +587,14 @@ const Home = () => {
       <section className="py-8 bg-white">
         <div className="w-4/5 mx-auto">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Our Clients</h2>
-          <div className="overflow-x-hidden scrollbar-hide whitespace-nowrap py-2">
-            <div className="relative w-full" style={{ overflow: 'hidden' }}>
-              <div className="flex animate-scroll-x space-x-8 items-center" style={{ width: 'max-content' }}>
-                {/* Logos duplicated for seamless loop */}
-                <img src="/images/Shared/Logos/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/Total.webp" alt="Total" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/pivot.webp" alt="Pivot" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/Npdc.webp" alt="NPDC" className="h-16 w-auto object-contain" />
-                {/* Duplicate for infinite scroll */}
-                <img src="/images/Shared/Logos/nnpc.webp" alt="NNPC" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/chevron.webp" alt="Chevron" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/Total.webp" alt="Total" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/seplat.webp" alt="SEPLAT" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/pivot.webp" alt="Pivot" className="h-16 w-auto object-contain" />
-                <img src="/images/Shared/Logos/Npdc.webp" alt="NPDC" className="h-16 w-auto object-contain" />
-              </div>
+          <div
+            ref={clientsScrollRef}
+            className="overflow-x-hidden scrollbar-hide py-2"
+          >
+            <div className="flex space-x-8 items-center w-max">
+              {clientLogos.map((logo, index) => (
+                <img key={index} src={logo} alt={`Client ${index + 1}`} className="h-16 w-auto object-contain" />
+              ))}
             </div>
           </div>
         </div> 

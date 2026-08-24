@@ -69,7 +69,7 @@ export default function Header() {
     { key: "services", name: "Services", href: "/services" },
     { key: "projects", name: "Projects", href: "/projects" },
     { key: "csr", name: "CSR", href: "/csr" },
-    { key: "fabrication-yard", name: "Workshop", href: "/fabrication-yard" },
+    { key: "Workshop", name: "Workshop", href: "/Workshop" },
     { key: "careers", name: "Careers", href: "/careers" },
     { key: "contact", name: "Contact", href: "/contact", dropdown: contactLinks },
   ];

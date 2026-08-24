@@ -5,9 +5,9 @@ import { motion } from "framer-motion"
 
 const stats = [
   { number: 150, suffix: "+", label: "Projects Completed" },
-  { number: 25, suffix: "+", label: "Years Experience" },
-  { number: 500, suffix: "+", label: "Satisfied Clients" },
-  { number: 99, suffix: "%", label: "Success Rate" },
+  { number: 11, suffix: "+", label: "Years Experience" },
+  { number: 50, suffix: "+", label: "Satisfied Clients" },
+  { number: 100, suffix: "%", label: "Project Success Rate" },
 ]
 
 function CountUp({ end, duration = 2 }) {
@@ -69,7 +69,7 @@ export default function StatsSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact in Numbers</h2>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Delivering excellence across Nigeria's energy sector with proven results
+            Delivering excellence across Nigeria's Power Oil & Gas sector with proven results
           </p>
         </motion.div>
 
