@@ -47,6 +47,39 @@ const certifications = [
   //   year: "2025",
   //   issue: "Issued July 31, 2025",
   // },
+  {
+    name: "API 5B-0730 License",
+    category: "API Product License",
+    description:
+      "Licensed to API Spec Q1® and API-5B for Casing & Tubing Threads.",
+    icon: FileCheck,
+    image: "/images/Certifications/Certificate 5B-0730_20260821103401_page-0001.jpg",
+    year: "2026",
+    validity: "August 21, 2026 – August 21, 2029",
+    issue: "Issued August 21, 2026",
+  },
+  {
+    name: "API 6A-2719 License",
+    category: "API Product License",
+    description:
+      "Licensed to API Spec Q1® and API-6A for Blind and Test Flanges at PSL 1, PSL 2, and PSL 3.",
+    icon: FileCheck,
+    image: "/images/Certifications/Certificate 6A-2719_20260821103450_page-0001.jpg",
+    year: "2026",
+    validity: "August 21, 2026 – August 21, 2029",
+    issue: "Issued August 21, 2026",
+  },
+  {
+    name: "API 7-2-1388 License",
+    category: "API Product License",
+    description:
+      "Licensed to API Spec Q1® and API-7-2 for Rotary Shouldered Connections Threads.",
+    icon: FileCheck,
+    image: "/images/Certifications/Certificate 7-2-1388_20260821103521_page-0001.jpg",
+    year: "2026",
+    validity: "August 21, 2026 – August 21, 2029",
+    issue: "Issued August 21, 2026",
+  },
 ]
 
   const OurCertifications = () => {
