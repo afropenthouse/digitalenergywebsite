@@ -31,7 +31,6 @@ const Home = () => {
   const [loadedImages, setLoadedImages] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderInterval = useRef(null);
-  const clientsScrollRef = useRef(null);
 
   const slides = [
     {
@@ -151,7 +150,7 @@ const Home = () => {
     "/images/Shared/Logos/chevron.webp",
     "/images/Shared/Logos/Total.webp",
     "/images/Shared/Logos/seepco.webp",
-    "/images/Shared/Logos/seplat.webp",
+    "/images/Shared/Logos/seplat.png",
     "/images/Shared/Logos/saipem.webp",
     "/images/Shared/Logos/Addax.webp",
     "/images/Shared/Logos/Hydrocarbon.webp",
@@ -225,23 +224,6 @@ const Home = () => {
       setLoadedImages(0)
       clearInterval(sliderInterval.current);
     }
-  }, [])
-
-  useEffect(() => {
-    const el = clientsScrollRef.current;
-    if (!el) return;
-    let raf;
-    const speed = 0.5;
-    const step = () => {
-      if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
-        el.scrollLeft = 0;
-      } else {
-        el.scrollLeft += speed;
-      }
-      raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
   }, [])
 
   if (isLoading) {
@@ -587,17 +569,14 @@ const Home = () => {
       <section className="py-8 bg-white">
         <div className="w-4/5 mx-auto">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Our Clients</h2>
-          <div
-            ref={clientsScrollRef}
-            className="overflow-x-hidden scrollbar-hide py-2"
-          >
-            <div className="flex space-x-8 items-center w-max">
-              {clientLogos.map((logo, index) => (
-                <img key={index} src={logo} alt={`Client ${index + 1}`} className="h-16 w-auto object-contain" />
+          <div className="overflow-hidden w-full">
+            <div className="inline-block animate-scroll-x whitespace-nowrap">
+              {[...clientLogos, ...clientLogos].map((logo, index) => (
+                <img key={index} src={logo} alt={`Client ${index + 1}`} className="inline-block h-16 w-auto object-contain align-middle mx-4" />
               ))}
             </div>
           </div>
-        </div> 
+        </div>
       </section>
     </motion.div>
   )
