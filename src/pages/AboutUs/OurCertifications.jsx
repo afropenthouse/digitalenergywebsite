@@ -80,6 +80,46 @@ const certifications = [
     validity: "August 21, 2026 – August 21, 2029",
     issue: "Issued August 21, 2026",
   },
+  {
+    name: "NCEC Consultancy Services Certificate",
+    category: "NCEC Certification",
+    description: "NCEC-certified for Consultancy Services across our operational domains.",
+    icon: FileCheck,
+    image: "/images/Certifications/NCEC Consultancy Services - 2025_page-0001.jpg",
+    year: "2025",
+  },
+  {
+    name: "NCEC Fabrication & Construction Certificate",
+    category: "NCEC Certification",
+    description: "NCEC-certified for Fabrication & Construction services.",
+    icon: FileCheck,
+    image: "/images/Certifications/NCEC Fabrication & Construction - 2025_page-0001.jpg",
+    year: "2025",
+  },
+  {
+    name: "NCEC Manufacturing Services Certificate",
+    category: "NCEC Certification",
+    description: "NCEC-certified for Manufacturing Services.",
+    icon: FileCheck,
+    image: "/images/Certifications/NCEC Manufacturing Services_page-0001.jpg",
+    year: "2025",
+  },
+  {
+    name: "NCEC Non Movable Assets Certificate",
+    category: "NCEC Certification",
+    description: "NCEC-certified for Non Movable Assets management.",
+    icon: FileCheck,
+    image: "/images/Certifications/NCEC Non Movable Assets - 2025_page-0001.jpg",
+    year: "2025",
+  },
+  {
+    name: "NCEC Quantity Surveying Certificate",
+    category: "NCEC Certification",
+    description: "NCEC-certified for Quantity Surveying services.",
+    icon: FileCheck,
+    image: "/images/Certifications/NCEC QS - 2025_page-0001.jpg",
+    year: "2025",
+  },
 ]
 
   const OurCertifications = () => {
