@@ -20,7 +20,6 @@ export default function Header() {
     { name: "Who We Are", href: "/about/who-we-are" },
     { name: "Management", href: "/about/management" },
     { name: "Our History", href: "/about/history" },
-    { name: "Our Certifications", href: "/about/certifications" },
     { name: "Picture Gallery", href: "/about/gallery" },
     { name: "Clients", href: "/about/clients" },
     { type: "header", name: "Policies" },
@@ -68,10 +67,11 @@ export default function Header() {
     { key: "about", name: "About", href: "/about", dropdown: aboutLinks },
     { key: "services", name: "Services", href: "/services" },
     { key: "projects", name: "Projects", href: "/projects" },
-    { key: "csr", name: "CSR", href: "/csr" },
+    { key: "certifications", name: "Certifications", href: "/about/certifications" },
     { key: "Workshop", name: "Workshop", href: "/Workshop" },
-    { key: "careers", name: "Careers", href: "/careers" },
+    { key: "csr", name: "CSR", href: "/csr" },
     { key: "contact", name: "Contact", href: "/contact", dropdown: contactLinks },
+    { key: "careers", name: "Careers", href: "/careers" },
   ];
 
   const handleSearch = (e) => {
@@ -149,6 +149,13 @@ export default function Header() {
           </div>
           
           <div className="flex items-center space-x-4">
+            <Link
+              to="/about/who-we-are"
+              className="inline-flex items-center justify-center h-8 px-4 text-xs font-medium text-blue-800 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-colors shadow-sm hidden md:inline-flex"
+            >
+              Learn More
+            </Link>
+            
             {/* Search - rounded-full style */}
             <form 
               onSubmit={handleSearch} 
@@ -161,13 +168,13 @@ export default function Header() {
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-9 pl-4 pr-2 text-sm focus:outline-none w-40 text-gray-700 bg-transparent placeholder-gray-400"
+                className="h-8 pl-3 pr-2 text-xs focus:outline-none w-32 text-gray-700 bg-transparent placeholder-gray-400"
               />
               <button
                 type="submit"
-                className="h-9 px-3 bg-blue-800 text-white hover:bg-blue-700 flex items-center justify-center transition-colors rounded-r-full"
+                className="h-8 px-2.5 bg-blue-800 text-white hover:bg-blue-700 flex items-center justify-center transition-colors rounded-r-full"
               >
-                <Search className="h-4 w-4" />
+                <Search className="h-3.5 w-3.5" />
               </button>
             </form>
             
@@ -274,12 +281,9 @@ export default function Header() {
               ))}
               
               <div className="flex-1 text-center">
-                <Link
-                  to="/about/who-we-are"
-                  className="inline-flex items-center justify-center h-8 px-4 text-xs font-medium text-blue-800 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-colors shadow-sm"
-                >
+                <span className="inline-flex items-center justify-center h-8 px-4 text-xs font-medium text-blue-800 bg-white/90 backdrop-blur-sm rounded-full shadow-sm opacity-0">
                   Learn More
-                </Link>
+                </span>
               </div>
             </div>
           </nav>
