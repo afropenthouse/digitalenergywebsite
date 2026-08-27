@@ -144,8 +144,8 @@ export default function Header() {
           
           {/* Certifications - hidden on scroll */}
           <div className={`hidden md:flex items-center space-x-4 transition-opacity duration-500 ${isScrolled ? "opacity-0" : "opacity-100"}`}>
-            <img src="/images/Misc/Bms1.webp" alt="ISO 9001:2015" className="h-12 w-auto" />
-            <img src="/images/Misc/Bms2.webp" alt="ISO 45001:2018" className="h-12 w-auto" />
+            <img src="/images/Home/use1.jpg" alt="ISO 9001:2015" className="h-12 w-auto transform scale-125 origin-center" />
+            <img src="/images/Home/use2.jpg" alt="ISO 45001:2018" className="h-12 w-auto transform scale-125 origin-center" />
           </div>
           
           <div className="flex items-center space-x-4">
