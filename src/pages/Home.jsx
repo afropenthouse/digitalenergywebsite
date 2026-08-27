@@ -180,6 +180,19 @@ const Home = () => {
     "/images/Shared/Logos/weatherford.webp",
   ];
 
+  const certificationLogos = [
+    "/images/Home/use1.jpg",
+    "/images/Home/use2.jpg",
+    "/images/Home/cer3.jpg",
+    "/images/Home/cer4.png",
+    "/images/Home/cer5.jpg",
+    "/images/Home/cer6.jpg",
+    "/images/Home/cer7.jpg",
+    "/images/Home/cer8.jpg",
+    "/images/Home/cer9.jpg",
+    "/images/Home/cer10.jpg",
+  ];
+
   // Collect all unique image URLs
   const allImageUrls = Array.from(new Set([
     ...slides.map(slide => slide.image),
@@ -357,10 +370,24 @@ const Home = () => {
         style={{ textDecoration: 'none' }}
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 0 002 2h12a2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
         </svg>
         Download Profile
       </a>
+
+      {/* Certifications Scroller Section */}
+      <section className="py-10 bg-white">
+        <div className="w-4/5 mx-auto">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Our Certifications</h2>
+          <div className="overflow-hidden w-full">
+            <div className="inline-block animate-scroll-x whitespace-nowrap">
+              {[...certificationLogos, ...certificationLogos, ...certificationLogos, ...certificationLogos, ...certificationLogos, ...certificationLogos, ...certificationLogos, ...certificationLogos].map((logo, index) => (
+                <img key={index} src={logo} alt={`Certification ${index + 1}`} className="inline-block h-20 w-auto object-contain align-middle mx-6" />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ==== REMAINDER OF THE PAGE (unchanged) ==== */}
 
