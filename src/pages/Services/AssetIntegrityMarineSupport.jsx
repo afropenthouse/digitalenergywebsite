@@ -54,7 +54,7 @@ const AssetIntegrityMarineSupport = () => {
             <div className="absolute inset-0">
               <img
                 src="/images/Services/OperationsMaintenance/om1.jpeg"
-                alt="Asset Integrity & Marine Support"
+                alt="Assets Integrity, Inspections & Corrosion Management"
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
@@ -75,7 +75,7 @@ const AssetIntegrityMarineSupport = () => {
                 transition={{ delay: 0.2 }}
                 className="text-4xl md:text-5xl font-bold mb-6"
               >
-                Asset Integrity & <span className="text-orange-400">Marine Support</span>
+                Assets Integrity, Inspections & <span className="text-orange-400">Corrosion Management</span>
               </motion.h2>
             </div>
           </motion.div>
@@ -120,7 +120,7 @@ const AssetIntegrityMarineSupport = () => {
                 <div className="relative rounded-lg overflow-hidden shadow-md">
                   <img
                     src="/images/Services/OperationsMaintenance/om1.jpeg"
-                    alt="Asset Integrity & Marine Support"
+                    alt="Assets Integrity, Inspections & Corrosion Management"
                     className="w-full h-[250px] object-cover"
                   />
                 </div>
