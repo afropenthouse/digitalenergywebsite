@@ -42,7 +42,7 @@ const services = [
   },
   {
     id: 'asset-integrity',
-    title: 'Asset Integrity & Marine Support',
+    title: 'Assets Integrity, Inspections & Corrosion Management',
     icon: Shield,
     path: '/services/asset-integrity'
   },

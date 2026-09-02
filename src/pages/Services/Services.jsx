@@ -116,7 +116,7 @@ const services = [
   {
     id: "asset-integrity",
     icon: Shield,
-    title: "Asset Integrity & Marine Support",
+    title: "Assets Integrity, Inspections & Corrosion Management",
     description: "Marine support, tank & vessel cleaning, and industrial cleaning services for safe and efficient operations.",
     path: "/services/asset-integrity",
     features: [
