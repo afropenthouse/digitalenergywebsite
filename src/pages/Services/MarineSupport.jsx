@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
-import { Wrench, Settings, FileText, Users, Shield, BarChart, Layout, Cpu, Factory, Gauge, Calculator, Building2, Ruler, Scale, ClipboardCheck, Eye, Waves, Anchor } from 'lucide-react'
+import { Ship, Wrench, Building2, Factory } from 'lucide-react'
 import ServicesNav from './ServicesNav'
 import Loader from '../Loader/Loader'
-import ServiceDetailFromHash, { getServiceFromHash, formatHeroTitle } from '@/components/ServiceDetailFromHash'
+import { getServiceFromHash, formatHeroTitle } from '@/components/ServiceDetailFromHash'
 
-const EngineeringServices = () => {
+const MarineSupport = () => {
   const location = useLocation();
   const serviceData = getServiceFromHash(location.pathname, location.hash);
   const [isLoading, setIsLoading] = useState(true)
@@ -16,28 +16,31 @@ const EngineeringServices = () => {
     const handleImageLoad = () => {
       setLoadedImages(prev => {
         const newCount = prev + 1
-        if (newCount === 2) { // Hero image and content image
+        if (newCount === 2) {
           setIsLoading(false)
         }
         return newCount
       })
     }
 
-    // Preload images
     const images = [
-      '/images/Services/EngineeringServices/engineering.webp',
-      '/images/Services/EngineeringServices/engineering.webp'
+      '/images/Services/Marine/marine1.png',
+      '/images/Services/Marine/marine2.png'
     ]
 
     images.forEach(src => {
       const img = new Image()
-      img.src = src.replace(/\.[^/.]+$/, ".webp")
+      img.src = src
       img.onload = handleImageLoad
+      img.onerror = handleImageLoad
     })
+
+    const timer = setTimeout(() => setIsLoading(false), 3000)
 
     return () => {
       setIsLoading(true)
       setLoadedImages(0)
+      clearTimeout(timer)
     }
   }, [])
 
@@ -45,48 +48,50 @@ const EngineeringServices = () => {
     return <Loader />
   }
 
-  const solutions = [
-    "Conceptual Design and Feasibility Studies",
-    "Front-End Engineering Design (FEED)",
-    "Integrated field development planning – feasibility, concept, pre-FEED",
-    "Basic Engineering Design",
-    "Detail Engineering Design",
-    "Pipeline engineering",
-    "Piping engineering (stress analysis and materials)",
-    "Piping layout design",
-    "Process and facilities engineering design",
-    "Electrical, instrumentation, automation and control (control systems, field instruments, metering) engineering design",
-    "Flow assurance and dynamic process simulation - Dynamic simulation and transient analysis",
-    "Engineering Cost and schedule estimation",
-    "Risk, safety, and environmental engineering – HAZOP, HAZIND etc",
-    "Plant Layout design",
-    "Rotating machinery engineering design",
-    "Structural engineering Design",
-    "Civil engineering Design",
-    "Weight and cost estimating",
-    "Construction and Fabrication Engineering",
-    "Late life asset management – production enhancement, concept studies, structural and marine assurance, cost estimating",
-    "As-built drawings",
-    "Engineering consultancy services – Owners Engineer",
-    "Third party design verification",
-    "Vibration analysis and acoustic engineering",
-    "Complex offshore structural analysis and fatigue / life extension assessment"
+  const marineServices = [
+    {
+      title: "Offshore Support Vessels",
+      icon: Ship,
+      intro: "Ships operating on open water for oilfield or coastal logistics.",
+      details: [
+        "We provide Offshore Support Vessels,",
+        "Offshore Security Escort Services",
+        "and Marine Support Services",
+      ]
+    },
+    {
+      title: "Shipyard & Maintenance",
+      icon: Wrench,
+      intro: "Engineers inspecting engines, dry docks, and vessel components.",
+      details: null,
+    },
+    {
+      title: "Port Operations",
+      icon: Building2,
+      intro: "Large cranes, cargo containers, and marine terminals loading goods.",
+      details: null,
+    },
+    {
+      title: "Engineering & Fabrication",
+      icon: Factory,
+      intro: "Steel piping, structural welding, and offshore platform construction.",
+      details: null,
+    },
   ]
 
   return (
     <div className="pt-48 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-6 py-8">
         <div className="space-y-8">
-          {/* Hero Section */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 md:py-20 rounded-2xl overflow-hidden mt-8"
           >
             <div className="absolute inset-0">
               <img
-                src="/images/Services/EngineeringServices/engineering.webp"
-                alt="Engineering Services"
+                src="/images/Services/Marine/marine1.png"
+                alt="Offshore & Marine Support"
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-800/70" />
@@ -99,7 +104,7 @@ const EngineeringServices = () => {
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">Our Services</p>
+                <p className="text-sm font-medium">{serviceData ? "Service Details" : "Our Services"}</p>
               </motion.div>
               {serviceData ? (
                 <>
@@ -115,7 +120,7 @@ const EngineeringServices = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="text-xl text-white max-w-3xl leading-relaxed"
+                    className="text-xl text-blue-100 max-w-3xl leading-relaxed"
                   >
                     {serviceData.subtitle}
                   </motion.p>
@@ -128,54 +133,44 @@ const EngineeringServices = () => {
                     transition={{ delay: 0.2 }}
                     className="text-4xl md:text-5xl font-bold mb-6"
                   >
-                    Engineering <span className="text-orange-400">Services</span>
+                    Offshore & <span className="text-orange-400">Marine Support</span>
                   </motion.h2>
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="text-xl text-white max-w-3xl leading-relaxed"
+                    className="text-xl text-blue-100 max-w-3xl leading-relaxed"
                   >
-                    Professional engineering solutions for your business needs.
+                    Vessel Chartering | Offshore Logistics | Subsea Inspection | Environmental Pollution Control
                   </motion.p>
                 </>
               )}
             </div>
           </motion.div>
 
-          {!serviceData && <ServiceDetailFromHash />}
-
-          {/* Navigation and Content Section */}
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Navigation Sidebar */}
             <div className="w-full md:w-56 flex-shrink-0">
               <ServicesNav />
             </div>
 
-            {/* Content Area */}
             <div className="flex-1">
-              {/* Overview Section */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 shadow-lg mb-8 border border-gray-100"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Engineering Solutions</h3>
-                <div className="space-y-6 text-gray-700">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Offshore & Marine Support</h3>
+                <div className="space-y-4 text-gray-700">
                   <p className="leading-relaxed">
-                    'Fit to Purpose' engineering solutions with a technology focus and specialized design & engineering expertise.
+                    Our Marine support services include vessel chartering, offshore logistics, subsea inspection, and environmental pollution control tailored for the oil, gas, and maritime industries.
                   </p>
                   <p className="leading-relaxed">
-                    Digital Energy offers clients a one-stop-shop for major projects by combining project management, survey, design, detailed engineering, fabrication, installation and maintenance engineering capabilities. Our Engineering and Procurement team work closely with each other to ensure early sourcing of major and long-lead equipment and to ensure compliance with the technical requirements and customer specifications. Quality engineering in projects is the essence of success.
-                  </p>
-                  <p className="leading-relaxed">
-                    DEISL's Professional group of engineers, designers and draftsmen provide conceptual designs from the proposal stage of a project all the way to detailed construction drawings and as-built drawings at the construction stage. The group utilizes state of the art engineering software with computer aided design (CAD) systems for all its two- and three-dimensional designs, modelling, simulations and calculations. The Group is supported by its home offices in Lagos, Port Harcourt, Calabar and Abuja Nigeria.
+                    We provide Offshore Support Vessels, Offshore Security Escort Services and Marine Support Services.
                   </p>
                 </div>
               </motion.div>
 
-              {/* Image Section 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -185,41 +180,54 @@ const EngineeringServices = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="relative rounded-lg overflow-hidden shadow-md">
                     <img
-                      src="/images/Services/EngineeringServices/engineering1.jpg"
-                      alt="Design & Planning"
+                      src="/images/Services/Marine/marine1.png"
+                      alt="Offshore Support Vessel Operations"
                       className="w-full h-[250px] object-cover"
                     />
                   </div>
                   <div className="relative rounded-lg overflow-hidden shadow-md">
                     <img
-                      src="/images/Services/EngineeringServices/engineering2.jpg"
-                      alt="Technical Analysis"
+                      src="/images/Services/Marine/marine2.png"
+                      alt="Marine Logistics & Port Operations"
                       className="w-full h-[250px] object-cover"
                     />
                   </div>
                 </div>
               </motion.div>
 
-              {/* Solutions List */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Engineering Tailored Solutions Include:</h3>
-                <div className="grid md:grid-cols-2 gap-1">
-                  {solutions.map((solution, index) => (
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Marine Capabilities</h3>
+                <div className="space-y-8">
+                  {marineServices.map((section, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.05 }}
-                      className="flex items-start space-x-2 py-1 hover:bg-blue-50 transition-colors"
+                      transition={{ delay: index * 0.1 }}
+                      className="space-y-4"
                     >
-                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="text-gray-700 text-sm leading-tight">{solution}</span>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <section.icon className="w-5 h-5 text-blue-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold text-gray-900">{section.title}</h4>
+                          <p className="text-base text-gray-600 mt-1">{section.intro}</p>
+                        </div>
+                      </div>
+                      {section.details && (
+                        <div className="pl-13 space-y-1">
+                          {section.details.map((item, itemIndex) => (
+                            <p key={itemIndex} className="text-gray-700 leading-relaxed">{item}</p>
+                          ))}
+                        </div>
+                      )}
                     </motion.div>
                   ))}
                 </div>
@@ -232,4 +240,4 @@ const EngineeringServices = () => {
   )
 }
 
-export default EngineeringServices 
+export default MarineSupport

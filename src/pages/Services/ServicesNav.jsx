@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Wrench, ShoppingCart, HardHat, Settings, Users, UserCheck, CheckCircle, Fuel, Shield } from 'lucide-react'
+import { Wrench, ShoppingCart, HardHat, Settings, Users, UserCheck, CheckCircle, Fuel, Shield, Anchor } from 'lucide-react'
 
 const services = [
   {
@@ -57,6 +57,12 @@ const services = [
     title: 'Marketing, Supply & Trading of Petroleum Products',
     icon: Fuel,
     path: '/services/trading'
+  },
+  {
+    id: 'marine',
+    title: 'Offshore & Marine Support',
+    icon: Anchor,
+    path: '/services/marine'
   }
 ]
 
