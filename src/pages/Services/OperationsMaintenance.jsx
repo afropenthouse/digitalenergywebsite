@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 import ServicesNav from './ServicesNav'
+import ServiceDetailFromHash, { getServiceFromHash, formatHeroTitle } from '@/components/ServiceDetailFromHash'
 
 // Operations & Maintenance (O&M) Services
 const OperationsMaintenance = () => {
+  const location = useLocation();
+  const serviceData = getServiceFromHash(location.pathname, location.hash);
   const services = [
     {
       title: 'Integrated Maintenance Management',
@@ -183,26 +187,51 @@ const OperationsMaintenance = () => {
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">Our Services</p>
+                <p className="text-sm font-medium">{serviceData ? "Service Details" : "Our Services"}</p>
               </motion.div>
-               <motion.h2 
-                 initial={{ opacity: 0, y: 20 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 transition={{ delay: 0.2 }}
-                 className="text-4xl md:text-5xl font-bold mb-6"
-               >
-                 Operations & Maintenance <span className="text-orange-400">(O&M)</span>
-               </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-xl text-blue-100 max-w-3xl leading-relaxed"
-              >
-                 End-to-end O&M solutions maximizing asset performance and operational reliability.
-               </motion.p>
+               {serviceData ? (
+                 <>
+                   <motion.h2
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ delay: 0.2 }}
+                     className="text-4xl md:text-5xl font-bold mb-6"
+                   >
+                     {formatHeroTitle(serviceData.title)}
+                   </motion.h2>
+                   <motion.p
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ delay: 0.3 }}
+                     className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+                   >
+                     {serviceData.subtitle}
+                   </motion.p>
+                 </>
+               ) : (
+                 <>
+                   <motion.h2
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ delay: 0.2 }}
+                     className="text-4xl md:text-5xl font-bold mb-6"
+                   >
+                     Operations & Maintenance <span className="text-orange-400">(O&M)</span>
+                   </motion.h2>
+                   <motion.p
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ delay: 0.3 }}
+                     className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+                   >
+                     End-to-end O&M solutions maximizing asset performance and operational reliability.
+                   </motion.p>
+                 </>
+               )}
             </div>
           </motion.div>
+
+          {!serviceData && <ServiceDetailFromHash />}
 
           {/* Navigation and Content Section */}
           <div className="flex flex-col md:flex-row gap-8">
@@ -210,6 +239,7 @@ const OperationsMaintenance = () => {
              <div className="w-full md:w-56 flex-shrink-0 md:sticky md:top-24">
               <ServicesNav />
             </div>
+
 
             {/* Content Area */}
             <div className="flex-1">

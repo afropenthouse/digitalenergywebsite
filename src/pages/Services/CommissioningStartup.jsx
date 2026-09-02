@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 import { CheckCircle, Wrench, Settings, Users, FileText, Shield } from 'lucide-react'
 import ServicesNav from './ServicesNav'
 import Loader from '../Loader/Loader'
+import ServiceDetailFromHash, { getServiceFromHash, formatHeroTitle } from '@/components/ServiceDetailFromHash'
 
 const CommissioningStartup = () => {
+  const location = useLocation();
+  const serviceData = getServiceFromHash(location.pathname, location.hash);
   const [isLoading, setIsLoading] = useState(true)
   const [loadedImages, setLoadedImages] = useState(0)
 
@@ -12,7 +16,17 @@ const CommissioningStartup = () => {
     const handleImageLoad = () => {
       setLoadedImages(prev => {
         const newCount = prev + 1
-        if (newCount === 2) { // Hero image and content image
+        if (newCount === 3) {
+          setIsLoading(false)
+        }
+        return newCount
+      })
+    }
+
+    const handleImageError = () => {
+      setLoadedImages(prev => {
+        const newCount = prev + 1
+        if (newCount === 3) {
           setIsLoading(false)
         }
         return newCount
@@ -21,19 +35,24 @@ const CommissioningStartup = () => {
 
     // Preload images
     const images = [
-      '/images/Services/CommissioningStartup/commisioning.webp',
-      '/images/Services/CommissioningStartup/commisioning.webp'
+      '/images/Services/CommissioningStartup/commsion1.jpg',
+      '/images/Services/CommissioningStartup/commsion2.jpg',
+      '/images/Services/CommissioningStartup/commsion1.jpg',
     ]
 
     images.forEach(src => {
       const img = new Image()
-      img.src = src.replace(/\.[^/.]+$/, ".webp") // Convert to WebP
+      img.src = src
       img.onload = handleImageLoad
+      img.onerror = handleImageError
     })
+
+    const timer = setTimeout(() => setIsLoading(false), 3000)
 
     return () => {
       setIsLoading(true)
       setLoadedImages(0)
+      clearTimeout(timer)
     }
   }, [])
 
@@ -112,7 +131,7 @@ const CommissioningStartup = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/images/Services/CommissioningStartup/commisioning.webp"
+                src="/images/Services/CommissioningStartup/commsion1.jpg"
                 alt="Commissioning & Start-up Services"
                 className="w-full h-full object-cover opacity-40"
               />
@@ -126,26 +145,51 @@ const CommissioningStartup = () => {
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">Construction, Installation and Site/Offshore Hookups</p>
+                <p className="text-sm font-medium">{serviceData ? "Service Details" : "Construction, Installation and Site/Offshore Hookups"}</p>
               </motion.div>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-4xl md:text-5xl font-bold mb-6"
-              >
-                Construction, Installation and <span className="text-orange-400">Site/Offshore Hookups</span>
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-xl text-blue-100 max-w-3xl leading-relaxed"
-              >
-                Pre-commissioning | Mechanical Completion | Functional Testing | Handover Documentation
-              </motion.p>
+              {serviceData ? (
+                <>
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-4xl md:text-5xl font-bold mb-6"
+                  >
+                    {formatHeroTitle(serviceData.title)}
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+                  >
+                    {serviceData.subtitle}
+                  </motion.p>
+                </>
+              ) : (
+                <>
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-4xl md:text-5xl font-bold mb-6"
+                  >
+                    Construction, Installation and <span className="text-orange-400">Site/Offshore Hookups</span>
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-xl text-blue-100 max-w-3xl leading-relaxed"
+                  >
+                    Pre-commissioning | Mechanical Completion | Functional Testing | Handover Documentation
+                  </motion.p>
+                </>
+              )}
             </div>
           </motion.div>
+
+          {!serviceData && <ServiceDetailFromHash />}
 
           {/* Navigation and Content Section */}
           <div className="flex flex-col md:flex-row gap-8">
@@ -181,12 +225,21 @@ const CommissioningStartup = () => {
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-md">
-                  <img
-                    src="/images/Services/CommissioningStartup/commisioning.webp"
-                    alt="Commissioning & Start-up"
-                    className="w-full h-[250px] object-cover"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/CommissioningStartup/commsion1.jpg"
+                      alt="Commissioning & Start-up 1"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src="/images/Services/CommissioningStartup/commsion2.jpg"
+                      alt="Commissioning & Start-up 2"
+                      className="w-full h-[250px] object-cover"
+                    />
+                  </div>
                 </div>
               </motion.div>
 

@@ -29,6 +29,7 @@ import ScrollUP from "./components/Scroll/ScrollUP";
 import FabricationConstruction from './pages/Services/FabricationConstruction';
 import FabricationConstructionServices from './pages/Services/FabricationConstructionServices';
 import TradingServices from "./pages/Services/TradingServices";
+import MarineSupport from "./pages/Services/MarineSupport";
 import Management from "./pages/AboutUs/Management";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
@@ -72,6 +73,7 @@ function AppRoutes() {
               <Route path="fabrication-construction" element={<FabricationConstructionServices />} />
               <Route path="Workshop" element={<FabricationYard />} />
               <Route path="trading" element={<TradingServices />} />
+              <Route path="marine" element={<MarineSupport />} />
             </Route>
             <Route path="projects" element={<Projects />} />
             <Route path="csr" element={<CSR />} />

@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 import ServicesNav from './ServicesNav'
+import { getServiceFromHash, formatHeroTitle } from '@/components/ServiceDetailFromHash'
 
 const FabricationConstruction = () => {
+  const location = useLocation();
+  const serviceData = getServiceFromHash(location.pathname, location.hash);
   const [openSection, setOpenSection] = useState(null)
 
   const machineShopServices = [
@@ -83,24 +87,47 @@ const FabricationConstruction = () => {
                 transition={{ delay: 0.1 }}
                 className="inline-block bg-blue-700/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6"
               >
-                <p className="text-sm font-medium">OCTG Solutions</p>
+                <p className="text-sm font-medium">{serviceData ? "Service Details" : "OCTG Solutions"}</p>
               </motion.div>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-4xl md:text-5xl font-bold mb-6"
-              >
-                 Fabrication and Machining of <span className="text-orange-400">OCTG Pipes and Joints</span>
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-xl text-white max-w-3xl leading-relaxed"
-              >
-                Precision fabrication, OCTG pipe and joints machining & manufacturing
-              </motion.p>
+              {serviceData ? (
+                <>
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-4xl md:text-5xl font-bold mb-6"
+                  >
+                    {formatHeroTitle(serviceData.title)}
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-xl text-white max-w-3xl leading-relaxed"
+                  >
+                    {serviceData.subtitle}
+                  </motion.p>
+                </>
+              ) : (
+                <>
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-4xl md:text-5xl font-bold mb-6"
+                  >
+                    Fabrication and Machining of <span className="text-orange-400">OCTG Pipes and Joints</span>
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-xl text-white max-w-3xl leading-relaxed"
+                  >
+                    Precision fabrication, OCTG pipe and joints machining & manufacturing
+                  </motion.p>
+                </>
+              )}
             </div>
           </motion.div>
 

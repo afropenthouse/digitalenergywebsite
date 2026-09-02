@@ -431,69 +431,103 @@ const Home = () => {
             {[
               {
                 title: "Engineering Services",
+                slug: "engineering",
                 description: "Full-cycle engineering capability: FEED, Detailed Design, and Fabrication/Installation Engineering. Supported by HAZOP, HAZID, and Constructability reviews across Process, Piping, Mechanical, Civil, Structural, Electrical, and Instrumentation disciplines.",
                 image: "/images/Services/EngineeringServices/engineering.webp",
                 path: "/services/engineering"
               },
               {
                 title: "Procurement Services",
+                slug: "procurement",
                 description: "End-to-end procurement with global reach and local expertise. The right materials at the right price and at the right time. From global vendors to Nigerian suppliers, we manage sourcing to meet your project's cost, quality, and Local Content requirements compliance.",
                 image: "/images/Services/ProcurementServices/procurement1.jpg",
                 path: "/services/procurement"
               },
               {
                 title: "Fabrication & Machining of OCTG Pipes and Joints",
+                slug: "fabrication",
                 description: "Built in Our Shop. Built to Spec. Machined to Last. Ready for Site. OCTG Solutions: We provide fabrication, threading, and repair of OCTG pipes and joints for drilling and production operations ensuring reliability downhole and on surface. We fabricate piping spools and structural steel assemblies in a controlled workshop environment to ensure quality, accuracy, and faster site installation.",
                 image: "/images/Services/FabricationConstruction/fabrication.webp",
                 path: "/services/fabrication"
               },
               {
                 title: "Construction, Installation and Site/Offshore Hookups",
+                slug: "construction-installation",
                 description: "Built Right. Installed Safe. Hooked Up Right. We deliver full-scope construction and installation services across power and oil & gas facilities, we execute civil, structural, mechanical, piping, and E&I works, plus site and offshore hookups for greenfield projects and brownfield facility upgrades.",
-                image: "/images/Services/CommissioningStartup/commisioning.webp",
+                images: [
+                  "/images/Services/CommissioningStartup/commsion1.jpg",
+                  "/images/Services/CommissioningStartup/commsion2.jpg",
+                ],
                 path: "/services/commissioning"
               },
               {
                 title: "Pre-commissioning, Commissioning & Start-up",
+                slug: "pre-commissioning",
                 description: "From Testing to First Oil / First Power. We manage pre-commissioning, commissioning, and start-up activities to de-risk your project and ensure systems perform safely from day one.",
                 image: "/images/Services/CommissioningStartup/commisioning.webp",
                 path: "/services/commissioning"
               },
               {
                 title: "Operations & Maintenance",
+                slug: "operations",
                 description: "Keep Your Assets Running. At Peak Performance. We provide full-scope O&M services ensuring safety, reliability, optimal asset performance, reduced downtime, Spare parts management, Shutdowns and extended infrastructure life cycle from daily operations to predictive, preventive and corrective maintenance services.",
                 image: "/images/Services/OperationsMaintenance/operation.webp",
                 path: "/services/operations"
               },
               {
-                title: "Asset Integrity & Marine Support",
-                description: "Safety. Compliance. Uptime. Proactive asset integrity management and marine services designed to protect your assets, meet regulatory requirements, sustain operational efficiency both offshore and onshore, extend asset life, prevent failures, and keep your operations running safely and optimally.",
+                title: "Assets Integrity, Inspections & Corrosion Management",
+                slug: "assets-integrity",
+                description: "Asset Integrity Management (AIM) is essential for ensuring the safety, reliability, and performance of critical assets in the oil and gas industry.\n\nSafety. Compliance. Uptime. Proactive asset integrity management, planned routine inspections and corrosion management services designed to protect your assets, meet regulatory requirements, sustain operational efficiency both offshore and onshore, extend asset life, prevent failures, and keep your operations running safely and optimally.",
                 image: "/images/Services/OperationsMaintenance/om2.jpeg",
                 path: "/services/operations"
               },
               {
                 title: "Project Management",
+                slug: "project-management",
                 description: "Your Project. Our Accountability. We plan, coordinate, and execute complex projects with disciplined project controls to deliver safely, on schedule, and to specification.",
-                image: "/images/Projects/matrixbig.jpg",
+                image: "/images/Projects/ProjectHome.jpg",
                 path: "/services"
               },
               {
                 title: "Technical Manpower Supply",
+                slug: "manpower",
                 description: "The Right People. Right on Time. Project staffing solutions with certified and experienced personnel. From IRATA and NDT to supervision and specialized trades fully compliant and ready to work.",
                 image: "/images/Services/TechnicalManpower/p8.webp",
                 path: "/services/manpower"
               },
+              {
+                title: "Offshore & Marine Support",
+                slug: "marine",
+                description: "Our Marine support services include vessel chartering, offshore logistics, subsea inspection, and environmental pollution control tailored for the oil, gas, and maritime industries.",
+                images: [
+                  "/images/Services/Marine/marine1.png",
+                  "/images/Services/Marine/marine2.png",
+                ],
+                path: "/services/marine"
+              },
             ].map((service, idx) => (
-              <div key={service.title} className="bg-white border border-gray-200 rounded-xl flex flex-col md:flex-row items-center h-auto md:min-h-56 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="flex-shrink-0 w-full md:w-48 h-48 md:h-56 overflow-hidden rounded-t-xl md:rounded-t-none md:rounded-l-xl">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+              <div key={service.title} className={`bg-white border border-gray-200 rounded-xl flex flex-col md:flex-row items-center h-auto shadow-sm hover:shadow-md transition-shadow duration-300 ${service.images ? "md:min-h-[240px]" : "md:min-h-56"}`}>
+                <div className={`flex-shrink-0 w-full ${service.images ? "md:w-56" : "md:w-48"} ${service.images ? "h-80 md:h-[240px] grid grid-rows-2 gap-2 p-2" : "h-48 md:h-56"} overflow-hidden rounded-t-xl md:rounded-t-none md:rounded-l-xl ${service.title === "Project Management" ? "bg-gray-50" : ""}`}>
+                  {service.images ? (
+                    service.images.map((img, i) => (
+                      <div key={i} className="w-full h-full flex items-center justify-center bg-white rounded-md overflow-hidden">
+                        <img src={img} alt={`${service.title} ${i + 1}`} className="w-full object-contain" style={{ height: '100%', objectFit: 'contain', minWidth: '100%' }} />
+                      </div>
+                    ))
+                  ) : (
+                    <img src={service.image} alt={service.title} className={`w-full h-full ${service.title === "Project Management" ? "object-contain" : "object-cover"}`} />
+                  )}
                 </div>
                 <div className="flex-1 flex flex-col justify-center h-auto md:h-full p-5 md:p-6">
                   <h3 className="text-base md:text-base font-bold text-gray-900 mb-2 leading-snug">{service.title}</h3>
-                  <p className="text-sm md:text-sm text-gray-700 mb-3 leading-relaxed">{service.description}</p>
-                  <a href={service.path} className="text-orange-500 font-medium flex items-center group hover:underline text-sm md:text-base">
+                  <div className="text-sm md:text-sm text-gray-700 mb-3 leading-relaxed space-y-2">
+                    {service.description.split('\n\n').map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
+                  <Link to={`${service.path}#${service.slug}`} className="text-orange-500 font-medium flex items-center group hover:underline text-sm md:text-base">
                     <span className="mr-1">&rarr; Read More</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
