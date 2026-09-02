@@ -369,8 +369,8 @@ const Home = () => {
         className="fixed bottom-8 right-8 z-30 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105 hover:shadow-orange-500/30"
         style={{ textDecoration: 'none' }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 0 002 2h12a2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
         </svg>
         Download Profile
       </a>
@@ -509,12 +509,12 @@ const Home = () => {
               <div key={service.title} className={`bg-white border border-gray-200 rounded-xl flex flex-col md:flex-row items-center h-auto shadow-sm hover:shadow-md transition-shadow duration-300 ${service.images ? "md:min-h-[240px]" : "md:min-h-56"}`}>
                 <div className={`flex-shrink-0 w-full ${service.images ? "md:w-56" : "md:w-48"} ${service.images ? "h-80 md:h-[240px] grid grid-rows-2 gap-2 p-2" : "h-48 md:h-56"} overflow-hidden rounded-t-xl md:rounded-t-none md:rounded-l-xl ${service.title === "Project Management" ? "bg-gray-50" : ""}`}>
                   {service.images ? (
-                    service.images.map((img, i) => (
-                      <div key={i} className="w-full h-full flex items-center justify-center bg-white rounded-md overflow-hidden">
-                        <img src={img} alt={`${service.title} ${i + 1}`} className="w-full object-contain" style={{ height: '100%', objectFit: 'contain', minWidth: '100%' }} />
-                      </div>
-                    ))
-                  ) : (
+                      service.images.map((img, i) => (
+                        <div key={i} className="w-full h-full flex items-center justify-center bg-white rounded-md overflow-hidden">
+                          <img src={img} alt={`${service.title} ${i + 1}`} className="w-full h-full object-cover" />
+                        </div>
+                      ))
+                   ) : (
                     <img src={service.image} alt={service.title} className={`w-full h-full ${service.title === "Project Management" ? "object-contain" : "object-cover"}`} />
                   )}
                 </div>
