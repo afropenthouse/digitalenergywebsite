@@ -18,6 +18,15 @@ const galleryCategories = [
 		],
 	},
 	{
+		name: "Cargo Trucks",
+		images: [
+			{ src: "/images/IMG_4988.JPEG", alt: "Cargo Truck 1" },
+			{ src: "/images/IMG_4989.JPEG", alt: "Cargo Truck 2" },
+			{ src: "/images/IMG_4990.JPEG", alt: "Cargo Truck 3" },
+			{ src: "/images/IMG_4991.JPEG", alt: "Cargo Truck 4" },
+		],
+	},
+	{
 		name: "Equipment",
 		images: [
 			{ src: "/images/Gallery/Equipment/Equipment1.webp", alt: "Equipment 1" },
