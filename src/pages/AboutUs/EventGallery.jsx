@@ -264,15 +264,17 @@ const EventGallery = () => {
 								>
 									{/* Close button */}
 									<button
-										className="absolute -top-12 right-0 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white z-50"
+										className="absolute -top-10 right-0 md:right-2 p-2 rounded-full bg-black/40 hover:bg-black/70 transition-colors text-white z-50"
+										onClick={() => setSelectedImage(null)}
 										>
-										<X className="w-8 h-8" />
+										<X className="w-6 h-6 md:w-8 md:h-8" />
 									</button>
 
 									{selectedImage.type === "video" ? (
 										<video
 											src={selectedImage.src}
 											controls
+											autoFocus
 											className="max-w-full max-h-[90vh] rounded-lg shadow-2xl"
 										/>
 									) : (
